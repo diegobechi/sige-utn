@@ -1,0 +1,337 @@
+
+html,body{
+    margin: 0px;
+    height: 100%;
+    background-color: lightblue;
+}
+
+/* ==|== Fonts =====================================================
+   Author: Diego Bechi
+   ========================================================================== */
+
+@font-face {
+    font-family: 'windsong';
+    src: url('../font/Windsong.eot?') format('eot'), 
+         url('../font/Windsong.woff') format('woff'), 
+         url('../font/Windsong.ttf')  format('truetype'),
+         url('../font/Windsong.svg#Windsong') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'titillium';
+    src: url('../font/titilliumweb-regular-webfont.eot');
+    src: url('../font/titilliumweb-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/titilliumweb-regular-webfont.woff') format('woff'),
+        url('../font/titilliumweb-regular-webfont.ttf') format('truetype'),
+        url('../font/titilliumweb-regular-webfont.svg#titillium_webregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.contenedor-general{
+background-color: #829EDF;
+/*background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MCcgaGVpZ2h0PSc1MCcgdmlld0JveD0nMCAwIDUwIDUwJz4KCTxsaW5lIHgxPScxJyB5MT0nMCcgeDI9JzUxJyB5Mj0nNTAnIHN0cm9rZT0nI2RiZGJkYicgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjZGJkYmRiJyBzdHJva2Utd2lkdGg9JzInLz4KCTxsaW5lIHgxPSc1MCcgeTE9JzAnIHgyPScwJyB5Mj0nNTAnIHN0cm9rZT0nI2VkZWRlZCcgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nMCcgeTE9JzAnIHgyPSc1MCcgeTI9JzUwJyBzdHJva2U9JyNlZGVkZWQnIHN0cm9rZS13aWR0aD0nMicvPgo8L3N2Zz4=');*/
+}
+
+menu#home-top-menu {
+    float: left;
+    margin: 0;
+    padding: 12px 0 0;
+}
+#home-top-menu > ul {
+    margin: 0;
+    padding: 0;
+}
+#home-top-menu li {
+    float: left;
+    list-style: none outside none;
+    margin-right: 2px;
+}
+#home-top-menu a {
+    color: #5555E4;
+    padding: 6px 22px 15px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari and Chrome */
+    -o-transition: all 0.5s; /* Opera */
+}
+#home-top-menu a.active,#home-top-menu a:hover  {
+    color: #5555E4;
+    border-bottom: 5px solid #5555E4;
+}
+
+.home-wrapper{
+    height: 100%;
+    left: 50%;
+    margin-left: -47%;
+    margin-right: auto;
+    margin-top: 40px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    position: absolute;
+    width: 95%;
+}
+
+.home-head-buttons{
+    display: block;
+    height: 50px;
+    padding-top: 10px;
+    width: 100%;
+    border-bottom: 1px solid #5555E4;
+    margin-bottom: 24px;
+}
+.home-head-buttons ul.myselect-ul li {
+    overflow: hidden;
+}
+.home-head-buttons ul.myselect-ul li p{
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.pt-perspective {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    perspective: 1200px;
+    margin-left: 7px;
+    /*transform-style: preserve-3d;*/
+}
+
+.pt-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.pt-page-oh{
+    overflow: hidden;
+}
+.pt-page-non{
+    display: none;
+}
+.pt-page-current,
+.no-js .pt-page {
+    visibility: visible;
+    height: 100%;
+}
+
+.no-js body {
+    overflow: auto;
+}
+.pt-page-ontop {
+    z-index: 999;
+}   
+.pt-page-1 {
+    background: #F6F6F6;
+    height: 100%;   
+}
+.pt-page-2 {
+    background: #F6F6F6;
+    height: 100%;   
+}
+.pt-page-3 {
+    background: #F6F6F6;
+    height: 100%;   
+}
+.formulario{
+}
+
+.menu-superior-general{
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    background-color: black;
+    /*float: left;*/
+}
+
+.label-menu-superior-general{
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    float: left;
+}
+
+.columna-informacion-alumno{
+    width: 50%;
+    height: 90%;
+    display: inline-block;
+    float: left;
+}
+
+.columna-datos-personales-alumno{
+    display: inline-block;
+    width: 35%;
+    height: 90%;
+    float: left;        
+    border-right: 2px solid;
+}
+
+.columna-foto-alumno{
+    display: inline-block;
+    width: 13%;
+    height: 90%;
+    float: left;
+    margin-left: 5px;
+}
+
+.pagina-principal-informacion-alumno{
+    height: 100%;
+    width: 100%;
+    margin-top: -5px;
+}
+
+.foto-perfil-datos-personales{
+    width: 150px;
+    height: 150px;
+    border: 8px solid #000;
+    border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    margin-top: 10px;   
+}
+
+.buttons-menu-container{
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.nombre-usuario-singin{
+    margin: 4px;
+    float: right;
+}
+
+.login-menu-container{
+    float: right;
+    width: 230px;
+    background-color: black;
+    margin-top: -130px;
+    margin-right: -100px;
+}
+
+.login-menu-container .btn.btn-primary{
+    margin-right: 37px;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.login-menu-container .btn.btn-danger{
+    margin-right: 37px;
+    float: right;
+    margin-bottom: 10px;
+}
+
+/*PESTAÑAS ALUMNO*/
+
+.contenedor-pestañas{
+    margin-top: -40px;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
+.contenedor-cuerpos-pestañas{
+    background-color: white;
+    height: 0px;
+}
+
+.contenedor-pestañas.active .contenedor-cuerpos-pestañas{
+    height: 400px;
+}
+
+.cuerpo-pestañas-bottom{
+    display: none;
+}
+
+/*PÁGINA HOME*/
+
+/*Niveles*/
+.home-niveles-contenedor{
+    height: 200px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-niveles-contenedor-nivel{
+    background-color: white;
+    height: 200px;
+    width: 500px;
+    display: inline-block;
+}
+
+.home-niveles-contenedor-nivel.open{
+}
+
+.home-niveles-contenedor-nivel-titulo{
+    vertical-align: top; 
+    height: 30px; 
+    background-color: rgb(9, 67, 155);
+    font-family: fantasy;
+    font-size: x-large;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.home-niveles-contenedor-nivel-contenido{
+    height: 75%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    padding-top: 10px;
+}
+
+/*Institución*/
+.home-institucion-contenedor{
+    height: 200px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-institucion-contenedor-titulo{
+    vertical-align: top; 
+    height: 30px; 
+    background-color: rgb(9, 67, 155);
+    font-family: fantasy;
+    font-size: x-large;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+.home-institucion-contenedor-contenido{
+    height: 70%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+}
