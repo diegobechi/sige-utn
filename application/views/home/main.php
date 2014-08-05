@@ -1,7 +1,29 @@
-<!--SLIDE-->
+<!--MENU-->
+<div id="menu-home" class="home-menu-opciones" style="display: table-row; border-bottom: 1px solid #829EDF; z-index: 9999";>
+    <menu id="home-top-menu">
+        <ul>
+            <li>
+                <a href="" class="home-top-item active" style="margin-left: -15px; padding-right: 5px">
+                    <img src="http://www.flaticon.es/png/256/10774.png" style="max-width: 20px">
+                </a>
+            </li>
+            <li>
+                <a href="#niveles" class="home-top-item"><b>NIVELES ACADÉMICOS</b></a>
+            </li>
+            <li>
+                <a href="#novedades" class="home-top-item"><b>NOVEDADES</b></a>
+            </li>
+            <li>
+                <a href="#institucion" class="home-top-item"><b>INSTITUCIÓN</b></a>
+            </li>
+        </ul>
+    </menu>
+</div>
+
+<!--HOME-->
 <div id="datos-personales-contenedor"class="contenedor-general" style="background-color: #829EDF">
 	<div class="container well" style="width:540px, background-color: transparent">
-        <div class="row">
+        <div class="row" style="margin-top: 90px">
             <div class="span12" style="width:700px">
                 <div id="homeCarousel" class="carousel slide">
                     <div class="carousel-inner"> 
@@ -36,16 +58,15 @@
 
     <!--NIVELES-->
     <div>
-        <div style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NIVELES ACADÉMICOS
+        <div id='niveles' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NIVELES ACADÉMICOS
         </div>
         <div>
             <div class="home-niveles-contenedor">
                 <div class="home-niveles-contenedor-nivel">
-                    <!-- ES UNA PRUEBA, SE PUEDE BORRAR <a href="javascript:;" onclick="app.home.prueba()">Cambiar color!</a>--> 
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left">Frase nivel inicial
+                        <div style="float: left; width: 300px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -54,7 +75,8 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL PRIMARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left">Frase nivel primario
+                        <div style="float: left; width: 300px"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
+                            al buen Dios lo que necesito y Él siempre me comprende.”</i>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -65,7 +87,7 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL SECUNDARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left">Frase nivel secundario
+                        <div style="float: left; width: 300px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López</i>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -75,9 +97,11 @@
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
-                        <div style="float: left">Frase nivel superior<br><br><br><br><b>Instituto Superior de Formación Docente</b><br><A href="http://santateresita.cba.infd.edu.ar/">
-                            Ir al sitio</A>
-                        </div>                        
+                        <div style="float: left; width: 300px">
+                            <i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
+                            Ef. 4,4</i><br><br><b>Instituto Superior de Formación Docente</b><br>
+                            <A href="http://santateresita.cba.infd.edu.ar/">Ir al sitio</A>
+                        </div>     
                     </div>
                 </div>
             </div>
@@ -86,7 +110,7 @@
 
     <!--NOVEDADES-->
     <div>
-        <div style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NOVEDADES
+        <div id='novedades' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NOVEDADES
         </div>
         <div>
             <div class="home-niveles-contenedor">
@@ -135,7 +159,7 @@
 
     <!--INSTITUCIÓN-->
     <div>
-        <div style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">INSTITUCIÓN
+        <div id='institucion' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">INSTITUCIÓN
         </div>
         <div class="home-institucion-contenedor" style="height: 1050px">
             <div class="home-institucion-contenedor-titulo">HISTORIA
@@ -291,16 +315,17 @@
                 </div>                
             </div>
         </div>
-        <div class="home-institucion-contenedor" style="margin-bottom: 15px">
+        <div class="home-institucion-contenedor" style="height: 318px; margin-bottom: 20px; padding-bottom: 10px;">
             <div class="home-institucion-contenedor-titulo">UBICACIÓN
             </div>
-            <div class="home-institucion-contenedor-contenido"> 
-                <div style="float: left">El Instituto se encuentra ubicado en Balnearia,  localidad situada en el departamento San Justo, provincia de Córdoba.<br><br>Limita al norte con la localidad de Miramar, 
+            <div class="home-institucion-contenedor-contenido" style="height: 82%"> 
+                <div style="float: left; width: 510px">El Instituto se encuentra ubicado en Balnearia,  localidad situada en el departamento San Justo, provincia de Córdoba.<br><br>Limita al norte con la localidad de Miramar, 
                     al este con Altos de Chipión, al sur con Villa Concepción del Tío, y al oeste con Marull.<br><br>Dista a 190 km de la capital de la provincia, Córdoba, y a 120 km de la cabecera del departamento, 
-                    San Francisco.<br><br>AGREGAR IMAGEN GOOGLE MAPS!!
+                    San Francisco.
                 </div>
+                <img src="http://sim1.subirimagenes.net/img/2014/06/02/140602025430246703.jpg" style="float: right; max-width: 45%">
             </div>
         </div>
     </div> <!--Institución-->
 
-</div> <!--Slide
+</div> <!--HOME-->

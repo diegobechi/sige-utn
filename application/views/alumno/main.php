@@ -32,19 +32,19 @@
 				</menu>
 			</div>
 		</div>
-			<div id="pt-main" class="pt-perspective">
-				<div class="pt-page pt-page-1">
-					<div>Comunicados</div>
-				</div>
-				<div class="pt-page pt-page-2">
-					<div>
-						<div>Asistencia</div>
-					</div>					
-				</div>
-				<div class="pt-page pt-page-3">
-					<div>Meritos y sanciones</div>
-				</div>
+		<div id="pt-main" class="pt-perspective">
+			<div class="pt-page pt-page-1">
+				<div>Comunicados</div>
 			</div>
+			<div class="pt-page pt-page-2">
+				<div>
+					<div>Asistencia</div>
+				</div>					
+			</div>
+			<div class="pt-page pt-page-3">
+				<div>Meritos y sanciones</div>
+			</div>
+		</div>
 	</div>
 </div>
 <div id="contenedor-pestañas" class="contenedor-pestañas">
@@ -62,6 +62,7 @@
 		<div id="cuerpo-pestaña-normas-convivencia" class="cuerpo-pestañas-bottom"></div>
 		<div id="cuerpo-pestaña-preguntas-frecuentes" class="cuerpo-pestañas-bottom"></div>
 	</div>
-	</div>
+</div>
+
 </div>
 

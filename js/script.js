@@ -22,6 +22,7 @@ $('.home-top-item').live('click',function(){
     $('.home-top-item').removeClass('active');
     $(this).addClass('active');
 });
+
 app.sige.transition_page = {};
 app.sige.transition_page.endanimation = function($outpage, $inpage ){
     endCurrPage = false;
@@ -116,34 +117,6 @@ app.sige.transition_page.animation = function( pageto, animation){
     
 }
 
-app.home = {};
-app.home.openLogin = function(bandera){
-    if(!bandera){
-        $('.login-menu-container').animate({
-            'margin-top': '-130px'
-        }, 500);
-    }else{
-        $('.login-menu-container').animate({
-            'margin-top': '5px'
-        }, 500);        
-    }
-}
-
-
-app.home.prueba=function(){
-    if(!$('.home-niveles-contenedor-nivel').hasClass('open')){
-        $('.home-niveles-contenedor-nivel').addClass('open');
-        $('.home-niveles-contenedor-nivel').animate({
-            'background-color':'red'
-        },500);
-    }else{
-        $('.home-niveles-contenedor-nivel').removeClass('open');
-        $('.home-niveles-contenedor-nivel').animate({
-            'background-color':'blue'
-        },500);
-    }
-}
-
 app.sige.openTabs = function(numPestaña){
 
     if(!$("#pestaña"+numPestaña).hasClass('active')){
@@ -197,4 +170,43 @@ app.helper.styleSupport = function ( prop ) {
     return supportedProp;
 }
 
+app.home = {};
+
+app.home.openLogin = function(bandera){
+    if(!bandera){
+        $('.login-menu-container').animate({
+            'margin-top': '-130px'
+        }, 500);
+    }else{
+        $('.login-menu-container').animate({
+            'margin-top': '5px'
+        }, 500);        
+    }
+}
+
+// app.home.seleccionado=function(){
+//     if(!$('.home-top-item').hasClass('active')){
+//         $('.home-top-item').addClass('active');
+//         $('#menu-home').animate({
+//             'margin-top': '-55px'
+//         }, 500);
+//     }else{
+//         $('.home-top-item').removeClass('active');
+//         // $('#menu-home').animate({
+//         //     'margin-top': '-55px'
+//         // }, 500);
+//     }
+// }
+
+$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 5) {
+        $('#menu-home').animate({
+            'margin-top': '-55px'
+        }, 1);
+    } else {
+        $('#menu-home').animate({
+            'margin-top': '-5px'
+        }, 1);
+    }
+});
 

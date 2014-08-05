@@ -8,7 +8,5 @@ class Home extends CI_Controller {
 		$this->load->view('menuUp');
 		$this->load->view("home/main");
 		$this->load->view('footer');
-		
-		
 	}
 }

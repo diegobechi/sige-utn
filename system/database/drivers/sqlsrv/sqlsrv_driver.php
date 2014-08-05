@@ -86,7 +86,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 */
 	function db_pconnect()
 	{
-		return $this->db_connect(TRUE);
+		$this->db_connect(TRUE);
 	}
 
 	// --------------------------------------------------------------------
