@@ -34,7 +34,7 @@ class CI_DB_driver {
 	var $password;
 	var $hostname;
 	var $database;
-	var $dbdriver		= 'sqlsrv';
+	var $dbdriver		= 'mysql';
 	var $dbprefix		= '';
 	var $char_set		= 'utf8';
 	var $dbcollat		= 'utf8_general_ci';
