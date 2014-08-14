@@ -59,14 +59,16 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 		$character_set = (0 === strcasecmp('utf8', $this->char_set)) ? 'UTF-8' : $this->char_set;
 
 		$connection = array(
-			'UID'				=> empty($this->username) ? '' : $this->username,
-			'PWD'				=> empty($this->password) ? '' : $this->password,
 			'Database'			=> $this->database,
 			'ConnectionPooling' => $pooling ? 1 : 0,
 			'CharacterSet'		=> $character_set,
 			'ReturnDatesAsStrings' => 1
 		);
 		
+		/*
+			'UID'				=> empty($this->username) ? '' : $this->username,
+			'PWD'				=> empty($this->password) ? '' : $this->password,
+		*/
 		// If the username and password are both empty, assume this is a 
 		// 'Windows Authentication Mode' connection.
 		if(empty($connection['UID']) && empty($connection['PWD'])) {
@@ -74,6 +76,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 		}
 
 		return sqlsrv_connect($this->hostname, $connection);
+		//return sqlsrv_connect('', array('Database' => $this->database));
 	}
 
 	// --------------------------------------------------------------------
@@ -85,7 +88,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 * @return	resource
 	 */
 	function db_pconnect()
-	{
+	{		
 		return $this->db_connect(TRUE);
 	}
 

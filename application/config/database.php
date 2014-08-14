@@ -48,9 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost:8080';
-$db['default']['username'] = 'BECHI';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'Bechi\Diego';
 $db['default']['password'] = '';
+$db['default']['port'] 	   = '8080';
 $db['default']['database'] = 'SIGE_UTN';
 $db['default']['dbdriver'] = 'sqlsrv';
 $db['default']['dbprefix'] = '';
