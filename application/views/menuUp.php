@@ -13,5 +13,9 @@
 			<input type="submit" class="btn btn-primary" value="Login" onclick="app.home.openLogin(false)">
 
 		</div>
-	</div>
+	</div>	
 </div>
+
+
+
+

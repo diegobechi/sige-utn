@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8080/Tesis-2014/';
+$config['base_url']	= 'http://localhost:8080/Tesis/';
 
 /*
 |--------------------------------------------------------------------------
