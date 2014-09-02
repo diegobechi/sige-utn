@@ -14,6 +14,6 @@ class Student_Model extends CI_Model {
     function get_all_students()
     {
         $query = $this->db->get('Alumno');
-        return $query->result();
+        return $query;
     }
 }
