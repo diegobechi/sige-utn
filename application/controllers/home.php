@@ -12,8 +12,8 @@ class Home extends CI_Controller {
 		$this->load->model('Student_Model');
 		$query = $this->Student_Model->get_all_students();
 
-		echo "<pre>";
+		/*echo "<pre>";
 		print_r($query->result());
-		die();
+		die();*/
 	}
 }
