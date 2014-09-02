@@ -11,9 +11,15 @@ class Student_Model extends CI_Model {
         parent::__construct();
     }
     
-    function get_all_students()
+    function get_all_students($columna, $legajo)
     {
-        $query = $this->db->get('Alumno');
-        return $query;
+        $string_query = $this->db->query("SELECT $columna FROM Alumno WHERE legajoAlumno = $legajo");
+        return $string_query->result();
     }
+
+    function get_all_students_complete(){
+        $string_query = $this->db->query("SELECT * FROM Alumno");
+        return $string_query->result();
+    }
+
 }

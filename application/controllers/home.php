@@ -6,14 +6,17 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('menuUp');
-		$this->load->view("home/main");
-		$this->load->view('footer');
 
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_all_students();
 
-		echo "<pre>";
-		print_r($query->result());
-		die();
+		$query = $this->Student_Model->get_all_students_complete();
+
+		for($i = 0; $i< count($query); $i++){
+			$array_query[$i] = (array) $query[$i];
+		}
+		$data ['alumno_uno']= $array_query[0];
+
+		$this->load->view("home/main", $data);
+		$this->load->view('footer');
 	}
 }

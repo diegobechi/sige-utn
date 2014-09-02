@@ -1,4 +1,5 @@
 <!--MENU-->
+<?php echo $alumno_uno["nombre"].$alumno_uno["legajoAlumno"]; ?>
 <div id="menu-home" class="home-menu-opciones" style="display: table-row; border-bottom: 1px solid #829EDF; z-index: 9999";>
     <menu id="home-top-menu">
         <ul>
@@ -63,7 +64,7 @@
         <div>
             <div class="home-niveles-contenedor">
                 <div class="home-niveles-contenedor-nivel">
-                    <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL
+                    <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL 
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
                         <div style="float: left; width: 300px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i>
