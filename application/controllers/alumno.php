@@ -18,9 +18,9 @@ class Alumno extends CI_Controller {
 		/*$query = $this->Student_Model->get_student($legajo);*/
 		$query = $this->Student_Model->get_notas_por_materia($legajo, $año);
 
-		echo "<pre>";
+		/*echo "<pre>";
 		print_r($query);
-		die();
+		die();*/
 
 		$this->load->view("alumno/main");
 		$this->load->view('footer');
