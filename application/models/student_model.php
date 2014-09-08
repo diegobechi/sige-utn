@@ -22,4 +22,8 @@ class Student_Model extends CI_Model {
         return $string_query->result();
     }
 
+    function get_all_estudiantes_inscriptos(){
+        $string_query = $this->db->query("SELECT * FROM Inscripcion");
+        return $string_query->result();
+    }
 }
