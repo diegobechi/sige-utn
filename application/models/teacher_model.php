@@ -33,4 +33,22 @@ class Teacher_Model extends CI_Model {
         return $string_query->result();        
     }
 
+    function get_asistencia($legajoDocente){
+        $string_query = $this->db->query("SELECT ad.fecha,a.nombre,c.idCurso
+                                            FROM AsistenciaDocente ad , Docente d, Asignatura a, Curso c
+                                            WHERE d.legajoDocente =ad.legajoDocente and
+                                                  a.idAsignatura = ad.idAsignatura  and
+                                                  c.idCurso = ad.idCurso and
+                                                  ad.presente = 0 and
+                                                  d.legajoDocente = $legajoDocente");
+    }
+
+    function set_calificacion_escolar($legajoAlumno, $idAsignatura, $fecha, $motivo, $evaluado, $calificacion){
+        $string_query = $this->db->query("INSERT INTO CalificacionEscolar (legajoAlumno, idAsignatura, fecha, motivo, evaluado, calificacion) 
+                                          VALUES (@legajoAlumno, @idAsignatura, @fecha, @motivo, @evaluado, @calificacion)");
+    }
+   
+    function delete_calificacion_escolar($legajoAlumno,$idAsignatura,$fecha,$motivo){
+        $string_query = $this->db->query("DELETE FROM CalificacionEscolar WHERE legajoAlumno = $legajoAlumno AND idAsignatura = @idAsignatura AND fecha = @fecha AND motivo = @motivo");
+          }
 }

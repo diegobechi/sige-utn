@@ -11,7 +11,7 @@ class Curso_Model extends CI_Model {
         parent::__construct();
     }
     
-    function get_all_students($idCurso){
+    /*function get_all_students($idCurso){
       $string_query = $this->db->query("SELECT alu.legajoAlumno as Legajo, alu.apellido, alu.nombre, ce.motivo, ce.calificacion, sum(aa.presente) as Inasistencias
                                       FROM Alumno alu, AsistenciaAlumno aa, CalificacionEscolar ce, Curso c, Inscripcion i
                                       WHERE alu.legajoAlumno = aa.legajoAlumno  and
@@ -21,7 +21,7 @@ class Curso_Model extends CI_Model {
                                          c.idCurso = $idCurso                                                   
                                       GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre, ce.motivo, ce.calificacion")
       return $string_query->result();
-    }
+    }*/
 
     /* START COMUNICADOS WEB*/
     function set_comunicado($idCurso, $legajoDocente, $comunicado){
