@@ -12,9 +12,9 @@ class Docente extends CI_Controller {
 		/*$query = $this->Teacher_Model->get_asignaturas();*/
 		/*$query = $this->Curso_Model->get_all_students();*/
 		echo "<pre>";
-		/*print_r($query);*/
+		print_r($query);
 		die();
-		/*$this->load->view("docente/main");*/
+		$this->load->view("docente/main");
 		$this->load->view('footer');
 	}
 }
