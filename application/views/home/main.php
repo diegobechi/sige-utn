@@ -1,5 +1,5 @@
 <!--MENU-->
-<?php echo $alumno_uno["nombre"].$alumno_uno["legajoAlumno"]; ?>
+<!--<?php echo $alumno_uno["nombre"].$alumno_uno["legajoAlumno"]; ?>-->
 <div id="menu-home" class="home-menu-opciones" style="display: table-row; border-bottom: 1px solid #829EDF; z-index: 9999";>
     <menu id="home-top-menu">
         <ul>
