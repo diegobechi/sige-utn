@@ -346,12 +346,14 @@ menu#home-top-menu {
     width: 140px;
     cursor: pointer;
     font-size: smaller;
+    color: black;
 }
 
 .home-niveles-menosinfo{
     width: 140px;
     cursor: pointer;
     font-size: smaller;
+    color: black;
 }
 
 .home-niveles-contenedor-masinfo{
