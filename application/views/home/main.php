@@ -23,9 +23,9 @@
 
 <!--HOME-->
 <div id="datos-personales-contenedor"class="contenedor-general" style="background-color: #829EDF">
-	<div class="container well" style="width:540px, background-color: transparent">
-        <div class="row" style="margin-top: 90px">
-            <div class="span12" style="width:700px">
+    <div class="container well" style="width:540px, background-color: transparent">
+        <div class="row" style="margin-top: 105px">
+            <div class="span12" style="width:700px; margin: -30px">
                 <div id="homeCarousel" class="carousel slide">
                     <div class="carousel-inner"> 
                         <div class="active item">
@@ -62,14 +62,175 @@
         <div id='niveles' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NIVELES ACADÉMICOS
         </div>
         <div>
+            <div style="display: none" class="home-niveles-contenedor-masinfo">
+                <div class="home-niveles-contenedor-nivel-masinfo">
+                    <div class="home-niveles-contenedor-nivel-titulo" style="padding-top: 1%">
+                        <p class="nivel-uno" style="display: none">NIVEL INICIAL</p>
+                        <p class="nivel-dos" style="display: none">NIVEL PRIMARIO</p>
+                        <p class="nivel-tres" style="display: none">NIVEL SECUNDARIO</p>
+                        <p class="nivel-cuatro" style="display: none">NIVEL SUPERIOR</p>
+                    </div>
+
+                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                        <div class="nivel-uno" style="display: none">
+                            <div style="float: left; width: 600px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i><br><br>
+                                •   Requisitos de inscripción - Descargar<br>•   Uniforme y presentación personal - Descargar<br>•   Normas de convivencia - Descargar<br>•   Valores - Descargar<br><br>
+                                •   Actividades<br><br>
+                            </div>
+                            <img src="img/Nivel inicial/Inicial.jpg" style="float: right; max-width: 40%">                        
+                        </div> 
+
+                        <div class="nivel-dos" style="display: none">
+                            <div style="float: left; width: 600px"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
+                                al buen Dios lo que necesito y Él siempre me comprende.”</i><br><br>•   Requisitos de inscripción - Descargar<br>•   Uniforme y presentación personal - Descargar<br>•   Normas de 
+                                convivencia - Descargar<br>•   Valores - Descargar<br>•   Actividades<br><br><br>                                
+                            </div>
+                            <img src="img/Nivel primario/Primario.jpg" style="float: right; max-width: 40%">
+                        </div>
+
+                        <div class="nivel-tres" style="display: none">
+                            <div style="float: left; width: 600px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López
+                            </i><br><br>•   Ficha y requisitos de inscripción - Descargar<br>•   Uniforme - Descargar<br>•   Orientación Agro y Ambiente - Descargar<br>•   Cooperativa Escolar 
+                            Juvenil de Producción "Testimonio" Ltda - Descargar<br>•   Normas de convivencia - Descargar<br>•   Valores - Descargar<br>•   Actividades<br><br>
+                            </div>
+                            <img src="img/Nivel secundario/Secundario.jpg" style="float: right; max-width: 40%">
+                        </div>
+
+                        <div class="nivel-cuatro" style="display: none">
+                            <div style="float: left; width: 600px"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
+                            Ef. 4,4</i><br><br>•   Requisitos de inscripción - Descargar<br>•   Uniforme - Descargar<br>•   Actividades<br>•   <a href="http://santateresita.cba.infd.edu.ar/sitio/">Más info</a><br><br>
+                            </div>
+                            <img src="img/Nivel superior/Superior.jpg" style="float: right; max-width: 40%">
+                        </div>
+
+                        <div class="row" style="margin-top: 105px">
+                            <div class="span12" style="width:500px">
+                                <div id="homeCarouselNivel" class="carousel slide">
+                                    <div class="carousel-inner nivel-uno"> 
+                                        <div class="active item">
+                                            <img src="img/Nivel inicial/Abuela cuenta cuentos.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Abuela cuenta cuentos</p>
+                                            </div>
+                                        </div> 
+                                        <div class="item">
+                                            <img src= "img/Nivel inicial/En el día de las mascotas.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Día de las mascotas</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel inicial/En la kermese.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Kermese</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel inicial/En la kermese (2).jpg">
+                                            <div class="carousel-caption">
+                                                <p>Kermese</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel inicial/En la kermese (3).jpg">
+                                            <div class="carousel-caption">
+                                                <p>Kermese</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel inicial/En momentos de experiencias en conjunto.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Momentos de experiencias en conjunto</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel inicial/En una dramatización.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Dramatización</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel inicial/Preparando el regalo del Día del Padre.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Preparando el regalo del Día del Padre</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-inner nivel-dos"> 
+                                        <div class="active item">
+                                            <img src="img/Nivel primario/Abuela cuenta cuentos.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Abuela cuenta cuentos</p>
+                                            </div>
+                                        </div> 
+                                        <div class="item">
+                                            <img src= "img/Nivel primario/En el día de las mascotas.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Día de las mascotas</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel primario/En la kermese.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Kermese</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel primario/En la kermese (2).jpg">
+                                            <div class="carousel-caption">
+                                                <p>Kermese</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel primario/En la kermese (3).jpg">
+                                            <div class="carousel-caption">
+                                                <p>Kermese</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel primario/En momentos de experiencias en conjunto.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Momentos de experiencias en conjunto</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel primario/En una dramatización.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Dramatización</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/Nivel primario/Preparando el regalo del Día del Padre.jpg">
+                                            <div class="carousel-caption">
+                                                <p>Preparando el regalo del Día del Padre</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a class="carousel-control left" href="#homeCarouselNivel" data-slide="prev">&lsaquo;</a>
+                                    <a class="carousel-control right" href="#homeCarouselNivel" data-slide="next">&rsaquo;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-niveles-menosinfo" onclick="app.home.cerrarInfo()"><b>Volver</b>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="home-niveles-contenedor">
                 <div class="home-niveles-contenedor-nivel">
-                    <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL 
+                    <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left; width: 300px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i>
+                        <div style="float: left; width: 300px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i><br><br><br><br>
+                            <div class="home-niveles-masinfo inicial"><b>Más información</b>
+                            </div>
                         </div>
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
+                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">                        
                     </div>
                 </div>
                 <div class="home-niveles-contenedor-nivel" style="margin-left: 125px">
@@ -77,7 +238,9 @@
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
                         <div style="float: left; width: 300px"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
-                            al buen Dios lo que necesito y Él siempre me comprende.”</i>
+                            al buen Dios lo que necesito y Él siempre me comprende.”</i><br><br>
+                            <div class="home-niveles-masinfo primario"><b>Más información</b>
+                            </div>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -88,7 +251,9 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL SECUNDARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left; width: 300px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López</i>
+                        <div style="float: left; width: 300px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López</i><br><br><br>
+                            <div class="home-niveles-masinfo secundario"><b>Más información</b>
+                            </div>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -97,12 +262,12 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL SUPERIOR
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
-                        <div style="float: left; width: 300px">
-                            <i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
-                            Ef. 4,4</i><br><br><b>Instituto Superior de Formación Docente</b><br>
-                            <A href="http://santateresita.cba.infd.edu.ar/">Ir al sitio</A>
-                        </div>     
+                        <div style="float: left; width: 300px"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
+                            Ef. 4,4</i><br><br><br>
+                            <div class="home-niveles-masinfo superior"><b>Más información</b>
+                            </div>
+                        </div>
+                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">     
                     </div>
                 </div>
             </div>
@@ -114,41 +279,41 @@
         <div id='novedades' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NOVEDADES
         </div>
         <div>
-            <div class="home-niveles-contenedor">
-                <div class="home-niveles-contenedor-nivel">
+            <div class="home-novedades-contenedor">
+                <div class="home-novedades-contenedor-novedad">
                     <!-- ES UNA PRUEBA, SE PUEDE BORRAR <a href="javascript:;" onclick="app.home.prueba()">Cambiar color!</a>--> 
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 1
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 1
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 1
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
-                <div class="home-niveles-contenedor-nivel" style="margin-left: 125px">
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 2
+                <div class="home-novedades-contenedor-novedad" style="margin-left: 125px">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 2
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 2
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
             </div>
-            <div class="home-niveles-contenedor" style="margin-bottom: 15px">
-                <div class="home-niveles-contenedor-nivel">
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 3
+            <div class="home-novedades-contenedor" style="margin-bottom: 15px">
+                <div class="home-novedades-contenedor-novedad">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 3
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 3
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
-                <div class="home-niveles-contenedor-nivel" style="margin-left: 125px">
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 4
+                <div class="home-novedades-contenedor-novedad" style="margin-left: 125px">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 4
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 4
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
