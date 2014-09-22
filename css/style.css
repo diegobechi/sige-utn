@@ -356,8 +356,15 @@ menu#home-top-menu {
     color: black;
 }
 
+.home-niveles-descargar{
+    width: 140px;
+    cursor: pointer;
+    font-size: smaller;
+    color: black;
+}
+
 .home-niveles-contenedor-masinfo{
-    height: 680px;
+    height: 760px;
     margin-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
@@ -368,7 +375,7 @@ menu#home-top-menu {
 
 .home-niveles-contenedor-nivel-masinfo{
     width: 1130px;
-    height: 680px;
+    height: 760px;
     background-color: white;
 }
 
