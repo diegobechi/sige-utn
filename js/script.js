@@ -10,6 +10,8 @@ app.sige.pages_5 = $('.pt-page-5');
 $('#contenedor-general').css('width',$(window).width());
 $('#contenedor-general').css('height',$(window).height());
 
+
+
 $pages = $( 'div.pt-page' );
 $pages.each( function(i,e) {
     var $page = $(e);
