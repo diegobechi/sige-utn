@@ -23,33 +23,86 @@
 
 <!--HOME-->
 <div id="datos-personales-contenedor"class="contenedor-general" style="background-color: #829EDF">
-	<div class="container well" style="width:540px, background-color: transparent">
-        <div class="row" style="margin-top: 90px">
-            <div class="span12" style="width:700px">
+    <div class="container well" style="width:540px, background-color: transparent">
+        <div class="row" style="margin-top: 105px">
+            <div class="span12" style="width:700px; margin: -30px">
                 <div id="homeCarousel" class="carousel slide">
                     <div class="carousel-inner"> 
                         <div class="active item">
-                            <img src="img/image1.jpg">
+                            <img src="img/Colegio/3. Foto esquina.jpg">
                             <div class="carousel-caption">
-                                <p>SIGE - Instituto Santa Teresita</p>
-                                <p><a class="btn btn-success btn-large">M&aacute;s informaci&oacute;n</a></p>
+                                <p>Instituto Santa Teresita</p>
+                                <!-- <p><a class="btn btn-success btn-large">M&aacute;s informaci&oacute;n</a></p> -->
                             </div>
                         </div> 
                         <div class="item">
-                            <img src= "img/image2.jpg">
+                            <img src= "img/Colegio/3. Foto 3.jpg">
                             <div class="carousel-caption">
-                                <p>SIGE - Instituto Santa Teresita</p>
-                                <p><a class="btn btn-warning btn-large">M&aacute;s informaci&oacute;n</a></p>
+                                <p>Instituto Santa Teresita</p>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="img/image3.jpg">
+                            <img src="img/Colegio/3. Foto 1.jpg">
                             <div class="carousel-caption">
-                                <p>SIGE - Instituto Santa Teresita</p>
-                                <p><a class="btn btn-primary btn-large">M&aacute;s informaci&oacute;n</a></p>
+                                <p>Instituto Santa Teresita</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/3. Foto.jpg">
+                            <div class="carousel-caption">
+                                <p>Instituto Santa Teresita</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Biblioteca 1.jpg">
+                            <div class="carousel-caption">
+                                <p>Biblioteca</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Laboratorio.jpg">
+                            <div class="carousel-caption">
+                                <p>Laboratorio</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Laboratorio 2.jpg">
+                            <div class="carousel-caption">
+                                <p>Laboratorio</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Laboratorio 1.jpg">
+                            <div class="carousel-caption">
+                                <p>Laboratorio</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Pastor.jpg">
+                            <div class="carousel-caption">
+                                <p>Pastor</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Sala de computacion.jpg">
+                            <div class="carousel-caption">
+                                <p>Sala de computación</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Sala de videos.jpg">
+                            <div class="carousel-caption">
+                                <p>Sala de videos</p>
+                            </div>
+                        </div> 
+                        <div class="item">
+                            <img src="img/Colegio/Virgen capilla.jpg">
+                            <div class="carousel-caption">
+                                <p>Virgen de la Capilla</p>
                             </div>
                         </div> 
                     </div>
+
                     <a class="carousel-control left" href="#homeCarousel" data-slide="prev">&lsaquo;</a>
                     <a class="carousel-control right" href="#homeCarousel" data-slide="next">&rsaquo;</a>
                 </div>
@@ -62,14 +115,400 @@
         <div id='niveles' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NIVELES ACADÉMICOS
         </div>
         <div>
+            <div style="display: none" class="home-niveles-contenedor-masinfo">
+                <div class="home-niveles-contenedor-nivel-masinfo">
+                    <div class="home-niveles-contenedor-nivel-titulo" style="padding-top: 1%">
+                        <p class="nivel-uno" style="display: none">NIVEL INICIAL</p>
+                        <p class="nivel-dos" style="display: none">NIVEL PRIMARIO</p>
+                        <p class="nivel-tres" style="display: none">NIVEL SECUNDARIO</p>
+                        <p class="nivel-cuatro" style="display: none">NIVEL SUPERIOR</p>
+                    </div>
+
+                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                        <div class="nivel-uno" style="display: none">
+                            <div style="float: left; width: 600px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i><br><br>
+                                •   Requisitos de inscripción - <a href="pdf/NIVEL INICIAL - Requisitos.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Uniforme y presentación personal - <a href="" class="home-niveles-descargar" target="_blank"><b>Falta el archivo!</b></a><br>
+                                •   Normas de convivencia - <a href="pdf/NIVEL INICIAL - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Valores - <a href="pdf/NIVEL INICIAL - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br>
+                                •   Actividades<br><br>                                
+                            </div>
+                            <img src="img/Nivel inicial/Inicial.jpg" style="float: right; max-width: 40%">                        
+                        </div> 
+
+                        <div class="nivel-dos" style="display: none">
+                            <div style="float: left; width: 600px"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
+                                al buen Dios lo que necesito y Él siempre me comprende.”</i><br><br>
+                                •   Requisitos de inscripción - <a href="pdf/NIVEL PRIMARIO - Requisitos.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Uniforme y presentación personal - <a href="pdf/NIVEL PRIMARIO - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Normas de convivencia - <a href="pdf/NIVEL PRIMARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Valores - <a href="pdf/NIVEL PRIMARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br>
+                                •   Actividades<br><br>                                
+                            </div>
+                            <img src="img/Nivel primario/Primario.jpg" style="float: right; max-width: 40%">
+                        </div>
+
+                        <div class="nivel-tres" style="display: none">
+                            <div style="float: left; width: 600px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López
+                            </i><br><br>
+                                •   Requisitos y ficha de inscripción - <a href="pdf/NIVEL SECUNDARIO - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Uniforme - <a href="pdf/NIVEL SECUNDARIO - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Especialidad "Agro y Ambiente" y espacio curricular - <a href="pdf/NIVEL SECUNDARIO - Especialidad y Espacio curricular.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Cooperativa Escolar - <a href="pdf/NIVEL SECUNDARIO - Cooperativa escolar.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Normas de convivencia - <a href="pdf/NIVEL SECUNDARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Valores - <a href="pdf/NIVEL SECUNDARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br>
+                                •   Actividades<br><br>
+                            </div>
+                            <img src="img/Nivel secundario/Secundario.jpg" style="float: right; max-width: 40%">
+                        </div>
+
+                        <div class="nivel-cuatro" style="display: none">
+                            <div style="float: left; width: 600px"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
+                            Ef. 4,4</i><br><br>
+                                •   Requisitos de inscripción - <a href="pdf/NIVEL SUPERIOR - Requisitos.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   Uniforme - <a href="pdf/NIVEL SUPERIOR - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                                •   <a href="http://santateresita.cba.infd.edu.ar/sitio/" class="home-niveles-descargar" target="_blank"><b>Más información</b></a><br><br>
+                                •   Actividades<br><br>
+                                <br>
+                            </div>
+                            <img src="img/Nivel superior/Superior.jpg" style="float: right; max-width: 40%">
+                        </div>
+
+                        <div style="height: 575px">
+                            <div class="row nivel-uno" style="margin-top: 105px; display: none">
+                                <div class="span12" style="width:500px">
+                                    <div id="homeCarouselNivelUno" class="carousel slide">
+                                        <div class="carousel-inner"> 
+                                            <div class="active item">
+                                                <img src="img/Nivel inicial/Abuela cuenta cuentos.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Abuela cuenta cuentos</p>
+                                                </div>
+                                            </div> 
+                                            <div class="item">
+                                                <img src= "img/Nivel inicial/En el día de las mascotas.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Día de las mascotas</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel inicial/En la kermese.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel inicial/En la kermese (2).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel inicial/En la kermese (3).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel inicial/En momentos de experiencias en conjunto.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Momentos de experiencias en conjunto</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel inicial/En una dramatización.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Dramatización</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel inicial/Preparando el regalo del Día del Padre.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Preparando el regalo del Día del Padre</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <a class="carousel-control left" href="#homeCarouselNivelUno" data-slide="prev">&lsaquo;</a>
+                                        <a class="carousel-control right" href="#homeCarouselNivelUno" data-slide="next">&rsaquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row nivel-dos" style="margin-top: 105px; display: none">
+                                <div class="span12" style="width:500px">
+                                    <div id="homeCarouselNivelDos" class="carousel slide">
+                                        <div class="carousel-inner"> 
+                                            <div class="active item">
+                                                <img src="img/Nivel primario/Recorriendo el barrio.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Recorriendo el barrio</p>
+                                                </div>
+                                            </div> 
+                                            <div class="item">
+                                                <img src= "img/Nivel primario/Promesa de Lealtad a la Bandera.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Promesa de lealtad a la Bandera</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Durante un proyecto de alfabetización Inicial.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Proyecto de Alfabetización Inicial</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En el acto del Dia de la Diversidad.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Acto del Día de la Diversidad</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En el laboratorio observando bichos.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Observando bichos en el laboratorio</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En la Kermese.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En la Kermese (2).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En la Kermese (3).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En la Kermese (4).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Kermese</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/En la preparación de las invitaciones al circo.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Preparando las invitaciones al circo</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Aquí, los personajes del circo.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Personajes del circo</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Festejando el día del niño.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Día del niño</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Jugando a la OCA.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Jugando a la OCA</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Participando en un concurso del diario La Voz.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Participando en un concurso del diario La Voz</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Preparando chimichurri para regalar.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Preparando chimichurri para regalar</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Presentando a los estudiantes de 1°.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Presentando a los estudiantes de 1°</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Presentando un espectáculo de magia.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Presentando un espectáculo de magia</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Producciones grupales.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Producciones grupales</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel primario/Visitando un comercio.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Visitando un comercio</p>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                        
+                                        <a class="carousel-control left" href="#homeCarouselNivelDos" data-slide="prev">&lsaquo;</a>
+                                        <a class="carousel-control right" href="#homeCarouselNivelDos" data-slide="next">&rsaquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row nivel-tres" style="margin-top: 105px; display: none">
+                                <div class="span12" style="width:500px">
+                                    <div id="homeCarouselNivelTres" class="carousel slide">
+                                        <div class="carousel-inner"> 
+                                            <div class="active item">
+                                                <img src="img/Nivel secundario/Armando frazadas.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Armando frazadas</p>
+                                                </div>
+                                            </div> 
+                                            <div class="item">
+                                                <img src= "img/Nivel secundario/Cerca de la desembocadura.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Cerca de la desembocadura</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Compartiendo el lema.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Compartiendo el lema</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Día en la naturaleza.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Día en la naturaleza</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/En el acantonamiento.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Acantonamiento</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/En servicio.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>En servicio</p>
+                                                </div>
+                                            </div>                                        
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Participando de la Eucaristía.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Participando de la Eucaristía</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Construyendo una casa.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Construyendo una casa</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Jugando en la guardería Municipal.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Jugando en la Guardería Municipal</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Guardería.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Jugando en la Guardería Municipal</p>
+                                                </div>   
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Guardería (1).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Jugando en la Guardería Municipal</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel secundario/Guardería (2).jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Jugando en la Guardería Municipal</p>
+                                                </div>   
+                                            </div>                                        
+                                        </div>
+                                        
+                                        <a class="carousel-control left" href="#homeCarouselNivelTres" data-slide="prev">&lsaquo;</a>
+                                        <a class="carousel-control right" href="#homeCarouselNivelTres" data-slide="next">&rsaquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row nivel-cuatro" style="margin-top: 105px; display: none">
+                                <div class="span12" style="width:500px">
+                                    <div id="homeCarouselNivelCuatro" class="carousel slide">
+                                        <div class="carousel-inner"> 
+                                            <div class="active item">
+                                                <img src="img/Nivel superior/Acompañando proyectos de alfabtización.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Acompañando proyectos de alfabtización</p>
+                                                </div>
+                                            </div> 
+                                            <div class="item">
+                                                <img src= "img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Actividad con los niños de la Escuela Especial</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel superior/Animando la Fiesta de la Primavera.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Animando la Fiesta de la Primavera</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel superior/Clases en el laboratorio.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Clases en el laboratorio</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel superior/En acompañamiento pedagógico.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>Realizando acompañamiento pedagógico</p>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img src="img/Nivel superior/En Taller de TICS.jpg">
+                                                <div class="carousel-caption">
+                                                    <p>En el Taller de TICS</p>
+                                                </div>
+                                            </div>                           
+                                        </div>
+
+                                        <a class="carousel-control left" href="#homeCarouselNivelCuatro" data-slide="prev">&lsaquo;</a>
+                                        <a class="carousel-control right" href="#homeCarouselNivelCuatro" data-slide="next">&rsaquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#niveles" class="home-niveles-menosinfo" onclick="app.home.cerrarInfo()"><b>Volver</b></a>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="home-niveles-contenedor">
                 <div class="home-niveles-contenedor-nivel">
-                    <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL 
+                    <div class="home-niveles-contenedor-nivel-titulo">NIVEL INICIAL
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left; width: 300px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i>
+                        <div style="float: left; width: 300px"><i>“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos” Mt. 19,14.</i><br><br><br><br>
+                            <a class="home-niveles-masinfo inicial"><b>Más información</b></a>
                         </div>
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
+                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">                        
                     </div>
                 </div>
                 <div class="home-niveles-contenedor-nivel" style="margin-left: 125px">
@@ -77,7 +516,8 @@
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
                         <div style="float: left; width: 300px"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
-                            al buen Dios lo que necesito y Él siempre me comprende.”</i>
+                            al buen Dios lo que necesito y Él siempre me comprende.”</i><br><br>
+                            <a class="home-niveles-masinfo primario"><b>Más información</b></a>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -88,7 +528,8 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL SECUNDARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left; width: 300px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López</i>
+                        <div style="float: left; width: 300px"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López</i><br><br><br>
+                            <a class="home-niveles-masinfo secundario"><b>Más información</b></a>
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
@@ -97,12 +538,11 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL SUPERIOR
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
-                        <div style="float: left; width: 300px">
-                            <i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
-                            Ef. 4,4</i><br><br><b>Instituto Superior de Formación Docente</b><br>
-                            <A href="http://santateresita.cba.infd.edu.ar/">Ir al sitio</A>
-                        </div>     
+                        <div style="float: left; width: 300px"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
+                            Ef. 4,4</i><br><br><br>
+                            <a class="home-niveles-masinfo superior"><b>Más información</b></a>
+                        </div>
+                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">     
                     </div>
                 </div>
             </div>
@@ -114,41 +554,40 @@
         <div id='novedades' style="height: 50px; background-color: rgb(2, 17, 97); color: #F7F7F7; font-family: fantasy; font-size: 30px; padding-top: 2%; padding-left: 1%">NOVEDADES
         </div>
         <div>
-            <div class="home-niveles-contenedor">
-                <div class="home-niveles-contenedor-nivel">
-                    <!-- ES UNA PRUEBA, SE PUEDE BORRAR <a href="javascript:;" onclick="app.home.prueba()">Cambiar color!</a>--> 
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 1
+            <div class="home-novedades-contenedor">
+                <div class="home-novedades-contenedor-novedad">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 1
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 1
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
-                <div class="home-niveles-contenedor-nivel" style="margin-left: 125px">
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 2
+                <div class="home-novedades-contenedor-novedad" style="margin-left: 125px">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 2
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 2
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
             </div>
-            <div class="home-niveles-contenedor" style="margin-bottom: 15px">
-                <div class="home-niveles-contenedor-nivel">
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 3
+            <div class="home-novedades-contenedor" style="margin-bottom: 15px">
+                <div class="home-novedades-contenedor-novedad">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 3
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 3
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
-                <div class="home-niveles-contenedor-nivel" style="margin-left: 125px">
-                    <div class="home-niveles-contenedor-nivel-titulo">NOVEDAD 4
+                <div class="home-novedades-contenedor-novedad" style="margin-left: 125px">
+                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 4
                     </div>
-                    <div class="home-niveles-contenedor-nivel-contenido"> 
+                    <div class="home-novedades-contenedor-novedad-contenido"> 
                         <div style="float: left">Novedad 4
                         </div>
                         <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
@@ -172,7 +611,7 @@
                     el mismo que movió a San Agustín Roscelli a fundar una Congregación. Sin emargo, la adaptación al lugar y a sus costumbres fue dificultosa. Tanto que ese primer día en el pueblo, y
                     acabando de conocer el viejo hotel en desuso que sería su hogar, las religiosas se sentaron sobre sus baúles y lloraron.<br><br>
                 </div>
-                <img src="http://imageshack.com/a/img842/8171/hfbz.jpg" style="float: right; max-width: 35%">  
+                <img src="img/Colegio/0. Foto colegio cuando era hotel.jpg" style="float: right; max-width: 35%">  
                 <div>
                     Aún así, y con todas las entendibles incertidumbres y nostalgias
                     que las unían a sus comunidades de origen, a sus afectos y seguridades, no tardaron en abrazarse al carisma del Padre Fundador: con sencillez, humildad y entrega comenzaron las tareas
@@ -189,7 +628,7 @@
                     Maestras Normales Nacionales, a la solicitud de los padres y la colaboración desinteresada de un grupo de docentes.<br>Dicho nivel fue modificando sus orientaciones según las 
                     necesidades del medio y las políticas vigentes<br><br>
                 </div>
-                <img src="http://imageshack.com/a/img824/2030/51dx.jpg" style="float: right; max-width: 35%">
+                <img src="img/Colegio/3. Foto esquina.jpg" style="float: right; max-width: 35%">
                 <div>
                     En mayo de 1964 se inauguraba el nuevo edificio del Instituto, fruto de tantas voluntades empeñadas en su logro.<br><br>En 
                     abril de 1976 se inició el Magisterio Superior, dando respuesta a la demanda de una sociedad que necesitaba tener maestros para sus escuelas, y siendo el primero de enseñanza privada
@@ -261,7 +700,7 @@
                 <div style="float: left"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada<br>
                     y la luz que emana de la estrella, dan vida al alma. Del Monte Santo de Dios desciende la gracia que hace fecunda la vida del cristiano<br>en el inmenso campo de la Iglesia.<br><br>
                 </div>
-                <img src="http://imageshack.com/a/img35/3610/5vqo.jpg" style="float: right; max-width: 15%">
+                <img src="img/Colegio/0. Escudo.jpg" style="float: right; max-width: 15%">
                 <div><br><br><br><br><br><br><b>HIMNO AL COLEGIO</b><br><br>Cantemos el himno de historia gloriosa<br>Colegio Santa Teresita,<br>recinto que entregas en vida armoniosa<br>sueños e ideales de paz y de amor.<br><br>Al 
                     amparo de la Inmaculada<br>los niños confían su amor a Jesús,<br>y siguiendo su ejemplo que es guía<br>los jóvenes llevan al mundo su luz.<br><br>Al abrigo de sus bellos muros<br>viven la 
                     esperanza y el saber,<br>que serán la herencia y el camino<br>que todo cristiano ha de tener.<br><br>Cantemos el himno a nuestro Colegio,<br>que al darnos la ciencia nos nutre en la fe,<br>
@@ -290,7 +729,7 @@
                 <div style="float: left"><b>SAN AGUSTÍN ROSCELLI - Fundador de la Congregación de las Hermanas de la Inmaculada de Génova</b><br><br><i>"Deben adquirir y perfeccionar más en las virtudes 
                     que necesitan.. pero sobre todo una inalcansable caridad"</i>
                 </div>
-                <img src="http://imageshack.com/a/img22/6634/blc2.jpg" style="float: right; max-width: 18%">
+                <img src="img/0. San Agustín Roscelli.jpg" style="float: right; max-width: 18%">
                 <div><br><br><br><br>Agustín Roscelli nació en Bargone di Casarza Ligure (Génova, Italia), el 27 de julio de 1818, en el seno de una humilde familia. 
                     Ordenado sacerdote en Génova el 19 de septiembre de 1846, desarrolló el propio apostolado primero como Vice-Párroco de San Martín de Albaro, después como asistente de los jóvenes de la obra de los 
                     Pequeños Artesanos fundada por el Padre Francisco Montebruno, desarrollando al mismo tiempo, con incansable entrega y sabiduría evangélica, el ministerio de confesor en la Iglesia de la Consolación 
@@ -305,7 +744,7 @@
                 </div>
                 <div style="float: left"><br><b>SANTA TERESITA DEL NIÑO JESÚS - Patrona del Instituto Santa Teresita</b><br><br><i>"Alegría, Sensillez, Obediencia"</i>
                 </div>
-                <img src="http://imageshack.com/a/img856/3531/fb4p.jpg" style="float: right; max-width: 18%; margin-top: 20px;">
+                <img src="img/0. Santa Teresita.jpg" style="float: right; max-width: 18%; margin-top: 20px;">
                 <div><br><br><br><br><br>Teresita nació en Francia, el 2 
                     de enero de 1873, a los dos días fue bautizada con el nombre de María Francisca Teresa. <br>Era la última de nueve hijos, cuatro de los cuales habían muerto muy pequeños, quedando cinco hijas 
                     mujeres.<br>Jesús la llamó a la vida a su amor en una familia como tantas, que también llevaban el peso de las preocupaciones de cada día.<br>Sus padres, Luis Martín y Celia Guerin, con sus valores 
@@ -324,7 +763,7 @@
                     al este con Altos de Chipión, al sur con Villa Concepción del Tío, y al oeste con Marull.<br><br>Dista a 190 km de la capital de la provincia, Córdoba, y a 120 km de la cabecera del departamento, 
                     San Francisco.
                 </div>
-                <img src="http://sim1.subirimagenes.net/img/2014/06/02/140602025430246703.jpg" style="float: right; max-width: 45%">
+                <img src="img/0. Ubicación.jpg" style="float: right; max-width: 45%">
             </div>
         </div>
     </div> <!--Institución-->
