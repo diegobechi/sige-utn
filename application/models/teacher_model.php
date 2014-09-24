@@ -33,6 +33,21 @@ class Teacher_Model extends CI_Model {
         return $string_query->result();        
     }
 
+    function get_my_cursos($legajoDocente){
+        $string_query = $this->db->query("SELECT DISTINCT  ne.division, c.seccion, t.nombre
+                                          FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
+                                          WHERE d.legajoDocente = ad.legajoDocente and 
+                                                a.idAsignatura = ad.idAsignatura and
+                                                ne.idNivelEducativo = a.idNivelEducativo and
+                                                ne.idNivelEducativo = c.idNivelEducativo and
+                                                c.idTurno = t.idTurno and
+                                                d.legajoDocente = $legajoDocente");
+        
+        /*$query = $string_query->result();*/
+        return $string_query->result();
+        /*return $this->clear_result($query);*/
+    }
+
     function get_asistencia($legajoDocente){
         $string_query = $this->db->query("SELECT ad.fecha,a.nombre,c.idCurso
                                             FROM AsistenciaDocente ad , Docente d, Asignatura a, Curso c
@@ -50,5 +65,12 @@ class Teacher_Model extends CI_Model {
    
     function delete_calificacion_escolar($legajoAlumno,$idAsignatura,$fecha,$motivo){
         $string_query = $this->db->query("DELETE FROM CalificacionEscolar WHERE legajoAlumno = $legajoAlumno AND idAsignatura = @idAsignatura AND fecha = @fecha AND motivo = @motivo");
-          }
+    }
+
+    function clear_result($query){
+        for($i = 0; $i< count($query); $i++){
+            $array_query[$i] = (array)$query[$i];
+        }
+        return $array_query;
+    }
 }
