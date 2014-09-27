@@ -6,7 +6,7 @@
 		<div class="close-popup"><img src="img/close.png"></div>
 	</div>
 	<div class="popup-body">
-		<div class="btn btn-cursos">Primer Grado</div>
+		<div class="btn btn-cursos primero" name="4" >Primer Grado</div>
 		<div class="btn btn-cursos">Segundo Grado</div>
 		<div class="btn btn-cursos">Tercero Grado</div>
 		<div class="btn btn-cursos">Cuarto Grado</div>

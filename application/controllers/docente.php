@@ -6,8 +6,13 @@ class Docente extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('menuUp');
-		$this->load->view('docente/selectorCurso');
-		
+		$this->load->view('docente/selectorCurso');			
+		$this->load->view("docente/info_curso");
+		$this->load->view("docente/listados");
+		$this->load->view("docente/info_asignaturas");
+		$this->load->view("docente/perfilAlumno");
+		$this->load->view('footer');
+
 		/*$this->load->model(array('Teacher_Model','Curso_Model'));
 
 		/*$query = $this->Teacher_Model->get_asignaturas();*/
@@ -15,11 +20,7 @@ class Docente extends CI_Controller {
 		/*echo "<pre>";
 		print_r($query);
 		die();*/
-		$this->load->view("docente/info_curso");
-		$this->load->view("docente/listados");
-		$this->load->view("docente/info_asignaturas");
-		$this->load->view("docente/perfilAlumno");
-		$this->load->view('footer');
+
 	}
 
 	public function getCursos(){
@@ -32,4 +33,5 @@ class Docente extends CI_Controller {
 		$data ['cursos']= $array_query;
 		echo json_encode($data['cursos']);		
 	}
+
 }

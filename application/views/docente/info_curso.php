@@ -30,7 +30,7 @@
 margin-top: 0px;
 
 }
-.Contenedor-de-alumnos{
+.contenedor-de-alumnos{
 	background: darkslategrey;
 	border: 2px solid grey;
 	width: 725px;
@@ -71,17 +71,18 @@ margin-top: 0px;
 				<span></span>
 				<h3> <img src="img/person.png"> Alumnos </h3>
 			</div>
-			<div class ="Contenedor-de-alumnos">
+			<div class ="contenedor-de-alumnos">
 				<ul>
-					<li class="box-alumno-generic"> <a id="legajo"href="#" class ="box-alumno">
-						<div>
-							<h2> Bechi 
-							</h2>
-							<h3> Diego David 
-							</h3>
-							<img src="img/student_1.png">
-						</div>
-					</a>
+					<li class="box-alumno-generic"> 
+						<a id="legajo-50609"href="#" class ="box-alumno">
+							<div>
+								<h2> Bechi 
+								</h2>
+								<h3> Diego David 
+								</h3>
+								<img src="img/student_1.png">
+							</div>
+						</a>
 					</li>
 					<li class="box-alumno-generic"> <a id="legajo"href="#" class ="box-alumno">
 						<div>
