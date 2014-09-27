@@ -25,4 +25,9 @@ class Alumno extends CI_Controller {
 		$this->load->view("alumno/main");
 		$this->load->view('footer');
 	}
+	public function getDatosAlumno($legajoAlumno){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_student($legajoAlumno);
+		echo json_encode($query);
+	}
 }

@@ -77,6 +77,21 @@ $(".btn.btn-cursos").on("click", function(){
     });
 });
 
+$('.box-alumno-generic a').on("click", function(){
+    var leg = $(this).data('legajo');
+    $.ajax({
+        url : "index.php/alumno/getDatosAlumno/"+leg,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log("exito");
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+})
+
 function crearSelector(data){
     var conte_btn=$("#selectorBtnCurso");
     for (var i=0; i<data.length;i++){
