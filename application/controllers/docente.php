@@ -6,7 +6,8 @@ class Docente extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('menuUp');
-
+		$this->load->view('docente/selectorCurso');
+		
 		/*$this->load->model(array('Teacher_Model','Curso_Model'));
 
 		/*$query = $this->Teacher_Model->get_asignaturas();*/
@@ -15,6 +16,9 @@ class Docente extends CI_Controller {
 		print_r($query);
 		die();*/
 		$this->load->view("docente/Info_curso");
+		$this->load->view("docente/listados");
+		$this->load->view("docente/info_asignaturas");
+		$this->load->view("docente/perfilAlumno");
 		$this->load->view('footer');
 	}
 

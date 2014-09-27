@@ -1,4 +1,3 @@
-
 <style>
 .contenedor{
 	width: 850px;
@@ -8,58 +7,101 @@
 }
 .titulo-principal h1{
 	margin-top: 0;
-	background-color: #000;
+	background-color: orange;
 	color: #fff;
 	font-size: 20px;
 	padding-left: 10px;
 }
 .lista-opciones{
 	width: 150px;
-/* display: inline-block; */
-	background-color: bisque;
+	background-color:gainsboro;
 	float: left;
 	margin-right: 10px;
 	}
 .Contenedor-general{
 	display: inline-block;
-	width: 640px;
+	width: 740px;
 	border: 2px solid grey;
-	background-color: aquamarine;}
+	margin: 0;
+	background-color: gainsboro;
+}
+.Titulo-de-opciones h3{
+	background-color: orange;
+margin-top: 0px;
+
+}
 .Contenedor-de-alumnos{
-	margin-right: 450px;
+	background: darkslategrey;
+	border: 2px solid grey;
+	width: 725px;
+	margin-right: 10px;
 	margin-left: 10px;
-	background: red;
+}
+.box-alumno-generic  {
+	background-color: white;
+	width: 150px;
+	display: inline-block;
+	border: 2px solid orange;
+}
+.box-alumno-generic a {
+	text-align: center;
+}
+
+.box-alumno{
+	text-decoration: none;
 }
 
 </style>
 
-<div class = "contenedor"> 
+<div class = "contenedor-info" style = "display:none;">  
 	<div class = "titulo-principal">
 		<span></span>
-		<h1> INFORMACION DEL CURSO:</h1>
+		<h1> <img src="img/curso.png"> INFORMACION DEL CURSO</h1>
 	</div>
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
-			<li> Alumnos</li>
-			<li>Materias</li>
-			<li> Alumnos</li>
-			<li>Materias</li>
+			<li> <img src="img/alumno.png"><a> Alumnos</li> </a>
+			<li> <img src="img/materia.png"> <a> Asignaturas</li> </a>
+			<li> <img src="img/listados.png"><a> Listados</li> </a>
+			<li> <img src="img/inasistencias.png"><a> Inasistencias</li> </a>
+			<li> <img src="img/mensajes.png"><a> Mensajes</li> </a>
 		</div>	
 		<div class ="Contenedor-general">
 			<div class ="Titulo-de-opciones">
 				<span></span>
-				<h3>Alumnos</h3>
+				<h3> <img src="img/person.png"> Alumnos </h3>
 			</div>
-			<div class ="Contendor-de-alumnos">
+			<div class ="Contenedor-de-alumnos">
 				<ul>
-					<li>
+					<li class="box-alumno-generic"> <a id="legajo"href="#" class ="box-alumno">
 						<div>
 							<h2> Bechi 
 							</h2>
 							<h3> Diego David 
 							</h3>
-							<img src="">
+							<img src="img/student_1.png">
 						</div>
+					</a>
+					</li>
+					<li class="box-alumno-generic"> <a id="legajo"href="#" class ="box-alumno">
+						<div>
+							<h2> Ribba	 
+							</h2>
+							<h3> Maria Noel 
+							</h3>
+							<img src="img/student_1.png">
+						</div>
+					</a>
+					</li>
+					<li class="box-alumno-generic"> <a id="legajo"href="#" class ="box-alumno">
+						<div>
+							<h2> Romero		
+							</h2>
+							<h3> Fernando 
+							</h3>
+							<img src="img/student_1.png">
+						</div>
+					</a>
 					</li>
 				</ul>
 			</div>
