@@ -88,7 +88,7 @@ function crearSelector(data){
 function createBoxAlumnos(data){
     var conte_info = $('.contenedor-de-alumnos ul');
     for(var i=0;i<data.length;i++){
-        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
+        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
         conte_info.append(newBox);
         console.log("new box");
     }
