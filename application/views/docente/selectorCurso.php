@@ -1,15 +1,11 @@
-<div class="overlay-popup"></div>
-<div id="selector-curso">	
+<div class="overlay-popup" style="display:none"></div>
+<div id="selector-curso" style="display:none">	
 	<div class="popup-header">
 		<img class="icono-popup-header" src="img/book.png">
 		<h2>Seleccionar un curso</h2>
 		<div class="close-popup"><img src="img/close.png"></div>
 	</div>
-	<div class="popup-body">
-		<div class="btn btn-cursos primero" name="4" >Primer Grado</div>
-		<div class="btn btn-cursos">Segundo Grado</div>
-		<div class="btn btn-cursos">Tercero Grado</div>
-		<div class="btn btn-cursos">Cuarto Grado</div>
+	<div class="popup-body" id="selectorBtnCurso">
 	</div>
 </div>
 

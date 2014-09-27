@@ -36,16 +36,29 @@ $(window).bind('scroll', function () {
     }
 });
 
-$(".btn.btn-cursos").on("click", function(){
-    $("#selector-curso").hide();
-    $(".overlay-popup").hide();
-    $(".contenedor-info").show();
-})
-
-$(".btn.btn-cursos.primero").on("click", function(){
-    /*var numCurso = $(this).attr('name');*/
+$("#ir-a-curso").on("click",function(){
     $.ajax({
-        url : "index.php/curso/getAlumnosPorCurso/4",
+        url : "index.php/docente/getCursos/100002",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {    
+            crearSelector(data);
+            console.log("exito");
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+    $("#selector-curso").show();
+    $(".overlay-popup").show();
+});
+
+$(".btn.btn-cursos").on("click", function(){
+    var numCurso = $(this).data('idcurso');
+    $.ajax({
+        url : "index.php/curso/getAlumnosPorCurso/"+numCurso,
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -62,7 +75,15 @@ $(".btn.btn-cursos.primero").on("click", function(){
             console.log("fallo");
         }
     });
-})
+});
+
+function crearSelector(data){
+    var conte_btn=$("#selectorBtnCurso");
+    for (var i=0; i<data.length;i++){
+        var newBox="<div class='btn btn-cursos' data-idcurso='"+data[i].idCurso+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
+        conte_btn.append(newBox);
+    }
+ }
 
 function createBoxAlumnos(data){
     var conte_info = $('.contenedor-de-alumnos ul');
@@ -76,18 +97,15 @@ function createBoxAlumnos(data){
 $('.close-popup').click(function(){
     $('.overlay-popup').fadeOut("slow");
     $(this).parent().parent().fadeOut("slow");
-})
+});
 
 $(".box-alumno").on("click",function(){
     var lega = $(this).attr("id");
     $(".overlay-popup").show();
     xxxxxxx
     $(".perfil-alumno-container").show();
-})
+});
 
-function getAlumno(lega){
-    ajax
-}
 $(".home-niveles-masinfo").on( "click", function() {
     if ( $(this).hasClass('inicial')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');

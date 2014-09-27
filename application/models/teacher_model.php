@@ -34,7 +34,7 @@ class Teacher_Model extends CI_Model {
     }
 
     function get_my_cursos($legajoDocente){
-        $string_query = $this->db->query("SELECT DISTINCT  ne.division, c.seccion, t.nombre
+        $string_query = $this->db->query("SELECT DISTINCT  c.idCurso, ne.division, c.seccion, t.nombre 
                                           FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
                                           WHERE d.legajoDocente = ad.legajoDocente and 
                                                 a.idAsignatura = ad.idAsignatura and
