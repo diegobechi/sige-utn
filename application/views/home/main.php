@@ -174,7 +174,7 @@
                             <img src="img/Nivel superior/Superior.jpg" style="float: right; max-width: 40%">
                         </div>
 
-                        <div style="height: 575px">
+                        <div style="height: 580px">
                             <div class="row nivel-uno" style="margin-top: 105px; display: none">
                                 <div class="span12" style="width:500px">
                                     <div id="homeCarouselNivelUno" class="carousel slide">
