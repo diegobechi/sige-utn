@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8080/sige-utn/';
+$config['base_url']	= 'http://localhost:8080/Tesis-2014/';
 
 /*
 |--------------------------------------------------------------------------

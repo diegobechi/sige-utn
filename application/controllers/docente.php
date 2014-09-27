@@ -14,7 +14,7 @@ class Docente extends CI_Controller {
 		/*echo "<pre>";
 		print_r($query);
 		die();*/
-		$this->load->view("docente/Info_curso");
+		$this->load->view("docente/info_curso");
 		$this->load->view('footer');
 	}
 

@@ -33,14 +33,14 @@
 
 </style>
 
-<div class = "contenedor"> 
+<div class="contenedor"> 
 	<div class = "titulo-principal">
 		<span></span>
 		<h1> INFORMACION DEL CURSO:</h1>
 	</div>
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
-			<li> Alumnos</li>
+			<li><a><img src="img/person.png"/>Alumnos</a></li>
 			<li>Materias</li>
 			<li> Alumnos</li>
 			<li>Materias</li>
