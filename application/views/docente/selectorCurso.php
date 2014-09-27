@@ -13,14 +13,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.close-popup').click(function(){
-			$('.overlay-popup').fadeOut("slow");
-			$('#selector-curso').fadeOut("slow");
-		})
-	})
-</script>
+
 
 <style type="text/css">
 /* START POPUP SELECTOR CURSO */

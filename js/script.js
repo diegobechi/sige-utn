@@ -210,6 +210,27 @@ $(window).bind('scroll', function () {
     }
 });
 
+$(".btn.btn-cursos").on("click", function(){
+    $("#selector-curso").hide();
+    $(".overlay-popup").hide();
+    $(".contenedor-info").show();
+})
+
+$('.close-popup').click(function(){
+    $('.overlay-popup').fadeOut("slow");
+    $(this).parent().parent().fadeOut("slow");
+})
+
+$(".box-alumno").on("click",function(){
+    var lega = $(this).attr("id");
+    $(".overlay-popup").show();
+    xxxxxxx
+    $(".perfil-alumno-container").show();
+})
+
+function getAlumno(lega){
+    ajax
+}
 $(".home-niveles-masinfo").on( "click", function() {
     if ( $(this).hasClass('inicial')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
