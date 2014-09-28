@@ -11,17 +11,16 @@ class Curso_Model extends CI_Model {
         parent::__construct();
     }
     
-    /*function get_all_students($idCurso){
-      $string_query = $this->db->query("SELECT alu.legajoAlumno as Legajo, alu.apellido, alu.nombre, ce.motivo, ce.calificacion, sum(aa.presente) as Inasistencias
-                                      FROM Alumno alu, AsistenciaAlumno aa, CalificacionEscolar ce, Curso c, Inscripcion i
-                                      WHERE alu.legajoAlumno = aa.legajoAlumno  and
-                                         alu.legajoAlumno = ce.legajoAlumno and
-                                         i.idCurso = c.idCurso and
-                                         i.legajoAlumno = alu.legajoAlumno  and
-                                         c.idCurso = $idCurso                                                   
-                                      GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre, ce.motivo, ce.calificacion")
-      return $string_query->result();
-    }*/
+    function get_all_students($idCurso){
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre
+                                        FROM Alumno alu, Curso c, Inscripcion i
+                                        WHERE i.idCurso = c.idCurso and
+                                        i.legajoAlumno = alu.legajoAlumno  and
+                                        c.idCurso = $idCurso                                                  
+                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre");
+      $query = $string_query->result();      
+      return $this->clear_result($query);
+    }
 
     /* START COMUNICADOS WEB*/
     function set_comunicado($idCurso, $legajoDocente, $comunicado){
@@ -50,5 +49,12 @@ class Curso_Model extends CI_Model {
                                         idAsignatura = $idAsignatura");
     }
     /* END TEMARIO DICTADO*/
+
+    function clear_result($query){
+        for($i = 0; $i< count($query); $i++){
+            $array_query[$i] = (array)$query[$i];
+        }
+        return $array_query;
+    }
 
 }

@@ -1,3 +1,7 @@
+<div class="btn" id="ir-a-curso">
+ <h> ir a Curso </h>
+</div>
+
 <div id="datos-personales-alumno"class="pagina-principal-informacion-alumno">
 	<div class="columna-foto-alumno">
 		<div><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-prn1/37387_404125861265_4252004_n.jpg" class="foto-perfil-datos-personales"></div>

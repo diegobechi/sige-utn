@@ -1,5 +1,5 @@
-<div class="overlay-popup"></div>
-<div class="perfil-alumno-container">
+<div class="overlay-popup"style = "display:none;"></div>
+<div class="perfil-alumno-container" style = "display:none;">
 	<div class="popup-header">
 		<span></span>
 		<h2>Nombre del alumno - Grado del alumno</h2>
@@ -40,14 +40,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.close-popup').click(function(){
-			$('.overlay-popup').fadeOut("slow");
-			$('.perfil-alumno-container').fadeOut("slow");
-		})
-	})
-</script>
+
 
 <style type="text/css">
 	.overlay-popup{
