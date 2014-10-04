@@ -15,16 +15,6 @@
 	background-color: gainsboro;
 }
 
-.box-alumno-generic  {
-	background-color: white;
-	width: 150px;
-	display: inline-block;
-	border: 2px solid orange;
-}
-.box-alumno-generic a {
-	text-align: center;
-}
-
 .Titulo-de-opciones h3{
     background-color: orange;
     margin-top: 0px;
