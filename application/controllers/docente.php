@@ -13,6 +13,7 @@ class Docente extends CI_Controller {
 		/*$this->load->view("docente/listados");
 		$this->load->view("docente/info_asignaturas");
 		$this->load->view("docente/perfilAlumno");*/
+		$this->load->view("docente/enviarMensaje");
 		$this->load->view('footer');
 
 		/*$this->load->model(array('Teacher_Model','Curso_Model'));
@@ -25,9 +26,9 @@ class Docente extends CI_Controller {
 
 	}
 
-	public function getCursos($legajoDocente, $aÃ±o){
+	public function getCursos($legajoDocente, $año){
 		$this->load->model('Teacher_Model');
-		$query = $this->Teacher_Model->get_my_cursos($legajoDocente, $aÃ±o);
+		$query = $this->Teacher_Model->get_my_cursos($legajoDocente, $año);
 		echo json_encode($query);		
 	}
 

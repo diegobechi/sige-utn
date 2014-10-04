@@ -30,56 +30,6 @@ html,body{
     font-style: normal;
 }
 
-.contenedor-general{
-background-color: #829EDF;
-margin-top: -40px;
-margin-bottom: -15px;
-border-radius: 5px;
-/*background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MCcgaGVpZ2h0PSc1MCcgdmlld0JveD0nMCAwIDUwIDUwJz4KCTxsaW5lIHgxPScxJyB5MT0nMCcgeDI9JzUxJyB5Mj0nNTAnIHN0cm9rZT0nI2RiZGJkYicgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjZGJkYmRiJyBzdHJva2Utd2lkdGg9JzInLz4KCTxsaW5lIHgxPSc1MCcgeTE9JzAnIHgyPScwJyB5Mj0nNTAnIHN0cm9rZT0nI2VkZWRlZCcgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nMCcgeTE9JzAnIHgyPSc1MCcgeTI9JzUwJyBzdHJva2U9JyNlZGVkZWQnIHN0cm9rZS13aWR0aD0nMicvPgo8L3N2Zz4=');*/
-}
-
-menu#home-top-menu {
-    float: left;
-    padding-left: 0px;
-}
-#home-top-menu > ul {
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-}
-#home-top-menu li {
-    list-style: none outside none;
-    margin-right: 2px;    
-}
-#home-top-menu a {
-    color: rgb(2, 17, 97);
-    padding: 13px 22px 15px;
-    font-size: 15px;
-    text-decoration: none;
-    transition: all 0.5s;
-    -moz-transition: all 0.5s; /* Firefox 4 */
-    -webkit-transition: all 0.5s; /* Safari and Chrome */
-    -o-transition: all 0.5s; /* Opera */
-    border-right: 2px solid rgb(2, 17, 97);
-
-}
-#home-top-menu a.active, #home-top-menu a:hover  { 
-    color: white;
-    background-color: rgb(2, 17, 97);
-    border-radius: 5px; 
-}
-
-#submenu-top-menu a{
-    border-right: white;
-    margin-left: -40px;
-    padding: 0px;
-    margin-right: 20px;
-}
-
-.scroll{
-    margin-top: 0px;
-}
-
 .home-wrapper{
     height: 100%;
     left: 50%;
@@ -100,9 +50,11 @@ menu#home-top-menu {
     border-bottom: 1px solid #5555E4;
     margin-bottom: 24px;
 }
+
 .home-head-buttons ul.myselect-ul li {
     overflow: hidden;
 }
+
 .home-head-buttons ul.myselect-ul li p{
     float: left;
     margin: 0;
@@ -175,42 +127,6 @@ menu#home-top-menu {
 .formulario{
 }
 
-.menu-superior-general{
-    width: 100%;
-    height: 55px;
-    background-color: black;
-}
-
-.label-menu-superior-general{
-    font-family: Arial;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    margin-top: 15px;
-    margin-left: 10px;
-    float: left;
-    margin-bottom: 15px;
-    float: left;
-}
-
-.foot{
-    width: 100%;
-    height: 50px;    
-    background-color: black;
-    /*position: fixed;*/
-    bottom: 0;
-}
-
-.label-foot{
-    font-family: Arial;
-    font-size: 10px;
-    font-weight: bold;
-    color: gray;
-    margin-top: -3px;
-    margin-bottom: 3px;
-    margin-left: 150px;
-}
-
 .columna-informacion-alumno{
     width: 50%;
     height: 90%;
@@ -280,29 +196,63 @@ menu#home-top-menu {
     margin-bottom: 10px;
 }
 
-/*PESTAÑAS ALUMNO*/
+/*MENÚ*/
 
-.contenedor-pestañas{
-    margin-top: -40px;
-    position: absolute;
+.menu-superior-general{
     width: 100%;
-    z-index: 999;
+    height: 55px;
+    background-color: black;
 }
 
-.contenedor-cuerpos-pestañas{
-    background-color: white;
-    height: 0px;
+.label-menu-superior-general{
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    float: left;
+    margin-bottom: 15px;
+    float: left;
 }
 
-.contenedor-pestañas.active .contenedor-cuerpos-pestañas{
-    height: 400px;
+menu#home-top-menu {
+    float: left;
+    padding-left: 0px;
+}
+#home-top-menu > ul {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+#home-top-menu li {
+    list-style: none outside none;
+    margin-right: 2px;    
+}
+#home-top-menu a {
+    color: rgb(2, 17, 97);
+    padding: 13px 22px 15px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari and Chrome */
+    -o-transition: all 0.5s; /* Opera */
+    border-right: 2px solid rgb(2, 17, 97);
+
+}
+#home-top-menu a.active, #home-top-menu a:hover  { 
+    color: white;
+    background-color: rgb(2, 17, 97);
+    border-radius: 5px; 
 }
 
-.cuerpo-pestañas-bottom{
-    display: none;
+#submenu-top-menu a{
+    border-right: white;
+    margin-left: -40px;
+    padding: 0px;
+    margin-right: 20px;
 }
-
-/*PÁGINA HOME*/
 
 .home-menu-opciones{
     display: table-row;
@@ -343,6 +293,40 @@ menu#home-top-menu {
 .submenu-opcion:hover{
     color: white;
     background-color: rgb(2, 17, 97);
+}
+
+.scroll{
+    margin-top: 0px;
+}
+
+/*FOOTER*/
+
+.foot{
+    width: 100%;
+    height: 50px;    
+    background-color: black;
+    /*position: fixed;*/
+    bottom: 0;
+}
+
+.label-foot{
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    color: gray;
+    margin-top: -3px;
+    margin-bottom: 3px;
+    margin-left: 150px;
+}
+
+/*PÁGINA HOME*/
+
+.contenedor-general{
+background-color: #829EDF;
+margin-top: -40px;
+margin-bottom: -15px;
+border-radius: 5px;
+/*background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MCcgaGVpZ2h0PSc1MCcgdmlld0JveD0nMCAwIDUwIDUwJz4KCTxsaW5lIHgxPScxJyB5MT0nMCcgeDI9JzUxJyB5Mj0nNTAnIHN0cm9rZT0nI2RiZGJkYicgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjZGJkYmRiJyBzdHJva2Utd2lkdGg9JzInLz4KCTxsaW5lIHgxPSc1MCcgeTE9JzAnIHgyPScwJyB5Mj0nNTAnIHN0cm9rZT0nI2VkZWRlZCcgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nMCcgeTE9JzAnIHgyPSc1MCcgeTI9JzUwJyBzdHJva2U9JyNlZGVkZWQnIHN0cm9rZS13aWR0aD0nMicvPgo8L3N2Zz4=');*/
 }
 
 .home-secciones{
@@ -521,7 +505,6 @@ menu#home-top-menu {
 .home-niveles-contenedor-nivel.open{
 }
 
-
 /*Novedades*/
 .home-novedades-contenedor{
     height: 200px;
@@ -610,4 +593,239 @@ menu#home-top-menu {
     border: 2px solid rgb(2, 17, 97);
     border-radius: 5px;
     margin: 1px;
+}
+
+/*PESTAÑAS ALUMNO*/
+
+.contenedor-pestañas{
+    margin-top: -40px;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
+.contenedor-cuerpos-pestañas{
+    background-color: white;
+    height: 0px;
+}
+
+.contenedor-pestañas.active .contenedor-cuerpos-pestañas{
+    height: 400px;
+}
+
+.cuerpo-pestañas-bottom{
+    display: none;
+}
+
+/*Información del curso*/
+
+.titulo-principal h1{
+    margin-top: 0;
+    background-color: orange;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.titulo-principal h3{
+    margin-top: 0;
+    background-color: orange;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.titulo-principal h1{
+ color: black;
+}
+
+.titulo-principal h3{
+ color: black;
+}
+
+.lista-opciones{
+    width: 150px;
+    background-color:gainsboro;
+    float: left;
+    margin-right: 10px;
+}
+
+.contenedor-principal{
+    display: inline-block;
+    width: 740px;
+    height: 250px;
+    border: 2px solid grey;
+    margin: 0;
+    background-color: gainsboro;
+}
+
+.contenedor-de-alumnos{
+    background-color: darkslategrey;
+    border: 2px solid grey;
+    width: 725px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.box-alumno{
+    text-decoration: none;
+}
+
+.contenedor-de-listados{
+    background-color: darkslategrey;
+    border: 2px solid grey;
+    width: 725px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.box-listado{
+    text-align: center;
+    background-color: white;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.contenedor-asignaturas{
+    margin-top: 0px;
+    display: inline-block;
+    background-color: darkslategrey;
+    border: 2px solid grey;
+    width: 738px;
+    height: 200px;
+}
+
+.box-asignatura-generica{
+    background-color: white;
+    border: 2px solid orange;
+}
+
+.box-asignatura-generica a{
+    text-align: center;
+}
+
+.box-asignatura{
+    text-decoration: none;
+}
+
+.overlay-popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(000, 000, 000, 0.5);
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.perfil-alumno-container{
+    width: 800px;
+    margin: 0 auto;
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.popup-header{
+        background-color: #000;
+        border-radius: 10px 10px 0 0;
+}
+
+.popup-header h2{
+    margin: 0;
+    color: white;
+    display: inline-block;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.close-popup{
+    float: right;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.popup-body{
+    padding: 30px 0;
+    background-color: #d1d1d1;
+    border-radius: 0 0 10px 10px;
+    min-height: 400px;
+}
+
+.container-left{
+        width: 200px;
+        float: left;
+        text-align: center;
+}
+
+.container-left img{
+    border: 2px solid #ddd;
+}
+
+.profile-picture{
+    width: 150px;
+    height: 150px;
+}
+
+.tutores-alumno{
+    width: 90px;
+    height: 90px;
+}
+
+.container-right{
+    width: 590px;
+    display: inline-block;
+}
+
+.container-right .tab-pane.active{
+    border: 1px solid #dddddd;
+    border-top: 0;
+    background-color: #fff;
+    padding: 20px 0 0 10px;
+}
+
+.container-right .nav.nav-tabs{
+    margin: 0px;
+}
+
+#profile label{
+    width: 150px;
+    display: inline-block;
+}
+
+.send-message-container{
+    margin: 0 auto;
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.send-message-container label{
+    display: inline-block;
+}
+
+.send-message-container textarea{
+    width: 485px;
+    height: 100px;
+    display: block;
+}
+
+.send-menssage-header .radio{
+    height: 25px;
+}
+
+.date-notes{
+    float: right;
+}
+
+.date-notes label{
+    width: 50px;
+}
+
+.selectpicker{
+    margin-bottom: 0px; 
+    visibility: hidden;
 }
