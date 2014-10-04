@@ -45,7 +45,7 @@
 	     		<ul>
 					<li class="box-asignatura-generica"> 
 						<div class="asignatura-titulo">
-							<h3> Asignatura</h3>								
+							<h3>Asignatura</h3>								
 						</div>
 						<div class="asignatura-body" style="display:none;">
 							ASDASASDASDASDASDAS
@@ -55,3 +55,6 @@
 	     </div> 
     </div>
 </div>
+
+<select>
+</select>

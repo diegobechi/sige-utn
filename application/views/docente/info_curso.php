@@ -53,7 +53,7 @@ margin-top: 0px;
 
 </style>
 
-<div class = "contenedor-info" style = "display:none;">  
+<div class = "contenedor-info" style = "display:block;">  
 	<div class = "titulo-principal">
 		<span></span>
 		<h1> <img src="img/curso.png"> INFORMACION DEL CURSO</h1>

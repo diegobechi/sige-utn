@@ -27,7 +27,7 @@ border: 2px solid black;
 </style>
 
 
-<div class = "contenedor-principal" >
+<div class = "contenedor-principal listado" >
 	<div class = "titulo-principal" >
   	  <span></span>
   	   <h1><img src="img/book_1.png"> Listados</h1> 

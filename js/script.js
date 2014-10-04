@@ -36,9 +36,9 @@ $(window).bind('scroll', function () {
     }
 });
 
-$("#ir-a-curso").on("click",function(){
+$("#misCursos").on("click",function(){
     $.ajax({
-        url : "index.php/docente/getCursos/100002",
+        url : "index.php/docente/getCursos/10002/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -51,12 +51,29 @@ $("#ir-a-curso").on("click",function(){
             console.log("fallo");
         }
     });
-    $("#selector-curso").show();
-    $(".overlay-popup").show();
 });
 
-$('body').on("click",".btn.btn-cursos", function(event){    
+$('body').on("click",".box-curso-generic", function(event){    
     var numCurso = $(this).data('idcurso');
+    $.ajax({
+        url : "index.php/docente/pruebaVista",
+        type: "GET",
+        dataType: "html",
+        success: function(data, textStatus, jqXHR){            
+            $('#curso-info-container').append(data);
+            $('#selector-curso').hide();
+            cargarInfoCurso(numCurso);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+
+
+});
+
+function cargarInfoCurso(numCurso){
+    
     $.ajax({
         url : "index.php/curso/getAlumnosPorCurso/"+numCurso,
         type: "GET",
@@ -64,9 +81,6 @@ $('body').on("click",".btn.btn-cursos", function(event){
         success: function(data, textStatus, jqXHR)
         {
             console.log(data);
-            $("#selector-curso").hide();
-            $(".overlay-popup").hide();
-            $(".contenedor-info").show();
             createBoxAlumnos(data);
 
         },
@@ -75,7 +89,7 @@ $('body').on("click",".btn.btn-cursos", function(event){
             console.log("fallo");
         }
     });
-});
+}
 
 $('body').on("click",".box-alumno",function(){
     var leg = $(this).data('legajo');
@@ -106,7 +120,7 @@ function crearSelector(data){
     var conte_btn=$("#selectorBtnCurso");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<div class='btn btn-cursos' data-idcurso='"+data[i].idCurso+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
+        var newBox="<div class='box-curso-generic' data-idcurso='"+data[i].idCurso+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
         conte_btn.append(newBox);
     }
  }
