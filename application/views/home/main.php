@@ -41,13 +41,42 @@
                     </menu>
                 </div>                            
             </li>
+            <li>
+                <a href="#galeria" class="home-top-item"><b>GALERÍA</b></a>
+            </li>
         </ul>
     </menu>
 </div>
 
 <!--HOME-->
 <div id="datos-personales-contenedor" class="contenedor-general" style="background-color: #829EDF">
-    <div class="container well" style="width:540px, background-color: transparent">
+    <div class="home-lema-contenedor">
+        <div class="home-lema-contenedor-lema">
+            <div class="home-lema-contenedor-lema-titulo">LEMA DEL INSTITUTO 2014
+            </div>
+            <div class="home-lema-contenedor-lema-contenido"> 
+                <div style="font-size: 25px; text-align: center; font-family: monospace"><br><b>"SÉ EN QUIEN HE PUESTO MI CONFIANZA"</b><br><br>
+                </div>
+                <div style="font-size: 20px; text-align: right; font-family: monospace; margin-right: 15px">2 Timoteo 1,12
+                </div>
+            </div>
+        </div>
+
+        <div class="home-oracion-contenedor-oracion">
+            <div class="home-oracion-contenedor-oracion-titulo">100 AÑOS DE LA PRESENCIA DE LAS HERMANAS EN ARGENTINA!
+            </div>
+            <div class="home-oracion-contenedor-oracion-contenido">
+                <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 15%">
+                <div style="float: left; max-width: 80%; text-align: justify">Señor Jesús, en los "campos extensos" de la América del siglo XXI sigue siendo necesaria la presencia de las
+                Hermanas de la Inmaculada para que nos ayuden a confesar la fe, a celebrarla y a dar testimonio de ella en una sociedad que necesita ser humanizada. <br> Por eso
+                te rogamos que el carisma del Padre Agustín Roscelli continúe vivo en nuestras religiosas y en nosotros, para que la semilla sembrada hace 100 años se haga mensaje,
+                grano enterrado, trigo molido y pan de altar. <br>Te lo pedimos por María, nuestra Madre Inmaculada. Amén.
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <div class="container well">
         <div class="row">
             <div class="span12" style="width:700px; margin: -30px">
                 <div id="homeCarousel" class="carousel slide">
@@ -541,7 +570,7 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL PRIMARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left; max-width: 70%"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
+                        <div style="float: left; max-width: 65%"><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
                             al buen Dios lo que necesito y Él siempre me comprende.”</i>                            
                         </div>
                         <img src="img/Nivel primario/NP. papel y lapiz.jpg" style="float: right; max-width: 25%; margin-top: 5%">
@@ -558,7 +587,7 @@
                     <div class="home-niveles-contenedor-nivel-contenido"> 
                         <div style="float: left; max-width: 70%"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito." L.M. López</i>                            
                         </div>
-                        <img src="img/Nivel secundario/NSe. estudiando.jpg" style="float: right; max-width: 18%; margin-top: 1%">
+                        <img src="img/Nivel secundario/NSe. estudiando.jpg" style="float: right; max-width: 18%; margin-top: 1%; margin-right: 3%">
                         <div style="width: 100px; margin-top: 125px;">
                             <a class="home-niveles-masinfo secundario"><b>Más información</b></a>
                         </div>
@@ -568,7 +597,7 @@
                     <div class="home-niveles-contenedor-nivel-titulo">NIVEL SUPERIOR
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido"> 
-                        <div style="float: left; max-width: 70%"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
+                        <div style="float: left; max-width: 65%"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.” 
                             Ef. 4,4</i>                            
                         </div>
                         <img src="img/Nivel superior/NS. enseñando.jpg" style="float: right; max-width: 27%; margin-top: 2%">     
@@ -643,7 +672,7 @@
                     el mismo que movió a San Agustín Roscelli a fundar una Congregación. Sin emargo, la adaptación al lugar y a sus costumbres fue dificultosa. Tanto que ese primer día en el pueblo, y
                     acabando de conocer el viejo hotel en desuso que sería su hogar, las religiosas se sentaron sobre sus baúles y lloraron.<br><br>
                 </div>
-                <img src="img/Colegio/0. Foto colegio cuando era hotel.jpg" style="float: right; max-width: 35%; border-radius: 5px">  
+                <img src="img/Colegio/0. Foto colegio cuando era hotel.jpg" style="float: right; max-width: 35%; border-radius: 5px; margin-left: 1%">  
                 <div>
                     Aún así, y con todas las entendibles incertidumbres y nostalgias
                     que las unían a sus comunidades de origen, a sus afectos y seguridades, no tardaron en abrazarse al carisma del Padre Fundador: con sencillez, humildad y entrega comenzaron las tareas
@@ -660,7 +689,7 @@
                     Maestras Normales Nacionales, a la solicitud de los padres y la colaboración desinteresada de un grupo de docentes.<br>Dicho nivel fue modificando sus orientaciones según las 
                     necesidades del medio y las políticas vigentes<br><br>
                 </div>
-                <img src="img/Colegio/3. Foto esquina.jpg" style="float: right; max-width: 35%; border-radius: 5px">
+                <img src="img/Colegio/3. Foto esquina.jpg" style="float: right; max-width: 35%; border-radius: 5px; margin-left: 1%">
                 <div>
                     En mayo de 1964 se inauguraba el nuevo edificio del Instituto, fruto de tantas voluntades empeñadas en su logro.<br><br>En 
                     abril de 1976 se inició el Magisterio Superior, dando respuesta a la demanda de una sociedad que necesitaba tener maestros para sus escuelas, y siendo el primero de enseñanza privada
@@ -734,7 +763,7 @@
                 <div style="float: left"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada<br>
                     y la luz que emana de la estrella, dan vida al alma. Del Monte Santo de Dios desciende la gracia que hace fecunda la vida del cristiano<br>en el inmenso campo de la Iglesia.<br><br>
                 </div>
-                <img src="img/Colegio/0. Escudo.jpg" style="float: right; max-width: 15%">
+                <img src="img/Colegio/0. Escudo.jpg" style="float: right; max-width: 15%; margin-left: 1%">
                 <div><br><br><br><br><br><br><b>HIMNO AL COLEGIO</b><br><br>Cantemos el himno de historia gloriosa<br>Colegio Santa Teresita,<br>recinto que entregas en vida armoniosa<br>sueños e ideales de paz y de amor.<br><br>Al 
                     amparo de la Inmaculada<br>los niños confían su amor a Jesús,<br>y siguiendo su ejemplo que es guía<br>los jóvenes llevan al mundo su luz.<br><br>Al abrigo de sus bellos muros<br>viven la 
                     esperanza y el saber,<br>que serán la herencia y el camino<br>que todo cristiano ha de tener.<br><br>Cantemos el himno a nuestro Colegio,<br>que al darnos la ciencia nos nutre en la fe,<br>
@@ -764,7 +793,7 @@
                 <div style="float: left"><b>SAN AGUSTÍN ROSCELLI - Fundador de la Congregación de las Hermanas de la Inmaculada de Génova</b><br><br><i>"Deben adquirir y perfeccionar más en las virtudes 
                     que necesitan.. pero sobre todo una inalcansable caridad"</i>
                 </div>
-                <img src="img/0. San Agustín Roscelli.jpg" style="float: right; max-width: 18%; border-radius: 5px">
+                <img src="img/0. San Agustín Roscelli.jpg" style="float: right; max-width: 18%; border-radius: 5px; margin-left: 1%">
                 <div><br><br><br><br>Agustín Roscelli nació en Bargone di Casarza Ligure (Génova, Italia), el 27 de julio de 1818, en el seno de una humilde familia. 
                     Ordenado sacerdote en Génova el 19 de septiembre de 1846, desarrolló el propio apostolado primero como Vice-Párroco de San Martín de Albaro, después como asistente de los jóvenes de la obra de los 
                     Pequeños Artesanos fundada por el Padre Francisco Montebruno, desarrollando al mismo tiempo, con incansable entrega y sabiduría evangélica, el ministerio de confesor en la Iglesia de la Consolación 
@@ -779,7 +808,7 @@
                 </div>
                 <div style="float: left"><br><b>SANTA TERESITA DEL NIÑO JESÚS - Patrona del Instituto Santa Teresita</b><br><br><i>"Alegría, Sensillez, Obediencia"</i>
                 </div>
-                <img src="img/0. Santa Teresita.jpg" style="float: right; max-width: 18%; margin-top: 20px; border-radius: 5px">
+                <img src="img/0. Santa Teresita.jpg" style="float: right; max-width: 18%; margin-top: 20px; border-radius: 5px; margin-left: 1%">
                 <div><br><br><br><br><br>Teresita nació en Francia, el 2 
                     de enero de 1873, a los dos días fue bautizada con el nombre de María Francisca Teresa. <br>Era la última de nueve hijos, cuatro de los cuales habían muerto muy pequeños, quedando cinco hijas 
                     mujeres.<br>Jesús la llamó a la vida a su amor en una familia como tantas, que también llevaban el peso de las preocupaciones de cada día.<br>Sus padres, Luis Martín y Celia Guerin, con sus valores 
@@ -791,12 +820,12 @@
             </div>
         </div>
         
-        <div id="ubicacion" class="home-institucion-contenedor" style="height: 318px; margin-bottom: 20px; padding-bottom: 10px;">
+        <div id="ubicacion" class="home-institucion-contenedor" style="height: 318px; padding-bottom: 10px;">
             <div class="home-institucion-contenedor-titulo">UBICACIÓN
             </div>
             <div class="home-institucion-contenedor-contenido" style="height: 82%"> 
-                <img src="img/0. Ubicación.jpg" style="float: right; max-width: 45%; border-radius: 5px">
-                <div style="float: left; width: 55%">El Instituto se encuentra ubicado en Balnearia,  localidad situada en el departamento San Justo, provincia de Córdoba.<br><br>Limita al norte con la localidad de Miramar, 
+                <img src="img/0. Ubicación.jpg" style="float: right; max-width: 45%; border-radius: 5px; margin-left: 1%">
+                <div style="float: left; width: 50%">El Instituto se encuentra ubicado en Balnearia,  localidad situada en el departamento San Justo, provincia de Córdoba.<br><br>Limita al norte con la localidad de Miramar, 
                     al este con Altos de Chipión, al sur con Villa Concepción del Tío, y al oeste con Marull.<br><br>Dista a 190 km de la capital de la provincia, Córdoba, y a 120 km de la cabecera del departamento, 
                     San Francisco.
                 </div>                
@@ -804,4 +833,52 @@
         </div>
     </div> <!--Institución-->
 
+    <!--GALERÍA-->
+    <div id="galeria">
+        <div class="home-secciones">GALERÍA
+        </div>
+        <div style="height: 200px;">
+            <div class="home-galeria-contenedor" style="margin-top: 15px;">
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+                <div class="home-galeria-contenedor-imagen">
+                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+                </div>
+            </div>
+        </div>
+    </div> <!--Galería-->
 </div> <!--HOME-->
