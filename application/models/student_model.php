@@ -24,11 +24,31 @@ class Student_Model extends CI_Model {
         return $this->clear_result($query);
     }
 
+    function get_tutor($legajoAlumno){
+        $string_query = $this->db->query("SELECT DISTINCT t.nroDocumento, t.sexo,CONVERT (char(10),t.fechaNacimiento, 103) as Fecha , e.nombre as 'Estado Civil', d.calle, d.numero, d.piso,t.telefonoFijo, t.telefonoMovil, t.correoElectronico
+                                          FROM Alumno a, Tutor t, GrupoFamiliar gf, Domicilio d, Estado e
+                                          WHERE a.legajoAlumno = gf.legajoAlumno and
+                                                  t.idTutor = gf.idTutor and
+                                                  t.idDomicilio = d.idDomicilio and
+                                                  t.idEstadoCivil = e.idEstado and
+                                                  a.legajoAlumno= $legajoAlumno");
+      )
+    }
+
     function get_tutores($legajoAlumno){
         $string_query = $this->db->query("SELECT t.* FROM Tutor t, GrupoFamiliar gf WHERE t.idTutor = gf.idTutor and 
                                             gf.legajoAlumno = $legajoAlumno");
         $query = $string_query->result();
         return $this->clear_result($query);
+    }
+
+    function get_mis_alumnos_a_cargo($idTutor){
+        $tring_query = $this ->db->query("SELECT DISTINCT a.legajoAlumno,a.apellido, a.nombre
+                                          FROM Alumno a, Tutor t, GrupoFamiliar gf
+                                          WHERE a.legajoAlumno = gf.legajoAlumno and
+                                          t.idTutor = gf.idTutor and
+                                          t.idTutor = $idTutor;")
+
     }
 
     function get_assistence($legajoAlumno, $año){       

@@ -1,5 +1,6 @@
-<div class="overlay-popup"style = "display:none;"></div>
-<div class="perfil-alumno-container" style = "display:none;">
+
+<div class="overlay-popup"style = "display:block;"></div>
+<div class="perfil-alumno-container" style = "display:block;">
 	<div class="popup-header">
 		<span></span>
 		<h2>Nombre del alumno - Grado del alumno</h2>
@@ -36,24 +37,17 @@
 			  	<label>Nro Documento</label><input type="text"><br>
 			  	<label>Sexo</label><input type="text"><br>
 			  	<label>Fecha de Nacimiento</label><input type="text"><br>
-			  	<label>Domicilio</label><input type="text"><br>
-			  	<label>Telefono Fijo</label><input type="text"><br>
-			  	<label>Telefono Movil</label><input type="text"><br>
 			  	<label>Estado Civil</label><input type="text"><br>
+			  	<label>Domicilio</label><input type="text"><br>
+			   	<label>Telefono Fijo</label><input type="text"><br>
+			  	<label>Telefono Movil</label><input type="text"><br>
+			  	<label>Correo Electronico</label><input type="text"><br>
 			  </div>
 			  <div class="tab-pane" id="messages">Otros</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
 
 <style type="text/css">
 	.overlay-popup{
