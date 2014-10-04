@@ -23,9 +23,7 @@
 }
 .box-asignatura-generica{
 	background-color: white;
-	width: 150px;
-	display: inline-block;
-	border: 2px solid orange;
+	border: 1px solid #000;
 
 }
 .box-asignatura-generica a{
@@ -38,58 +36,21 @@
 
 
 </style>
-<div class = "contenedor-principal">
+<div class = "contenedor-principal asignaturas">
 	<div class = "Titulo-principal">
 		<h1> <img src="img/book_1.png">  Asignaturas</h1>
     </div>
     	<div class = "contenedor-asignaturas">
-	     	<div class= " listado-asignaturas">
+	     	<div class= "listado-asignaturas">
 	     		<ul>
 					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
+						<div class="asignatura-titulo">
+							<h3> Asignatura</h3>								
+						</div>
+						<div class="asignatura-body" style="display:none;">
+							ASDASASDASDASDASDAS
+						</div>						
+					</li>					
 				</ul>
 	     </div> 
     </div>
