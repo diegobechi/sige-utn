@@ -1,58 +1,3 @@
-<style>
-.contenedor{
-	width: 850px;
-	margin: 0 auto;
-	border: 2px solid #000;
-	
-}
-.titulo-principal h1{
-	margin-top: 0;
-	background-color: orange;
-	color: #fff;
-	font-size: 20px;
-	padding-left: 10px;
-}
-.lista-opciones{
-	width: 150px;
-	background-color:gainsboro;
-	float: left;
-	margin-right: 10px;
-	}
-.contenedor-general{
-	display: inline-block;
-	width: 740px;
-	border: 2px solid grey;
-	margin: 0;
-	background-color: gainsboro;
-}
-.Titulo-de-opciones h3{
-	background-color: orange;
-margin-top: 0px;
-
-}
-.contenedor-de-alumnos{
-	background: darkslategrey;
-	border: 2px solid grey;
-	width: 725px;
-	margin-right: 10px;
-	margin-left: 10px;
-}
-.box-alumno-generic  {
-	background-color: white;
-	width: 150px;
-	display: inline-block;
-	border: 2px solid orange;
-}
-.box-alumno-generic a {
-	text-align: center;
-}
-
-.box-alumno{
-	text-decoration: none;
-}
-
-</style>
-
 <div class = "contenedor-info" style = "display:none;">  
 	<div class = "titulo-principal">
 		<span></span>
@@ -66,8 +11,8 @@ margin-top: 0px;
 			<li> <img src="img/inasistencias.png"/><a> Inasistencias</a></li>
 			<li> <img src="img/mensajes.png"/><a> Mensajes</a></li>
 		</div>	
-		<div class ="contenedor-general">
-			<div class ="Titulo-de-opciones">
+		<div class ="contenedor-principal alumnos">
+			<div class ="titulo-principal">
 				<span></span>
 				<h3> <img src="img/person.png"> Alumnos </h3>
 			</div>
@@ -76,9 +21,49 @@ margin-top: 0px;
 				</ul>
 			</div>
 		</div>
+
+		<div class = "contenedor-principal listados">
+			<div class = "titulo-principal">
+		  	  <span></span>
+		  	   <h1><img src="img/book_1.png"> Listados</h1> 
+		    </div>
+		  	
+		  	<div class = "contenedor-de-listados">
+		   	    <ul>
+		    	    <li class = "box-listado">
+		   		        <a id="curso" href="#" class="box-alumno">
+							<div>
+								<img src="img/listado.png">
+								<h6> Listado de Alumnos</h6>
+							</div>
+				        </a>
+				    </li>
+				    <li class = "box-listado">
+		   		        <a id="curso" href="#" class="box-alumno">
+							<div>
+								<img src="img/listado.png">
+								<h6> Inasistencias por fecha</h6>
+							</div>
+				        </a>
+				    </li>
+				     <li class = "box-listado">
+		   		        <a id="curso" href="#" class="box-alumno">
+							<div>
+								<img src="img/listado.png">
+								<h6> Licencias otorgadas</h6>
+							</div>
+				        </a>
+				    </li>
+		        </ul>
+		    </div>
+		</div>
+
+
 	</div>
 </div>
+
 <div class="overlay-popup"style = "display:none;"></div>
+
 <div class="perfil-alumno-container" style = "display:none;">
 	<div class="popup-header">
 		<span></span>
@@ -119,80 +104,3 @@ margin-top: 0px;
 		</div>
 	</div>
 </div>
-
-
-
-<style type="text/css">
-	.overlay-popup{
-	    width: 100%;
-	    height: 100%;
-	    position: fixed;
-	    background-color: rgba(000, 000, 000, 0.5);
-	    top: 0;
-	    bottom: 0;
-	    z-index: 99;
-	 }
-	.close-popup{
-	    float: right;
-	    margin: 10px 10px 0 0;
-	    cursor: pointer;
-	 }
-	.perfil-alumno-container{
-		width: 800px;
-		margin: 0 auto;
-		z-index: 999;
-		position: absolute;
-		left: 0;
-		right: 0;
-	}
-	.container-left{
-		width: 200px;
-		float: left;
-		text-align: center;
-	}
-	.container-left img{
-		border: 2px solid #ddd;
-	}
-	.container-right{
-		width: 590px;
-		display: inline-block;
-	}
-	.popup-header{
-	    background-color: #000;
-	    border-radius: 10px 10px 0 0;
-	}
-	.popup-header h2{
-	    margin: 0;
-	    color: white;
-	    display: inline-block;
-	    font-size: 25px;
-	    vertical-align: middle;
-	}
-	.popup-body{
-	    padding: 30px 0;
-	    background-color: #d1d1d1;
-	    border-radius: 0 0 10px 10px;
-	    min-height: 400px;
-	 }
-	 .container-right .tab-pane.active{
-	 	border: 1px solid #dddddd;
-	 	border-top: 0;
-	 	background-color: #fff;
-	 	padding: 20px 0 0 10px;
-	 }
-	 .container-right .nav.nav-tabs{
-	 	margin: 0px;
-	 }
-	 #profile label{
-	 	width: 150px;
-	 	display: inline-block;
-	 }
-	 .tutores-alumno{
-	 	width: 90px;
-	 	height: 90px;
-	 }
-	 .profile-picture{
-	 	width: 150px;
-	 	height: 150px;
-	 }
-</style>
