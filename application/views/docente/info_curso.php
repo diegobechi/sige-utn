@@ -1,4 +1,4 @@
-<div class = "contenedor-info" style = "display:none;">  
+<div class = "contenedor-info" style = "display:block;">  
 	<div class = "titulo-principal">
 		<span></span>
 		<h1> <img src="img/curso.png"> INFORMACION DEL CURSO</h1>
@@ -58,7 +58,53 @@
 		    </div>
 		</div>
 
-
+		<div class = "contenedor-principal asignaturas">
+			<div class = "titulo-principal">
+				<h1> <img src="img/book_1.png">  Asignaturas 
+					<select>
+					<option> 2014
+					</option>
+					<option> 2013
+					</option>
+					<option> 2012
+					</option>
+					</select>
+				</h1>
+		    </div>
+		    	<div class = "contenedor-asignaturas">
+			     	<div class= " listado-asignaturas">
+			     		<ul>
+			     			<li class="box-asignatura-generica"> 
+			     				<div class="asignatura-titulo">
+			     					<h3> Asignatura
+			     					</h3>        
+			     				</div>
+			     				<div class="asignatura-body" style = "display:none;">
+			     					ASDASASDASDASDASDAS
+			     				</div>      
+			     			</li>
+			     			<li class="box-asignatura-generica"> 
+			     				<div class="asignatura-titulo">
+			     					<h3> Asignatura
+			     					</h3>        
+			     				</div>
+			     				<div class="asignatura-body" style = "display:none;">
+			     					ASDASASDASDASDASDAS
+			     				</div>      
+			     			</li>
+			     			<li class="box-asignatura-generica"> 
+			     				<div class="asignatura-titulo">
+			     					<h3> Asignatura
+			     					</h3>        
+			     				</div>
+			     				<div class="asignatura-body" style = "display:none;">
+			     					ASDASASDASDASDASDAS
+			     				</div>      
+			     			</li>
+						</ul>
+			     </div> 
+		    </div>
+		</div>
 	</div>
 </div>
 

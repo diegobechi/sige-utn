@@ -1,5 +1,5 @@
-<div class="overlay-popup"style = "display:block;"></div>
-<div class="perfil-alumno-container" style = "display:block;">
+<div class="overlay-popup"style = "display:none;"></div>
+<div class="perfil-alumno-container" style = "display:none;">
 	<div class="popup-header">
 		<span></span>
 		<h2>Nombre del alumno - Grado del alumno</h2>
