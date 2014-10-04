@@ -164,7 +164,7 @@ $(".home-niveles-masinfo").on( "click", function() {
 });
 
 /*Docente*/
-$("#ir-a-curso").on("click",function(){
+$("#misCursos").on("click",function(){
     $.ajax({
         url : "index.php/docente/getCursos/10002/2014",
         type: "GET",
@@ -257,7 +257,7 @@ $('.close-popup').click(function(){
     $('.overlay-popup').fadeOut("slow");
     $(this).parent().parent().fadeOut("slow");
 });
-
+/*
 window.onload=hora;
 fecha = new Date();
 
@@ -273,7 +273,7 @@ function hora(){
     fecha.setSeconds(fecha.getSeconds()+1);
     setTimeout("hora()",1000);
 }
-
+*/
 $(document).ready(function(){
     $('#opciones_1, #opciones_2').click(function() {
         if($('#opciones_2').is(':checked')){ 

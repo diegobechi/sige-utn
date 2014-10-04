@@ -29,7 +29,6 @@ class Teacher_Model extends CI_Model {
                                                   t.idDomicilio = d.idDomicilio and
                                                   t.idEstadoCivil = e.idEstado and
                                                   a.legajoAlumno= $legajoAlumno");
-      )
     }
 
     function get_asignaturas($legajoDocente){
