@@ -42,10 +42,7 @@ class Teacher_Model extends CI_Model {
                                                 ne.idNivelEducativo = c.idNivelEducativo and
                                                 c.idTurno = t.idTurno and
                                                 d.legajoDocente = $legajoDocente");
-        
-        /*$query = $string_query->result();*/
         return $string_query->result();
-        /*return $this->clear_result($query);*/
     }
 
     function get_asistencia($legajoDocente){
