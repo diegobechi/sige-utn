@@ -225,9 +225,7 @@ $('body').on('click','.box-asignatura-generica',function(){
     }else{
         $('.asignatura-body').hide();
         $(this).children('.asignatura-body').show();
-    }    
-    $(".overlay-popup").show();
-    $(".perfil-alumno-container").show();
+    }
 })
 
 function cargarDatosAlumno(data){
@@ -253,10 +251,32 @@ function createBoxAlumnos(data){
     }
 }
 
-$('.close-popup').click(function(){
+$('body').on('click', '.box-alumno-generic', function(){
+    $(".overlay-popup").show();
+    $(".perfil-alumno-container").show();
+})
+
+$('body').on('click', '.lista-opciones li', function(){
+    var name=$(this).data('title');
+    $('.contenedor-principal').each(function(){
+        if($(this).hasClass(name)){
+            $('.contenedor-principal').hide();
+            $(this).show();
+        }
+    })
+
+})
+    
+$('body').on('click','.close-popup', function(){
     $('.overlay-popup').fadeOut("slow");
     $(this).parent().parent().fadeOut("slow");
 });
+
+$('body').on('click', 'img.tutores-alumno', function(){
+    $('.popup-perfil-tutor').show();
+    $('.overlay-perfil-tutor').show();
+
+})
 /*
 window.onload=hora;
 fecha = new Date();

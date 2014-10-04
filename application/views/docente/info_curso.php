@@ -5,11 +5,16 @@
 	</div>
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
-			<li> <img src="img/alumno.png"/><a> Alumnos</a></li>
-			<li> <img src="img/materia.png"/> <a> Asignaturas</a></li>
-			<li> <img src="img/listados.png"/><a> Listados</a></li>
-			<li> <img src="img/inasistencias.png"/><a> Inasistencias</a></li>
-			<li> <img src="img/mensajes.png"/><a> Mensajes</a></li>
+			<li data-title="alumnos"> <img src="img/alumno.png"/>Alumnos</li>
+			<li> <img src="img/materia.png"/> Asignaturas
+				<ul>
+					<li data-title="misAsignaturas">Mis Asignaturas</li>
+					<li data-title="asignaturas">Asignaturas del curso</li>
+				</ul>
+			</li>
+			<li data-title="listados"> <img src="img/listados.png"/>Listados</li>
+			<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>
+			<li data-title="mensajes"> <img src="img/mensajes.png"/>Mensajes</li>
 		</div>	
 		<div class ="contenedor-principal alumnos">
 			<div class ="titulo-principal">
@@ -22,7 +27,7 @@
 			</div>
 		</div>
 
-		<div class = "contenedor-principal listados">
+		<div class = "contenedor-principal listados" style="display:none;">
 			<div class = "titulo-principal">
 		  	  <span></span>
 		  	   <h1><img src="img/book_1.png"> Listados</h1> 
@@ -58,7 +63,7 @@
 		    </div>
 		</div>
 
-		<div class = "contenedor-principal asignaturas">
+		<div class = "contenedor-principal asignaturas" style="display:none;">
 			<div class = "titulo-principal">
 				<h1> <img src="img/book_1.png">  Asignaturas 
 					<select>
@@ -142,11 +147,64 @@
 			  	<label>Telefono Movil</label><input type="text"><br>
 			  	<label>Lugar de Nacimiento</label><input type="text"><br>
 			  	<label>Estado Civil</label><input type="text"><br>
-
 			  </div>
-			  <div class="tab-pane" id="notes">Observaciones</div>
+			  <div class="tab-pane" id="notes">Observaciones
+			  </div>
 			  <div class="tab-pane" id="messages">Otros</div>
 			</div>
 		</div>
 	</div>
+	<div class="overlay-perfil-tutor"></div>
+	<div class="popup-perfil-tutor">
+		<div class="foto-tutor">
+			<img src="img/profile-temp.png">			
+		</div>
+		<div class="datos-tutor">
+			<label>Nro Documento</label><label>32333924</label><br>
+			<label>Sexo</label><label>MACHO</label><br>
+			<label>Fecha de Nacimiento</label><label>07/06/1986</label><br>
+			<label>Estado Civil</label><label>Soltero</label><br>
+			<label>Domicilio</label><label>lalalalalala</label><br>
+			<label>Telefono Fijo</label><label>123123123131</label><br>
+			<label>Telefono Movil</label><label>1231231231231</label><br>
+			<label>Correo Electronico</label><label>123123123123@gmail.com</label><br>
+		</div>		
+	</div>
 </div>
+
+<style>
+	.overlay-perfil-tutor{
+		display: none;
+		background-color: black;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: fixed;
+		opacity: 0.7;
+	}
+	.datos-tutor label{
+		display: inline-block;
+	}
+	.datos-tutor{
+		float: left;
+	}
+	.foto-tutor{
+		width: 120px;
+		margin: 15px;
+		float: left;
+	}
+	.popup-perfil-tutor{
+		display: none;
+		background-color: white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 460px;
+		height: 200px;
+		margin: auto;
+		border: 4px solid red;
+	}
+</style>
