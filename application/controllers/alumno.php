@@ -31,4 +31,10 @@ class Alumno extends CI_Controller {
 		$query = $this->Student_Model->get_student($legajoAlumno);
 		echo json_encode($query);
 	}
+
+	public function getTutor($legajoAlumno){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_tutor($legajoAlumno);
+		echo json_encode($query);
+	}
 }

@@ -23,16 +23,29 @@ class Curso_Model extends CI_Model {
     }
 
     function get_all_asignaturas($idCurso, $año){
-      $string_query = $this->db->query("SELECT DISTINCT a.nombre, a.tipo, d.apellido, d.nombre,hc.diaSemana
-                                        FROM Asignatura a, Curso c, HorarioCurso hc, Docente d, AsignaturaPorDocente ad, NivelEducativo ne
-                                        WHERE  hc.idAsignatura = a.idAsignatura and
-                                            hc.idCurso = c.idCurso and
-                                            hc.legajoDocente = ad.legajoDocente and
-                                            hc.idAsignatura = ad.idAsignatura and
-                                            d.legajoDocente = ad.legajoDocente and
-                                            c.cicloLectivo = $año and
-                                            c.idCurso = $idCurso");
+      $string_query = $this->db->query("SELECT DISTINCT a.nombre as Asignaturas
+                                        FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
+                                        WHERE d.legajoDocente = ad.legajoDocente and 
+                                          a.idAsignatura = ad.idAsignatura and
+                                          ne.idNivelEducativo = a.idNivelEducativo and
+                                          ne.idNivelEducativo = c.idNivelEducativo and
+                                          c.idTurno = t.idTurno and
+                                          c.idCurso = $idCurso and
+                                          c.cicloLectivo= $año
+                                          order by a.nombre;");
       return $string_query->result();  
+    }
+
+    function get_asistencia_curso($idCurso, $año){
+      $string_query = $this->db->query("SELECT alu.legajoAlumno, alu.apellido, alu.nombre, sum(aa.presente) as 'Cantidad de Inasistencias'
+                                        FROM Alumno alu, AsistenciaAlumno aa, Inscripcion i, Curso c
+                                        WHERE alu.legajoAlumno = aa.legajoAlumno and 
+                                           alu.legajoAlumno = i.legajoAlumno and
+                                           c.idCurso = i.idCurso and
+                                           c.idCurso = $idCurso and
+                                           c.cicloLectivo = $año
+                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre");
+      return $string_query->result();
     }
 
     /* START COMUNICADOS WEB*/

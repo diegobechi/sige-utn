@@ -32,7 +32,12 @@ class Student_Model extends CI_Model {
                                                   t.idDomicilio = d.idDomicilio and
                                                   t.idEstadoCivil = e.idEstado and
                                                   a.legajoAlumno= $legajoAlumno");
+<<<<<<< HEAD
       
+=======
+        $query = $string_query->result();
+        return $this->clear_result($query);
+>>>>>>> 8b679298c549b85da2bf29cb84d459ca3b1a4dd4
     }
 
     function get_tutores($legajoAlumno){
