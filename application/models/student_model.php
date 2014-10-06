@@ -32,7 +32,8 @@ class Student_Model extends CI_Model {
                                                   t.idDomicilio = d.idDomicilio and
                                                   t.idEstadoCivil = e.idEstado and
                                                   a.legajoAlumno= $legajoAlumno");
-      )
+        $query = $string_query->result();
+        return $this->clear_result($query);
     }
 
     function get_tutores($legajoAlumno){
@@ -47,7 +48,7 @@ class Student_Model extends CI_Model {
                                           FROM Alumno a, Tutor t, GrupoFamiliar gf
                                           WHERE a.legajoAlumno = gf.legajoAlumno and
                                           t.idTutor = gf.idTutor and
-                                          t.idTutor = $idTutor;")
+                                          t.idTutor = $idTutor;");
 
     }
 
