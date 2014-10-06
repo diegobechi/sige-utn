@@ -77,21 +77,14 @@ $(".btn.btn-cursos").on("click", function(){
     });
 });
 
-$('.box-alumno-generic a').on("click", function(){
-    var leg = $(this).data('legajo');
-    $.ajax({
-        url : "index.php/alumno/getDatosAlumno/"+leg,
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){
-            console.log("exito");
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    });
+$('body').on('click','.box-asignatura-generica',function(){
+    if($(this).children('.asignatura-body').is(':visible')){
+        $(this).children('.asignatura-body').hide();
+    }else{
+        $('.asignatura-body').hide();
+        $(this).children('.asignatura-body').show();
+    }    
 })
-
 function crearSelector(data){
     var conte_btn=$("#selectorBtnCurso");
     for (var i=0; i<data.length;i++){

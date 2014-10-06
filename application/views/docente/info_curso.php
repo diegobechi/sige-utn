@@ -61,7 +61,13 @@ margin-top: 0px;
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
 			<li> <img src="img/alumno.png"/><a> Alumnos</a></li>
-			<li> <img src="img/materia.png"/> <a> Asignaturas</a></li>
+			<li> <img src="img/materia.png"/> Asignaturas
+				<ul> <li> MisAsignaturas
+					</li>
+					<li>  delCurso 
+					</li>
+				</ul>
+			 </li>
 			<li> <img src="img/listados.png"/><a> Listados</a></li>
 			<li> <img src="img/inasistencias.png"/><a> Inasistencias</a></li>
 			<li> <img src="img/mensajes.png"/><a> Mensajes</a></li>

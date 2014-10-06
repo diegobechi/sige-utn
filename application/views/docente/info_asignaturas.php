@@ -23,8 +23,6 @@
 }
 .box-asignatura-generica{
 	background-color: white;
-	width: 150px;
-	display: inline-block;
 	border: 2px solid orange;
 
 }
@@ -40,56 +38,47 @@
 </style>
 <div class = "contenedor-principal">
 	<div class = "Titulo-principal">
-		<h1> <img src="img/book_1.png">  Asignaturas</h1>
+		<h1> <img src="img/book_1.png">  Asignaturas 
+			<select>
+			<option> 2014
+			</option>
+			<option> 2013
+			</option>
+			<option> 2012
+			</option>
+			</select>
+		</h1>
     </div>
     	<div class = "contenedor-asignaturas">
 	     	<div class= " listado-asignaturas">
 	     		<ul>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
-					<li class="box-asignatura-generica"> 
-						<a id="Asignatura"href="#" class ="box-asignatura">
-							<div>
-								<h3> Asignatura
-								</h3>
-								<img src="img/book_1.png">
-							</div>
-						</a>
-					</li>
+	     			<li class="box-asignatura-generica"> 
+	     				<div class="asignatura-titulo">
+	     					<h3> Asignatura
+	     					</h3>        
+	     				</div>
+	     				<div class="asignatura-body" style = "display:none;">
+	     					ASDASASDASDASDASDAS
+	     				</div>      
+	     			</li>
+	     			<li class="box-asignatura-generica"> 
+	     				<div class="asignatura-titulo">
+	     					<h3> Asignatura
+	     					</h3>        
+	     				</div>
+	     				<div class="asignatura-body" style = "display:none;">
+	     					ASDASASDASDASDASDAS
+	     				</div>      
+	     			</li>
+	     			<li class="box-asignatura-generica"> 
+	     				<div class="asignatura-titulo">
+	     					<h3> Asignatura
+	     					</h3>        
+	     				</div>
+	     				<div class="asignatura-body" style = "display:none;">
+	     					ASDASASDASDASDASDAS
+	     				</div>      
+	     			</li>
 				</ul>
 	     </div> 
     </div>
