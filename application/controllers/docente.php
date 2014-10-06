@@ -10,7 +10,6 @@ class Docente extends CI_Controller {
 		$this->load->view('docente/main');	
 		$this->load->view('docente/selectorCurso');			
 		$this->load->view("docente/info_curso");
-		$this->load->view("docente/listados");
 		$this->load->view("docente/info_asignaturas");*/
 		$this->load->view("docente/perfilAlumno");
 		$this->load->view('footer');
