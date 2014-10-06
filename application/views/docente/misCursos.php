@@ -8,6 +8,7 @@
 		</div>
 	</div>
 </div>
+
 <script>
     window.onload = function(){
         app.sige.init();

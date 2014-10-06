@@ -22,6 +22,19 @@ class Curso_Model extends CI_Model {
       return $this->clear_result($query);
     }
 
+    function get_all_asignaturas($idCurso, $año){
+      $string_query = $this->db->query("SELECT DISTINCT a.nombre, a.tipo, d.apellido, d.nombre,hc.diaSemana
+                                        FROM Asignatura a, Curso c, HorarioCurso hc, Docente d, AsignaturaPorDocente ad, NivelEducativo ne
+                                        WHERE  hc.idAsignatura = a.idAsignatura and
+                                            hc.idCurso = c.idCurso and
+                                            hc.legajoDocente = ad.legajoDocente and
+                                            hc.idAsignatura = ad.idAsignatura and
+                                            d.legajoDocente = ad.legajoDocente and
+                                            c.cicloLectivo = $año and
+                                            c.idCurso = $idCurso");
+      return $string_query->result();  
+    }
+
     /* START COMUNICADOS WEB*/
     function set_comunicado($idCurso, $legajoDocente, $comunicado){
       $string_query = $this->db->query("INSERT INTO ComunicadoWeb VALUES(1,$idCurso,$legajoDocente,'04/09/2014',$comunicado)");

@@ -651,11 +651,12 @@ border-radius: 5px;
 }
 
 .contenedor-principal{
-    display=inline-block;
+    display: inline-block;
     width: 740px;
+    height: 250px;
     border: 2px solid grey;
     margin: 0;
-    background-color: darkslategrey;
+    background-color: gainsboro;
 }
 
 .contenedor-de-alumnos{
@@ -685,6 +686,28 @@ border-radius: 5px;
     display: inline-block;
     text-align: center;
     border: 2px solid black;
+}
+
+.contenedor-asignaturas{
+    margin-top: 0px;
+    display: inline-block;
+    background-color: darkslategrey;
+    border: 2px solid grey;
+    width: 738px;
+    height: 200px;
+}
+
+.box-asignatura-generica{
+    background-color: white;
+    border: 2px solid orange;
+}
+
+.box-asignatura-generica a{
+    text-align: center;
+}
+
+.box-asignatura{
+    text-decoration: none;
 }
 
 .overlay-popup{
@@ -771,4 +794,38 @@ border-radius: 5px;
 #profile label{
     width: 150px;
     display: inline-block;
+}
+
+.send-message-container{
+    margin: 0 auto;
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.send-message-container label{
+    display: inline-block;
+}
+
+.send-message-container textarea{
+    width: 485px;
+    height: 100px;
+    display: block;
+}
+
+.send-menssage-header .radio{
+    height: 25px;
+}
+
+.date-notes{
+    float: right;
+}
+
+.date-notes label{
+    width: 50px;
+}
+
+.selectpicker{
+    margin-bottom: 0px; 
+    visibility: hidden;
 }
