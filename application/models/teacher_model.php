@@ -21,6 +21,17 @@ class Teacher_Model extends CI_Model {
         return $string_query->result();
     }
 
+    function get_tutor($legajoAlumno){
+        $string_query = $this->db->query("SELECT DISTINCT t.nroDocumento, t.sexo,CONVERT (char(10),t.fechaNacimiento, 103) as Fecha , e.nombre as 'Estado Civil', d.calle, d.numero, d.piso,t.telefonoFijo, t.telefonoMovil, t.correoElectronico
+                                          FROM Alumno a, Tutor t, GrupoFamiliar gf, Domicilio d, Estado e
+                                          WHERE a.legajoAlumno = gf.legajoAlumno and
+                                                  t.idTutor = gf.idTutor and
+                                                  t.idDomicilio = d.idDomicilio and
+                                                  t.idEstadoCivil = e.idEstado and
+                                                  a.legajoAlumno= $legajoAlumno");
+      )
+    }
+
     function get_asignaturas($legajoDocente){
         $string_query = $this->db->query("SELECT DISTINCT a.nombre as Asignatura, ne.division, c.seccion, t.nombre
                                             FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t

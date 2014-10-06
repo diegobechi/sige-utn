@@ -36,6 +36,8 @@ $(window).bind('scroll', function () {
     }
 });
 
+
+
 $("#ir-a-curso").on("click",function(){
     $.ajax({
         url : "index.php/docente/getCursos/100002",
