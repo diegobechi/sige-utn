@@ -356,6 +356,78 @@ menu#home-top-menu {
     border-radius: 5px;
 }
 
+/*Lema y oración*/
+.home-lema-contenedor{
+    height: 200px;
+    background-color: #829EDF;
+    padding-top: 15px;
+    margin-top: 85px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-lema-contenedor-lema{  
+    height: 100%;
+    display: inline-block;
+    max-width: 25%;
+    float: left;
+}
+
+.home-lema-contenedor-lema-titulo{
+    vertical-align: top; 
+    height: 14%; 
+    background-color: rgb(9, 67, 155);
+    font-family: fantasy;
+    font-size: x-large;
+    padding-top: 12px;
+    padding-left: 1%;
+    border-radius: 5px;
+}
+
+.home-lema-contenedor-lema-contenido{
+    height: 75%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    padding-top: 10px;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2px;
+    text-align: justify;
+}
+
+.home-oracion-contenedor-oracion{  
+    height: 100%;
+    display: inline-block;
+    max-width: 74%;
+    float: right;
+}
+
+.home-oracion-contenedor-oracion-titulo{
+    vertical-align: middle; 
+    height: 14%; 
+    background-color: rgb(9, 67, 155);
+    font-family: fantasy;
+    font-size: x-large;
+    padding-top: 12px;
+    padding-left: 1%;
+    border-radius: 5px;
+}
+
+.home-oracion-contenedor-oracion-contenido{
+    height: 75%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    padding-top: 10px;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2px;
+    text-align: justify;
+}
+
 /*Niveles*/
 .home-niveles-contenedor{
     height: 200px;
@@ -393,10 +465,10 @@ menu#home-top-menu {
     border-radius: 5px;
     background-color: white;
     margin-top: 2px;
+    text-align: justify;
 }
 
 .home-niveles-masinfo{
-    /*width: 140px;*/
     cursor: pointer;
     font-size: smaller;
     color: black;
@@ -443,6 +515,7 @@ menu#home-top-menu {
     background-color: white;
     margin-top: 2px;
     overflow: auto;
+    text-align: justify;
 }
 
 .home-niveles-contenedor-nivel.open{
@@ -485,6 +558,7 @@ menu#home-top-menu {
     background-color: white;
     border-radius: 5px;
     margin-top: 2px;
+    text-align: justify;
 }
 
 /*Institución*/
@@ -518,4 +592,22 @@ menu#home-top-menu {
     background-color: white;
     border-radius: 5px;
     margin-top: 2px;
+    text-align: justify;
+}
+
+/*Galería*/
+.home-galeria-contenedor{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.home-galeria-contenedor-imagen{
+    height: auto;
+    width: 10%;
+    display: inline-block;
+    border: 2px solid rgb(2, 17, 97);
+    border-radius: 5px;
+    margin: 1px;
 }

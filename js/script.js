@@ -55,7 +55,7 @@ $("#ir-a-curso").on("click",function(){
     $(".overlay-popup").show();
 });
 
-$(".btn.btn-cursos").on("click", function(){
+$('body').on("click",".btn.btn-cursos", function(event){    
     var numCurso = $(this).data('idcurso');
     $.ajax({
         url : "index.php/curso/getAlumnosPorCurso/"+numCurso,
@@ -84,9 +84,17 @@ $('body').on('click','.box-asignatura-generica',function(){
         $('.asignatura-body').hide();
         $(this).children('.asignatura-body').show();
     }    
+    $(".overlay-popup").show();
+    $(".perfil-alumno-container").show();
 })
+function cargarDatosAlumno(data){
+    console.log('cargo los datos');
+    console.log(data);
+}
+
 function crearSelector(data){
     var conte_btn=$("#selectorBtnCurso");
+    conte_btn.empty();
     for (var i=0; i<data.length;i++){
         var newBox="<div class='btn btn-cursos' data-idcurso='"+data[i].idCurso+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
         conte_btn.append(newBox);
@@ -107,12 +115,7 @@ $('.close-popup').click(function(){
     $(this).parent().parent().fadeOut("slow");
 });
 
-$(".box-alumno").on("click",function(){
-    var lega = $(this).attr("id");
-    $(".overlay-popup").show();
-    xxxxxxx
-    $(".perfil-alumno-container").show();
-});
+
 
 $(".home-niveles-masinfo").on( "click", function() {
     if ( $(this).hasClass('inicial')){
