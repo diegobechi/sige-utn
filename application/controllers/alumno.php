@@ -6,6 +6,7 @@ class Alumno extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('menuUp');
+		/*$this->load->view('alumno/main');	*/
 		
 		$this->load->model('Student_Model');
 

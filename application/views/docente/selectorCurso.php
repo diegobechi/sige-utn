@@ -1,11 +1,11 @@
 <div class="overlay-popup" style="display:none"></div>
-<div id="selector-curso" style="display:none">	
+<div id="selector-asignatura" style="display:none">	
 	<div class="popup-header">
 		<img class="icono-popup-header" src="img/book.png">
-		<h2>Seleccionar un curso</h2>
+		<h2>Seleccionar una asignatura</h2>
 		<div class="close-popup"><img src="img/close.png"></div>
 	</div>
-	<div class="popup-body" id="selectorBtnCurso">
+	<div class="popup-body" id="selectorBtnAsignatura">
 	</div>
 </div>
 
