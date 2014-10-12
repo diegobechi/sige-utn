@@ -18,4 +18,10 @@ class Curso extends CI_Controller {
 		$query = $this->Curso_Model->get_all_asignaturas($idCurso, $año);
 		echo json_encode($query);	
 	}
+
+	 public function getAsistenciaCurso($idCurso, $año){
+	 	$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->get_asistencia_curso($idCurso, $año);
+		echo json_encode($query);
+	 }
 }

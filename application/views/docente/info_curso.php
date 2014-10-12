@@ -76,7 +76,7 @@
 					</select>
 				</h1>
 		    </div>
-		    	<div class = "contenedor-asignaturas">
+		    	<div class="contenedor-asignaturas">
 			     	<div class= " listado-asignaturas">
 			     		<ul>
 			     			<li class="box-asignatura-generica"> 
@@ -109,6 +109,9 @@
 						</ul>
 			     </div> 
 		    </div>
+		</div>
+
+		<div class="contenedor-principal inasistencias" style="display:none;">
 		</div>
 	</div>
 </div>

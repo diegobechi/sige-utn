@@ -196,8 +196,6 @@ $('body').on("click",".box-curso-generic", function(event){
             console.log("fallo");
         }
     });
-
-
 });
 
 function cargarInfoCurso(numCurso){
