@@ -275,6 +275,51 @@ $('body').on('click', 'img.tutores-alumno', function(){
     $('.overlay-perfil-tutor').show();
 
 })
+
+/*Alumno*/    
+$("#misAsignaturas").on("click",function(){
+    $.ajax({
+        url : "index.php/alumno/getAsignaturas/100001/2014",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {    
+            crearSelector(data);
+            console.log("exito");
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+});
+
+function crearSelector(data){
+    var conte_btn=$("#selectorBtnAsignatura");
+    conte_btn.empty();
+    for (var i=0; i<data.length;i++){
+        var newBox="<div class='box-asignatura-generica' data-idasignatura='"+data[i].idcurso+"</div>";
+        conte_btn.append(newBox);
+    }
+ }
+
+$('body').on("click",".box-asignatura-generica", function(event){    
+    var numCurso = $(this).data('idcurso');
+    $.ajax({
+        url : "index.php/alumno/pruebaVista",
+        type: "GET",
+        dataType: "html",
+        success: function(data, textStatus, jqXHR){            
+            $('#curso-info-container').append(data);
+            $('#selector-curso').hide();
+            cargarInfoCurso(numCurso);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+});
+
 /*
 window.onload=hora;
 fecha = new Date();

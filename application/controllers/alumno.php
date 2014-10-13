@@ -6,8 +6,6 @@ class Alumno extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('menuUp');
-		/*$this->load->view('alumno/main');	*/
-		
 		$this->load->model('Student_Model');
 
 		$legajo = 100001;
@@ -17,7 +15,7 @@ class Alumno extends CI_Controller {
         }
 		/*$query = $this->Student_Model->get_assistence($legajo, $año);*/
 		/*$query = $this->Student_Model->get_student($legajo);*/
-		$query = $this->Student_Model->get_notas_por_materia($legajo, $año);
+		/*$query = $this->Student_Model->get_notas_por_materia($legajo, $año);*/
 
 		/*echo "<pre>";
 		print_r($query);
@@ -32,9 +30,9 @@ class Alumno extends CI_Controller {
 		echo json_encode($query);
 	}
 
-	public function getTutor($legajoAlumno){
+	public function getAsignaturas($legajoAlumno, $año){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_tutor($legajoAlumno);
-		echo json_encode($query);
+		$query = $this->Student_Model->get_asignaturas($legajoAlumno, $año);
+		echo json_encode($query);		
 	}
 }

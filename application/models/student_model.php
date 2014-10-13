@@ -32,7 +32,21 @@ class Student_Model extends CI_Model {
                                                   t.idDomicilio = d.idDomicilio and
                                                   t.idEstadoCivil = e.idEstado and
                                                   a.legajoAlumno= $legajoAlumno");
-<<<<<<< HEAD
+
+    }
+
+    function get_asignaturas($legajoAlumno, $cicloLectivo){
+        $string_query = $this->db->query("SELECT DISTINCT a.nombre
+                                       FROM Asignatura a, Alumno alu, Inscripcion i, Curso c, HorarioCurso hc
+                                       WHERE alu.legajoAlumno = i.legajoAlumno and
+                                              i.idCurso = c.idCurso and
+                                              c.idCurso = hc.idCurso and
+                                              a.idAsignatura = hc.idAsignatura  and          
+                                              c.cicloLectivo = $cicloLectivo and
+                                              alu.legajoAlumno = $legajoAlumno");
+}
+
+/*<<<<<<< HEAD
       
 =======
         $query = $string_query->result();
@@ -92,4 +106,5 @@ class Student_Model extends CI_Model {
         $query = $string_query->result();
         return $this->clear_result($query);
     }
+*/
 }

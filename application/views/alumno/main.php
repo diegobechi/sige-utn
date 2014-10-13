@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs">
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
-		<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
+		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
 		<li><a href="#tab_c" data-toggle="tab">MENSAJES</a></li>
 		<li><a href="#tab_d" data-toggle="tab">MIS APORTES</a></li>
 		<li><a href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
@@ -12,10 +12,11 @@
 				ac turpis egestas.</p>
 		</div>
 		<div class="tab-pane fade" id="tab_b">
-			<div id="curso-info-container"></div>
-			<div id="selector-curso">
+			<div id="asignatura-info-container"></div>
+			<div id="selector-asignatura">
 				<h4>Seleccione una Asignatura</h4>
-				<div id="selectorBtnCurso"></div>
+				<div id="selectorBtnAsignatura">
+				</div>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_c">
@@ -44,6 +45,7 @@
 	height: 150px;
 	margin: 20px;
 }
+
 </style>
 <!--	
 <div id="datos-personales-alumno"class="pagina-principal-informacion-alumno">

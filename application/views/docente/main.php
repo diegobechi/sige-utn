@@ -14,7 +14,8 @@
 			<div id="curso-info-container"></div>
 			<div id="selector-curso">
 				<h4>Seleccione un curso</h4>
-				<div id="selectorBtnCurso"></div>
+				<div id="selectorBtnCurso">
+				</div>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_c">
