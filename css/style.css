@@ -581,9 +581,12 @@ border-radius: 5px;
 /*Galería*/
 .home-galeria-contenedor{
     margin-left: 15px;
-    margin-right: 15px;
+    margin-right: 15px; 
     padding-left: 50px;
     padding-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
 }
 
 .home-galeria-contenedor-imagen{
@@ -669,6 +672,17 @@ border-radius: 5px;
 
 .box-alumno{
     text-decoration: none;
+}
+
+.box-alumno-generic  {
+    background-color: white;
+    width: 150px;
+    display: inline-block;
+    border: 2px solid orange;
+}
+
+.box-alumno-generic a {
+    text-align: center;
 }
 
 .contenedor-de-listados{

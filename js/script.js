@@ -224,7 +224,7 @@ $('body').on('click','.box-asignatura-generica',function(){
         $('.asignatura-body').hide();
         $(this).children('.asignatura-body').show();
     }
-})
+});
 
 function cargarDatosAlumno(data){
     console.log('cargo los datos');
@@ -252,7 +252,7 @@ function createBoxAlumnos(data){
 $('body').on('click', '.box-alumno-generic', function(){
     $(".overlay-popup").show();
     $(".perfil-alumno-container").show();
-})
+});
 
 $('body').on('click', '.lista-opciones li', function(){
     var name=$(this).data('title');
@@ -263,7 +263,7 @@ $('body').on('click', '.lista-opciones li', function(){
         }
     })
 
-})
+});
     
 $('body').on('click','.close-popup', function(){
     $('.overlay-popup').fadeOut("slow");
@@ -274,6 +274,7 @@ $('body').on('click', 'img.tutores-alumno', function(){
     $('.popup-perfil-tutor').show();
     $('.overlay-perfil-tutor').show();
 
+<<<<<<< HEAD
 })
 
 /*Alumno*/    
@@ -318,6 +319,8 @@ $('body').on("click",".box-asignatura-generica", function(event){
             console.log("fallo");
         }
     });
+=======
+>>>>>>> fd6fc2b84e02aa9868615ade3a666755b28cc00f
 });
 
 /*
@@ -337,6 +340,7 @@ function hora(){
     setTimeout("hora()",1000);
 }
 */
+
 $(document).ready(function(){
     $('#opciones_1, #opciones_2').click(function() {
         if($('#opciones_2').is(':checked')){ 

@@ -837,48 +837,55 @@
     <div id="galeria">
         <div class="home-secciones">GALERÍA
         </div>
-        <div style="height: 200px;">
-            <div class="home-galeria-contenedor" style="margin-top: 15px;">
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
-                </div>
-                <div class="home-galeria-contenedor-imagen">
-                    <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg">
+
+        <div id="links" class="home-galeria-contenedor">
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Banana" data-gallery>
+                <img src="img/Colegio/3. Foto esquina.jpg" alt="Banana">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Apple" data-gallery>
+                <img src="img/Colegio/3. Foto esquina.jpg" alt="Apple">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Orange" data-gallery>
+                <img src="img/Colegio/3. Foto esquina.jpg" alt="Orange">
+            </a>
+        </div>   
+
+        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->            
+        <div id="blueimp-gallery" class="blueimp-gallery"> <!-- data-use-bootstrap-modal="false" -->
+        <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: white; border-radius: 5px">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div> <!--Galería-->
+    
 </div> <!--HOME-->
+

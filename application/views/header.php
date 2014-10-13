@@ -9,4 +9,8 @@
         <link rel="stylesheet" type="text/css" href="css/animations.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.css"> 
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-image-gallery.css">
     </head><body>
