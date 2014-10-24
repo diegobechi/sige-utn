@@ -423,7 +423,36 @@ $('body').on('click','#programa', function(){
         }
     })
 })
+$(document).ready(function(){
+    buscarComunicadoWeb();
+})
 
+function buscarComunicadoWeb(){
+    $.ajax({
+     url: "index.php/curso/getComunicadoWeb/2",
+     type:"GET",
+     dataType: "json",
+     success: function(data, textStatus, jqXHR){
+        console.log(data);
+        cargarComunicadoWeb(data);
+    },
+    error: function (jqXHR, textStatus, errorThrown)
+    {
+        console.log("fallo");
+    }
+})
+
+}
+
+function cargarComunicadoWeb(data){
+    var conte = $("#lista-mensajes");
+    $("#cantMensajes").text("(" + data.length+")");
+    for (var i = 0 ; i<data.length; i++){
+        var nuevaLinea = "<div><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+        conte.append(nuevaLinea);
+    }
+
+}
 
 $(document).ready(function(){
     $('#opciones_1, #opciones_2').click(function() {

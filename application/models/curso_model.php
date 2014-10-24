@@ -52,11 +52,18 @@ class Curso_Model extends CI_Model {
     function set_comunicado($idCurso, $legajoDocente, $comunicado){
       $string_query = $this->db->query("INSERT INTO ComunicadoWeb VALUES(1,$idCurso,$legajoDocente,'04/09/2014',$comunicado)");
     }
+ 
     function get_comunicado($idCurso, $startDate, $endDate){
-      $string_query = $this->db->query("SELECT * FROM ComunicadoWeb WHERE idCurso = 4 and
-                                      convert(varchar, fecha, 103)between '04/09/2014' and '28/08/2014'");
+      $consulta = "SELECT CONVERT (char(10),cw.fecha, 103) as fecha,cw.comunicado, d.apellido, d.nombre
+                                        FROM ComunicadoWeb cw, Docente d, Curso c
+                                        WHERE cw.legajoDocente = d.legajoDocente and
+                                            cw.idCurso = c.idCurso and
+                                            cw.fecha between ' $startDate ' and  ' $endDate ' and
+                                            c.idCurso = $idCurso";
+      $string_query = $this->db->query($consulta);
       return $string_query->result();
     }
+
     function update_comunicado($idComunicado){
       $string_query = $this->db->query("UPDATE ComunicadoWeb SET comunicado = $comunicado WHERE idComunicado = $idComunicado");
     }

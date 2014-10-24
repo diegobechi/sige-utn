@@ -94,13 +94,11 @@ class Student_Model extends CI_Model {
                                                  a.legajoAlumno = $legajoAlumno");
         return $string_query->result();
     }
-
     function get_sanciones($legajoAlumno){
         $string_query = $this->db->query("SELECT * FROM SancionDisciplinaria WHERE legajoAlumno = $legajoAlumno");
         $query = $string_query->result();
         return $this->clear_result($query);    
     }
-
     function get_meritos($legajoAlumno){
         $string_query = $this->db->query("");
         $query = $string_query->result();

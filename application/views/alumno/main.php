@@ -37,9 +37,8 @@
 </div>
 <div id="page-wrap">
 	<div id="lista-mensajes">
-	    <h3>Mensajes (1) </h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
+	    <h3>Mensajes <span id= 'cantMensajes'></span> </h3>
+	  	</div>
 </div>
 
 <script>
@@ -61,19 +60,22 @@
 	background: #369;
 	color: #fff;
 	padding: 5px 10px;
-	margin: 0 0 10px 0;
+	margin:0;
 	line-height: 24px;
 }
-
+#lista-mensajes div {
+	background-color:#fff;
+	padding: 10px;
+}
 #page-wrap { 
-	width: 200px;
+	width: 600px;
 	right: 0px;
 	top: 10%;
 	position: fixed;
 }
 
 #page-wrap.vertical{
-	right: -200px;
+	right: -600px;
 }
 
 .vertical #lista-mensajes h3 {
