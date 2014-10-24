@@ -12,7 +12,8 @@
 				ac turpis egestas.</p>
 		</div>
 		<div class="tab-pane fade" id="tab_b">
-			<div id="asignatura-info-container"></div>
+			<div id="asignatura-info-container">
+			</div>
 			<div id="selector-asignatura">
 				<h4>Seleccione una Asignatura</h4>
 				<div id="selectorBtnAsignatura">

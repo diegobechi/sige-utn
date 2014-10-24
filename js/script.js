@@ -41,54 +41,30 @@ $(window).bind('scroll', function () {
 $(".home-niveles-masinfo").on( "click", function() {
     if ( $(this).hasClass('inicial')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
-
+        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
         $('.nivel-uno').css('display', 'block');
-
-        $('.nivel-uno').animate({
-        }, 1); 
-
+        $('.nivel-uno').animate({}, 1);
         $('.home-niveles-contenedor').css('display', 'none');
     }
     else if ( $(this).hasClass('primario')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
-
+        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
         $('.nivel-dos').css('display', 'block');
-
-        $('.nivel-dos').animate({
-        }, 1); 
-
+        $('.nivel-dos').animate({}, 1); 
         $('.home-niveles-contenedor').css('display', 'none');
     }
     else if ( $(this).hasClass('secundario')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
-
+        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
         $('.nivel-tres').css('display', 'block');
-
-        $('.nivel-tres').animate({
-        }, 1); 
-
+        $('.nivel-tres').animate({}, 1); 
         $('.home-niveles-contenedor').css('display', 'none');
     }
     else{
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
-
+        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
         $('.nivel-cuatro').css('display', 'block');
-
-        $('.nivel-cuatro').animate({
-        }, 1); 
-
+        $('.nivel-cuatro').animate({}, 1); 
         $('.home-niveles-contenedor').css('display', 'none');
     }
 
@@ -171,7 +147,7 @@ $("#misCursos").on("click",function(){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {    
-            crearSelector(data);
+            crearSelectorCurso(data);
             console.log("exito");
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -182,24 +158,38 @@ $("#misCursos").on("click",function(){
 });
 
 $('body').on("click",".box-curso-generic", function(event){    
+    var conte_info = $('.contenedor-info');
     var numCurso = $(this).data('idcurso');
-    $.ajax({
-        url : "index.php/docente/pruebaVista",
-        type: "GET",
-        dataType: "html",
-        success: function(data, textStatus, jqXHR){            
-            $('#curso-info-container').append(data);
-            $('#selector-curso').hide();
-            cargarInfoCurso(numCurso);
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    });
+    var nombre_curso = $(this).text();
+    if(!conte_info.size() > 0){        
+        $.ajax({
+            url : "index.php/docente/pruebaVista",
+            type: "GET",
+            dataType: "html",
+            success: function(data, textStatus, jqXHR){            
+                $('#curso-info-container').append(data);
+                $('#selector-curso').hide();
+                $('.titulo-principal h1').text(nombre_curso);
+                cargarInfoCurso(numCurso);
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        });
+    }else{        
+        $('#selector-curso').hide();
+        $('.titulo-principal h1').text(nombre_curso);
+        conte_info.show();
+        cargarInfoCurso(numCurso);
+    }    
 });
 
-function cargarInfoCurso(numCurso){
-    
+$('body').on('click','#back-button', function(){
+    $('#selector-curso').show();
+    $('.contenedor-info').hide();
+})
+
+function cargarInfoCurso(numCurso){    
     $.ajax({
         url : "index.php/curso/getAlumnosPorCurso/"+numCurso,
         type: "GET",
@@ -208,7 +198,6 @@ function cargarInfoCurso(numCurso){
         {
             console.log(data);
             createBoxAlumnos(data);
-
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -226,12 +215,7 @@ $('body').on('click','.box-asignatura-generica',function(){
     }
 });
 
-function cargarDatosAlumno(data){
-    console.log('cargo los datos');
-    console.log(data);
-}
-
-function crearSelector(data){
+function crearSelectorCurso(data){
     var conte_btn=$("#selectorBtnCurso");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
@@ -242,6 +226,7 @@ function crearSelector(data){
 
 function createBoxAlumnos(data){
     var conte_info = $('.contenedor-de-alumnos ul');
+    conte_info.empty();
     for(var i=0;i<data.length;i++){
         var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
         conte_info.append(newBox);
@@ -249,9 +234,57 @@ function createBoxAlumnos(data){
     }
 }
 
+function cargarPerfilAlumno(data){
+    console.log('Nuevo Alumno');
+    $('#perfil-nombre-header').text(data[0].apellido+', '+data[0].nombre);
+    $('#perfil-legajo').val(data[0].legajoAlumno);
+    $('#perfil-dni').val(data[0].nroDocumento);
+    $('#perfil-sexo').val(data[0].sexo);
+    $('#perfil-fecha-nac').val(data[0].fechaNacimiento);
+    $('#perfil-nacionalidad').val(data[0].nacionalidad);
+    $('#perfil-domicilio').val(data[0].idDomicilio);
+    $('#perfil-tel-fijo').val(data[0].telefonoFijo);
+    $('#perfil-tel-movil').val(data[0].telefonoMovil);
+    $('#perfil-lugar-nac').val(data[0].lugarNacimiento);
+    $('#perfil-estado-civil').val(data[0].idEstado);
+
+    if (data[0].observaciones == ''){
+        $('#perfil-observaciones').text('No se poseen observaciones para el alumno'); 
+    }else{
+        $('#perfil-observaciones').val(data[0].observaciones);    
+    }
+    
+}
+
+function limpiarPerfilAlumno(data){
+    if($('#perfil-legajo').val() != data[0].legajoAlumno){
+        $('#profile input').each(function(){
+            $(this).val('');
+        });
+        cargarPerfilAlumno(data);
+    }else{
+        console.log('Mismo Alumno');
+    }
+    
+}
+
 $('body').on('click', '.box-alumno-generic', function(){
-    $(".overlay-popup").show();
-    $(".perfil-alumno-container").show();
+    var legajo_alumno = $(this).children().data('legajo');
+    $.ajax({
+        url : "index.php/alumno/getDatosAlumno/"+legajo_alumno,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log(data);
+            limpiarPerfilAlumno(data);
+            $(".overlay-popup").show();
+            $(".perfil-alumno-container").show();
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+
 });
 
 $('body').on('click', '.lista-opciones li', function(){
@@ -266,18 +299,23 @@ $('body').on('click', '.lista-opciones li', function(){
 });
     
 $('body').on('click','.close-popup', function(){
-    $('.overlay-popup').fadeOut("slow");
-    $(this).parent().parent().fadeOut("slow");
+    $('.overlay-popup').hide();
+    $(this).parent().parent().hide();
 });
+
+$('body').on('click','.close-popup-tutor', function(){
+    $('.overlay-perfil-tutor').hide();
+    $('.popup-perfil-tutor').hide();
+});
+
 
 $('body').on('click', 'img.tutores-alumno', function(){
     $('.popup-perfil-tutor').show();
     $('.overlay-perfil-tutor').show();
-
-<<<<<<< HEAD
 })
 
-/*Alumno*/    
+/*Alumno*/
+
 $("#misAsignaturas").on("click",function(){
     $.ajax({
         url : "index.php/alumno/getAsignaturas/100001/2014",
@@ -285,7 +323,7 @@ $("#misAsignaturas").on("click",function(){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {    
-            crearSelector(data);
+            crearSelectorAsignatura(data);
             console.log("exito");
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -295,51 +333,97 @@ $("#misAsignaturas").on("click",function(){
     });
 });
 
-function crearSelector(data){
+function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<div class='box-asignatura-generica' data-idasignatura='"+data[i].idcurso+"</div>";
+        var newBox="<div class='box-asignatura-generica' data-idasignatura='"+data[i].idAsignatura+"'>"+data[i].nombre+"</div>";
         conte_btn.append(newBox);
     }
  }
 
 $('body').on("click",".box-asignatura-generica", function(event){    
-    var numCurso = $(this).data('idcurso');
+    
+    var conte_info = $('.contenedor-info');
+    var numAsignatura= $(this).data('idasignatura');
+    var nombre_asignatura = $(this).text();
+    if(!conte_info.size() > 0){        
+        $.ajax({
+            url : "index.php/alumno/cargar_vista_asignatura",
+            type: "GET",
+            dataType: "html",
+            success: function(data, textStatus, jqXHR){            
+                $('#asignatura-info-container').append(data);
+                $('#selector-asignatura').hide();
+                $('.titulo-principal h1').text(nombre_asignatura);
+                $('.titulo-principal h1').attr('data-idasignatura', numAsignatura);
+                cargarInfoAsignatura(numAsignatura);
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        });
+    }else{        
+        $('#selector-curso').hide();
+        $('.titulo-principal h1').text(nombre_curso);
+        conte_info.show();
+        cargarInfoCurso(numCurso);
+    }  
+
+
+});
+
+
+function cargarInfoAsignatura(numAsignatura){    
     $.ajax({
-        url : "index.php/alumno/pruebaVista",
+        url : "index.php/alumno/getNotasAsignatura/100001/"+numAsignatura+"/2014",
         type: "GET",
-        dataType: "html",
-        success: function(data, textStatus, jqXHR){            
-            $('#curso-info-container').append(data);
-            $('#selector-curso').hide();
-            cargarInfoCurso(numCurso);
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log(data);
+            createBoxAlumnos(data);
         },
-        error: function (jqXHR, textStatus, errorThrown){
+        error: function (jqXHR, textStatus, errorThrown)
+        {
             console.log("fallo");
         }
     });
-=======
->>>>>>> fd6fc2b84e02aa9868615ade3a666755b28cc00f
-});
-
-/*
-window.onload=hora;
-fecha = new Date();
-
-function hora(){
-    var hora=fecha.getHours();
-    var minutos=fecha.getMinutes();
-    var segundos=fecha.getSeconds();
-    if(hora<10){ hora='0'+hora;}
-    if(minutos<10){minutos='0'+minutos; }
-    if(segundos<10){ segundos='0'+segundos; }
-    fech=hora+":"+minutos+":"+segundos;
-    document.getElementById('hora').innerHTML=fech;
-    fecha.setSeconds(fecha.getSeconds()+1);
-    setTimeout("hora()",1000);
 }
-*/
+
+$('#temas-dictados').on('click', function(){
+    var numAsignatura = $('.titulo-principal h1').data('idasignatura');
+    var numCurso = 4;
+    $.ajax({
+        url: "index.php/curso/getTemasDictados/"+numCurso+"/"+numAsignatura+"",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    })
+})
+ 
+$('body').on('click','#programa', function(){
+    var numAsignatura = $('.titulo-principal h1').data('idasignatura');
+    var numCurso = 4;
+    $.ajax({
+        url: "index.php/curso/getProgramaAsignatura/"+numCurso+"/"+numAsignatura+"",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    })
+})
+
 
 $(document).ready(function(){
     $('#opciones_1, #opciones_2').click(function() {

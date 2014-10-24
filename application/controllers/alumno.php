@@ -35,4 +35,13 @@ class Alumno extends CI_Controller {
 		$query = $this->Student_Model->get_asignaturas($legajoAlumno, $año);
 		echo json_encode($query);		
 	}
+
+	public function getNotasAsignatura($legajoAlumno, $idAsignatura, $año){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_notas_por_materia($legajoAlumno, $idAsignatura, $año);
+		echo json_encode($query);		
+	}
+	public function cargar_vista_asignatura(){
+		$this->load->view("alumno/info_asignatura");
+	}	
 }

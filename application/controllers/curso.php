@@ -24,4 +24,16 @@ class Curso extends CI_Controller {
 		$query = $this->Curso_Model->get_asistencia_curso($idCurso, $año);
 		echo json_encode($query);
 	 }
+
+	 public function getTemasDictados($idCurso, $idAsignatura){
+	 	$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->get_temario_dictado($idCurso, $idAsignatura);
+		echo json_encode($query);
+	 }
+
+	public function getProgramaAsignatura($idCurso, $idAsignatura){
+	 	$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->get_programa($idCurso, $idAsignatura);
+		echo json_encode($query);
+	}	 
 }

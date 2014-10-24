@@ -39,7 +39,7 @@
 */
 
 //$route['default_controller'] = "docente";
-$route['default_controller'] = "home";
+$route['default_controller'] = "alumno";
 $route['404_override'] = '';
 
 
