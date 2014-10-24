@@ -18,8 +18,7 @@ class Curso_Model extends CI_Model {
                                         i.legajoAlumno = alu.legajoAlumno  and
                                         c.idCurso = $idCurso                                                  
                                         GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre");
-      $query = $string_query->result();      
-      return $this->clear_result($query);
+      return $string_query->result();
     }
 
     function get_all_asignaturas($idCurso, $año){
@@ -75,6 +74,19 @@ class Curso_Model extends CI_Model {
                                         idAsignatura = $idAsignatura");
     }
     /* END TEMARIO DICTADO*/
+
+    function get_programa($idCurso, $idAsignatura){
+      $string_query = $this->db->query("SELECT a.programa 
+                                        FROM Curso c , NivelEducativo ne, Asignatura a
+                                        WHERE c.idNivelEducativo = ne.idNivelEducativo and
+                                              ne.idNivelEducativo = a.idNivelEducativo and
+                                              c.cicloLectivo = 2014 and
+                                              c.idCurso= $idCurso  and
+                                              a.idAsignatura= $idAsignatura");
+      return $string_query->result();
+    }
+
+
 
     function clear_result($query){
         for($i = 0; $i< count($query); $i++){

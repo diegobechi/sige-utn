@@ -36,7 +36,7 @@ class Student_Model extends CI_Model {
     }
 
     function get_asignaturas($legajoAlumno, $cicloLectivo){
-        $string_query = $this->db->query("SELECT DISTINCT a.nombre
+        $string_query = $this->db->query("SELECT DISTINCT a.idAsignatura, a.nombre
                                        FROM Asignatura a, Alumno alu, Inscripcion i, Curso c, HorarioCurso hc
                                        WHERE alu.legajoAlumno = i.legajoAlumno and
                                               i.idCurso = c.idCurso and
@@ -44,14 +44,8 @@ class Student_Model extends CI_Model {
                                               a.idAsignatura = hc.idAsignatura  and          
                                               c.cicloLectivo = $cicloLectivo and
                                               alu.legajoAlumno = $legajoAlumno");
-}
-
-/*<<<<<<< HEAD
-      
-=======
         $query = $string_query->result();
         return $this->clear_result($query);
->>>>>>> 8b679298c549b85da2bf29cb84d459ca3b1a4dd4
     }
 
     function get_tutores($legajoAlumno){
@@ -77,16 +71,15 @@ class Student_Model extends CI_Model {
         return $this->clear_result($query);
     }
 
-    function get_notas_por_materia($legajoAlumno, $año){
+    function get_notas_por_materia($legajoAlumno, $idAsignatura, $año){
         $string_query = $this->db->query("SELECT a.nombre,ce.motivo, ce.calificacion,CONVERT(VARCHAR(11), ce.fecha, 106) as fecha 
                                             FROM Curso c, NivelEducativo ne, Alumno alu, Inscripcion i, Asignatura a, CalificacionEscolar ce 
                                             WHERE alu.legajoAlumno= i.legajoAlumno and i.idCurso = c.idCurso and    
                                             c.idNivelEducativo = ne.idNivelEducativo and a.idNivelEducativo = ne.idNivelEducativo and 
                                             ce.idAsignatura = a.idAsignatura and ce.legajoAlumno = alu.legajoAlumno and 
-                                            alu.legajoAlumno = $legajoAlumno and YEAR(ce.fecha)= $año 
-                                            GROUP BY a.nombre,ce.fecha, ce.calificacion,ce.motivo");
-        $query = $string_query->result();
-        return $this->clear_result($query);
+                                            alu.legajoAlumno = $legajoAlumno and YEAR(ce.fecha)= $año and a.idAsignatura = $idAsignatura
+                                            GROUP BY a.nombre, ce.fecha, ce.motivo, ce.calificacion");
+        return $string_query->result();        
     }
 
     function get_aportes($legajoAlumno){
@@ -106,5 +99,5 @@ class Student_Model extends CI_Model {
         $query = $string_query->result();
         return $this->clear_result($query);
     }
-*/
+
 }
