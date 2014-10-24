@@ -43,5 +43,19 @@ class Alumno extends CI_Controller {
 	}
 	public function cargar_vista_asignatura(){
 		$this->load->view("alumno/info_asignatura");
-	}	
+	}
+
+	public function getTutor($legajoAlumno){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_tutor($legajoAlumno);
+		echo json_encode($query);		
+	}
+
+	public function getAportes($legajoAlumno){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_aportes($legajoAlumno);
+		echo json_encode($query);		
+	}
+
+
 }

@@ -17,7 +17,8 @@ class Curso_Model extends CI_Model {
                                         WHERE i.idCurso = c.idCurso and
                                         i.legajoAlumno = alu.legajoAlumno  and
                                         c.idCurso = $idCurso                                                  
-                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre");
+                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre
+                                        ORDER BY alu.apellido ASC");
       return $string_query->result();
     }
 

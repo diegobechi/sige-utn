@@ -242,7 +242,7 @@ function cargarPerfilAlumno(data){
     $('#perfil-sexo').val(data[0].sexo);
     $('#perfil-fecha-nac').val(data[0].fechaNacimiento);
     $('#perfil-nacionalidad').val(data[0].nacionalidad);
-    $('#perfil-domicilio').val(data[0].idDomicilio);
+    $('#perfil-domicilio').val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
     $('#perfil-tel-fijo').val(data[0].telefonoFijo);
     $('#perfil-tel-movil').val(data[0].telefonoMovil);
     $('#perfil-lugar-nac').val(data[0].lugarNacimiento);
@@ -435,5 +435,11 @@ $(document).ready(function(){
     });
 })
 
-
+    $('#lista-mensajes h3').on('click',function(){
+        if($('#page-wrap').hasClass('vertical')){
+            $('#page-wrap').removeClass('vertical');
+        }else{
+            $('#page-wrap').addClass('vertical');
+        }
+    })
 

@@ -1,7 +1,6 @@
 <ul class="nav nav-tabs">
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
-		<li><a href="#tab_c" data-toggle="tab">MENSAJES</a></li>
 		<li><a href="#tab_d" data-toggle="tab">MIS APORTES</a></li>
 		<li><a href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
 	</ul>
@@ -36,6 +35,63 @@
 		</div>
 	</div><!-- tab content -->
 </div>
+<div id="page-wrap">
+	<div id="lista-mensajes">
+	    <h3>Mensajes (1) </h3>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+
+<script>
+
+</script>
+
+<style>
+
+#lista-mensajes{
+	display: block;
+	position: relative;
+	margin: 40px 0;
+}
+
+#lista-mensajes h3{
+	font: bold 12px Sans-Serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: #369;
+	color: #fff;
+	padding: 5px 10px;
+	margin: 0 0 10px 0;
+	line-height: 24px;
+}
+
+#page-wrap { 
+	width: 200px;
+	right: 0px;
+	top: 10%;
+	position: fixed;
+}
+
+#page-wrap.vertical{
+	right: -200px;
+}
+
+.vertical #lista-mensajes h3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+</style>
+
 
 <style>
 .box-curso-generic{
