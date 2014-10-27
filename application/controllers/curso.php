@@ -43,4 +43,10 @@ class Curso extends CI_Controller {
 		$query = $this->Curso_Model->get_comunicado($idCurso, $fecha_desde, $fecha_hasta);
 		echo json_encode($query);
 	}
+
+	public function getMisDocentes($idCurso){
+		$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->getDocentes($idCurso);
+		echo json_encode($query);
+	}
 }
