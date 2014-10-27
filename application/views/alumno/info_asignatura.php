@@ -10,7 +10,6 @@
 			<li data-title="notas"> <img src="img/alumno.png"/>Notas</li>
 			<li data-title="temas-dictados" id="temas-dictados"> <img src="img/materia.png"/> Temas Dictados</li>
 			<li data-title="programa" id="programa"> <img src="img/listados.png"/>Programa</li>
-			<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>
 			<li data-title="general"> <img src="img/mensajes.png"/>General</li>
 		</div>	
 		<div class ="contenedor-principal alumnos">
@@ -31,9 +30,9 @@
 		    </div>
 		</div>
 
-		<div class = "contenedor-principal asignaturas" style="display:none;">
+		<div class = "contenedor-principal programa" style="display:none;">
 			<div class = "titulo-principal">
-				<h1> <img src="img/book_1.png">  Asignaturas 
+				<h1> <img src="img/book_1.png">  Programa 
 					<select>
 					<option> 2014
 					</option>
@@ -45,41 +44,27 @@
 				</h1>
 		    </div>
 		    	<div class="contenedor-asignaturas">
-			     	<div class= " listado-asignaturas">
-			     		<ul>
-			     			<li class="box-asignatura-generica"> 
-			     				<div class="asignatura-titulo">
-			     					<h3> Asignatura
-			     					</h3>        
-			     				</div>
-			     				<div class="asignatura-body" style = "display:none;">
-			     					ASDASASDASDASDASDAS
-			     				</div>      
-			     			</li>
-			     			<li class="box-asignatura-generica"> 
-			     				<div class="asignatura-titulo">
-			     					<h3> Asignatura
-			     					</h3>        
-			     				</div>
-			     				<div class="asignatura-body" style = "display:none;">
-			     					ASDASASDASDASDASDAS
-			     				</div>      
-			     			</li>
-			     			<li class="box-asignatura-generica"> 
-			     				<div class="asignatura-titulo">
-			     					<h3> Asignatura
-			     					</h3>        
-			     				</div>
-			     				<div class="asignatura-body" style = "display:none;">
-			     					ASDASASDASDASDASDAS
-			     				</div>      
-			     			</li>
-						</ul>
+			     	<div class= " listado-asignaturas">			     		
 			     </div> 
 		    </div>
 		</div>
 
-		<div class="contenedor-principal inasistencias" style="display:none;">
+		<div class="contenedor-principal general" style="display:none;">
+			<div class = "titulo-principal">
+		  	  <span></span>
+		  	   <h1><img src="img/book_1.png"> Informacion General</h1> 
+		    </div>
+			<div>
+     			<label>Luenes 8am a 12am</label>
+     			<label>Luenes 8am a 12am</label>
+     			<label>Luenes 8am a 12am</label>
+     		</div>
+     		<div>
+     			<img src="">
+     			<label>Diego Bechi</label>
+     			<label>diegobechi@gmail.com</label>
+     			<input type="button" value="Ver CV">
+     		</div>
 		</div>
 	</div>
 </div>

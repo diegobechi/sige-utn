@@ -94,6 +94,10 @@ class Curso_Model extends CI_Model {
       return $string_query->result();
     }
 
+    function getDocentes($idCurso){
+      $string_query = $this->db->query("");
+      return $string_query->result();
+    }
 
 
     function clear_result($query){

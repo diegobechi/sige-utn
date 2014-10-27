@@ -19,7 +19,7 @@ class Student_Model extends CI_Model {
     }
     
     function get_student($legajoAlumno){
-        $string_query = $this->db->query("SELECT a.legajoAlumno, a.apellido, a.nombre,a.nroDocumento, a.sexo, a.nacionalidad, CONVERT (char(10), a.fechaNacimiento, 103) as 'fechaNacimiento', a.lugarNacimiento, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento,e.nombre, a.telefonoFijo, a.telefonoMovil
+        $string_query = $this->db->query("SELECT a.legajoAlumno, a.apellido, a.nombre ,a.nroDocumento, a.sexo, a.nacionalidad, CONVERT (char(10), a.fechaNacimiento, 103) as 'fechaNacimiento', a.lugarNacimiento, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento,e.nombre as estado, a.telefonoFijo, a.telefonoMovil
                                           FROM Alumno a , Domicilio d, Estado e
                                           WHERE   a.idDomicilio = d.idDomicilio and a.legajoAlumno = $legajoAlumno and a.idEstado = e.idEstado");
         return $string_query->result();        

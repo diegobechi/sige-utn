@@ -284,7 +284,6 @@ $('body').on('click', '.box-alumno-generic', function(){
             console.log("fallo");
         }
     });
-
 });
 
 $('body').on('click', '.lista-opciones li', function(){
@@ -464,11 +463,70 @@ $(document).ready(function(){
     });
 })
 
-    $('#lista-mensajes h3').on('click',function(){
-        if($('#page-wrap').hasClass('vertical')){
-            $('#page-wrap').removeClass('vertical');
-        }else{
-            $('#page-wrap').addClass('vertical');
+$('#lista-mensajes h3').on('click',function(){
+    if($('#page-wrap').hasClass('vertical')){
+        $('#page-wrap').removeClass('vertical');
+    }else{
+        $('#page-wrap').addClass('vertical');
+    }
+})
+
+$('body').on('click', '#misDatos', function(){
+    //levantar el legajo de la cookie
+    var legajo_alumno = '100001';
+    $.ajax({
+        url : "index.php/alumno/getDatosAlumno/"+legajo_alumno,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log(data);
+            cargarDatosAlumno(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+});
+
+function cargarDatosAlumno(data){
+    $('#perfil-nombre-completo').val(data[0].apellido+', '+data[0].nombre);    
+    $('#perfil-dni').val(data[0].nroDocumento);
+    $('#perfil-sexo').val(data[0].sexo);
+    $('#perfil-fecha-nac').val(data[0].fechaNacimiento);
+    $('#perfil-nacionalidad').val(data[0].nacionalidad);
+    $('#perfil-domicilio').val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
+    $('#perfil-tel-fijo').val(data[0].telefonoFijo);
+    $('#perfil-tel-movil').val(data[0].telefonoMovil);
+    $('#perfil-mail').val(data[0].correoElectronico);
+    $('#perfil-lugar-nac').val(data[0].lugarNacimiento);
+
+    $('#perfil-legajo').val(data[0].legajoAlumno);
+    $('#perfil-estado').val(data[0].estado);
+    $('#perfil-lugar-nac').val();
+    $('#perfil-lugar-nac').val();    
+}
+
+$('body').on('click', '#misDocentes', function(){
+    // Buscar curso en las cookies
+    var idCurso = '2';
+    $.ajax({
+        url: 'index.php/curso/getMisDocentes/'+ idCurso,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito");
+            cargarMisDocentes(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
         }
     })
+})
 
+function cargarMisDocentes(data){
+    var conte = $('#listadoDocentes');
+    for (var i = 0; i < data.length; i++) {
+        var newLine = '<div><h3>'+data[i].apellido+''+data[i].nombre+'</h3><label>'+data[i].asignatura+' '+data[i].correoElectronico+' </label></div>'
+    };
+    $('#conte-listado-docentes').show();
+}
