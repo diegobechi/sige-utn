@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs">
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
-		<li><a href="#tab_d" data-toggle="tab">MIS APORTES</a></li>
+		<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
 		<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
 	</ul>
 	<div class="tab-content">
@@ -20,10 +20,14 @@
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_c">
-			<h4>MENSAJES</h4>
-			<div>
-				<div>PANEL PARA ENVIAR MENSAJES</div>
-				<div>PANEL PARA LEER MENSAJES</div>
+			<div id="aportes-info-container">
+				<table style="display:none;">
+					<thead>
+					</thead>
+					<tbody class="aportes-alumno">
+						
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_d">

@@ -13,13 +13,6 @@ class Alumno extends CI_Controller {
             $año = getdate();
             $año = $año['year'];
         }
-		/*$query = $this->Student_Model->get_assistence($legajo, $año);*/
-		/*$query = $this->Student_Model->get_student($legajo);*/
-		/*$query = $this->Student_Model->get_notas_por_materia($legajo, $año);*/
-
-		/*echo "<pre>";
-		print_r($query);
-		die();*/
 
 		$this->load->view("alumno/main");
 		$this->load->view('footer');

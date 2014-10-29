@@ -313,6 +313,29 @@ $('body').on('click', 'img.tutores-alumno', function(){
     $('.overlay-perfil-tutor').show();
 })
 
+$('body').on('click', '#misAportes', function(){
+    $.ajax({
+        url: "index.php/alumno/getAportes/1000001",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){    
+            crearListadoAportes(data);
+            console.log("exito");
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+})
+
+function crearListadoAportes(data){
+    var conte = $('.aportes-alumno');
+    for(var i=0, i < data.length, i++){
+        var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+data[i].importe+'</td><td>'+data[i].fecha+'</td></tr>';
+        conte.append(new_line);
+    }
+}
+
 /*Alumno*/
 
 $("#misAsignaturas").on("click",function(){

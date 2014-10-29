@@ -62,7 +62,6 @@ class Student_Model extends CI_Model {
                                           WHERE a.legajoAlumno = gf.legajoAlumno and
                                           t.idTutor = gf.idTutor and
                                           t.idTutor = $idTutor;");
-
     }
 
     function get_assistence($legajoAlumno, $año){       
@@ -84,14 +83,19 @@ class Student_Model extends CI_Model {
     }
 
     function get_aportes($legajoAlumno){
-        $string_query = $this->db->query( "SELECT mc.nroComprobante,mc.tipoMovimiento, mc.fecha, mc.importe 
-                                           FROM Alumno a, Matricula m, MatriculaAlumno ma, Cuota c, CuotaGrupoFamiliar cgf, GrupoFamiliar gf, MovimientoCaja mc, Curso cu
-                                           WHERE mc.idMatriculaAlumno = ma.idMatriculaAlumno and
-                                              mc.idCuotaGrupoFamiliar = cgf.idCuotaGrupoFamiliar and
-                                              cgf.idCuota = c.idCuota and
-                                                 a.legajoAlumno = ma.legajoAlumno and
-                                                 ma.idMatricula = m.idMatricula and 
-                                                 a.legajoAlumno = $legajoAlumno");
+        $string_query = $this->db->query( "SELECT DISTINCT mc.nroComprobante,mc.descripcion, mc.importe,CONVERT(VARCHAR(11), mc.fecha, 106) as 'Fecha de pago'
+                                            FROM   MovimientoCaja mc,  CuotaGrupoFamiliar cgf,Tutor t, GrupoFamiliar gf, Alumno a, Cuota c
+                                            WHERE  mc.idCuotaGrupoFamiliar = cgf.idCuotaGrupoFamiliar and
+                                                   cgf.idTutor = t.idTutor and 
+                                                   gf.idTutor = t.idTutor and
+                                                   gf.legajoAlumno = a.legajoAlumno and
+                                                   a.legajoAlumno = $legajoAlumno UNION
+                                            SELECT DISTINCT  mc.nroComprobante,mc.descripcion, mc.importe,CONVERT(VARCHAR(11), mc.fecha, 106)  
+                                            FROM MatriculaAlumno ma, Alumno a, Matricula m,Tutor t, MovimientoCaja mc
+                                            WHERE ma.legajoAlumno = a.legajoAlumno and
+                                                  ma.idMatricula= m.idMatricula and 
+                                                  mc.idMatriculaAlumno = ma.idMatriculaAlumno and
+                                                  a.legajoAlumno = $legajoAlumno");
         return $string_query->result();
     }
     function get_sanciones($legajoAlumno){
