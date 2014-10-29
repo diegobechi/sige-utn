@@ -49,4 +49,10 @@ class Curso extends CI_Controller {
 		$query = $this->Curso_Model->getDocentes($idCurso);
 		echo json_encode($query);
 	}
+
+	public function getMisHorarios($idCurso){
+		$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->getHorarios($idCurso);
+		echo json_encode($query);
+	}
 }

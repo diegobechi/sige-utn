@@ -543,7 +543,7 @@ function cargarDatosAlumno(data){
 
 $('body').on('click', '#misDocentes', function(){
     // Buscar curso en las cookies
-    var idCurso = '2';
+    var idCurso = '4';
     $.ajax({
         url: 'index.php/curso/getMisDocentes/'+ idCurso,
         type: 'GET',
@@ -561,7 +561,79 @@ $('body').on('click', '#misDocentes', function(){
 function cargarMisDocentes(data){
     var conte = $('#listadoDocentes');
     for (var i = 0; i < data.length; i++) {
-        var newLine = '<div><h3>'+data[i].apellido+''+data[i].nombre+'</h3><label>'+data[i].asignatura+' '+data[i].correoElectronico+' </label></div>'
+        var newLine = '<div><div><img src="img/alumno.png"></div><div><h4>'+data[i].apellido+''+data[i].nombre+'</h4><span>'+data[i].asignatura+'</span><span>'+data[i].correoElectronico+'</span></div></div></div>';
+        conte.append(newLine);
     };
     $('#conte-listado-docentes').show();
+    $('.overlay-popup').show();
+}
+
+$('body').on('click', '#misHorarios', function(){
+    // Buscar curso en las cookies
+    var idCurso = '4';
+    $.ajax({
+        url: 'index.php/curso/getMisHorarios/'+ idCurso,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito");
+            cargarMisHorarios(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+})
+
+function cargarMisHorarios(data){
+    var conte = $('.cuerpo-tabla-horarios');
+    if(data.length > 0){
+        var contador = 0;
+        var newLine = "";
+        for (var i = 0; i < data.length; i++) {
+            if(contador == 0){
+                newLine += '<tr>';
+            }
+            newLine += '<td><div>'+data[i].nombre+'</div><div>'+data[i].horaInicio+' - '+data[i].horaFin+'</div></td>';
+            contador++;
+            if (contador == 7){
+                newLine += '</tr>';
+                contador = 0;
+            };            
+        };
+        conte.append(newLine);
+    }
+    $('#conte-listado-horarios').show();
+    $('.overlay-popup').show();
+}
+
+$('body').on('click', '#misTutores', function(){
+    // Buscar curso en las cookies
+    var legajoAlumno = '100002';
+    $.ajax({
+        url: 'index.php/alumno/getTutor/'+ legajoAlumno,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito");
+            cargarDatosTutor(data);            
+            $(".overlay-popup").show();
+            $(".perfil-tutor-container").show();
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+})
+
+function cargarDatosTutor(data){
+    $('#tutor-nombre-completo').val(data[0].apellido+', '+data[0].nombre);    
+    $('#tutor-dni').val(data[0].nroDocumento);
+    $('#tutor-sexo').val(data[0].sexo);
+    $('#tutor-fecha-nac').val(data[0].fechaNacimiento);
+    $('#tutor-estado').val(data[0].estado);
+    $('#tutor-domicilio').val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
+    $('#tutor-tel-fijo').val(data[0].telefonoFijo);
+    $('#tutor-tel-movil').val(data[0].telefonoMovil);
+    $('#tutor-mail').val(data[0].correoElectronico);  
 }
