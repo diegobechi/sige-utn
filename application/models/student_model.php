@@ -19,9 +19,16 @@ class Student_Model extends CI_Model {
     }
     
     function get_student($legajoAlumno){
-        $string_query = $this->db->query("SELECT a.legajoAlumno, a.apellido, a.nombre ,a.nroDocumento, a.sexo, a.nacionalidad, CONVERT (char(10), a.fechaNacimiento, 103) as 'fechaNacimiento', a.lugarNacimiento, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento,e.nombre as estado, a.telefonoFijo, a.telefonoMovil
-                                          FROM Alumno a , Domicilio d, Estado e
-                                          WHERE   a.idDomicilio = d.idDomicilio and a.legajoAlumno = $legajoAlumno and a.idEstado = e.idEstado");
+        $string_query = $this->db->query("SELECT a.apellido, a.nombre,a.nroDocumento, a.sexo,CONVERT(VARCHAR(11),a.fechaNacimiento, 106) as 'fecha nacimiento',a.nacionalidad, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento, a.telefonoFijo, a.telefonoMovil,a.lugarNacimiento,a.legajoAlumno, ne.division, COUNT(*) as Inasistencias, e.nombre as 'Estado Academico'
+                                          FROM Alumno a , Domicilio d, Inscripcion i, Curso c, NivelEducativo ne, AsistenciaAlumno aa, Estado e
+                                          WHERE  a.idDomicilio = d.idDomicilio and
+                                                 a.legajoAlumno = i.legajoAlumno and
+                                                 c.idCurso = i.idCurso and
+                                                 c.idNivelEducativo = ne.idNivelEducativo and 
+                                                 a.legajoAlumno = aa.legajoAlumno and 
+                                                 a.idEstado = e.idEstado and
+                                                 a.legajoAlumno =$legajoAlumno 
+                                          GROUP BY a.apellido, a.nombre, a.nroDocumento, a.sexo,a.fechaNacimiento, a.nacionalidad,a.correoElectronico,d.calle,d.numero,d.piso,d.departamento,a.telefonoFijo,a.telefonoMovil,a.lugarNacimiento, a.legajoAlumno, ne.division, e.nombre");
         return $string_query->result();        
     }
 
@@ -83,7 +90,7 @@ class Student_Model extends CI_Model {
     }
 
     function get_aportes($legajoAlumno){
-        $string_query = $this->db->query( "SELECT DISTINCT mc.nroComprobante,mc.descripcion, mc.importe,CONVERT(VARCHAR(11), mc.fecha, 106) as 'Fecha de pago'
+        $string_query = $this->db->query( "SELECT DISTINCT mc.nroComprobante,mc.descripcion, mc.importe,CONVERT(VARCHAR(11), mc.fecha, 106) as 'fecha'
                                             FROM   MovimientoCaja mc,  CuotaGrupoFamiliar cgf,Tutor t, GrupoFamiliar gf, Alumno a, Cuota c
                                             WHERE  mc.idCuotaGrupoFamiliar = cgf.idCuotaGrupoFamiliar and
                                                    cgf.idTutor = t.idTutor and 

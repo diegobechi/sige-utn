@@ -315,7 +315,7 @@ $('body').on('click', 'img.tutores-alumno', function(){
 
 $('body').on('click', '#misAportes', function(){
     $.ajax({
-        url: "index.php/alumno/getAportes/1000001",
+        url: "index.php/alumno/getAportes/100012",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){    
@@ -330,8 +330,8 @@ $('body').on('click', '#misAportes', function(){
 
 function crearListadoAportes(data){
     var conte = $('.aportes-alumno');
-    for(var i=0, i < data.length, i++){
-        var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+data[i].importe+'</td><td>'+data[i].fecha+'</td></tr>';
+    for(var i=0; i < data.length; i++){
+        var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+parseFloat(data[i].importe).toFixed(2)+'</td><td>'+data[i].fecha+'</td></tr>';
         conte.append(new_line);
     }
 }
@@ -496,7 +496,7 @@ $('#lista-mensajes h3').on('click',function(){
 
 $('body').on('click', '#misDatos', function(){
     //levantar el legajo de la cookie
-    var legajo_alumno = '100001';
+    var legajo_alumno = '100012';
     $.ajax({
         url : "index.php/alumno/getDatosAlumno/"+legajo_alumno,
         type: "GET",
