@@ -83,7 +83,7 @@ class Student_Model extends CI_Model {
     }
 
     function get_aportes($legajoAlumno){
-        $string_query = $this->db->query( "SELECT DISTINCT mc.nroComprobante,mc.descripcion, mc.importe,CONVERT(VARCHAR(11), mc.fecha, 106) as 'Fecha de pago'
+        $string_query = $this->db->query( "SELECT DISTINCT mc.nroComprobante,mc.descripcion, mc.importe,CONVERT(VARCHAR(11), mc.fecha, 106) as 'fecha'
                                             FROM   MovimientoCaja mc,  CuotaGrupoFamiliar cgf,Tutor t, GrupoFamiliar gf, Alumno a, Cuota c
                                             WHERE  mc.idCuotaGrupoFamiliar = cgf.idCuotaGrupoFamiliar and
                                                    cgf.idTutor = t.idTutor and 

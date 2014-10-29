@@ -330,9 +330,14 @@ $('body').on('click', '#misAportes', function(){
 
 function crearListadoAportes(data){
     var conte = $('.aportes-alumno');
-    for(var i=0, i < data.length, i++){
-        var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+data[i].importe+'</td><td>'+data[i].fecha+'</td></tr>';
-        conte.append(new_line);
+    if(data.length >= 1){
+        for(var i=0; i < data.length; i++){
+            var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+data[i].importe+'</td><td>'+data[i].fecha+'</td></tr>';
+            conte.append(new_line);
+        }
+    }else{
+        var sinAportes = "Usted no ha realizado aportes al dia de la fecha.";
+        conte.append(sinAportes);
     }
 }
 
@@ -468,12 +473,16 @@ function buscarComunicadoWeb(){
 
 function cargarComunicadoWeb(data){
     var conte = $("#lista-mensajes");
-    $("#cantMensajes").text("(" + data.length+")");
-    for (var i = 0 ; i<data.length; i++){
-        var nuevaLinea = "<div><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
-        conte.append(nuevaLinea);
+    if(data.length >= 1){
+        $("#cantMensajes").text("(" + data.length+")");
+        for (var i = 0 ; i<data.length; i++){
+            var nuevaLinea = "<div><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+            conte.append(nuevaLinea);
+        }
+    }else{
+        var sinMensajes = " Este curso no tiene mensajes nuevos ";
+        conte.append(sinMensajes);
     }
-
 }
 
 $(document).ready(function(){
