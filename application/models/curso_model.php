@@ -95,10 +95,27 @@ class Curso_Model extends CI_Model {
     }
 
     function getDocentes($idCurso){
-      $string_query = $this->db->query("");
+      $string_query = $this->db->query("SELECT DISTINCT d.apellido, d.nombre, a.nombre as 'asignatura' 
+                                        FROM HorarioCurso hc, Docente d, Curso c, Asignatura a, Turno t
+                                        WHERE hc.legajoDocente = d.legajoDocente and
+                                           hc.idCurso = c.idCurso and
+                                           hc.idAsignatura = a.idAsignatura and
+                                           c.idTurno = t.idTurno and 
+                                           c.idCurso = $idCurso");
       return $string_query->result();
     }
 
+    function getHorarios($idCurso){
+      $string_query = $this->db->query("SELECT DISTINCT SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio', SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin',hc.diaSemana,a.nombre
+                                        FROM HorarioCurso hc, Asignatura a, Inscripcion i, Alumno alu, Curso c
+                                        WHERE   hc.idCurso = c.idCurso and
+                                                hc.idAsignatura = a.idAsignatura and
+                                                alu.legajoAlumno = i.legajoAlumno and
+                                                i.idCurso = c.idCurso and
+                                                c.idCurso = $idCurso 
+                                                order by SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) ");
+      return $string_query->result();
+    }
 
     function clear_result($query){
         for($i = 0; $i< count($query); $i++){
