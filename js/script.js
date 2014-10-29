@@ -314,18 +314,21 @@ $('body').on('click', 'img.tutores-alumno', function(){
 })
 
 $('body').on('click', '#misAportes', function(){
-    $.ajax({
-        url: "index.php/alumno/getAportes/100012",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){    
-            crearListadoAportes(data);
-            console.log("exito");
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    })
+    var aportes = $('.aportes-alumno tr').size()
+    if(aportes== 0){   
+        $.ajax({
+            url: "index.php/alumno/getAportes/100012",
+            type: "GET",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR){    
+                crearListadoAportes(data);
+                console.log("exito");
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        })
+    }
 })
 
 function crearListadoAportes(data){
@@ -534,8 +537,8 @@ function cargarDatosAlumno(data){
 
     $('#perfil-legajo').val(data[0].legajoAlumno);
     $('#perfil-estado').val(data[0].estado);
-    $('#perfil-lugar-nac').val();
-    $('#perfil-lugar-nac').val();    
+    $('#perfil-inasistencias').val(data[0].inasistencias);
+    $('#perfil-curso').val(data[0].division +' '+data[0].seccion);    
 }
 
 $('body').on('click', '#misDocentes', function(){

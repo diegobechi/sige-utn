@@ -21,7 +21,7 @@
 		</div>
 		<div class="tab-pane fade" id="tab_c">
 			<div id="aportes-info-container">
-				<table style="display:none;">
+				<table >
 					<thead>
 					</thead>
 					<tbody class="aportes-alumno">
