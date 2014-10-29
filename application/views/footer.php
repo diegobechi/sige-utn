@@ -1,14 +1,6 @@
 
 		<script src="js/libs/jquery-1.7.2.min.js"></script>
 		<script src="js/libs/jquery-ui-1.8.22.custom.min.js"></script>
-		<script src="js/libs/jquery.autocomplete-min.js"></script>
-		<script src="js/libs/ajaxfileupload.js"></script>  
-		<script src="js/libs/twitter-text.js"></script>
-		<script src="js/libs/jquery.ui.core.js"></script>
-		<script src="js/libs/jquery.ui.datepicker.js"></script>
-		<script src="js/libs/jquery-ui.multidatespicker.js"></script>
-		<script src="js/libs/json2.js"></script>
-		<script src="js/libs/jquery.mousewheel.js"></script>
 		<script src="js/libs/mwheelIntent.js"></script>
 		<script src="js/libs/jquery.jscrollpane.min.js"></script> 
 		<script src="js/libs/jquery.oauthpopup.js"></script> 

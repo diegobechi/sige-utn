@@ -13,7 +13,6 @@ class Docente extends CI_Controller {
 		/*$this->load->view("docente/listados");
 		$this->load->view("docente/info_asignaturas");
 		$this->load->view("docente/perfilAlumno");*/
-		/*$this->load->view("docente/enviarMensaje");*/
 		$this->load->view('footer');
 
 		/*$this->load->model(array('Teacher_Model','Curso_Model'));
