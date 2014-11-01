@@ -524,7 +524,7 @@ $('body').on('click', '#misDatos', function(){
 });
 
 function cargarDatosAlumno(data){
-    $('#perfil-nombre-completo').val(data[0].apellido+', '+data[0].nombre);    
+    $('#perfil-nombre-completo').val(data[0].apellido+', '+data[0].nombre);   
     $('#perfil-dni').val(data[0].nroDocumento);
     $('#perfil-sexo').val(data[0].sexo);
     $('#perfil-fecha-nac').val(data[0].fechaNacimiento);
@@ -587,22 +587,11 @@ $('body').on('click', '#misHorarios', function(){
 
 function cargarMisHorarios(data){
     var conte = $('.cuerpo-tabla-horarios');
-    if(data.length > 0){
-        var contador = 0;
-        var newLine = "";
-        for (var i = 0; i < data.length; i++) {
-            if(contador == 0){
-                newLine += '<tr>';
-            }
-            newLine += '<td><div>'+data[i].nombre+'</div><div>'+data[i].horaInicio+' - '+data[i].horaFin+'</div></td>';
-            contador++;
-            if (contador == 7){
-                newLine += '</tr>';
-                contador = 0;
-            };            
-        };
+    var newLine = "";
+    for (var i = 0; i < data.Lunes.length; i++) {
+        var newLine = "<tr><td>"+data.Lunes[i].nombre+"</br>"+data.Lunes[i].horaInicio+" - "+data.Lunes[i].horaFin+"</td><td>"+data.Martes[i].nombre+"</br>"+data.Martes[i].horaInicio+" - "+data.Martes[i].horaFin+"</td><td>"+data.Miércoles[i].nombre+"</br>"+data.Miércoles[i].horaInicio+" - "+data.Miércoles[i].horaFin+"</td><td>"+data.Jueves[i].nombre+"</br>"+data.Jueves[i].horaInicio+" - "+data.Jueves[i].horaFin+"</td><td>"+data.Viernes[i].nombre+"</br>"+data.Viernes[i].horaInicio+" - "+data.Viernes[i].horaFin+"</td></tr>";      
         conte.append(newLine);
-    }
+    };
     $('#conte-listado-horarios').show();
     $('.overlay-popup').show();
 }
@@ -627,7 +616,7 @@ $('body').on('click', '#misTutores', function(){
 })
 
 function cargarDatosTutor(data){
-    $('#tutor-nombre-completo').val(data[0].apellido+', '+data[0].nombre);    
+    $('#perfil-nombre-header').text(data[0].apellido+', '+data[0].nombre);
     $('#tutor-dni').val(data[0].nroDocumento);
     $('#tutor-sexo').val(data[0].sexo);
     $('#tutor-fecha-nac').val(data[0].fechaNacimiento);
@@ -637,3 +626,5 @@ function cargarDatosTutor(data){
     $('#tutor-tel-movil').val(data[0].telefonoMovil);
     $('#tutor-mail').val(data[0].correoElectronico);  
 }
+
+
