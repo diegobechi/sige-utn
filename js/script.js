@@ -142,7 +142,7 @@ $(".home-niveles-masinfo").on( "click", function() {
 /*Docente*/
 $("#misCursos").on("click",function(){
     $.ajax({
-        url : "index.php/docente/getCursos/10002/2014",
+        url : "index.php/docente/getCursos/100018/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -317,7 +317,7 @@ $('body').on('click', '#misAportes', function(){
     var aportes = $('.aportes-alumno tr').size()
     if(aportes== 0){   
         $.ajax({
-            url: "index.php/alumno/getAportes/100012",
+            url: "index.php/alumno/getAportes/100018",
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){    
@@ -348,7 +348,7 @@ function crearListadoAportes(data){
 
 $("#misAsignaturas").on("click",function(){
     $.ajax({
-        url : "index.php/alumno/getAsignaturas/100001/2014",
+        url : "index.php/alumno/getAsignaturas/100018/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -406,7 +406,7 @@ $('body').on("click",".box-asignatura-generica", function(event){
 
 function cargarInfoAsignatura(numAsignatura){    
     $.ajax({
-        url : "index.php/alumno/getNotasAsignatura/100001/"+numAsignatura+"/2014",
+        url : "index.php/alumno/getNotasAsignatura/100018/"+numAsignatura+"/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
@@ -422,7 +422,7 @@ function cargarInfoAsignatura(numAsignatura){
 
 $('#temas-dictados').on('click', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 4;
+    var numCurso = 1;
     $.ajax({
         url: "index.php/curso/getTemasDictados/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
@@ -439,7 +439,7 @@ $('#temas-dictados').on('click', function(){
  
 $('body').on('click','#programa', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 4;
+    var numCurso = 1;
     $.ajax({
         url: "index.php/curso/getProgramaAsignatura/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
@@ -508,7 +508,7 @@ $('#lista-mensajes h3').on('click',function(){
 
 $('body').on('click', '#misDatos', function(){
     //levantar el legajo de la cookie
-    var legajo_alumno = '100012';
+    var legajo_alumno = '100018';
     $.ajax({
         url : "index.php/alumno/getDatosAlumno/"+legajo_alumno,
         type: "GET",
@@ -543,7 +543,7 @@ function cargarDatosAlumno(data){
 
 $('body').on('click', '#misDocentes', function(){
     // Buscar curso en las cookies
-    var idCurso = '4';
+    var idCurso = '1';
     $.ajax({
         url: 'index.php/curso/getMisDocentes/'+ idCurso,
         type: 'GET',
@@ -570,7 +570,7 @@ function cargarMisDocentes(data){
 
 $('body').on('click', '#misHorarios', function(){
     // Buscar curso en las cookies
-    var idCurso = '4';
+    var idCurso = '1';
     $.ajax({
         url: 'index.php/curso/getMisHorarios/'+ idCurso,
         type: 'GET',
@@ -609,7 +609,7 @@ function cargarMisHorarios(data){
 
 $('body').on('click', '#misTutores', function(){
     // Buscar curso en las cookies
-    var legajoAlumno = '100002';
+    var legajoAlumno = '100018';
     $.ajax({
         url: 'index.php/alumno/getTutor/'+ legajoAlumno,
         type: 'GET',
