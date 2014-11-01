@@ -106,15 +106,21 @@ class Curso_Model extends CI_Model {
     }
 
     function getHorarios($idCurso){
-      $string_query = $this->db->query("SELECT DISTINCT SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio', SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin',hc.diaSemana,a.nombre
-                                        FROM HorarioCurso hc, Asignatura a, Inscripcion i, Alumno alu, Curso c
-                                        WHERE   hc.idCurso = c.idCurso and
-                                                hc.idAsignatura = a.idAsignatura and
-                                                alu.legajoAlumno = i.legajoAlumno and
-                                                i.idCurso = c.idCurso and
-                                                c.idCurso = $idCurso 
-                                                order by SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) ");
-      return $string_query->result();
+      $string_query = $this->db->query("SELECT hc.diaSemana, hc.horaInicio, hc.horaFin , a.nombre FROM HorarioCurso hc,Asignatura a  WHERE hc.idCurso = $idCurso and a.idAsignatura = hc.idAsignatura and hc.diaSemana = 'Lunes'
+                                        UNION
+                                        SELECT hc.diaSemana,hc.horaInicio, hc.horaFin ,  a.nombre FROM HorarioCurso hc,Asignatura a  WHERE hc.idCurso = $idCurso and a.idAsignatura = hc.idAsignatura and hc.diaSemana = 'Martes'
+                                        UNION
+                                        SELECT hc.diaSemana,hc.horaInicio, hc.horaFin ,  a.nombre FROM HorarioCurso hc,Asignatura a  WHERE hc.idCurso = $idCurso and a.idAsignatura = hc.idAsignatura and hc.diaSemana = 'Miércoles'
+                                        UNION
+                                        SELECT hc.diaSemana,hc.horaInicio, hc.horaFin ,   a.nombre FROM HorarioCurso hc,Asignatura a  WHERE hc.idCurso = $idCurso and a.idAsignatura = hc.idAsignatura and hc.diaSemana = 'Jueves'
+                                        UNION
+                                        SELECT hc.diaSemana,hc.horaInicio, hc.horaFin ,   a.nombre FROM HorarioCurso hc,Asignatura a  WHERE hc.idCurso = $idCurso and a.idAsignatura = hc.idAsignatura and hc.diaSemana = 'Viernes'
+
+                                        ORDER BY diaSemana, horaInicio");
+      $query = $string_query->result();
+      $query = $this->clear_result($query);
+      return $query;
+     
     }
 
     function clear_result($query){

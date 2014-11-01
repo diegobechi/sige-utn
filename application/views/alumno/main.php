@@ -98,7 +98,7 @@
 						<h3>Mis Horarios</h3>
 						<div id="listadoHorarios">
 							<table id="tablaHorarios">
-								<!--<thead>
+								<thead>
 									<tr>
 										<td>Lunes</td>
 										<td>Martes</td>
@@ -106,10 +106,20 @@
 										<td>Jueves</td>
 										<td>Viernes</td>
 									</tr>
-								</thead>-->
+								</thead>
 								<tbody class="cuerpo-tabla-horarios">
 								</tbody>
 							</table>
+							<div class="footer-horarios">
+								<div>
+									<img src="img/Colegio/0. Escudo.jpg">
+									<label>Instituto Santa Teresita</label>
+								</div>
+								<div>
+									<span>Telefono: 0351-153240621</span>
+									<span>Mail: santateresita@gmail.com</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
