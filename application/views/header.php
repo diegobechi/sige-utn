@@ -14,4 +14,5 @@
         <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.css"> 
         <link rel="stylesheet" type="text/css" href="css/bootstrap-image-gallery.css">
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    </head><body>
+    </head>
+    <body>

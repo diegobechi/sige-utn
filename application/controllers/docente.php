@@ -7,22 +7,8 @@ class Docente extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('menuUp');
-		$this->load->view('docente/main');	
-		/*$this->load->view('docente/selectorCurso');*/
-		/*$this->load->view("docente/info_curso");*/
-		/*$this->load->view("docente/listados");
-		$this->load->view("docente/info_asignaturas");
-		$this->load->view("docente/perfilAlumno");*/
+		$this->load->view('docente/main');
 		$this->load->view('footer');
-
-		/*$this->load->model(array('Teacher_Model','Curso_Model'));
-
-		/*$query = $this->Teacher_Model->get_asignaturas();*/
-		/*$query = $this->Curso_Model->get_all_students();*/
-		/*echo "<pre>";
-		print_r($query);
-		die();*/
-
 	}
 
 	public function getCursos($legajoDocente, $año){
