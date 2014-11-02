@@ -75,7 +75,12 @@ class Curso extends CI_Controller {
 			}
 			$cont = 0;
 		}
-		echo json_encode($horarios);
-		
+		echo json_encode($horarios);		
+	}
+
+	public function getDatosAsignaturas($idCurso,$idAsignatura){
+		$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->getDatosGeneralesAsignaturas($idCurso,$idAsignatura);
+		echo json_encode($query);
 	}
 }

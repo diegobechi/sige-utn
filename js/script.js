@@ -342,6 +342,8 @@ function crearListadoAportes(data){
         var sinAportes = "Usted no ha realizado aportes al dia de la fecha.";
         conte.append(sinAportes);
     }
+    
+    
 }
 
 /*Alumno*/
@@ -627,4 +629,88 @@ function cargarDatosTutor(data){
     $('#tutor-mail').val(data[0].correoElectronico);  
 }
 
+$('body').on('click', '#retirarPersonas', function(){
+    // Buscar tutor en las cookies
+    cargarPersonasAutorizadas();
+})
 
+function cargarPersonasAutorizadas(){
+    var idTutor = '2';
+    $.ajax({
+        url: 'index.php/alumno/get_personasAutorizadas/'+ idTutor,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito");
+            var conte = $('#listadoAutorizados');
+            conte.empty();
+            var newLine = "";
+            for (var i = 0; i < data.length; i++) {
+                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido_nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>EDIT</span></td></tr>";      
+                conte.append(newLine);
+            };
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+}
+
+$('body').on('click', '.editarAutorizado', function(){
+    // Buscar tutor en las cookies
+    var infoAutorizado = $(this).parent().parent();
+    var persona = {};
+    persona.idTutor = infoAutorizado.data('tutor');
+    persona.nombreCompleto = infoAutorizado.children().children().eq(0).val();
+    persona.nroDocumento = infoAutorizado.children().children().eq(1).val();
+    persona.telefono = infoAutorizado.children().children().eq(2).val();
+    persona.relacion = infoAutorizado.children().children().eq(3).val();
+
+    console.log(persona);
+})
+
+$('body').on('click', '.eliminarAutorizado', function(){
+    // Buscar tutor en las cookies
+    var idTutor = $(this).parent().parent().data('tutor');
+    var nroDoc = $(this).parent().parent().data('autorizado');
+    $.ajax({
+        url: 'index.php/alumno/delete_personasAutorizadas/'+ idTutor+"/"+nroDoc,
+        type: 'SET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito");
+            cargarPersonasAutorizadas();
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+})
+
+$('body').on('click', '#agregarPermitidas', function(){
+    // Buscar tutor en las cookies
+    var persona = {};
+    persona.idTutor = $('#permita-idTutor').val();
+    persona.nombreCompleto = $('#permita-nombre').val();
+    persona.nroDocumento = $('#permita-dni').val();
+    persona.telefono = $('#permita-num').val();
+    persona.relacion = $('#permita-relacion').val();
+
+    $.ajax({
+        url: 'index.php/alumno/set_personasAutorizadas/'+ persona.idTutor+"/"+ persona.nombreCompleto+"/"+ persona.nroDocumento+"/"+ persona.telefono+"/"+ persona.relacion,
+        type: 'SET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito Guardando");
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("Fallo Guardando");
+            cargarPersonasAutorizadas();
+            $('#permita-idTutor').val('');
+            $('#permita-nombre').val('');
+            $('#permita-dni').val('');
+            $('#permita-num').val('');
+            $('#permita-relacion').val('');
+        }
+    })
+})

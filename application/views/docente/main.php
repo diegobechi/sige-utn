@@ -1,4 +1,5 @@
 <ul class="nav nav-tabs">
+		<label class="label-menu-superior-general">INSTITUTO SANTA TERESITA</label>
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 		<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
 		<li><a href="#tab_c" data-toggle="tab">MENSAJES</a></li>

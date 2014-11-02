@@ -1,4 +1,5 @@
-<ul class="nav nav-tabs">
+<label class="label-menu-superior-general">INSTITUTO SANTA TERESITA</label>
+<ul class="nav nav-tabs" style="background-color: #000;">	
 	<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 	<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
 	<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
@@ -20,9 +21,19 @@
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_c">
+
 			<div id="aportes-info-container">
-				<table >
+				<div>
+					<h1>Listado de aranceles:</h1>
+				</div>
+				<table id="tablaAportes">
 					<thead>
+						<tr>
+							<td>Ticket</td>
+							<td>Arancel</td>
+							<td>Precio</td>
+							<td>Fecha</td>
+						</tr>
 					</thead>
 					<tbody class="aportes-alumno">
 
@@ -59,9 +70,11 @@
 
 				<div class="box-generic academicos">
 					<h3>Acciones</h3>
-					<input id="misTutores" type="button" value="Ver Tutores">
-					<input id="misHorarios" type="button" value="Mis Horarios">					
-					<input id="misDocentes" type="button" value="Mis Docentes">
+					<div class="botones-datos-personales">
+						<input id="misTutores" type="button" value="Ver Tutores">
+						<input id="misHorarios" type="button" value="Mis Horarios">					
+						<input id="misDocentes" type="button" value="Mis Docentes">
+					</div>
 				</div>
 				<div class="overlay-popup"style = "display:none;"></div>
 				<div class="perfil-tutor-container" style = "display:none;">
@@ -76,6 +89,8 @@
 						<div class="container-right">
 							<ul class="nav nav-tabs" role="tablist">
 							  <li class="active"><a href="#profile" role="tab" data-toggle="tab">Informacion Personal</a></li>
+							  <li class=""><a id="retirarPersonas" href="#personas-premitidas" role="tab" data-toggle="tab">Personas Retirar</a></li>
+							  <li class=""><a class="nueva-permitida" href="#nueva-premitida" role="tab" data-toggle="tab" style="display:none;">Asociar Nueva Persona</a></li>
 							</ul>
 							<div class="tab-content">
 							  <div class="tab-pane active" id="profile">							  	
@@ -89,12 +104,37 @@
 							  	<label>Correo Electronico</label><input id="tutor-mail" type="text"><br>
 							  	
 							  </div>
+							  <div class="tab-pane " id="personas-premitidas">							  	
+							  	<table>
+							  		<thead>
+							  			<tr>
+							  				<td></td>
+							  				<td>Nombre Completo</td>
+							  				<td>Nro Documento</td>
+							  				<td>Telefono</td>
+							  				<td>Relacion</td>
+							  				<td></td>
+							  			</tr>
+							  		</thead>
+							  		<tbody id="listadoAutorizados">
+							  		</tbody>
+							  	</table>
+							  	<div class="nuevaPersonaPermitida">
+							  		<input id="permita-idTutor" type="text" value="2">
+							  		<input id="permita-nombre" type="text" placeholder="Nombre completo...">
+								  	<input id="permita-dni" type="text" placeholder="Nro documento.."> <br>
+								  	<input id="permita-num" type="text" placeholder="Telefono...">
+								  	<input id="permita-relacion" type="text" placeholder="Relación..."> <br>
+								  	<input type="button" value="Agregar" id="agregarPermitidas">
+							  	</div>							  	
+							  </div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="conte-listado-horarios" style="display:none;">
 					<div>
+						<div class="close-popup"><img src="img/close.png"></div>
 						<h3>Mis Horarios</h3>
 						<div id="listadoHorarios">
 							<table id="tablaHorarios">
@@ -140,6 +180,48 @@
 
 	<style>
 
+<<<<<<< HEAD
+=======
+	#listadoAutorizados input{
+		width: 100px;
+	}
+
+	#aportes-info-container{
+		width: 500px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 15px;
+	}
+
+	.aportes-alumno td{
+		padding: 5px;
+		border: 1px solid #000;
+	}
+
+	#misTutores,
+	#misHorarios,
+	#misDocentes{
+		height: 100px;
+		width: 100px;
+	}
+
+	#misHorarios{
+		margin: 0 10px;
+	}
+
+	.botones-datos-personales{
+		margin: 0 auto;
+		width: 330px;
+		padding: 15px 0;
+	}
+
+	.nuevaPersonaPermitida{
+		text-align: center;
+		border: 1px solid #000;
+		padding: 15px;
+	}
+
+>>>>>>> 11baa72ed3a268872859557b22d3493c9e856260
 	#conte-listado-horarios{
 		background-color: white;
 		position: absolute;

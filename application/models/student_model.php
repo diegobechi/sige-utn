@@ -105,8 +105,36 @@ class Student_Model extends CI_Model {
     }
     function get_meritos($legajoAlumno){
         $string_query = $this->db->query("");
-        $query = $string_query->result();
-        return $this->clear_result($query);
+        return $string_query->result();
     }
+
+    /* START AMB Personas Autorizadas */
+    function get_autorizados($idTutor){
+        $string_query = $this->db->query("SELECT pa.idTutor, pa.apellido_nombre, pa.nroDocumento, pa.telefono, pa.relacion 
+                                          FROM PersonaAutorizada pa, Tutor t
+                                          WHERE pa.idTutor = t.idTutor and 
+                                                pa.idTutor = $idTutor");
+        return $string_query->result();
+    }
+
+    function set_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+        $string_query = $this->db->query("INSERT INTO PersonaAutorizada (idtutor, apellido_nombre, nroDocumento, telefono, relacion)
+                                          VALUES ('$idTutor', '$nombreCompleto', '$nroDocumento', '$telefono', '$relacion')");
+        return $string_query->result();
+    }
+
+    function update_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+        $string_query = $this->db->query("UPDATE PersonaAutorizada 
+                                          SET idTutor = '$idTutor', nroDocumento = '$nroDocumento', apellido_nombre = '$nombreCompleto', telefono = '$telefono', relacion = '$relacion' 
+                                          WHERE idTutor= $idtutor");
+        return $string_query->result();
+    }
+
+    function delete_autorizados($idTutor,$nroDocumento){
+        $string_query = $this->db->query("DELETE FROM PersonaAutorizada WHERE idTutor = $idTutor and nroDocumento = $nroDocumento");
+        return $string_query->result();
+    }
+    
+    /* END AMB Personas Autorizadas */
 
 }

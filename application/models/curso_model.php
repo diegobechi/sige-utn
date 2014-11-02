@@ -122,6 +122,16 @@ class Curso_Model extends CI_Model {
       return $query;
      
     }
+    
+    function getDatosGeneralesAsignaturas($idCurso,$idAsignatura){
+      $string_query = $this->db->query("SELECT hc.diaSemana, hc.horaInicio , hc.horaFin , d.apellido, d.nombre
+                                        FROM curso c, HorarioCurso hc, Docente d
+                                        WHERE hc.idCurso = c.idCurso and 
+                                              hc.legajoDocente = d.legajoDocente and 
+                                              c.idCurso = $idCurso and 
+                                              idAsignatura = $idAsignatura;");
+      return $string_query->result();
+    }
 
     function clear_result($query){
         for($i = 0; $i< count($query); $i++){
