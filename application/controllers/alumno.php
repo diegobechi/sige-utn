@@ -8,7 +8,7 @@ class Alumno extends CI_Controller {
 		$this->load->view('menuUp');
 		$this->load->model('Student_Model');
 
-		$legajo = 100018;
+		$legajo = 100012;
 		if(empty($año)){
             $año = getdate();
             $año = $año['year'];

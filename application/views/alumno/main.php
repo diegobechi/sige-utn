@@ -140,7 +140,7 @@
 
 	<style>
 
-	.cuerpo-tabla-horarios{
+	#conte-listado-horarios{
 		background-color: white;
 		position: absolute;
 		z-index: 99;
@@ -150,8 +150,8 @@
 		margin: 0 auto;
 	}
 
-	.cuerpo-tabla-horarios td,
-	.cuerpo-tabla-horarios tr {
+	#conte-listado-horarios td,
+	#conte-listado-horarios tr {
 		border: 1px solid;
 	}
 

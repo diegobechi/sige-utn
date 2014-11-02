@@ -142,7 +142,7 @@ $(".home-niveles-masinfo").on( "click", function() {
 /*Docente*/
 $("#misCursos").on("click",function(){
     $.ajax({
-        url : "index.php/docente/getCursos/100018/2014",
+        url : "index.php/docente/getCursos/100012/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -317,7 +317,7 @@ $('body').on('click', '#misAportes', function(){
     var aportes = $('.aportes-alumno tr').size()
     if(aportes== 0){   
         $.ajax({
-            url: "index.php/alumno/getAportes/100018",
+            url: "index.php/alumno/getAportes/100012",
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){    
@@ -348,7 +348,7 @@ function crearListadoAportes(data){
 
 $("#misAsignaturas").on("click",function(){
     $.ajax({
-        url : "index.php/alumno/getAsignaturas/100018/2014",
+        url : "index.php/alumno/getAsignaturas/100012/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -406,7 +406,7 @@ $('body').on("click",".box-asignatura-generica", function(event){
 
 function cargarInfoAsignatura(numAsignatura){    
     $.ajax({
-        url : "index.php/alumno/getNotasAsignatura/100018/"+numAsignatura+"/2014",
+        url : "index.php/alumno/getNotasAsignatura/100012/"+numAsignatura+"/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
@@ -508,7 +508,7 @@ $('#lista-mensajes h3').on('click',function(){
 
 $('body').on('click', '#misDatos', function(){
     //levantar el legajo de la cookie
-    var legajo_alumno = '100018';
+    var legajo_alumno = '100012';
     $.ajax({
         url : "index.php/alumno/getDatosAlumno/"+legajo_alumno,
         type: "GET",
@@ -598,7 +598,7 @@ function cargarMisHorarios(data){
 
 $('body').on('click', '#misTutores', function(){
     // Buscar curso en las cookies
-    var legajoAlumno = '100018';
+    var legajoAlumno = '100012';
     $.ajax({
         url: 'index.php/alumno/getTutor/'+ legajoAlumno,
         type: 'GET',
