@@ -457,6 +457,7 @@ $('body').on('click','#programa', function(){
         dataType: "json",
         success: function(data, textStatus, jqXHR){
             console.log(data);
+            cargarPrograma(data);
 
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -469,7 +470,8 @@ $('body').on('click','#programa', function(){
 function cargarPrograma(data){
     var conte = $('.contenedor-programa');
     conte.empty();
-    var new_line = "<div><iframe src="+data[0].programa+" style="width:600px; height:500px;" frameborder="0"></iframe></div>";
+    /* var new_line = "<div><iframe src='"+data[0].programa+"' style='width:600px; height:500px;' frameborder='0'></iframe></div>";*/
+    var new_line = "<div><iframe src='http://red.ilce.edu.mx/sitios/micrositios/cortazar_aniv/pdf/8_Cielo_Rayuela_libro.pdf' style='width:600px; height:500px;' frameborder='0'></iframe></div>";
     conte.append(new_line);
 }
 
