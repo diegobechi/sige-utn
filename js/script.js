@@ -142,7 +142,7 @@ $(".home-niveles-masinfo").on( "click", function() {
 /*Docente*/
 $("#misCursos").on("click",function(){
     $.ajax({
-        url : "index.php/docente/getCursos/100018/2014",
+        url : "index.php/docente/getCursos/10003/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -317,7 +317,7 @@ $('body').on('click', '#misAportes', function(){
     var aportes = $('.aportes-alumno tr').size()
     if(aportes== 0){   
         $.ajax({
-            url: "index.php/alumno/getAportes/100018",
+            url: "index.php/alumno/getAportes/100012",
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){    
@@ -335,7 +335,7 @@ function crearListadoAportes(data){
     var conte = $('.aportes-alumno');
     if(data.length >= 1){
         for(var i=0; i < data.length; i++){
-            var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+data[i].importe+'</td><td>'+data[i].fecha+'</td></tr>';
+            var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+parseFloat(data[i].importe).toFixed(2)+'</td><td>'+data[i].fecha+'</td></tr>';
             conte.append(new_line);
         }
     }else{
@@ -407,7 +407,7 @@ $('body').on("click",".box-asignatura-generica", function(event){
 
 
 function cargarInfoAsignatura(numAsignatura){    
-    $.ajax({
+    /*$.ajax({
         url : "index.php/alumno/getNotasAsignatura/100018/"+numAsignatura+"/2014",
         type: "GET",
         dataType: "json",
@@ -419,10 +419,10 @@ function cargarInfoAsignatura(numAsignatura){
         {
             console.log("fallo");
         }
-    });
+    });*/
 }
 
-$('#temas-dictados').on('click', function(){
+$('body').on('click','#temas-dictados', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
     var numCurso = 1;
     $.ajax({
@@ -430,7 +430,7 @@ $('#temas-dictados').on('click', function(){
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-
+            cargarTemasDictados(data);
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -438,7 +438,16 @@ $('#temas-dictados').on('click', function(){
         }
     })
 })
- 
+
+function cargarTemasDictados(data){
+    var conte_btn=$("#listadoTemasDictados");
+    conte_btn.empty();
+    for (var i=0; i<data.length;i++){
+        var new_line="<div class='tema_dictado'><div>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span>"+data[i].fechaPublicacion+"</span></div>";
+        conte_btn.append(new_line);
+    }
+}
+
 $('body').on('click','#programa', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
     var numCurso = 1;
@@ -646,7 +655,7 @@ function cargarPersonasAutorizadas(){
             conte.empty();
             var newLine = "";
             for (var i = 0; i < data.length; i++) {
-                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido_nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>EDIT</span></td></tr>";      
+                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido_nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td></tr>";      
                 conte.append(newLine);
             };
         },
@@ -675,7 +684,7 @@ $('body').on('click', '.eliminarAutorizado', function(){
     var nroDoc = $(this).parent().parent().data('autorizado');
     $.ajax({
         url: 'index.php/alumno/delete_personasAutorizadas/'+ idTutor+"/"+nroDoc,
-        type: 'SET',
+        type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
             console.log("Exito");

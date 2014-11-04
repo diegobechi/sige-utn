@@ -74,7 +74,12 @@ class Curso_Model extends CI_Model {
       $string_query = $this->db->query("INSERT INTO TemarioDictado VALUES (idCurso = $idCurso, idAsignatura = $idAsignatura, fecha = $fecha, temasDictado = $temasDictado, legajoDocente = $legajoDocente)");
     }
     function get_temario_dictado($idCurso, $idAsignatura){
-      $string_query = $this->db->query("SELECT * FROM TemarioDictado WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and YEAR(fecha) = YEAR(getdate())");
+      $string_query = $this->db->query("SELECT CONVERT(VARCHAR(11),tm.fecha, 106) as 'fechaPublicacion'  , tm.temasClase , d.apellido , d.nombre
+                                        FROM TemarioDictado tm, Docente d , Asignatura a
+                                        WHERE tm.legajoDocente = d.legajoDocente and
+                                              tm.idAsignatura = a.idAsignatura and
+                                              tm.idCurso = $idCurso and
+                                              a.idAsignatura = $idAsignatura;");
       return $string_query->result();
     }
     function update_temario_dictado($idCurso, $idAsignatura, $temasDictado){
