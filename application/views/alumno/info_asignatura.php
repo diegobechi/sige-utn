@@ -28,6 +28,8 @@
 		  	  <span></span>
 		  	   <h1><img src="img/book_1.png"> Temas Dictados</h1> 
 		    </div>
+		    <div id="listadoTemasDictados">
+		    </div>
 		</div>
 
 		<div class = "contenedor-principal programa" style="display:none;">

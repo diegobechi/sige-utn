@@ -19,13 +19,12 @@ class Student_Model extends CI_Model {
     }
     
     function get_student($legajoAlumno){
-        $string_query = $this->db->query("SELECT a.apellido, a.nombre,a.nroDocumento, a.sexo,CONVERT(VARCHAR(11),a.fechaNacimiento, 106) as 'fecha nacimiento',a.nacionalidad, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento, a.telefonoFijo, a.telefonoMovil,a.lugarNacimiento,a.legajoAlumno, ne.division, COUNT(*) as inasistencias, e.nombre as 'estado', c.seccion
-                                          FROM Alumno a , Domicilio d, Inscripcion i, Curso c, NivelEducativo ne, AsistenciaAlumno aa, Estado e
+        $string_query = $this->db->query("SELECT a.apellido, a.nombre,a.nroDocumento, a.sexo,CONVERT(VARCHAR(11),a.fechaNacimiento, 106) as 'fecha nacimiento',a.nacionalidad, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento, a.telefonoFijo, a.telefonoMovil,a.lugarNacimiento,a.legajoAlumno, ne.division, e.nombre as 'estado', c.seccion
+                                          FROM Alumno a , Domicilio d, Inscripcion i, Curso c, NivelEducativo ne, Estado e
                                           WHERE  a.idDomicilio = d.idDomicilio and
                                                  a.legajoAlumno = i.legajoAlumno and
                                                  c.idCurso = i.idCurso and
-                                                 c.idNivelEducativo = ne.idNivelEducativo and 
-                                                 a.legajoAlumno = aa.legajoAlumno and 
+                                                 c.idNivelEducativo = ne.idNivelEducativo and
                                                  a.idEstado = e.idEstado and
                                                  a.legajoAlumno =$legajoAlumno 
                                           GROUP BY a.apellido, a.nombre, a.nroDocumento, a.sexo,a.fechaNacimiento, a.nacionalidad,a.correoElectronico,d.calle,d.numero,d.piso,d.departamento,a.telefonoFijo,a.telefonoMovil,a.lugarNacimiento, a.legajoAlumno, ne.division, e.nombre,c.seccion");
