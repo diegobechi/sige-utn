@@ -180,6 +180,8 @@
 
 	<style>
 
+<<<<<<< HEAD
+=======
 	#listadoAutorizados input{
 		width: 100px;
 	}
@@ -219,6 +221,7 @@
 		padding: 15px;
 	}
 
+>>>>>>> 11baa72ed3a268872859557b22d3493c9e856260
 	#conte-listado-horarios{
 		background-color: white;
 		position: absolute;

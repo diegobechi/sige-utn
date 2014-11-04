@@ -408,7 +408,7 @@ $('body').on("click",".box-asignatura-generica", function(event){
 
 function cargarInfoAsignatura(numAsignatura){    
     /*$.ajax({
-        url : "index.php/alumno/getNotasAsignatura/100018/"+numAsignatura+"/2014",
+        url : "index.php/alumno/getNotasAsignatura/100012/"+numAsignatura+"/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
@@ -528,7 +528,7 @@ $('#lista-mensajes h3').on('click',function(){
 
 $('body').on('click', '#misDatos', function(){
     //levantar el legajo de la cookie
-    var legajo_alumno = '100018';
+    var legajo_alumno = '100012';
     $.ajax({
         url : "index.php/alumno/getDatosAlumno/"+legajo_alumno,
         type: "GET",
