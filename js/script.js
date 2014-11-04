@@ -186,6 +186,7 @@ $('body').on("click",".box-curso-generic", function(event){
 
 $('body').on('click','#back-button', function(){
     $('#selector-curso').show();
+    $('#selector-asignatura').show();
     $('.contenedor-info').hide();
 })
 
@@ -396,10 +397,9 @@ $('body').on("click",".box-asignatura-generica", function(event){
             }
         });
     }else{        
-        $('#selector-curso').hide();
-        $('.titulo-principal h1').text(nombre_curso);
+        $('#selector-asignatura').hide();
         conte_info.show();
-        cargarInfoCurso(numCurso);
+        cargarInfoAsignatura(numAsignatura);
     }  
 
 
@@ -469,8 +469,38 @@ $('body').on('click','#programa', function(){
 function cargarPrograma(data){
     var conte = $('.contenedor-programa');
     conte.empty();
-    var new_line = "<div><iframe src="+data[0].programa+" style="width:600px; height:500px;" frameborder="0"></iframe></div>";
+    var new_line = "<div><iframe src='"+data[0].programa+"' style='width:600px; height:500px;' frameborder='0'></iframe></div>";
     conte.append(new_line);
+}
+
+
+$('body').on('click','#info_general', function(){
+    var numAsignatura = $('.titulo-principal h1').data('idasignatura');
+    var numCurso = 1;
+    $.ajax({
+        url: "index.php/curso/getDatosAsignaturas/"+numCurso+"/"+numAsignatura+"",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log(data);
+            cargarInfoCursoGeneral(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+})
+
+function cargarInfoCursoGeneral(data){
+    var conte_horarios = $('.info_horarios');
+    var conte_docente = $('.info_docente');
+    for (var i=0; i<data.length;i++){
+        var new_line="<span>"+data[i].diaSemana+" "+data[i].horaInicio+" "+data[i].horaFin+"</span>";
+        conte_horarios.append(new_line);
+    }
+    var new_card="<img src=''><label>"+data[0].apellido+", "+data[0].nombre+" </br> "+data[0].correoElectronico+"</label><label></label></br><a target='_blank' href='"+data[0].curriculumVitae+"'>";
+    conte_docente.append(new_card);
+
 }
 
 $(document).ready(function(){
