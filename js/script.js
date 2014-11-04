@@ -350,7 +350,7 @@ function crearListadoAportes(data){
 
 $("#misAsignaturas").on("click",function(){
     $.ajax({
-        url : "index.php/alumno/getAsignaturas/100012/2014",
+        url : "index.php/alumno/getAsignaturas/100052/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -424,7 +424,7 @@ function cargarInfoAsignatura(numAsignatura){
 
 $('body').on('click','#temas-dictados', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 1;
+    var numCurso = 9;
     $.ajax({
         url: "index.php/curso/getTemasDictados/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
@@ -450,7 +450,7 @@ function cargarTemasDictados(data){
 
 $('body').on('click','#programa', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 1;
+    var numCurso = 9;
     $.ajax({
         url: "index.php/curso/getProgramaAsignatura/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
