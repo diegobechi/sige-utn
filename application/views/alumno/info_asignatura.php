@@ -45,8 +45,7 @@
 					</select>
 				</h1>
 		    </div>
-		    	<div class="contenedor-asignaturas">
-			     	<div class= " listado-asignaturas">			     		
+		    	<div class="contenedor-programa">			     	
 			     </div> 
 		    </div>
 		</div>
