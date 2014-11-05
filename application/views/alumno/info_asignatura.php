@@ -56,15 +56,8 @@
 		  	   <h1><img src="img/book_1.png"> Informacion General</h1> 
 		    </div>
 			<div class="info_horarios">
-     			<label>Luenes 8am a 12am</label>
-     			<label>Luenes 8am a 12am</label>
-     			<label>Luenes 8am a 12am</label>
      		</div>
      		<div class="info_docente">
-     			<img src="">
-     			<label>Diego Bechi</label>
-     			<label>diegobechi@gmail.com</label>
-     			<input type="button" value="Ver CV">
      		</div>
 		</div>
 	</div>

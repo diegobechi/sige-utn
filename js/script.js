@@ -478,7 +478,7 @@ function cargarPrograma(data){
 
 $('body').on('click','#info_general', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 1;
+    var numCurso = 9;
     $.ajax({
         url: "index.php/curso/getDatosAsignaturas/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
@@ -497,10 +497,10 @@ function cargarInfoCursoGeneral(data){
     var conte_horarios = $('.info_horarios');
     var conte_docente = $('.info_docente');
     for (var i=0; i<data.length;i++){
-        var new_line="<span>"+data[i].diaSemana+" "+data[i].horaInicio+" "+data[i].horaFin+"</span>";
+        var new_line="<span>"+data[i].diaSemana+" "+data[i].horaInicio+" "+data[i].horaFin+"</span> </br>";
         conte_horarios.append(new_line);
     }
-    var new_card="<img src=''><label>"+data[0].apellido+", "+data[0].nombre+" </br> "+data[0].correoElectronico+"</label><label></label></br><a target='_blank' href='"+data[0].curriculumVitae+"'>";
+    var new_card="<img src=''><label>"+data[0].apellido+", "+data[0].nombre+" </br> "+data[0].correoElectronico+"</label><label></label></br><a target='_blank' href='"+data[0].curriculumVitae+"'> ver cv</a>";
     conte_docente.append(new_card);
 
 }
