@@ -10,7 +10,7 @@
 			<li data-title="notas"> <img src="img/alumno.png"/>Notas</li>
 			<li data-title="temas-dictados" id="temas-dictados"> <img src="img/materia.png"/> Temas Dictados</li>
 			<li data-title="programa" id="programa"> <img src="img/listados.png"/>Programa</li>
-			<li data-title="general"> <img src="img/mensajes.png"/>General</li>
+			<li data-title="general" id="info_general"> <img src="img/mensajes.png"/>General</li>
 		</div>	
 		<div class ="contenedor-principal alumnos">
 			<div class ="titulo-principal">
@@ -55,16 +55,9 @@
 		  	  <span></span>
 		  	   <h1><img src="img/book_1.png"> Informacion General</h1> 
 		    </div>
-			<div>
-     			<label>Luenes 8am a 12am</label>
-     			<label>Luenes 8am a 12am</label>
-     			<label>Luenes 8am a 12am</label>
+			<div class="info_horarios">
      		</div>
-     		<div>
-     			<img src="">
-     			<label>Diego Bechi</label>
-     			<label>diegobechi@gmail.com</label>
-     			<input type="button" value="Ver CV">
+     		<div class="info_docente">
      		</div>
 		</div>
 	</div>
