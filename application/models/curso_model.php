@@ -49,8 +49,8 @@ class Curso_Model extends CI_Model {
     }
 
     /* START COMUNICADOS WEB*/
-    function set_comunicado($idCurso, $legajoDocente, $comunicado){
-      $string_query = $this->db->query("INSERT INTO ComunicadoWeb VALUES(1,$idCurso,$legajoDocente,'04/09/2014',$comunicado)");
+    function set_comunicado($idCurso, $legajoDocente, $fecha, $comunicado){
+      $string_query = $this->db->query("INSERT INTO ComunicadoWeb(idCurso, legajoDocente, fecha, comunicado) VALUES ($idCurso, $legajoDocente, $fecha, ' $comunicado ')");
     }
  
     function get_comunicado($idCurso, $startDate, $endDate){
@@ -70,8 +70,11 @@ class Curso_Model extends CI_Model {
     /* END COMUNICADOS WEB*/
 
     /* START TEMARIO DICTADO*/
-    function set_temario_dictado($idCurso, $idAsignatura,$legajoDocente, $temasDictado){
-      $string_query = $this->db->query("INSERT INTO TemarioDictado VALUES (idCurso = $idCurso, idAsignatura = $idAsignatura, fecha = $fecha, temasDictado = $temasDictado, legajoDocente = $legajoDocente)");
+    function set_temario_dictado($idCurso, $idAsignatura, $fecha, $temasClase, $legajoDocente){      
+      $string_query = $this->db->query("INSERT INTO TemarioDictado(idCurso, idAsignatura, fecha, temasClase, legajoDocente) 
+                                        VALUES ($idCurso, $idAsignatura, $fecha, ' $temasClase ', $legajoDocente)");
+      return $string_query;
+
     }
     function get_temario_dictado($idCurso, $idAsignatura){
       $string_query = $this->db->query("SELECT CONVERT(VARCHAR(11),tm.fecha, 106) as 'fechaPublicacion'  , tm.temasClase , d.apellido , d.nombre

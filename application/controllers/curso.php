@@ -25,6 +25,12 @@ class Curso extends CI_Controller {
 		echo json_encode($query);
 	 }
 
+	 public function setTemasDictados($idCurso, $idAsignatura, $fecha, $temasClase , $legajoDocente){	 	
+	 	$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->set_temario_dictado($idCurso, $idAsignatura, $fecha, $temasClase, $legajoDocente);
+		echo json_encode($query);
+	 }
+
 	 public function getTemasDictados($idCurso, $idAsignatura){
 	 	$this->load->model('Curso_Model');
 		$query = $this->Curso_Model->get_temario_dictado($idCurso, $idAsignatura);
@@ -35,7 +41,14 @@ class Curso extends CI_Controller {
 	 	$this->load->model('Curso_Model');
 		$query = $this->Curso_Model->get_programa($idCurso, $idAsignatura);
 		echo json_encode($query);
-	}	 
+	}
+
+	public function setComunicadoWeb($idCurso, $legajoDocente, $fecha, $comunicado){	 	
+	 	$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->set_comunicado($idCurso, $legajoDocente, $fecha, $comunicado);
+		echo json_encode($query);
+	}
+
 	public function getComunicadoWeb($idCurso){
 	  $fecha_hasta = date( "d-m-Y",mktime(0, 0, 0, date("m"),date("d"), date("Y")));;
 	  $fecha_desde = date( "d-m-Y",mktime(0, 0, 0, date("m"),date("d")-7, date("Y")));

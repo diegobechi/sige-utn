@@ -748,7 +748,7 @@ $('body').on('click', '#agregarPermitidas', function(){
 
     $.ajax({
         url: 'index.php/alumno/set_personasAutorizadas/'+ persona.idTutor+"/"+ persona.nombreCompleto+"/"+ persona.nroDocumento+"/"+ persona.telefono+"/"+ persona.relacion,
-        type: 'SET',
+        type: 'POST',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
             console.log("Exito Guardando");
@@ -764,3 +764,110 @@ $('body').on('click', '#agregarPermitidas', function(){
         }
     })
 })
+
+/* START TEMARIO CURSADO */
+
+$('body').on('click', '#enviarTemario', function(){
+    var temario = {};
+    temario.docente = $('#legajoDocente').text();
+    temario.curso = $('#cursoTemario').children('option:selected').data('cursoid');
+    temario.asignatura = $('#asignaturaTemario').children('option:selected').data('asignaturaid');
+    temario.temaDictado = $('#temaDisctado').val();
+    temario.fecha = $('#fechaDictado').val();
+    $.ajax({
+        url: 'index.php/curso/setTemasDictados/'+ temario.curso+"/"+ temario.asignatura +"/"+ temario.fecha +"/"+ temario.temaDictado +"/"+ temario.docente,
+        type: 'POST',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito TEMARIO");
+            updateListaTemario();
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("Fallo TEMARIO");
+        }
+    })
+})
+
+$('body').on('click', '#updateTemario', function(){
+    updateListaTemario();
+})
+
+function updateListaTemario(){    
+    var curso = $('#cursoTemario').children('option:selected').data('cursoid');
+    var asignatura = $('#asignaturaTemario').children('option:selected').data('asignaturaid');
+    $.ajax({
+        url: 'index.php/curso/getTemasDictados/'+ curso+"/"+asignatura,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){            
+            listarTemasCurso(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+}
+
+function listarTemasCurso(data){
+    var conte = $('#show-list-items');
+    conte.empty();
+    var newLine = "";
+    for (var i = 0; i < data.length; i++) {
+        var newLine = "<div><p class='texto-temario'>"+data[i].temasClase+"</p><span class='firma-texto-temario'></span>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fechaPublicacion+"<span ><img src='' />EDIT</span><div class='separate-line'></div></div>";      
+        conte.append(newLine);
+    };
+}
+
+/* END TEMARIO CURSADO */
+
+/* START COMUNICADO WEB */
+$('body').on('click', '#enviarComunicado', function(){
+    var comunicado = {};
+    comunicado.docente = $('#legajo').text();
+    comunicado.curso = $('#cursoComunicado').children('option:selected').data('cursoid');
+    comunicado.textoComunicado = $('#temaComunicado').val();
+    comunicado.fecha = $('#fechaComunicado').val();
+    $.ajax({
+        url: 'index.php/curso/setComunicadoWeb/'+ comunicado.curso+"/"+ comunicado.docente +"/"+ comunicado.fecha +"/"+ comunicado.textoComunicado,
+        type: 'POST',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            console.log("Exito COMUNICADO");
+            updateListaComunicados();
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("Fallo COMUNICADO");
+        }
+    })
+})
+
+$('body').on('click', '#updateComunicado', function(){
+    updateListaComunicados();
+})
+
+function updateListaComunicados(){    
+    var curso = $('#cursoComunicado').children('option:selected').data('cursoid');
+    $.ajax({
+        url: 'index.php/curso/getTemasDictados/'+ curso+"/"+asignatura,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){            
+            console.log(data);
+            /*listarComunicadosWeb(data);*/
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+}
+
+function listarComunicadosWeb(data){
+    var conte = $('#show-list-comunicados');
+    conte.empty();
+    var newLine = "";
+    for (var i = 0; i < data.length; i++) {
+        var newLine = "<div><p class='texto-temario'>"+data[i].temasClase+"</p><span class='firma-texto-temario'></span>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fechaPublicacion+"<span ><img src='' />EDIT</span><div class='separate-line'></div></div>";      
+        conte.append(newLine);
+    };
+}
+/* END COMUNICADO WEB */
