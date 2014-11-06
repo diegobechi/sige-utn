@@ -2,7 +2,7 @@
 html,body{
     margin: 0px;
     height: 100%;
-    background-color: rgb(248, 248, 248) !important;
+    background-color: lightgray !important;
 }
 
 /* ==|== Fonts =====================================================
@@ -307,7 +307,6 @@ menu#home-top-menu {
 .foot{
     width: 100%;
     background-color: black;
-    position: fixed;
     bottom: 0;
 }
 
@@ -745,8 +744,7 @@ menu#home-top-menu {
     padding-left: 50px;
     padding-right: 20px;
     margin-top: 15px;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .home-galeria-contenedor-imagen{
