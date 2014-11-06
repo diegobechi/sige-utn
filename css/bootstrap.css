@@ -5259,15 +5259,11 @@ input[type="submit"].btn.btn-mini {
   padding: 14px 15px 15px;
   margin-bottom: 0;
   text-align: right;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid cornflowerblue;
   -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
   *zoom: 1;
-  -webkit-box-shadow: inset 0 1px 0 #ffffff;
-     -moz-box-shadow: inset 0 1px 0 #ffffff;
-          box-shadow: inset 0 1px 0 #ffffff;
 }
 
 .modal-footer:before,
@@ -5982,6 +5978,7 @@ a.badge:focus {
 
 .carousel-inner > .item {
   position: relative;
+  height: 50px;
   display: none;
   -webkit-transition: 0.6s ease-in-out left;
      -moz-transition: 0.6s ease-in-out left;
@@ -5993,6 +5990,7 @@ a.badge:focus {
 .carousel-inner > .item > a > img {
   display: block;
   line-height: 1;
+  width: 960px;
 }
 
 .carousel-inner > .active,
@@ -6003,6 +6001,7 @@ a.badge:focus {
 
 .carousel-inner > .active {
   left: 0;
+  height: 50px;
 }
 
 .carousel-inner > .next,
