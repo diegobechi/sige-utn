@@ -5,22 +5,13 @@ class Alumno extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('header');
-		$this->load->view('menuUp');
-		
 		$this->load->model('Student_Model');
 
-		$legajo = 100001;
+		$legajo = 100012;
 		if(empty($año)){
             $año = getdate();
             $año = $año['year'];
         }
-		/*$query = $this->Student_Model->get_assistence($legajo, $año);*/
-		/*$query = $this->Student_Model->get_student($legajo);*/
-		$query = $this->Student_Model->get_notas_por_materia($legajo, $año);
-
-		/*echo "<pre>";
-		print_r($query);
-		die();*/
 
 		$this->load->view("alumno/main");
 		$this->load->view('footer');
@@ -31,9 +22,55 @@ class Alumno extends CI_Controller {
 		echo json_encode($query);
 	}
 
+	public function getAsignaturas($legajoAlumno, $año){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_asignaturas($legajoAlumno, $año);
+		echo json_encode($query);		
+	}
+
+	public function getNotasAsignatura($legajoAlumno, $idAsignatura, $año){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_notas_por_materia($legajoAlumno, $idAsignatura, $año);
+		echo json_encode($query);		
+	}
+	public function cargar_vista_asignatura(){
+		$this->load->view("alumno/info_asignatura");
+	}
+
 	public function getTutor($legajoAlumno){
 		$this->load->model('Student_Model');
 		$query = $this->Student_Model->get_tutor($legajoAlumno);
-		echo json_encode($query);
+		echo json_encode($query);		
 	}
+
+	public function getAportes($legajoAlumno){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_aportes($legajoAlumno);
+		echo json_encode($query);		
+	}
+
+	public function get_personasAutorizadas($idTutor){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_autorizados($idTutor);
+		echo json_encode($query);	
+	}
+
+	public function set_personasAutorizadas($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->set_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion);
+		echo json_encode($query);	
+	}
+
+	public function update_personasAutorizadas($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->update_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion);
+		echo json_encode($query);	
+	}
+
+	public function delete_personasAutorizadas($idTutor,$nroDocumento){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->delete_autorizados($idTutor,$nroDocumento);
+		echo json_encode($query);	
+	}
+
 }

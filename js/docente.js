@@ -5,10 +5,10 @@ app.sige = {};
 app.sige.init = function() {
     $.ajax({
         type: "post",
-        url: "index.php/docente/getCursos",
+        url: "index.php/alumno/getAsignaturas",
         dataType: "json",
         success: function(data){
-        	app.sige.organizarCursos(data);
+        	app.sige.organizarAsignaturas(data);
         },
         error: function (jqXHR, textStatus, errorThrown)
 		{
@@ -17,11 +17,11 @@ app.sige.init = function() {
     	});
 }
 
-app.sige.organizarCursos  = function(data){
+app.sige.organizarAsignaturas  = function(data){
 	var array_cursos = data;
-	for (var i=0; i < array_cursos.length ; i++) {
-		var division = array_cursos[i].nombre;
-		$('#miscursos').append('<input type="button" value='+division+'>');
+	for (var i=0; i < array_asginaturas.length ; i++) {
+		var division = array_asginaturas[i].nombre;
+		$('#misasignaturas').append('<input type="button" value='+division+'>');
 	};
 }
 
