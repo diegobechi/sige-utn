@@ -648,7 +648,9 @@ function buscarComunicadoWeb(){
     },
     error: function (jqXHR, textStatus, errorThrown)
     {
+        var data = {};
         console.log("fallo");
+        cargarComunicadoWeb(data);
     }
 })
 
@@ -659,11 +661,11 @@ function cargarComunicadoWeb(data){
     if(data.length >= 1){
         $("#cantMensajes").text("(" + data.length+")");
         for (var i = 0 ; i<data.length; i++){
-            var nuevaLinea = "<div><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+            var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p><input type='button value='+ ver mas'/></div>";
             conte.append(nuevaLinea);
         }
     }else{
-        var sinMensajes = " Este curso no tiene mensajes nuevos ";
+        var sinMensajes = "<div class='contenedor-comunicados sin-comunicados' > Este curso no tiene mensajes nuevos </div>";
         conte.append(sinMensajes);
     }
 }

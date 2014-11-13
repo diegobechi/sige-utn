@@ -1048,3 +1048,11 @@ menu#home-top-menu {
     margin: auto;
     border: 4px solid red;
 }
+
+.contenedor-comunicados{
+    min-height: 300px;
+}
+
+.contenedor-comunicados.sin-comunicados{
+    min-height: 100px;
+}
