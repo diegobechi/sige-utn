@@ -150,3 +150,33 @@ class Curso_Model extends CI_Model {
     }
 
 }
+
+
+/*devolver los datos de un comunicado web en particular pasado como parametro 
+
+SELECT  cw.idComunicadoWeb,CONVERT (char(10),cw.fecha, 103) as 'fechaComunicado' , cw.comunicado, a.nombre
+FROM ComunicadoWeb cw, Curso c, Docente d, Asignatura a, AsignaturaPorDocente ad
+WHERE cw.idCurso = c.idCurso and
+      cw.legajoDocente = d.legajoDocente and
+      d.legajoDocente = ad.legajoDocente and
+      a.idAsignatura = ad.idAsignatura and
+      d.legajoDocente = $legajoDocente and 
+      cw.idComunicadoWeb = $idComunicadoWeb 
+      
+      
+/* devolver un temario dictado seleccionado de una asignatura en un curso determinado 
+
+SELECT CONVERT(VARCHAR(11),td.fecha, 106) as 'fechaPublicacion'  , td.temasClase , d.apellido , d.nombre, a.idAsignatura
+FROM TemarioDictado td, Docente d , Asignatura a
+WHERE td.legajoDocente = d.legajoDocente and
+      td.idAsignatura = a.idAsignatura and
+      td.idCurso = $idCurso and 
+      a.idAsignatura = $idAsignatura and
+      td.fecha = $fecha
+
+/*Borrar un comunicado web especifcado como parametro
+
+DELETE FROM ComunicadoWeb 
+ WHERE idComunicadoWeb = $idComunicadoWeb
+
+      */

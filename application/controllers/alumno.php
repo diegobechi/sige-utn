@@ -4,6 +4,10 @@ class Alumno extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('url');
+		if (!$this->session->userdata('logged_in')) {
+            redirect('c_login', 'refresh');
+        }
 		$this->load->view('header');
 		$this->load->model('Student_Model');
 

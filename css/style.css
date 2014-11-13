@@ -598,13 +598,13 @@ border-radius: 5px;
 }
 
 /*PESTAÑAS ALUMNO*/
-
+/*
 .contenedor-pestañas{
     margin-top: -40px;
     position: absolute;
     width: 100%;
     z-index: 999;
-}
+} */
 
 .contenedor-cuerpos-pestañas{
     background-color: white;

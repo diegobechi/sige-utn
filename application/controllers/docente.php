@@ -5,7 +5,12 @@ class Docente extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('url');
+		if (!$this->session->userdata('logged_in')) {
+            redirect('c_login', 'refresh');
+        }
 		$this->load->view('header');
+		/*$this->load->view('docente/cargar_notas');*/
 		$this->load->view('docente/main');
 		$this->load->view('footer');
 	}
