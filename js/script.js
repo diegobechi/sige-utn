@@ -479,7 +479,7 @@ function crearListadoAportes(data){
 
 $("#misAsignaturas").on("click",function(){
     $.ajax({
-        url : "alumno/getAsignaturas/100052/2014",
+        url : "alumno/getAsignaturas/100012/2014",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -552,6 +552,7 @@ function cargarInfoAsignatura(numAsignatura){
 
 $('body').on('click','#temas-dictados', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
+    var numAsignatura = 44;
     var numCurso = 9;
     $.ajax({
         url: "curso/getTemasDictados/"+numCurso+"/"+numAsignatura+"",
@@ -826,7 +827,7 @@ function cargarPersonasAutorizadas(){
             conte.empty();
             var newLine = "";
             for (var i = 0; i < data.length; i++) {
-                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido_nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td></tr>";      
+                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido_nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td><td><span class='button'>EDIT</span></td></tr>";      
                 conte.append(newLine);
             };
         },

@@ -3,17 +3,20 @@
 	<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 	<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
 	<li><a href="#tab_c" data-toggle="tab">MENSAJES</a></li>
-	<li><a href="#tab_d" data-toggle="tab">CURRICULUM</a></li>
+	<li><a href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
 	<li><a href="#tab_e" data-toggle="tab">TEMARIO</a></li>
+	<li><a href="#tab_f" data-toggle="tab">CARGAR NOTAS</a></li>
 	<li><a href="c_home/logout">Logout</a></li>
 </ul>
 <div class="tab-content">
 	
 		<div class="tab-pane fade active in" id="tab_a">
-			<div class="box-generic">
-				<h3>Welcome NOMBRE DOCENTE</h3>
-				<img class="img-cover"src="img/smart-teacher.jpg">
-			</div>
+			<div class="contenedor-pestana-general">
+				<div class="box-generic">
+					<h3>Welcome NOMBRE DOCENTE</h3>
+					<img class="img-cover"src="img/smart-teacher.jpg">
+				</div>
+			</div>			
 		</div>
 		<div class="tab-pane fade" id="tab_b">			
 			<div id="curso-info-container">
@@ -54,6 +57,41 @@
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_d">
+			<div class="contenedor-pestana-general">
+					<div class="pestana-datos-docente">
+						<div class="box-generic personales">
+							<h3>Datos personales</h3>
+							<div>
+								<label>Nombre y Apellido</label><input id="perfil-nombre-completo" type="text"><br>
+								<label>Nro Documento</label><input id="perfil-dni" type="text"><br>
+								<label>Sexo</label><input id="perfil-sexo" type="text"><br>
+								<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac" type="text"><br>
+								<label>Nacionalidad</label><input id="perfil-nacionalidad" type="text"><br>
+								<label>Domicilio</label><input id="perfil-domicilio" type="text"><br>
+								<label>Telefono Fijo</label><input id="perfil-tel-fijo" type="text"><br>
+								<label>Telefono Movil</label><input id="perfil-tel-movil" type="text"><br>
+								<label>Mail</label><input id="perfil-mail" type="text"><br>
+								<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text"><br>
+							</div>
+						</div>
+						
+						<div class="box-generic academicos">
+							<h3>Datos academicos generales</h3>
+							<label>Legajo</label><input id="perfil-legajo" type="text"><br>
+							<label>Cursos</label><input id="perfil-curso"type="text"><br>
+
+						</div>
+
+						<div class="box-generic acciones">
+							<h3>Acciones</h3>
+							<div class="botones-datos-personales">
+								<input id="misTutores" type="button" value="Cargar CV">
+								<input id="misHorarios" type="button" value="Mis Cursos">
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
 			<h4>CURRICULUM</h4>
 			<div>
 				<input type="button" value="Cargar CV">
@@ -113,7 +151,12 @@
 				</div>
 			</div>
 		</div>
-	
+		<div class="tab-pane fade active in" id="tab_f">
+			<div class="box-generic">
+				<h3>CARGAR NOTAS</h3>
+				<div>Carga de notas planilla</div>
+			</div>
+		</div>
 </div><!-- tab content -->
 
 <style>

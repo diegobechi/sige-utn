@@ -58,7 +58,7 @@ class Curso_Model extends CI_Model {
                                         FROM ComunicadoWeb cw, Docente d, Curso c
                                         WHERE cw.legajoDocente = d.legajoDocente and
                                             cw.idCurso = c.idCurso and
-                                            cw.fecha between  $startDate  and   $endDate  and
+                                            cw.fecha between ' $startDate ' and ' $endDate ' and
                                             c.idCurso = $idCurso";
                                              echo "<pre>";
     var_dump($consulta);

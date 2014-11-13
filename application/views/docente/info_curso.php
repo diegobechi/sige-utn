@@ -8,15 +8,12 @@
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
 			<li data-title="alumnos"> <img src="img/alumno.png"/>Alumnos</li>
-			<li> <img src="img/materia.png"/> Asignaturas
-				<ul>
-					<li data-title="misAsignaturas">Mis Asignaturas</li>
-					<li data-title="asignaturas">Asignaturas del curso</li>
-				</ul>
-			</li>
-			<li data-title="listados"> <img src="img/listados.png"/>Listados</li>
-			<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>
+			<li data-title="asignaturas"> <img src="img/materia.png"/>Asignaturas</li>
 			<li data-title="mensajes"> <img src="img/mensajes.png"/>Mensajes</li>
+			<li data-title="cargaNotas"> <img src="img/mensajes.png"/>Cargar Notas</li>
+			<li data-title="temario"> <img src="img/mensajes.png"/>Temario</li>
+			<li data-title="listados"> <img src="img/listados.png"/>Listados</li>
+			<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>			
 		</div>	
 		<div class ="contenedor-principal alumnos">
 			<div class ="titulo-principal">
@@ -28,43 +25,6 @@
 				</ul>
 			</div>
 		</div>
-
-		<div class = "contenedor-principal listados" style="display:none;">
-			<div class = "titulo-principal">
-		  	  <span></span>
-		  	   <h1><img src="img/book_1.png"> Listados</h1> 
-		    </div>
-		  	
-		  	<div class = "contenedor-de-listados">
-		   	    <ul>
-		    	    <li class = "box-listado">
-		   		        <a id="curso" href="#" class="box-alumno">
-							<div>
-								<img src="img/listado.png">
-								<h6> Listado de Alumnos</h6>
-							</div>
-				        </a>
-				    </li>
-				    <li class = "box-listado">
-		   		        <a id="curso" href="#" class="box-alumno">
-							<div>
-								<img src="img/listado.png">
-								<h6> Inasistencias por fecha</h6>
-							</div>
-				        </a>
-				    </li>
-				     <li class = "box-listado">
-		   		        <a id="curso" href="#" class="box-alumno">
-							<div>
-								<img src="img/listado.png">
-								<h6> Licencias otorgadas</h6>
-							</div>
-				        </a>
-				    </li>
-		        </ul>
-		    </div>
-		</div>
-
 		<div class = "contenedor-principal asignaturas" style="display:none;">
 			<div class = "titulo-principal">
 				<h1> <img src="img/book_1.png">  Asignaturas 
@@ -111,8 +71,48 @@
 						</ul>
 			     </div> 
 		    </div>
+		</div>		
+		<div class="contenedor-principal mensajes" style="display:none;">
 		</div>
-
+		<div class="contenedor-principal cargarNotas" style="display:none;">
+		</div>
+		<div class="contenedor-principal temario" style="display:none;">
+		</div>
+		<div class = "contenedor-principal listados" style="display:none;">
+			<div class = "titulo-principal">
+		  	  <span></span>
+		  	   <h1><img src="img/book_1.png"> Listados</h1> 
+		    </div>
+		  	
+		  	<div class = "contenedor-de-listados">
+		   	    <ul>
+		    	    <li class = "box-listado">
+		   		        <a id="curso" href="#" class="box-alumno">
+							<div>
+								<img src="img/listado.png">
+								<h6> Listado de Alumnos</h6>
+							</div>
+				        </a>
+				    </li>
+				    <li class = "box-listado">
+		   		        <a id="curso" href="#" class="box-alumno">
+							<div>
+								<img src="img/listado.png">
+								<h6> Inasistencias por fecha</h6>
+							</div>
+				        </a>
+				    </li>
+				     <li class = "box-listado">
+		   		        <a id="curso" href="#" class="box-alumno">
+							<div>
+								<img src="img/listado.png">
+								<h6> Licencias otorgadas</h6>
+							</div>
+				        </a>
+				    </li>
+		        </ul>
+		    </div>
+		</div>
 		<div class="contenedor-principal inasistencias" style="display:none;">
 		</div>
 	</div>

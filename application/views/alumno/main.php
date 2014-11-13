@@ -7,26 +7,33 @@
 	<li><a href="c_home/logout">Logout</a></li>
 </ul>
 <div class="tab-content">
-	<div class="tab-pane fade active in" id="tab_a">
-		<h4>Welcome NOMBRE ALUMNO</h4>
-		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-			ac turpis egestas.</p>
+		<div class="tab-pane fade active in" id="tab_a">
+			<div class="contenedor-pestana-general">
+				<div class="box-generic asignaturas">
+					<h3>Welcome NOMBRE ALUMNO</h3>
+					<div>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					ac turpis egestas.</div>
+				</div>				
+			</div>		
 		</div>
 		<div class="tab-pane fade" id="tab_b">
-			<div id="asignatura-info-container">
-			</div>
-			<div id="selector-asignatura">
-				<h4>Seleccione una Asignatura</h4>
-				<div id="selectorBtnAsignatura">
+			<div class="contenedor-pestana-general">
+				<div id="asignatura-info-container">
 				</div>
-			</div>
+				<div id="selector-asignatura" class="box-generic asignaturas">
+					<h3><img src="">Asignaturas del curso</h3>
+					<div id="selectorBtnAsignatura">
+					</div>
+				</div>
+			</div>			
 		</div>
 		<div class="tab-pane fade" id="tab_c">
 
-			<div id="aportes-info-container">
+			<div id="aportes-info-container"  class="contenedor-pestana-general">
 				<div>
 					<h1>Listado de aranceles:</h1>
 				</div>
+				<div> <input type="button" value="Imprimir en PDF"></div>
 				<table id="tablaAportes">
 					<thead>
 						<tr>
@@ -40,6 +47,17 @@
 
 					</tbody>
 				</table>
+				<div class="pagination pagination-centered">
+				    <ul>
+				      <li class="disabled"><a href="#">Prev</a></li>
+				      <li class="active"><a href="#">1</a></li>
+				      <li class="disabled"><a href="#">2</a></li>
+				      <li class="disabled"><a href="#">3</a></li>
+				      <li class="disabled"><a href="#">4</a></li>
+				      <li class="disabled"><a href="#">5</a></li>
+				      <li class="disabled"><a href="#">Next</a></li>
+				    </ul>
+				  </div>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_d">
@@ -72,7 +90,7 @@
 				<div class="box-generic academicos">
 					<h3>Acciones</h3>
 					<div class="botones-datos-personales">
-						<input id="misTutores" type="button" value="Ver Tutores">
+						<input id="misTutores" type="button" value="Tutor / Autorizados">
 						<input id="misHorarios" type="button" value="Mis Horarios">					
 						<input id="misDocentes" type="button" value="Mis Docentes">
 					</div>
@@ -114,6 +132,7 @@
 							  				<td>Nro Documento</td>
 							  				<td>Telefono</td>
 							  				<td>Relacion</td>
+							  				<td></td>
 							  				<td></td>
 							  			</tr>
 							  		</thead>
