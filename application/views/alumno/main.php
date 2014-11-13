@@ -4,6 +4,7 @@
 	<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
 	<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
 	<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
+	<li><a href="c_home/logout">Logout</a></li>
 </ul>
 <div class="tab-content">
 	<div class="tab-pane fade active in" id="tab_a">
@@ -80,11 +81,11 @@
 				<div class="perfil-tutor-container" style = "display:none;">
 					<div class="popup-header">
 						<h2><span id="perfil-nombre-header"></span><span id="perfil-grado-header"></span></h2>
-						<div class="close-popup"><img src="img/close.png"></div>
+						<div class="close-popup"><img src="../img/close.png"></div>
 					</div>
 					<div class="popup-body">
 						<div class="container-left">
-							<img class="profile-picture" src="img/profile-temp.png">
+							<img class="profile-picture" src="../img/profile-temp.png">
 						</div>
 						<div class="container-right">
 							<ul class="nav nav-tabs" role="tablist">
@@ -134,7 +135,7 @@
 				</div>
 				<div id="conte-listado-horarios" style="display:none;">
 					<div>
-						<div class="close-popup"><img src="img/close.png"></div>
+						<div class="close-popup"><img src="../img/close.png"></div>
 						<h3>Mis Horarios</h3>
 						<div id="listadoHorarios">
 							<table id="tablaHorarios">
@@ -152,7 +153,7 @@
 							</table>
 							<div class="footer-horarios">
 								<div>
-									<img src="img/Colegio/0. Escudo.jpg">
+									<img src="../img/Colegio/0. Escudo.jpg">
 									<label>Instituto Santa Teresita</label>
 								</div>
 								<div>

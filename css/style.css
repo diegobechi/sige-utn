@@ -757,13 +757,13 @@ menu#home-top-menu {
 }
 
 /*PESTAÑAS ALUMNO*/
-
+/*
 .contenedor-pestañas{
     margin-top: -40px;
     position: absolute;
     width: 100%;
     z-index: 999;
-}
+} */
 
 .contenedor-cuerpos-pestañas{
     background-color: white;
@@ -1047,4 +1047,12 @@ menu#home-top-menu {
     height: 200px;
     margin: auto;
     border: 4px solid red;
+}
+
+.contenedor-comunicados{
+    min-height: 300px;
+}
+
+.contenedor-comunicados.sin-comunicados{
+    min-height: 100px;
 }
