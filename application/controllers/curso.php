@@ -50,12 +50,8 @@ class Curso extends CI_Controller {
 	}
 
 	public function getComunicadoWeb($idCurso){
-	  $fecha_hasta = date( "Y/m/d",mktime(0, 0, 0, date("m"),date("d"), date("Y")));;
-	  $fecha_desde = date( "Y/m/d",mktime(0, 0, 0, date("m"),date("d")-7, date("Y")));
-	   echo "<pre>";
-	  var_dump($fecha_hasta);
-	 var_dump($fecha_desde);
-	 die();
+	  $fecha_hasta = date( "d-m-Y",mktime(0, 0, 0, date("m"),date("d"), date("Y")));;
+	  $fecha_desde = date( "d-m-Y",mktime(0, 0, 0, date("m"),date("d")-7, date("Y")));
 	  $this->load->model('Curso_Model');
 	  $query = $this->Curso_Model->get_comunicado($idCurso, $fecha_desde, $fecha_hasta);
 	  echo json_encode($query);
