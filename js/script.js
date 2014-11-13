@@ -614,7 +614,7 @@ $(document).ready(function(){
 
 function buscarComunicadoWeb(){
     $.ajax({
-     url: "index.php/curso/getComunicadoWeb/2",
+     url: "index.php/curso/getComunicadoWeb/9",
      type:"GET",
      dataType: "json",
      success: function(data, textStatus, jqXHR){
