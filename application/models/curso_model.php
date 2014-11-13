@@ -58,7 +58,7 @@ class Curso_Model extends CI_Model {
                                         FROM ComunicadoWeb cw, Docente d, Curso c
                                         WHERE cw.legajoDocente = d.legajoDocente and
                                             cw.idCurso = c.idCurso and
-                                            cw.fecha between  ' $startDate '  and  ' $endDate ' and
+                                            cw.fecha between  $startDate  and  $endDate and
                                             c.idCurso = $idCurso";
       $string_query = $this->db->query($consulta);
       return $string_query->result();
@@ -72,7 +72,7 @@ class Curso_Model extends CI_Model {
     /* START TEMARIO DICTADO*/
     function set_temario_dictado($idCurso, $idAsignatura, $fecha, $temasClase, $legajoDocente){      
       $string_query = $this->db->query("INSERT INTO TemarioDictado(idCurso, idAsignatura, fecha, temasClase, legajoDocente) 
-                                        VALUES ($idCurso, $idAsignatura, $fecha, ' $temasClase ', $legajoDocente)");
+                                        VALUES ($idCurso, $idAsignatura, '$fecha', ' $temasClase ', $legajoDocente)");
       return $string_query;
 
     }

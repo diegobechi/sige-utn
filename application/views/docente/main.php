@@ -91,16 +91,15 @@
 						</div>						
 					</div>
 				</div>
-			</div>
-			<h4>CURRICULUM</h4>
-			<div>
-				<input type="button" value="Cargar CV">
-				<div>PANEL PARA PREVISUALIZAR EL CV EN PDF
-					<div>
-						<iframe src="http://red.ilce.edu.mx/sitios/micrositios/cortazar_aniv/pdf/8_Cielo_Rayuela_libro.pdf" style="width:600px; height:500px;" frameborder="0"></iframe>						
+				<h4>CURRICULUM</h4>
+				<div>
+					<input type="button" value="Cargar CV">
+					<div>PANEL PARA PREVISUALIZAR EL CV EN PDF
+						<div>
+							<iframe src="http://red.ilce.edu.mx/sitios/micrositios/cortazar_aniv/pdf/8_Cielo_Rayuela_libro.pdf" style="width:600px; height:500px;" frameborder="0"></iframe>						
+						</div>
 					</div>
-				</div>
-			</div>
+				</div>			
 		</div>
 		<div class="tab-pane fade" id="tab_e">
 			<style>
@@ -151,7 +150,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="tab-pane fade active in" id="tab_f">
+		<div class="tab-pane fade" id="tab_f">
 			<div class="box-generic">
 				<h3>CARGAR NOTAS</h3>
 				<div>Carga de notas planilla</div>
