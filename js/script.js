@@ -15,7 +15,7 @@ app.home = {};
 app.home.openLogin = function(bandera){
     if(!bandera){
         $('.login-menu-container').animate({
-            'margin-top': '-130px'
+            'margin-top': '-315px'
         }, 500);
     }else{
         $('.login-menu-container').animate({
@@ -24,14 +24,21 @@ app.home.openLogin = function(bandera){
     }
 }
 
-$(window).bind('scroll', function () {
+$(window).bind('scroll', function
+  () {
     if ($(window).scrollTop() > 5) {
         $('#menu-home').animate({
-            'margin-top': '-55px'
+            'margin-top': '-150px'
+        }, 1);
+        $('#datos-personales-contenedor').animate({
+            'margin-top': '15px'
         }, 1);
     } else {
         $('#menu-home').animate({
             'margin-top': '-5px'
+        }, 1);
+        $('#datos-personales-contenedor').animate({
+            'margin-top': '50px'
         }, 1);
     }
 });
@@ -41,28 +48,44 @@ $(window).bind('scroll', function () {
 $(".home-niveles-masinfo").on( "click", function() {
     if ( $(this).hasClass('inicial')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
+
+        $('.home-niveles-contenedor-masinfo').animate({
+            'height': '500px'
+        }, 1); 
+
         $('.nivel-uno').css('display', 'block');
         $('.nivel-uno').animate({}, 1);
         $('.home-niveles-contenedor').css('display', 'none');
     }
     else if ( $(this).hasClass('primario')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
+
+        $('.home-niveles-contenedor-masinfo').animate({
+            'height': '585px'
+        }, 1); 
+
         $('.nivel-dos').css('display', 'block');
         $('.nivel-dos').animate({}, 1); 
         $('.home-niveles-contenedor').css('display', 'none');
     }
     else if ( $(this).hasClass('secundario')){
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
+
+        $('.home-niveles-contenedor-masinfo').animate({
+            'height': '585px'
+        }, 1); 
+
         $('.nivel-tres').css('display', 'block');
         $('.nivel-tres').animate({}, 1); 
         $('.home-niveles-contenedor').css('display', 'none');
     }
     else{
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
-        $('.home-niveles-contenedor-masinfo').animate({}, 1); 
+
+        $('.home-niveles-contenedor-masinfo').animate({
+            'height': '500px'
+        }, 1); 
+
         $('.nivel-cuatro').css('display', 'block');
         $('.nivel-cuatro').animate({}, 1); 
         $('.home-niveles-contenedor').css('display', 'none');
@@ -83,61 +106,141 @@ app.home.cerrarInfo = function() {
     }, 1);  
 }
 
-$(".home-niveles-masinfo").on( "click", function() {
-    if ( $(this).hasClass('inicial')){
-        $('.home-niveles-contenedor-masinfo').css('display', 'block');
+app.home.mostrarInfoHistoria = function() {
+    $('.home-institucion-contenedor-desplegable-historia').css('display', 'block');
 
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
+    $('.home-institucion-contenedor-desplegable-historia').animate({
+    }, 1); 
 
-        $('.nivel-uno').css('display', 'block');
+    $('.home-institucion-contenedor-vermas-historia').css('display', 'none');
 
-        $('.nivel-uno').animate({
-        }, 1); 
+    $('.home-institucion-contenedor-historia').animate({
+        'height': '1105px'
+    }, 1); 
 
-        $('.home-niveles-contenedor').css('display', 'none');
-    }
-    else if ( $(this).hasClass('primario')){
-        $('.home-niveles-contenedor-masinfo').css('display', 'block');
+    $('.home-institucion-contenedor-contenido-historia').animate({
+        'height': '93%'
+    }, 1);
+}
 
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
+app.home.ocultarInfoHistoria = function() {
+    $('.home-institucion-contenedor-desplegable-historia').css('display', 'none');
 
-        $('.nivel-dos').css('display', 'block');
+    $('.home-institucion-contenedor-vermas-historia').css('display', 'block');
 
-        $('.nivel-dos').animate({
-        }, 1); 
+    $('.home-institucion-contenedor-vermas-historia').animate({
+    }, 1);
 
-        $('.home-niveles-contenedor').css('display', 'none');
-    }
-    else if ( $(this).hasClass('secundario')){
-        $('.home-niveles-contenedor-masinfo').css('display', 'block');
+    $('.home-institucion-contenedor-historia').animate({
+        'height': '525px'
+    }, 1); 
 
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
+    $('.home-institucion-contenedor-contenido-historia').animate({
+        'height': '86%'
+    }, 1);
+}
 
-        $('.nivel-tres').css('display', 'block');
+app.home.mostrarInfoFormacion = function() {
+    $('.home-institucion-contenedor-desplegable-formacion').css('display', 'block');
 
-        $('.nivel-tres').animate({
-        }, 1); 
+    $('.home-institucion-contenedor-desplegable-formacion').animate({
+    }, 1); 
 
-        $('.home-niveles-contenedor').css('display', 'none');
-    }
-    else{
-        $('.home-niveles-contenedor-masinfo').css('display', 'block');
+    $('.home-institucion-contenedor-vermas-formacion').css('display', 'none');
 
-        $('.home-niveles-contenedor-masinfo').animate({
-        }, 1); 
+    $('.home-institucion-contenedor-formacion').animate({
+        'height': '1000px'
+    }, 1); 
 
-        $('.nivel-cuatro').css('display', 'block');
+    $('.home-institucion-contenedor-contenido-formacion').animate({
+        'height': '93%'
+    }, 1);
+}
 
-        $('.nivel-cuatro').animate({
-        }, 1); 
+app.home.ocultarInfoFormacion = function() {
+    $('.home-institucion-contenedor-desplegable-formacion').css('display', 'none');
 
-        $('.home-niveles-contenedor').css('display', 'none');
-    }
+    $('.home-institucion-contenedor-vermas-formacion').css('display', 'block');
 
-});
+    $('.home-institucion-contenedor-vermas-formacion').animate({
+    }, 1);
+
+    $('.home-institucion-contenedor-formacion').animate({
+        'height': '620px'
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-formacion').animate({
+        'height': '88%'
+    }, 1);
+}
+
+app.home.mostrarInfoSimbolos = function() {
+    $('.home-institucion-contenedor-desplegable-simbolos').css('display', 'block');
+
+    $('.home-institucion-contenedor-desplegable-simbolos').animate({
+    }, 1); 
+
+    $('.home-institucion-contenedor-vermas-simbolos').css('display', 'none');
+
+    $('.home-institucion-contenedor-simbolos').animate({
+        'height': '1400px'
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-simbolos').animate({
+        'height': '95%'
+    }, 1);
+}
+
+app.home.ocultarInfoSimbolos = function() {
+    $('.home-institucion-contenedor-desplegable-simbolos').css('display', 'none');
+
+    $('.home-institucion-contenedor-vermas-simbolos').css('display', 'block');
+
+    $('.home-institucion-contenedor-vermas-simbolos').animate({
+    }, 1);
+
+    $('.home-institucion-contenedor-simbolos').animate({
+        'height': '570px'
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-simbolos').animate({
+        'height': '87%'
+    }, 1);
+}
+
+app.home.mostrarInfoPatronos = function() {
+    $('.home-institucion-contenedor-desplegable-patronos').css('display', 'block');
+
+    $('.home-institucion-contenedor-desplegable-patronos').animate({
+    }, 1); 
+
+    $('.home-institucion-contenedor-vermas-patronos').css('display', 'none');
+
+    $('.home-institucion-contenedor-patronos').animate({
+        'height': '895px'
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-patronos').animate({
+        'height': '91%'
+    }, 1);
+}
+
+app.home.ocultarInfoPatronos = function() {
+    $('.home-institucion-contenedor-desplegable-patronos').css('display', 'none');
+
+    $('.home-institucion-contenedor-vermas-patronos').css('display', 'block');
+
+    $('.home-institucion-contenedor-vermas-patronos').animate({
+    }, 1);
+
+    $('.home-institucion-contenedor-patronos').animate({
+        'height': '565px'
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-patronos').animate({
+        'height': '87%'
+    }, 1);
+}
 
 /*Docente*/
 $("#misCursos").on("click",function(){
