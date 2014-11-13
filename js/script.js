@@ -661,7 +661,7 @@ function cargarComunicadoWeb(data){
     if(data.length >= 1){
         $("#cantMensajes").text("(" + data.length+")");
         for (var i = 0 ; i<data.length; i++){
-            var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p><input type='button value='+ ver mas'/></div>";
+            var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p><input type='button' value='+ ver mas'/></div>";
             conte.append(nuevaLinea);
         }
     }else{
