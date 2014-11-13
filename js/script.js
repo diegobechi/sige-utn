@@ -639,7 +639,7 @@ $(document).ready(function(){
 
 function buscarComunicadoWeb(){
     $.ajax({
-     url: "index.php/curso/getComunicadoWeb/9",
+     url: "curso/getComunicadoWeb/9",
      type:"GET",
      dataType: "json",
      success: function(data, textStatus, jqXHR){
