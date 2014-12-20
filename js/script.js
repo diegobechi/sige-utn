@@ -4,11 +4,11 @@ app.sige = {};
 
 $('#contenedor-general').css('width',$(window).width());
 $('#contenedor-general').css('height',$(window).height());
-
+/*
 $('.home-top-item').live('click',function(){
     $('.home-top-item').removeClass('active');
     $(this).addClass('active');
-});
+});*/
 
 app.home = {};
 
@@ -34,11 +34,11 @@ function cargarNovedades(){
         success: function(data, textStatus, jqXHR)
         {    
             crearContenedorNovedad(data);
-            console.log("exito");
+            console.log("exito novedades");
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
-            console.log("fallo");
+            console.log("fallo noveadd");
         }
     });
 }

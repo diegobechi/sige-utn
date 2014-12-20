@@ -1,13 +1,13 @@
 
 		
-		<script src="../js/libs/jquery-ui-1.8.22.custom.min.js"></script>
-		<script src="../js/libs/jquery.jscrollpane.min.js"></script>
-		<script src="../js/libs/highcharts.js"></script>
-		<script type="text/javascript" src="../js/script.js"></script>
+		<script src="js/libs/jquery-ui-1.8.22.custom.min.js"></script>
+		<script src="js/libs/jquery.jscrollpane.min.js"></script>
+		<script src="js/libs/highcharts.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-		<script src="../js/bootstrap-image-gallery.min.js"></script>
+		<script src="js/bootstrap-image-gallery.min.js"></script>
 
 		<div class="foot">			
 			<div class="label-foot">
@@ -24,6 +24,6 @@
 			</div>
 			<div style="text-align: center; font-size: 10px;"><b>© 2014 SIGE - Todos los derechos reservados</b></div>
 		</div>
-	</body>
+	</body> 
 
 </html>

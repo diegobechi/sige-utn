@@ -408,7 +408,7 @@
         </div>
         <div>
             <div class="home-novedades-contenedor">
-                <div class="home-novedades-contenedor-novedad" style="float: left;">
+<!--                <div class="home-novedades-contenedor-novedad" style="float: left;">
                     <div class="home-novedades-contenedor-novedad-titulo">
                         <label id="titulo-novedad">NOVEDAD 1</label>
                     </div>
@@ -418,7 +418,7 @@
                         </div>
                     </div>
                 </div>
-<!--                 <div class="home-novedades-contenedor-novedad" style="float: right;">
+                 <div class="home-novedades-contenedor-novedad" style="float: right;">
                     <div class="home-novedades-contenedor-novedad-titulo">
                         <label id="titulo-novedad">NOVEDAD 2</label>
                     </div>
@@ -427,7 +427,7 @@
                             <label id="contenido-novedad"> Novedad 2</label>
                         </div>
                     </div>
-                </div -->>
+                </div -->
             </div>
 
             <div class="home-novedades-contenedor-vermas" style="border: 2px solid;border-radius: 5px;margin-left: 5%;margin-right: 5%;" onclick="">
