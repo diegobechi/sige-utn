@@ -1,0 +1,56 @@
+Exporting package to 'D:\Mis documentos\Tortoise\2. Flujo de Analisis\Diagramas de Colaboración\Paquete Gestion de No Docentes\RegistrarNuevoNoDocente- Curso Normal.xml'
+Retrieving data for export: diagram elements
+Retrieving data for export: links
+Retrieving data for export: constraints
+Retrieving data for export: attribute tagged values
+Retrieving data for export: operation tagged values
+Retrieving data for export: operation parameter tagged values
+Retrieving data for export: connector tagged values
+Completed data retrieval
+Pre-processing export tree...
+Completed pre-processing
+Processing package: Use Case Model
+Element:0: GestionarRegistrarNoDocente
+Element:1: $help://usecasediagram.htm
+Element:2: Note
+Element:3: ND:NoDocente
+Element:4: P:Pais
+Element:5: Primary Use Cases
+Element:6: Responsable de Inscripcion (R.I)
+Element:7: $help://actor.htm
+Element:8: U:Usuario
+Element:9: PU:PerfilUsuario
+Element:10: Barrio
+Element:11: B:Barrio
+Element:12: Provincia
+Element:13: 
+Element:14: Localidad
+Element:15: L:Localidad
+Element:16: $help://use_case_model_pattern.htm
+Element:17: Actors
+Element:18: Pais
+Element:19: PantallaRegistrarNoDocente
+Element:20: PerfilUsuario
+Element:21: D:Domicilio
+Element:22: U:Usuario
+Element:23: Pro:Provincia
+Element:24: ND:Domicilio
+Element:25: NoDocente
+Element:26: PU:PerfilUsuario
+Element:27: Object1
+Element:28: 
+Diagram: Use Case Model
+Diagram: RegistrarNuevoNoDocente - Curso Normal
+Processing package: Actors
+Element:29: User
+Diagram: Actors
+Processing package: Primary Use Cases
+Element:30: System Boundary
+Element:31: Use Case2
+Element:32: Use Case1
+Element:33: Note
+Element:34: Object1
+Diagram: Primary Use Cases
+Diagram: Use Case1
+Formatting output XML...please wait
+XMI Document Export Complete!
