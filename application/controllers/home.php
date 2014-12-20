@@ -3,13 +3,10 @@ class Home extends CI_Controller {
 
 	public function index()
 	{	
+		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('menuUp');
 		$this->load->view("home/main");
 		$this->load->view('footer');
-		$this->load->model('Student_Model');
 	}
-
-
-
 }
