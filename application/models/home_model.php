@@ -7,7 +7,7 @@ class Home_Model extends CI_Model {
         parent::__construct();
     }
     
-    function get_novedad(){
+    function get_novedades(){
         $string_query = $this->db->query("SELECT fecha, titulo, descripcion, rutaArchivo
                                           FROM Novedad");
                                           
