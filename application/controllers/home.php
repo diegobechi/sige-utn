@@ -13,8 +13,8 @@ class Home extends CI_Controller {
 
 	public function getNovedades(){
 		$this->load->model('Home_Model');
-		$query = $this->Home_Model->get_novedad();
-		echo json_encode($query);		
+		$query = $this->Home_Model->get_novedades();
+		echo json_encode($query);
 	}
 
 }

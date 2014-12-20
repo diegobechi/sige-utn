@@ -17,7 +17,7 @@ class Student_Model extends CI_Model {
         }
         return $array_query;
     }
-    
+
     function get_student($legajoAlumno){
         $string_query = $this->db->query("SELECT a.apellido, a.nombre,a.nroDocumento, a.sexo,CONVERT(VARCHAR(11),a.fechaNacimiento, 106) as 'fecha nacimiento',a.nacionalidad, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento, a.telefonoFijo, a.telefonoMovil,a.lugarNacimiento,a.legajoAlumno, ne.division, e.nombre as 'estado', c.seccion
                                           FROM Alumno a , Domicilio d, Inscripcion i, Curso c, NivelEducativo ne, Estado e

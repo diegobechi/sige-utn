@@ -28,7 +28,7 @@ app.home.openLogin = function(bandera){
 
 function cargarNovedades(){
     $.ajax({
-        url : "home/getNovedades/",
+        url : "index.php/home/getNovedades/",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -46,11 +46,14 @@ function cargarNovedades(){
 function crearContenedorNovedad(data){
     var conte_novedad = $('.home-novedades-contenedor');
     conte_novedad.empty();
-    for(var i=0;i<2;i++){
-        var newBox ="<div class='home-novedades-contenedor-novedad'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-        
+    for(var i=0;i<data.length;i++){
+        if (i>0 && i%2==1) {
+            var newBox ="<div class='home-novedades-contenedor-novedad' style='float: right;'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+        }else{
+            var newBox ="<div class='home-novedades-contenedor-novedad'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+        }
         // var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
-        conte_info.append(newBox);
+        conte_novedad.append(newBox);
     }
 }
 
