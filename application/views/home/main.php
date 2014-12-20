@@ -1,10 +1,12 @@
 <!--MENU-->
 <!--<?php echo $alumno_uno["nombre"].$alumno_uno["legajoAlumno"]; ?>-->
+
 <div id="menu-home" class="home-menu-opciones">
     <menu id="home-top-menu">
         <ul>
+            <img id="imagen-menu-escudo" src="img/Colegio/0. Escudo.jpg">
             <li>
-                <a href="#top" class="home-top-item active" style="margin-left: -15px; padding-right: 5px">
+                <a id="top-menu" href="#top" class="home-top-item active" style="padding-right: 5px; padding-left: 6px; margin-left: 2px;">
                     <img src="http://www.flaticon.es/png/256/10774.png" style="max-width: 20px">
                 </a>
             </li>
@@ -15,28 +17,28 @@
                 <a href="#novedades" class="home-top-item"><b>NOVEDADES</b></a>
             </li>
             <li class="lista">
-                <a href="#institucion" class="home-top-item"><b>INSTITUCIÓN</b></a>
+                <a id="menu-institucion" href="#institucion" class="home-top-item"><b>INSTITUCIÓN</b></a>
                 <div id="submenu-top-menu" class="home-submenu-opciones">
                     <menu  style="margin-top: 2px; margin-bottom: 0px">
                         <ul>
-                            <div class="submenu-opcion">
+                            <li class="submenu-opcion">
                                 <a href="#historia"><b>Historia</b></a>
-                            </div>
-                            <div class="submenu-opcion">
+                            </li>
+                            <li class="submenu-opcion">
                                 <a href="#naturaleza"><b>Naturaleza</b></a>
-                            </div>
-                            <div class="submenu-opcion">
+                            </li>
+                            <li class="submenu-opcion">
                                 <a href="#formacion"><b>Estilo de formación y enseñanza</b></a>
-                            </div>
-                            <div class="submenu-opcion">
+                            </li>
+                            <li class="submenu-opcion">
                                 <a href="#simbolos"><b>Signos, símbolos y tradiciones</b></a>
-                            </div>
-                            <div class="submenu-opcion">
+                            </li>
+                            <li class="submenu-opcion">
                                 <a href="#patronos"><b>Patronos</b></a>
-                            </div>
-                            <div class="submenu-opcion" style="border-bottom: 2px solid rgb(9, 67, 155);">
+                            </li>
+                            <li class="submenu-opcion" style="border-bottom: 2px solid rgb(9, 67, 155);">
                                 <a href="#ubicacion"><b>Ubicación</b></a>
-                            </div>
+                            </li>
                         </ul>
                     </menu>
                 </div>                            
@@ -51,15 +53,15 @@
 <!--HOME-->
 <div id="datos-personales-contenedor" class="contenedor-general">
     <div>
-        <div class="row">
-            <div class="home-lema-contenedor">
-                <div class="home-lema-contenedor-titulo"><br><b>LEMA DEL INSTITUTO 2014</b><br><br>
+        <div class="row" style="padding-top: 100px;">
+            <!-- <div class="home-lema-contenedor">
+                <div class="home-lema-contenedor-titulo"><br><b>LEMA 2014</b><br><br>
                 </div>
                 <div class="home-lema-contenedor-contenido"><br><b>"SÉ EN QUIEN HE PUESTO MI CONFIANZA"</b><br><br>
                     <div style="font-size: 15px; text-align: right; margin-right: 15px">2 Timoteo 1,12
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="span12" style="display: inline-block;">
                 <div id="homeCarousel" class="carousel slide">
@@ -84,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="home-oracion-contenedor">
+            <!-- <div class="home-oracion-contenedor">
                 <div class="home-oracion-contenedor-titulo"><b>ORACIÓN: 100 AÑOS HERMANAS EN ARGENTINA!</b>
                 </div>
                 <div class="home-oracion-contenedor-contenido"><br>
@@ -95,7 +97,7 @@
                     grano enterrado, trigo molido y pan de altar. <br>Te lo pedimos por María, nuestra Madre Inmaculada. Amén.
                     </div>
                 </div>
-            </div>  
+            </div> -->  
         </div>
     </div>
 
@@ -131,29 +133,29 @@
                         </div>
                         <img src="img/Nivel inicial/Inicial.jpg" style="float: right; max-width: 40%"> 
 
-                        <div id="links" class="home-galeria-contenedor nivel-uno" style="display: none; margin-top: 310px;">                             
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/Abuela cuenta cuentos.jpg" title="Abuela cuenta cuentos" data-gallery>
+                        <div id="galeriaInicial" class="home-galeria-contenedor nivel-uno" style="display: none; margin-top: 310px;">                             
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/Abuela cuenta cuentos.jpg" title="Abuela cuenta cuentos" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/Abuela cuenta cuentos.jpg" alt="Abuela cuenta cuentos">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En el día de las mascotas.jpg" title="Día de las mascotas" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En el día de las mascotas.jpg" title="Día de las mascotas" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/En el día de las mascotas.jpg" alt="Día de las mascotas">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En la kermese.jpg" title="Kermese" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En la kermese.jpg" title="Kermese" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/En la kermese.jpg" alt="Kermese">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En la kermese (2).jpg" title="Kermese" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En la kermese (2).jpg" title="Kermese" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/En la kermese (2).jpg" alt="Kermese">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En la kermese (3).jpg" title="Kermese" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En la kermese (3).jpg" title="Kermese" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/En la kermese (3).jpg" alt="Kermese">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En momentos de experiencias en conjunto.jpg" title="Momentos de experiencias en conjunto" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En momentos de experiencias en conjunto.jpg" title="Momentos de experiencias en conjunto" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/En momentos de experiencias en conjunto.jpg" alt="Momentos de experiencias en conjunto">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En una dramatización.jpg" title="Dramatización" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/En una dramatización.jpg" title="Dramatización" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/En una dramatización.jpg" alt="Dramatización">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/Preparando el regalo del Día del Padre.jpg" title="Preparando el regalo del Día del Padre" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel inicial/Preparando el regalo del Día del Padre.jpg" title="Preparando el regalo del Día del Padre" data-gallery='inicial'>
                                 <img src="img/Nivel inicial/Preparando el regalo del Día del Padre.jpg" alt="Preparando el regalo del Día del Padre">
                             </a>
                         </div> 
@@ -174,14 +176,14 @@
                         </div>
                         <img src="img/Nivel primario/Primario.jpg" style="float: right; max-width: 40%">
 
-                        <div id="links" class="home-galeria-contenedor nivel-dos" style="display: none; margin-top: 310px;">
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Recorriendo el barrio.jpg" title="Recorriendo el barrio" data-gallery>
+                        <div id="galeriaPrimario" class="home-galeria-contenedor nivel-dos" style="display: none; margin-top: 310px;">
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Recorriendo el barrio.jpg" title="Recorriendo el barrio" data-gallery='primario'>
                                 <img src="img/Nivel primario/Recorriendo el barrio.jpg" alt="Recorriendo el barrio">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Promesa de Lealtad a la Bandera.jpg" title="Promesa de lealtad a la Bandera" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Promesa de Lealtad a la Bandera.jpg" title="Promesa de lealtad a la Bandera" data-gallery='primario'>
                                 <img src="img/Nivel primario/Promesa de Lealtad a la Bandera.jpg" alt="Promesa de lealtad a la Bandera">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Durante un proyecto de alfabetización Inicial.jpg" title="Proyecto de Alfabetización Inicial" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Durante un proyecto de alfabetización Inicial.jpg" title="Proyecto de Alfabetización Inicial" data-gallery='primario'>
                                 <img src="img/Nivel primario/Durante un proyecto de alfabetización Inicial.jpg" alt="Proyecto de Alfabetización Inicial">
                             </a>
 <!--                        <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En el acto del Dia de la Diversidad.jpg" title="Acto del Día de la Diversidad" data-gallery>
@@ -249,38 +251,38 @@
                         </div>
                         <img src="img/Nivel secundario/Secundario.jpg" style="float: right; max-width: 40%">
 
-                        <div id="links" class="home-galeria-contenedor nivel-tres" style="display: none; margin-top: 310px;">
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Armando frazadas.jpg" title="Armando frazadas" data-gallery>
+                        <div id="galeriaSecundario" class="home-galeria-contenedor nivel-tres" style="display: none; margin-top: 310px;">
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Armando frazadas.jpg" title="Armando frazadas" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Armando frazadas.jpg" alt="Armando frazadas">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Cerca de la desembocadura.jpg" title="Compartiendo el lema" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Cerca de la desembocadura.jpg" title="Compartiendo el lema" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Cerca de la desembocadura.jpg" alt="Compartiendo el lema">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Día en la naturaleza.jpg" title="Día en la naturaleza" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Día en la naturaleza.jpg" title="Día en la naturaleza" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Día en la naturaleza.jpg" alt="Día en la naturaleza">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/En el acantonamiento.jpg" alt="Acantonamiento">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En servicio.jpg" title="En servicio" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En servicio.jpg" title="En servicio" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/En servicio.jpg" alt="En servicio">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Participando de la Eucaristía.jpg" title="Participando de la Eucaristía" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Participando de la Eucaristía.jpg" title="Participando de la Eucaristía" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Participando de la Eucaristía.jpg" alt="Participando de la Eucaristía">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Construyendo una casa.jpg" title="Construyendo una casa" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Construyendo una casa.jpg" title="Construyendo una casa" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Construyendo una casa.jpg" alt="Construyendo una casa">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Jugando en la guardería Municipal.jpg" title="Jugando en la Guardería Municipal" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Jugando en la guardería Municipal.jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Jugando en la guardería Municipal.jpg" alt="Jugando en la Guardería Municipal">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Guardería.jpg" title="Jugando en la Guardería Municipal" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Guardería.jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Guardería.jpg" alt="Jugando en la Guardería Municipal">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Guardería (1).jpg" title="Jugando en la Guardería Municipal" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Guardería (1).jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Guardería (1).jpg" alt="Jugando en la Guardería Municipal">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Guardería (2).jpg" title="Jugando en la Guardería Municipal" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/Guardería (2).jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Guardería (2).jpg" alt="Jugando en la Guardería Municipal">
                             </a>
                         </div> 
@@ -301,29 +303,29 @@
                         </div>
                         <img src="img/Nivel superior/Superior.jpg" style="float: right; max-width: 40%">
 
-                        <div id="links" class="home-galeria-contenedor nivel-cuatro" style="display: none; margin-top: 310px;">
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Acompañando proyectos de alfabtización.jpg" title="Acompañando proyectos de alfabtización" data-gallery>
+                        <div id="galeriaSuperior" class="home-galeria-contenedor nivel-cuatro" style="display: none; margin-top: 310px;">
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Acompañando proyectos de alfabtización.jpg" title="Acompañando proyectos de alfabtización" data-gallery='superior'>
                                 <img src="img/Nivel superior/Acompañando proyectos de alfabtización.jpg" alt="Acompañando proyectos de alfabtización">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg" title="Actividad con los niños de la Escuela Especial" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg" title="Actividad con los niños de la Escuela Especial" data-gallery='superior'>
                                 <img src="img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg" alt="Actividad con los niños de la Escuela Especial">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Animando la Fiesta de la Primavera.jpg" title="Animando la Fiesta de la Primavera" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Animando la Fiesta de la Primavera.jpg" title="Animando la Fiesta de la Primavera" data-gallery='superior'>
                                 <img src="img/Nivel superior/Animando la Fiesta de la Primavera.jpg" alt="Animando la Fiesta de la Primavera">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Clases en el laboratorio.jpg" title="Clases en el laboratorio" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/Clases en el laboratorio.jpg" title="Clases en el laboratorio" data-gallery='superior'>
                                 <img src="img/Nivel superior/Clases en el laboratorio.jpg" alt="Clases en el laboratorio">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/En acompañamiento pedagógico.jpg" title="Realizando acompañamiento pedagógico" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/En acompañamiento pedagógico.jpg" title="Realizando acompañamiento pedagógico" data-gallery='superior'>
                                 <img src="img/Nivel superior/En acompañamiento pedagógico.jpg" alt="Realizando acompañamiento pedagógico">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/En Taller de TICS.jpg" title="En el Taller de TICS" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel superior/En Taller de TICS.jpg" title="En el Taller de TICS" data-gallery='superior'>
                                 <img src="img/Nivel superior/En Taller de TICS.jpg" alt="En el Taller de TICS">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery='superior'>
                                 <img src="img/Nivel secundario/En el acantonamiento.jpg" alt="Acantonamiento">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery>
+                            <a class="home-galeria-contenedor-imagen" href="img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery='superior'>
                                 <img src="img/Nivel secundario/En el acantonamiento.jpg" alt="Acantonamiento">
                             </a>                            
                         </div> 
@@ -407,44 +409,54 @@
         <div>
             <div class="home-novedades-contenedor">
                 <div class="home-novedades-contenedor-novedad" style="float: left;">
-                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 1
+                    <div class="home-novedades-contenedor-novedad-titulo">
+                        <label id="titulo-novedad">NOVEDAD 1</label>
                     </div>
                     <div class="home-novedades-contenedor-novedad-contenido"> 
-                        <div style="float: left">Novedad 1
+                        <div style="float: left">
+                            <label id="contenido-novedad"> Novedad 1</label>
                         </div>
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
                 <div class="home-novedades-contenedor-novedad" style="float: right;">
-                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 2
+                    <div class="home-novedades-contenedor-novedad-titulo">
+                        <label id="titulo-novedad">NOVEDAD 2</label>
                     </div>
                     <div class="home-novedades-contenedor-novedad-contenido"> 
-                        <div style="float: left">Novedad 2
+                        <div style="float: left">
+                            <label id="contenido-novedad"> Novedad 2</label>
                         </div>
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
             </div>
+
             <div class="home-novedades-contenedor" style="margin-bottom: 15px">
                 <div class="home-novedades-contenedor-novedad" style="float: left;">
-                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 3
+                    <div class="home-novedades-contenedor-novedad-titulo">
+                        <label id="titulo-novedad">NOVEDAD 3</label>
                     </div>
                     <div class="home-novedades-contenedor-novedad-contenido"> 
-                        <div style="float: left">Novedad 3
+                        <div style="float: left">
+                            <label id="contenido-novedad"> Novedad 3</label>
                         </div>
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
                 <div class="home-novedades-contenedor-novedad" style="float: right;">
-                    <div class="home-novedades-contenedor-novedad-titulo">NOVEDAD 4
+                    <div class="home-novedades-contenedor-novedad-titulo">
+                        <label id="titulo-novedad">NOVEDAD 4</label>
                     </div>
                     <div class="home-novedades-contenedor-novedad-contenido"> 
-                        <div style="float: left">Novedad 4
+                        <div style="float: left">
+                            <label id="contenido-novedad"> Novedad 4</label>
                         </div>
-                        <img src="http://2.bp.blogspot.com/-AyBAOo7mtZM/UAeC0HYAlYI/AAAAAAAABFM/iM3z9xg1le0/s1600/Corazon-t15737.jpg" style="float: right; max-width: 20%">
                     </div>
                 </div>
             </div>
+
+            <div class="home-novedades-contenedor-vermas" style="border: 2px solid;border-radius: 5px;margin-left: 5%;margin-right: 5%;" onclick="">
+                <a class="home-novedades-contenedor-vermas"><b>Ver más</b></a>
+            </div>
+
         </div>
     </div> <!--Novedades-->
 
@@ -456,7 +468,7 @@
             <div class="home-institucion-contenedor-titulo"><b>HISTORIA</b>
             </div>
             <div class="home-institucion-contenedor-contenido-historia"> 
-                <div style="float: left; width: 1090px;">Verano de 1930. Con más expectativas que certezas, un ya lejano 29 de enero, llegaban a Balnearia las primeras religiosas de la Congregación de las Hermanas de
+                <div style="float: left; width: 100%">Verano de 1930. Con más expectativas que certezas, un ya lejano 29 de enero, llegaban a Balnearia las primeras religiosas de la Congregación de las Hermanas de
                     la Inmaculada de Génova.<br><br>Los comienzos no fueron sencillos. Las Hermanas sabían que habían llegado a un país junto a innumerables masas de inmigrantes europeos que, ante la
                     mecanización de las tareas rurales y el aumento de la población en el Viejo Continente, venían a buscar un porvenir mejor a estas tierras. Pero a ellas las traía un ideal superior,
                     el mismo que movió a San Agustín Roscelli a fundar una Congregación. Sin emargo, la adaptación al lugar y a sus costumbres fue dificultosa. Tanto que ese primer día en el pueblo, y
@@ -475,7 +487,7 @@
                 <div class="home-institucion-contenedor-vermas-historia" onclick="app.home.mostrarInfoHistoria()">
                     <a class="home-institucion-contenedor-vermas-historia"><b>Ver más</b></a>
                 </div>
-                <div class="home-institucion-contenedor-desplegable-historia" style="display:none; width: 1090px;">
+                <div class="home-institucion-contenedor-desplegable-historia" style="display:none; width: 100%">
                     A medida que las circunstancias lo exigieron, fue adoptándose a los nuevos requerimientos, hasta que las inundaciones de la zona 
                     exigieron que, con la ayuda de los padres, sea necesario rehacer el edificio, siguiendo las pautas de arquitectura escolar. A partir de entonces fue ampliándose sucesivamente 
                     hasta adquirir las dimensiones y comodidades actuales.<br><br>
@@ -505,7 +517,7 @@
             <div class="home-institucion-contenedor-titulo"><b>NATURALEZA</b>
             </div>
             <div class="home-institucion-contenedor-contenido-naturaleza"> 
-                <div style="float: left">El <b>Instituto Santa Teresita</b> es un centro educativo de la Iglesia Católica al servicio de la formación de la niñez, la adolescencia y la juventud. Está dirigido por 
+                <div>El <b>Instituto Santa Teresita</b> es un centro educativo de la Iglesia Católica al servicio de la formación de la niñez, la adolescencia y la juventud. Está dirigido por 
                     las Hermanas de la Inmaculada de Génova, de acuerdo con las disposiciones de la Iglesia, de la propia Congregación y las normas educativas de la Nación Argentina y de la Provincia de 
                     Córdoba para los Institutos privados adscriptos a la Enseñanza Oficial.<br><br>Está ubicado en la zona urbana de la localidad de Balnearia, del departamento San Justo. Su zona de 
                     influencia es amplia. Se extiende a las zonas rurales y a las localidades vecinas de Miramar, Marull, Villa Concepción del Tío, La Para, Villa Fontana, La Puerta, Obispo Trejo, Altos 
@@ -522,7 +534,7 @@
             <div class="home-institucion-contenedor-titulo"><b>ESTILO DE FORMACIÓN Y ENSEÑANZA</b>
             </div>
             <div class="home-institucion-contenedor-contenido-formacion"> 
-                <div style="float: left; background-color: white; width: 1093px;">El estilo de formación del Instituto Santa Teresita se caracteriza por “la caridad en el ocultamiento” que ha de animar a todos los miembros de la comunidad educativa 
+                <div style="float: left; background-color: white; width: 100%">El estilo de formación del Instituto Santa Teresita se caracteriza por “la caridad en el ocultamiento” que ha de animar a todos los miembros de la comunidad educativa 
                     para impulsarlos a realizar, a través de la educación, un servicio humilde y sencillo.<br><br>Por ello:<br>•   Busca formar, “no sólo expertos profesionales, sino sobre todo auténticos 
                     católicos” que miren, amen, imiten e invoquen a María, criatura nueva, y con su ayuda, vivan en amistad con Jesús, comprometidos en su Iglesia.<br>•   Asume la misión educadora como 
                     apostolado que exige el ejemplo y la presencia activa, en el ámbito de las actividades escolares, tanto de las Hermanas como de los docentes y de los padres.<br>•   Brinda asistencia 
@@ -543,7 +555,7 @@
                 <div class="home-institucion-contenedor-vermas-formacion" onclick="app.home.mostrarInfoFormacion()">
                     <a class="home-institucion-contenedor-vermas-formacion" ><b>Ver más</b></a>
                 </div>
-                <div class="home-institucion-contenedor-desplegable-formacion" style="display:none; width: 1093px;">
+                <div class="home-institucion-contenedor-desplegable-formacion" style="display:none; width: 100%">
                     Esta animación, tanto en lo educativo como en lo catequístico-pastoral, es promovida por la superiora de la comunidad, la representante legal, los directivos y el 
                     capellán del Colegio. Colaboran directamente los jefes de Departamentos de materias afines, los alumnos delegados de cada curso y los padres representantes de cada curso.<br><br>
                     Derivados de estos propósitos se asumen y promueven los siguientes VALORES:<br>
@@ -561,14 +573,14 @@
             </div>
         </div>
 
-        <div id="simbolos" class="home-institucion-contenedor-simbolos" style="height: 570px">
+        <div id="simbolos" class="home-institucion-contenedor-simbolos">
             <div class="home-institucion-contenedor-titulo"><b>SIGNOS, SÍMBOLOS Y TRADICIONES</b>
             </div>
-            <div class="home-institucion-contenedor-contenido-simbolos" style="height: 87%"> 
-                <div style="float: left;"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada<br>
+            <div class="home-institucion-contenedor-contenido-simbolos"> 
+                <div style="float: left; width: 100%"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada<br>
                     y la luz que emana de la estrella, dan vida al alma. Del Monte Santo de Dios desciende la gracia que hace fecunda la vida del cristiano<br>en el inmenso campo de la Iglesia.<br><br>
                 </div>
-                <img src="img/Colegio/0. Escudo.jpg" style="float: right; max-width: 15%; margin-left: 1%">
+                <img src="img/Colegio/0. Escudo.jpg" style="float: right; max-width: 15%; margin-left: 1%; margin-top: -120px;">
                 <div><br><br><br><br><br><br><b>HIMNO AL COLEGIO</b><br><br>Cantemos el himno de historia gloriosa<br>Colegio Santa Teresita,<br>recinto que entregas en vida armoniosa<br>sueños e ideales de paz y de amor.<br><br>Al 
                     amparo de la Inmaculada<br>los niños confían su amor a Jesús,<br>y siguiendo su ejemplo que es guía<br>los jóvenes llevan al mundo su luz.<br><br>Al abrigo de sus bellos muros<br>viven la 
                     esperanza y el saber,<br>que serán la herencia y el camino<br>que todo cristiano ha de tener.<br><br>
@@ -576,7 +588,7 @@
                 <div class="home-institucion-contenedor-vermas-simbolos" onclick="app.home.mostrarInfoSimbolos()">
                     <a class="home-institucion-contenedor-vermas-simbolos"><b>Ver más</b></a>
                 </div>
-                <div class="home-institucion-contenedor-desplegable-simbolos" style="display:none; width: 1090px;">
+                <div class="home-institucion-contenedor-desplegable-simbolos" style="display:none; width: 100%">
                     Cantemos el himno a nuestro Colegio,<br>que al darnos la ciencia nos nutre en la fe,<br>
                     un himno que encierra gratitud sincera,<br>recuerdo querido por siempre ha de ser.<br><br><b>CELEBRACIONES ESPECIALES</b><br><br>•   El 7 de mayo se celebra a San Agustín Roscelli, Fundador del 
                     Instituto de la Hermanas de la Inmaculada, sacerdote, confesor, catequista, pedagogo y guía de jóvenes en riesgo, de muchachos de la calle, asistente de madres solteras, huérfanos y 
@@ -604,7 +616,7 @@
             <div class="home-institucion-contenedor-titulo"><b>PATRONOS</b>
             </div>
             <div class="home-institucion-contenedor-contenido-patronos"> 
-                <div style="float: left"><b>SAN AGUSTÍN ROSCELLI - Fundador de la Congregación de las Hermanas de la Inmaculada de Génova</b><br><br><i>"Deben adquirir y perfeccionar más en las virtudes 
+                <div style="float: left; width: 100%" ><b>SAN AGUSTÍN ROSCELLI - Fundador de la Congregación de las Hermanas de la Inmaculada de Génova</b><br><br><i>"Deben adquirir y perfeccionar más en las virtudes 
                     que necesitan.. pero sobre todo una inalcansable caridad"</i>
                 </div>
                 <img src="img/0. San Agustín Roscelli.jpg" style="float: right; max-width: 18%; border-radius: 5px; margin-left: 1%">
@@ -623,7 +635,7 @@
                 <div class="home-institucion-contenedor-vermas-patronos" onclick="app.home.mostrarInfoPatronos()">
                     <a class="home-institucion-contenedor-vermas-patronos"><b>Ver más</b></a>
                 </div>
-                <div class="home-institucion-contenedor-desplegable-patronos" style="display:none; width: 1090px;">
+                <div class="home-institucion-contenedor-desplegable-patronos" style="display:none; width: 100%">
                     <div style="float: left"><b>SANTA TERESITA DEL NIÑO JESÚS - Patrona del Instituto Santa Teresita</b><br><br><i>"Alegría, Sensillez, Obediencia"</i>
                     </div>
                     <img src="img/0. Santa Teresita.jpg" style="float: right; max-width: 18%; margin-top: 20px; border-radius: 5px; margin-left: 1%">
@@ -645,12 +657,11 @@
         <div id="ubicacion" class="home-institucion-contenedor-ubicacion">
             <div class="home-institucion-contenedor-titulo"><b>UBICACIÓN</b>
             </div>
-            <div class="home-institucion-contenedor-contenido-ubicacion"> 
+            <div class="home-institucion-contenedor-contenido-ubicacion">                 
                 <img src="img/0. Ubicación.jpg" style="float: right; max-width: 45%; border-radius: 5px; margin-left: 1%">
-                <div style="float: left; width: 50%">El Instituto se encuentra ubicado en Balnearia,  localidad situada en el departamento San Justo, provincia de Córdoba.<br><br>Limita al norte con la localidad de Miramar, 
-                    al este con Altos de Chipión, al sur con Villa Concepción del Tío, y al oeste con Marull.<br><br>Dista a 190 km de la capital de la provincia, Córdoba, y a 120 km de la cabecera del departamento, 
-                    San Francisco.
-                </div>                
+                El Instituto se encuentra ubicado en Balnearia,  localidad situada en el departamento San Justo, provincia de Córdoba.<br><br>Limita al norte con la localidad de Miramar, 
+                al este con Altos de Chipión, al sur con Villa Concepción del Tío, y al oeste con Marull.<br><br>Dista a 190 km de la capital de la provincia, Córdoba, y a 120 km de la cabecera del departamento, 
+                San Francisco.                
             </div>
         </div>
     </div> <!--Institución-->
@@ -660,14 +671,14 @@
         <div class="home-secciones"><b>GALERÍA</b>
         </div>
 
-        <div id="links" class="home-galeria-contenedor">
-            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Banana" data-gallery>
+        <div id="galeriaHome" class="home-galeria-contenedor">
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Banana" data-gallery='home'>
                 <img src="img/Colegio/3. Foto esquina.jpg" alt="Banana">
             </a>
-            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Apple" data-gallery>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Apple" data-gallery='home'>
                 <img src="img/Colegio/3. Foto esquina.jpg" alt="Apple">
             </a>
-            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Orange" data-gallery>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Orange" data-gallery='home'>
                 <img src="img/Colegio/3. Foto esquina.jpg" alt="Orange">
             </a>
         </div>  

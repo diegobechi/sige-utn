@@ -24,26 +24,27 @@ app.home.openLogin = function(bandera){
     }
 }
 
-$(window).bind('scroll', function
-  () {
-    if ($(window).scrollTop() > 5) {
+/*Home*/
+
+$(window).bind('scroll', function() {
+    if ($(window).scrollTop() > 10) {
         $('#menu-home').animate({
-            'margin-top': '-150px'
+            'margin-top': '-220px'
         }, 1);
-        $('#datos-personales-contenedor').animate({
-            'margin-top': '15px'
-        }, 1);
-    } else {
+        $('.row').animate({
+            'padding-top': '30px'
+        }, 1);  
+        $('#imagen-menu-escudo').css('display', 'block');
+    } else {    
         $('#menu-home').animate({
-            'margin-top': '-5px'
+            'margin-top': '20px'
         }, 1);
-        $('#datos-personales-contenedor').animate({
-            'margin-top': '50px'
+        $('.row').animate({
+            'padding-top': '100px'
         }, 1);
+        $('#imagen-menu-escudo').css('display', 'none');
     }
 });
-
-/*Home*/
 
 $(".home-niveles-masinfo").on( "click", function() {
     if ( $(this).hasClass('inicial')){
@@ -115,11 +116,9 @@ app.home.mostrarInfoHistoria = function() {
     $('.home-institucion-contenedor-vermas-historia').css('display', 'none');
 
     $('.home-institucion-contenedor-historia').animate({
-        'height': '1105px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-historia').animate({
-        'height': '93%'
     }, 1);
 }
 
@@ -132,11 +131,9 @@ app.home.ocultarInfoHistoria = function() {
     }, 1);
 
     $('.home-institucion-contenedor-historia').animate({
-        'height': '525px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-historia').animate({
-        'height': '86%'
     }, 1);
 }
 
@@ -149,11 +146,9 @@ app.home.mostrarInfoFormacion = function() {
     $('.home-institucion-contenedor-vermas-formacion').css('display', 'none');
 
     $('.home-institucion-contenedor-formacion').animate({
-        'height': '1000px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-formacion').animate({
-        'height': '93%'
     }, 1);
 }
 
@@ -166,11 +161,9 @@ app.home.ocultarInfoFormacion = function() {
     }, 1);
 
     $('.home-institucion-contenedor-formacion').animate({
-        'height': '620px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-formacion').animate({
-        'height': '88%'
     }, 1);
 }
 
@@ -183,11 +176,9 @@ app.home.mostrarInfoSimbolos = function() {
     $('.home-institucion-contenedor-vermas-simbolos').css('display', 'none');
 
     $('.home-institucion-contenedor-simbolos').animate({
-        'height': '1400px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-simbolos').animate({
-        'height': '95%'
     }, 1);
 }
 
@@ -200,11 +191,9 @@ app.home.ocultarInfoSimbolos = function() {
     }, 1);
 
     $('.home-institucion-contenedor-simbolos').animate({
-        'height': '570px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-simbolos').animate({
-        'height': '87%'
     }, 1);
 }
 
@@ -217,11 +206,9 @@ app.home.mostrarInfoPatronos = function() {
     $('.home-institucion-contenedor-vermas-patronos').css('display', 'none');
 
     $('.home-institucion-contenedor-patronos').animate({
-        'height': '895px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-patronos').animate({
-        'height': '91%'
     }, 1);
 }
 
@@ -234,11 +221,9 @@ app.home.ocultarInfoPatronos = function() {
     }, 1);
 
     $('.home-institucion-contenedor-patronos').animate({
-        'height': '565px'
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-patronos').animate({
-        'height': '87%'
     }, 1);
 }
 
