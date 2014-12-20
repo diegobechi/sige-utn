@@ -1,15 +1,8 @@
 
 		
 		<script src="../js/libs/jquery-ui-1.8.22.custom.min.js"></script>
-		<script src="../js/libs/mwheelIntent.js"></script>
-		<script src="../js/libs/jquery.jscrollpane.min.js"></script> 
-		<script src="../js/libs/jquery.oauthpopup.js"></script> 
-		<script src="../js/libs/raphael-min.js"></script> 
-		<script src="../js/libs/highcharts.js"></script> 
-		<script src="../js/libs/exporting-report.js"></script>
-		<script src="../js/libs/jquery.tipTip.minified.js"></script>		
-
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src="../js/libs/jquery.jscrollpane.min.js"></script>
+		<script src="../js/libs/highcharts.js"></script>
 		<script type="text/javascript" src="../js/script.js"></script>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

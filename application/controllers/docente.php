@@ -11,16 +11,21 @@ class Docente extends CI_Controller {
 		$this->legajoDocente = $info_session['id_usuario'];
     }
 
-	public function index()
-	{
+	public function index(){
 		$this->load->helper('url');
 		if (!$this->session->userdata('logged_in')) {
             redirect('c_login', 'refresh');
+        }else{
+        	$session_data = $this->session->userdata('logged_in');
+        	if($session_data['tipo_usuario'] == 2){
+        		$this->load->view('header');
+				/*$this->load->view('docente/cargar_notas');*/
+				$this->load->view('docente/main');
+				$this->load->view('footer');
+        	}else{
+        		redirect('alumno', 'refresh');
+        	}
         }
-		$this->load->view('header');
-		/*$this->load->view('docente/cargar_notas');*/
-		$this->load->view('docente/main');
-		$this->load->view('footer');
 	}
 
 	public function getDocente(){

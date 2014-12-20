@@ -44,8 +44,7 @@ class C_verifyLogin extends CI_Controller {
     }
 
     function check_tipo_usuario(){
-        if($this->session->userdata('logged_in'))
-        {
+        if($this->session->userdata('logged_in')){
             $session_data = $this->session->userdata('logged_in');
             $data['tipo_usuario'] = $session_data['tipo_usuario'];            
             if($data['tipo_usuario'] == 4){

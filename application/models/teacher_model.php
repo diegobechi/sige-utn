@@ -16,7 +16,7 @@ class Teacher_Model extends CI_Model {
                                           FROM Docente d, Domicilio dom
                                           WHERE d.idDomicilio = dom.idDomicilio and
                                                 d.legajoDocente = $legajoDocente");
-        return $string_query->result();        
+        return $string_query->result();
     }
 
     function get_teacher($legajoDocente){
