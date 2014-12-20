@@ -1,0 +1,635 @@
+
+html,body{
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    background-color: #ECECEC !important;
+}
+
+.buttons-menu-container{
+    float: right;
+    margin-top: 1%;
+    margin-right: 1%;
+}
+
+/*MENÚ*/
+
+.menu-superior-general{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(0, 1, 94);
+    overflow: hidden;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
+}
+
+.label-menu-superior-general{
+    font-family: Calibri;   
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-top: 35px;
+    margin-left: 15px;
+    float: left;
+    text-align: center;
+}
+
+#imagen-menu-escudo{
+    padding-left: 15px; 
+    margin-top: -12px; 
+    height: 45px; 
+    display: none;
+    padding-right: 15px;
+    border-right: 2px solid rgb(2, 17, 97);
+}
+
+menu#home-top-menu {
+    float: left;
+    padding-left: 0px;
+}
+
+#home-top-menu > ul {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+#home-top-menu li {
+    list-style: none outside none;
+    margin-right: 2px;    
+}
+
+#home-top-menu a {
+    color: rgb(2, 17, 97);
+    padding: 13px 22px 15px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari and Chrome */
+    -o-transition: all 0.5s; /* Opera */
+    border-right: 2px solid rgb(2, 17, 97);
+
+}
+
+#home-top-menu a.active, #home-top-menu a:hover  { 
+    color: white;
+    background-color: rgb(2, 17, 97);
+    border-radius: 5px; 
+}
+
+#submenu-top-menu a{
+    border-right: white;
+    margin-left: -40px;
+    padding: 0px;
+    margin-right: 20px;
+}
+
+.home-menu-opciones{
+    display: table-row;
+    width: 80%;
+    background-color: white;
+    position: fixed;
+    border-bottom: 5px solid rgb(2, 17, 97);
+    border-top: 5px solid rgb(2, 17, 97);
+    z-index: 9999;
+    margin-top: 20px;
+    height: 49px;
+}
+
+.home-submenu-opciones{
+    margin-bottom: 24px;
+    float: left;
+    position: fixed;
+    margin-top: 13px;
+    display: none;
+}
+
+.lista:hover > .home-submenu-opciones {
+    display: block;
+}
+
+.submenu-opcion {
+    margin-left: -65px; 
+    border-top: 2px solid rgb(2, 17, 97);
+    border-left: 2px solid rgb(2, 17, 97);
+    border-right: 2px solid rgb(2, 17, 97);
+    padding-left: 60px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.submenu-opcion:hover{
+    color: white;
+    background-color: rgb(2, 17, 97);
+}
+
+.scroll{
+    margin-top: 0px;
+}
+
+/*FOOTER*/
+
+.foot{
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+}
+
+.label-foot{
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    color: gray;
+    margin-top: -3px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+}
+
+#imagen-footer{
+    float: left;  
+    margin-left: 10px; 
+    margin-top: 3px; 
+    height: 55px;
+}
+
+/*PÁGINA HOME*/
+
+.contenedor-general{
+    background-color: white; /*beige;*/
+    margin-bottom: -15px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
+    /*background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MCcgaGVpZ2h0PSc1MCcgdmlld0JveD0nMCAwIDUwIDUwJz4KCTxsaW5lIHgxPScxJyB5MT0nMCcgeDI9JzUxJyB5Mj0nNTAnIHN0cm9rZT0nI2RiZGJkYicgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjZGJkYmRiJyBzdHJva2Utd2lkdGg9JzInLz4KCTxsaW5lIHgxPSc1MCcgeTE9JzAnIHgyPScwJyB5Mj0nNTAnIHN0cm9rZT0nI2VkZWRlZCcgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nMCcgeTE9JzAnIHgyPSc1MCcgeTI9JzUwJyBzdHJva2U9JyNlZGVkZWQnIHN0cm9rZS13aWR0aD0nMicvPgo8L3N2Zz4=');*/
+}
+
+.home-secciones{
+    height: 40px; 
+    background-color: rgb(2, 17, 97); 
+    color: lightgray; 
+    font-size: 25px; 
+    padding-top: 15px; 
+    padding-left: 1%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/*Lema y oración*/
+.home-lema-contenedor{  
+    height: 100%;
+    display: inline-block;
+    max-width: 15%;
+    float: left;
+    padding-right: 15px; 
+    padding-left: 2%; 
+    border-radius: 5px;
+    text-align: justify;
+    margin-left: -15px;
+    padding-bottom: 15px;
+}
+
+.home-lema-contenedor-titulo{
+    font-size: 25px; 
+    text-align: center; 
+    font-family: Calibri;
+    background-color: rgba(0, 0, 255, 0.67); 
+    color: lightgray;
+}
+
+.home-lema-contenedor-contenido{
+    font-size: 20px; 
+    text-align: center; 
+    border: 2px solid rgba(0, 0, 255, 0.67); 
+    padding-bottom: 10px;
+}
+
+.home-oracion-contenedor{  
+    height: 100%;
+    display: inline-block;
+    max-width: 15%;
+    float: left;
+    padding-right: 15px; 
+    padding-left: 2%; 
+    border-radius: 5px;
+    text-align: justify;
+    margin-left: -15px;
+    padding-bottom: 15px;
+    margin-top: -28%;
+}
+
+.home-oracion-contenedor-titulo{
+    font-size: 20px; 
+    text-align: center; 
+    font-family: Calibri;
+    background-color: rgba(0, 0, 255, 0.67); 
+    color: lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.home-oracion-contenedor-contenido{
+    font-size: 15px; 
+    text-align: center; 
+    border: 2px solid rgba(0, 0, 255, 0.67);
+    overflow: auto;
+    height: 233px;
+    padding-bottom: 10px;
+}
+
+/*Niveles*/
+.home-niveles-contenedor{
+    height: 200px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-niveles-contenedor-nivel{  
+    height: 100%;
+    /*width: 500px;*/
+    display: inline-block;
+    max-width: 45%;
+}
+
+.home-niveles-contenedor-nivel-titulo{ 
+    height: 25px; 
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 5%;
+    border-radius: 5px;
+    color: gray;
+}
+
+.home-niveles-contenedor-nivel-contenido{
+    height: 75%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    padding-top: 10px;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2px;
+    text-align: justify;
+}
+
+.home-niveles-masinfo{
+    cursor: pointer;
+    font-size: smaller;
+    color: gray;
+    margin-top: 13%;
+    text-align: center;
+}
+
+.home-niveles-menosinfo{
+    width: 140px;
+    cursor: pointer;
+    font-size: smaller;
+    color: gray;
+    text-align: center;
+}
+
+.home-niveles-descargar{
+    width: 140px;
+    cursor: pointer;
+    font-size: smaller;
+    color: black;
+}
+
+.home-niveles-contenedor-masinfo{
+    height: 585px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-niveles-contenedor-nivel-masinfo{
+    height: 100%;
+    /*width: 500px;*/
+    display: inline-block;
+    max-width: 100%;
+}
+
+.home-niveles-contenedor-nivel-contenido-masinfo{
+    height: 93%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    padding-top: 10px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2px;
+    overflow: auto;
+    text-align: justify;
+}
+
+/*Novedades*/
+.home-novedades-contenedor{
+    height: 200px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-novedades-contenedor-agregarnovedad{
+    height: 145px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: inline-block;
+}
+
+.home-novedades-contenedor-agregarnovedad-titulo{
+    height: 35px; 
+    background-color: rgba(0, 0, 255, 0.67);
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 20px;
+    border-radius: 5px;
+    color: lightgray;
+    width: 109%;
+    float: left;
+}
+
+.home-novedades-contenedor-agregarnovedad-contenido{
+    height: 75%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    overflow: auto;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    width: 107%;
+}
+
+.home-novedades-agregarnovedad{
+    cursor: pointer;
+    font-size: smaller;
+    color: lightgray;
+    text-align: center;
+    width: 80px;
+    background-color: rgba(0, 0, 255, 0.67);
+    display: inline-block;
+}
+
+.home-novedades-contenedor-novedad{
+    height: 100%;
+    width: 45%;
+    display: inline-block;
+}
+
+.home-novedades-contenedor-novedad-titulo{ 
+    height: 25px; 
+    background-color: rgba(0, 0, 255, 0.67);
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 5%;
+    border-radius: 5px;
+    color: lightgray;
+}
+
+.home-novedades-contenedor-novedad-contenido{
+    height: 75%; 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    padding-top: 10px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+}
+
+.home-novedades-contenedor-vermas{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer;
+    font-size: small;
+}
+
+/*Institución*/
+.home-institucion-contenedor-historia{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.home-institucion-contenedor-naturaleza{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 15px;
+}
+
+.home-institucion-contenedor-formacion{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 15px;
+}
+
+.home-institucion-contenedor-simbolos{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 15px;
+}
+
+.home-institucion-contenedor-patronos{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 15px;
+}
+
+.home-institucion-contenedor-ubicacion{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 15px;
+}
+
+.home-institucion-contenedor-titulo{
+    height: 25px; 
+    background-color: rgba(0, 0, 255, 0.67);
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 20px;
+    border-radius: 5px;
+    color: lightgray;
+}
+
+.home-institucion-contenedor-contenido-historia{ 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.home-institucion-contenedor-contenido-naturaleza{
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.home-institucion-contenedor-contenido-formacion{ 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.home-institucion-contenedor-contenido-simbolos{
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.home-institucion-contenedor-contenido-patronos{ 
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.home-institucion-contenedor-contenido-ubicacion{
+    padding-right: 20px; 
+    padding-left: 20px; 
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: justify;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.home-institucion-contenedor-vermas-historia{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer;
+    font-size: small;
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermas-formacion{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer;
+    font-size: small;
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermas-simbolos{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer;
+    font-size: small;
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermas-patronos{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer;
+    font-size: small;
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermenos-historia{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer; 
+    font-size: small;   
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermenos-formacion{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer; 
+    font-size: small;   
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermenos-simbolos{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer; 
+    font-size: small;   
+    border-radius: 5px;
+}
+
+.home-institucion-contenedor-vermenos-patronos{
+    background-color: lightgrey; 
+    text-align: center; 
+    color: rgba(0, 0, 255, 0.67); 
+    cursor: pointer; 
+    font-size: small;
+    border-radius: 5px;   
+}
+
+/*Galería*/
+.home-galeria-contenedor{
+    margin-left: 15px;
+    margin-right: 15px; 
+    padding-left: 50px;
+    padding-right: 20px;
+    margin-top: 15px;
+    padding-bottom: 30px;
+}
+
+.home-galeria-contenedor-imagen{
+    height: auto;
+    width: 10%;
+    display: inline-block;
+    border: 2px solid rgb(2, 17, 97);
+    border-radius: 5px;
+    margin: 1px;
+}
+
