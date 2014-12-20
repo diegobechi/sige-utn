@@ -1,51 +1,61 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Alumno extends CI_Controller {
+	
+	private $legajoAlumno;
+
+    public function __construct() {
+        parent::__construct();
+        $info_session = $this->session->userdata('logged_in');
+		$this->legajoAlumno = $info_session['id_usuario'];
+    }
 
 	public function index()
 	{
+		$this->load->helper('url');
+		if (!$this->session->userdata('logged_in')) {
+            redirect('c_login', 'refresh');
+        }
 		$this->load->view('header');
 		$this->load->model('Student_Model');
-
-		$legajo = 100012;
 		if(empty($año)){
             $año = getdate();
             $año = $año['year'];
         }
-
 		$this->load->view("alumno/main");
 		$this->load->view('footer');
 	}
-	public function getDatosAlumno($legajoAlumno){
+
+	public function getDatosAlumno(){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_student($legajoAlumno);
+		$query = $this->Student_Model->get_student($this->legajoAlumno);
 		echo json_encode($query);
 	}
 
-	public function getAsignaturas($legajoAlumno, $año){
+	public function getAsignaturas($año){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_asignaturas($legajoAlumno, $año);
+		$query = $this->Student_Model->get_asignaturas($this->legajoAlumno, $año);
 		echo json_encode($query);		
 	}
 
-	public function getNotasAsignatura($legajoAlumno, $idAsignatura, $año){
+	public function getNotasAsignatura($idAsignatura, $año){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_notas_por_materia($legajoAlumno, $idAsignatura, $año);
+		$query = $this->Student_Model->get_notas_por_materia($this->legajoAlumno, $idAsignatura, $año);
 		echo json_encode($query);		
 	}
 	public function cargar_vista_asignatura(){
 		$this->load->view("alumno/info_asignatura");
 	}
 
-	public function getTutor($legajoAlumno){
+	public function getTutor(){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_tutor($legajoAlumno);
+		$query = $this->Student_Model->get_tutor($this->legajoAlumno);
 		echo json_encode($query);		
 	}
 
-	public function getAportes($legajoAlumno){
+	public function getAportes(){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_aportes($legajoAlumno);
+		$query = $this->Student_Model->get_aportes($this->legajoAlumno);
 		echo json_encode($query);		
 	}
 

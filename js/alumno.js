@@ -1,27 +1,16 @@
-
-var app = app || {};
-app.sige = {};
-
-app.sige.init = function() {
+$("#misAsignaturas").on("click",function(){
     $.ajax({
-        type: "post",
-        url: "index.php/docente/getCursos",
+        url : "alumno/getAsignaturas/100012/2014",
+        type: "GET",
         dataType: "json",
-        success: function(data){
-        	app.sige.organizarCursos(data);
+        success: function(data, textStatus, jqXHR)
+        {    
+            crearSelectorAsignatura(data);
+            console.log("exito");
         },
         error: function (jqXHR, textStatus, errorThrown)
-		{
-		 	console.log(textStatus);
-		}
-    	});
-}
-
-app.sige.organizarCursos  = function(data){
-	var array_cursos = data;
-	for (var i=0; i < array_cursos.length ; i++) {
-		var division = array_cursos[i].nombre;
-		$('#miscursos').append('<input type="button" value='+division+'>');
-	};
-}
-
+        {
+            console.log("fallo");
+        }
+    });
+});

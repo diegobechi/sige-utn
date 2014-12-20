@@ -10,6 +10,15 @@ class Curso_Model extends CI_Model {
     {
         parent::__construct();
     }
+
+    function get_curso($legajoAlumno, $año){
+      $string_query = $this->db->query("SELECT i.idCurso
+                                        FROM Inscripcion i, Alumno a
+                                        WHERE i.legajoAlumno = a.legajoAlumno and
+                                              a.legajoAlumno = $legajoAlumno and
+                                              YEAR(i.fecha) = $año");
+      return $string_query->result();
+    }
     
     function get_all_students($idCurso){
       $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre
@@ -58,7 +67,7 @@ class Curso_Model extends CI_Model {
                                         FROM ComunicadoWeb cw, Docente d, Curso c
                                         WHERE cw.legajoDocente = d.legajoDocente and
                                             cw.idCurso = c.idCurso and
-                                            cw.fecha between ' $startDate ' and  ' $endDate ' and
+                                            cw.fecha between  $startDate  and  $endDate and
                                             c.idCurso = $idCurso";
       $string_query = $this->db->query($consulta);
       return $string_query->result();
@@ -72,7 +81,7 @@ class Curso_Model extends CI_Model {
     /* START TEMARIO DICTADO*/
     function set_temario_dictado($idCurso, $idAsignatura, $fecha, $temasClase, $legajoDocente){      
       $string_query = $this->db->query("INSERT INTO TemarioDictado(idCurso, idAsignatura, fecha, temasClase, legajoDocente) 
-                                        VALUES ($idCurso, $idAsignatura, $fecha, ' $temasClase ', $legajoDocente)");
+                                        VALUES ($idCurso, $idAsignatura, '$fecha', ' $temasClase ', $legajoDocente)");
       return $string_query;
 
     }
@@ -142,6 +151,21 @@ class Curso_Model extends CI_Model {
       return $string_query->result();
     }
 
+    function getNotasPorAsignaturaInicial($idCurso, $idAsignatura, $etapa){
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion
+                                        FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
+                                        WHERE c.idCurso = hc.idCurso and
+                                           a.idAsignatura = hc.idAsignatura and
+                                              alu.legajoAlumno = ce.legajoAlumno and
+                                              a.idAsignatura = ce.idAsignatura and
+                                              alu.legajoAlumno=i.legajoAlumno and
+                                              c.idCurso = i.idCurso and
+                                              a.idAsignatura = $idAsignatura and
+                                              c.idCurso = $idCurso and
+                                              ce.etapa= '$etapa'");
+      return $string_query->result();
+    }
+
     function clear_result($query){
         for($i = 0; $i< count($query); $i++){
             $array_query[$i] = (array)$query[$i];
@@ -150,3 +174,33 @@ class Curso_Model extends CI_Model {
     }
 
 }
+
+
+/*devolver los datos de un comunicado web en particular pasado como parametro 
+
+SELECT  cw.idComunicadoWeb,CONVERT (char(10),cw.fecha, 103) as 'fechaComunicado' , cw.comunicado, a.nombre
+FROM ComunicadoWeb cw, Curso c, Docente d, Asignatura a, AsignaturaPorDocente ad
+WHERE cw.idCurso = c.idCurso and
+      cw.legajoDocente = d.legajoDocente and
+      d.legajoDocente = ad.legajoDocente and
+      a.idAsignatura = ad.idAsignatura and
+      d.legajoDocente = $legajoDocente and 
+      cw.idComunicadoWeb = $idComunicadoWeb 
+      
+      
+/* devolver un temario dictado seleccionado de una asignatura en un curso determinado 
+
+SELECT CONVERT(VARCHAR(11),td.fecha, 106) as 'fechaPublicacion'  , td.temasClase , d.apellido , d.nombre, a.idAsignatura
+FROM TemarioDictado td, Docente d , Asignatura a
+WHERE td.legajoDocente = d.legajoDocente and
+      td.idAsignatura = a.idAsignatura and
+      td.idCurso = $idCurso and 
+      a.idAsignatura = $idAsignatura and
+      td.fecha = $fecha
+
+/*Borrar un comunicado web especifcado como parametro
+
+DELETE FROM ComunicadoWeb 
+ WHERE idComunicadoWeb = $idComunicadoWeb
+
+      */
