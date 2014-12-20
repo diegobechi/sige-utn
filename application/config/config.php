@@ -15,7 +15,7 @@
 |
 */
 $config['base_url']	= 'http://localhost:8080/sige-utn/index.php/';
-
+$config['legajo'] = "";
 /*
 |--------------------------------------------------------------------------
 | Index File

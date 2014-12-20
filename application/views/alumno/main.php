@@ -100,6 +100,7 @@
 					<div class="popup-header">
 						<h2><span id="perfil-nombre-header"></span><span id="perfil-grado-header"></span></h2>
 						<div class="close-popup"><img src="../img/close.png"></div>
+						<div id="idTutor"></div>
 					</div>
 					<div class="popup-body">
 						<div class="container-left">
@@ -140,7 +141,6 @@
 							  		</tbody>
 							  	</table>
 							  	<div class="nuevaPersonaPermitida">
-							  		<input id="permita-idTutor" type="text" value="2">
 							  		<input id="permita-nombre" type="text" placeholder="Nombre completo...">
 								  	<input id="permita-dni" type="text" placeholder="Nro documento.."> <br>
 								  	<input id="permita-num" type="text" placeholder="Telefono...">

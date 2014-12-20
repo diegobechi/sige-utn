@@ -3,6 +3,14 @@
 
 class Docente extends CI_Controller {
 
+	private $legajoDocente;
+
+    public function __construct() {
+        parent::__construct();
+        $info_session = $this->session->userdata('logged_in');
+		$this->legajoDocente = $info_session['id_usuario'];
+    }
+
 	public function index()
 	{
 		$this->load->helper('url');
@@ -15,15 +23,21 @@ class Docente extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function getCursos($legajoDocente, $año){
+	public function getDocente(){
 		$this->load->model('Teacher_Model');
-		$query = $this->Teacher_Model->get_my_cursos($legajoDocente, $año);
+		$query = $this->Teacher_Model->get_docente($this->legajoDocente);
 		echo json_encode($query);		
 	}
 
-	public function getAsignaturas($legajoDocente, $idCurso){
+	public function getCursos($año){
 		$this->load->model('Teacher_Model');
-		$query = $this->Teacher_Model->get_asignaturas($legajoDocente, $idCurso);
+		$query = $this->Teacher_Model->get_my_cursos($this->legajoDocente, $año);
+		echo json_encode($query);		
+	}
+
+	public function getAsignaturas($idCurso){
+		$this->load->model('Teacher_Model');
+		$query = $this->Teacher_Model->get_asignaturas($this->legajoDocente, $idCurso);
 		echo json_encode($query);		
 	}
 	public function pruebaVista(){

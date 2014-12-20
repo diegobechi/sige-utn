@@ -8,7 +8,7 @@ class M_login extends CI_Model {
     }
  
     function login($username, $password) {
-        $query = $this->db->query("SELECT * FROM Usuario u WHERE u.idUsuario = $username and u.nombre = '$password'");
+        $query = $this->db->query("SELECT * FROM Usuario u WHERE u.idUsuario = $username and u.contraseña = '$password'");
         if($query->num_rows() == 1) { 
             return $query->result(); //if data is true
         } else {

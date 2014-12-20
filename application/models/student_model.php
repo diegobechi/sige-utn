@@ -32,7 +32,7 @@ class Student_Model extends CI_Model {
     }
     
     function get_tutor($legajoAlumno){
-        $string_query = $this->db->query("SELECT DISTINCT t.apellido, t.nombre, t.nroDocumento, t.sexo,CONVERT (char(10),t.fechaNacimiento, 103) as Fecha , e.nombre as 'Estado Civil', d.calle, d.numero, d.piso,t.telefonoFijo, t.telefonoMovil, t.correoElectronico
+        $string_query = $this->db->query("SELECT DISTINCT t.idTutor, t.apellido, t.nombre, t.nroDocumento, t.sexo,CONVERT (char(10),t.fechaNacimiento, 103) as Fecha , e.nombre as 'Estado Civil', d.calle, d.numero, d.piso,t.telefonoFijo, t.telefonoMovil, t.correoElectronico
                                           FROM Alumno a, Tutor t, GrupoFamiliar gf, Domicilio d, Estado e
                                           WHERE a.legajoAlumno = gf.legajoAlumno and
                                                   t.idTutor = gf.idTutor and
@@ -109,7 +109,7 @@ class Student_Model extends CI_Model {
 
     /* START AMB Personas Autorizadas */
     function get_autorizados($idTutor){
-        $string_query = $this->db->query("SELECT pa.idTutor, pa.apellido_nombre, pa.nroDocumento, pa.telefono, pa.relacion 
+        $string_query = $this->db->query("SELECT pa.idTutor, pa.apellido, pa.nombre, pa.nroDocumento, pa.telefono, pa.relacion 
                                           FROM PersonaAutorizada pa, Tutor t
                                           WHERE pa.idTutor = t.idTutor and 
                                                 pa.idTutor = $idTutor");

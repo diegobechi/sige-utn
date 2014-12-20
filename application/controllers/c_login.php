@@ -4,7 +4,6 @@ class C_login extends CI_Controller {
         $this->load->helper(array('form','html'));
         $this->load->view('header');
 		$this->load->view('v_login');
-		$this->load->view('footer');
-        
+		$this->load->view('footer');        
     }
 }

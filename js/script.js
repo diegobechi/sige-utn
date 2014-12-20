@@ -289,7 +289,7 @@ $('body').on("click",".box-curso-generic", function(event){
 
 $('body').on('click','#cargarAlumnosInicial', function(){
     $.ajax({
-        url : "curso/getAlumnosPorCurso/9",
+        url : "curso/notasPorAsignaturaInicial/$idCurso/$idAsignatura/$legajoAlumno/$etapa)",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -310,7 +310,14 @@ $('body').on('click','#back-button', function(){
     $('.contenedor-info').hide();
 })
 
-function cargarInfoCurso(numCurso){    
+function cargarInfoCurso(numCurso){
+    var nivel = $('#informacion-num-curso').text();
+    console.log(nivel);
+    if(nivel.indexOf ('sala') > 0){
+        $('.grilla-notas').show();
+    }else{
+        $('.inicial-notas').show();
+    }    
     $.ajax({
         url : "curso/getAlumnosPorCurso/"+numCurso,
         type: "GET",
@@ -327,11 +334,20 @@ function cargarInfoCurso(numCurso){
     });
 }
 
+function createBoxAlumnos(data){
+    var conte_info = $('.contenedor-de-alumnos ul');
+    conte_info.empty();
+    for(var i=0;i<data.length;i++){
+        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
+        conte_info.append(newBox);
+    }
+}
+
 function listarAlumnosInicial(data){
     var conte_btn = $('.accordion.nivel-inicial');
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox='<div class="accordion-group"><div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'"><img src="../img/person.png"><span>'+data[i].nombre+'</span></a></div><div id="collapseOne" class="accordion-body collapse"><div class="accordion-inner">'+data[i].calificacion+'</div></div></div>';
+        var newBox='<div class="accordion-group"><div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'"><img src="../img/person.png"><span>'+data[i].nombre+'</span></a></div><div id="collapse'+i+'" class="accordion-body collapse"><div class="accordion-inner"><h4>'+data[i].etapa+'</h4><div><textarea>'+data[i].calificacion+'</textarea></div><input type="button" value="Guardar" data-legajoalumno="'+data[i].legajoAlumno+'"></div></div></div>';
         conte_btn.append(newBox);
     }
 }
@@ -354,14 +370,6 @@ function crearSelectorCurso(data){
     }
  }
 
-function createBoxAlumnos(data){
-    var conte_info = $('.contenedor-de-alumnos ul');
-    conte_info.empty();
-    for(var i=0;i<data.length;i++){
-        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
-        conte_info.append(newBox);
-    }
-}
 
 function cargarPerfilAlumno(data){
     console.log('Nuevo Alumno');
@@ -446,7 +454,7 @@ $('body').on('click', '#misAportes', function(){
     var aportes = $('.aportes-alumno tr').size()
     if(aportes== 0){   
         $.ajax({
-            url: "alumno/getAportes/100012",
+            url: "alumno/getAportes/",
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){    
@@ -478,8 +486,10 @@ function crearListadoAportes(data){
 /*Alumno*/
 
 $("#misAsignaturas").on("click",function(){
+    var fecha = new Date();
+    var año = fecha.getFullYear();
     $.ajax({
-        url : "alumno/getAsignaturas/100012/2014",
+        url : "alumno/getAsignaturas/"+año,
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -528,32 +538,12 @@ $('body').on("click",".box-asignatura-generica", function(event){
         $('#selector-asignatura').hide();
         conte_info.show();
         cargarInfoAsignatura(numAsignatura);
-    }  
-
-
+    }
 });
 
-
-function cargarInfoAsignatura(numAsignatura){    
-    /*$.ajax({
-        url : "alumno/getNotasAsignatura/100012/"+numAsignatura+"/2014",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){
-            console.log(data);
-            createBoxAlumnos(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            console.log("fallo");
-        }
-    });*/
-}
-
 $('body').on('click','#temas-dictados', function(){
-    var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numAsignatura = 44;
-    var numCurso = 9;
+    var numAsignatura = $('.titulo-principal h1').data('idasignatura');    
+    var numCurso = $('#curso-alumno').data('cursoid');
     $.ajax({
         url: "curso/getTemasDictados/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
@@ -607,7 +597,7 @@ function cargarPrograma(data){
 
 $('body').on('click','#info_general', function(){
     var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 9;
+    var numCurso = $('#curso-alumno').data('cursoid');
     $.ajax({
         url: "curso/getDatosAsignaturas/"+numCurso+"/"+numAsignatura+"",
         type: "GET",
@@ -631,30 +621,49 @@ function cargarInfoCursoGeneral(data){
     }
     var new_card="<img src=''><label>"+data[0].apellido+", "+data[0].nombre+" </br> "+data[0].correoElectronico+"</label><label></label></br><a target='_blank' href='"+data[0].curriculumVitae+"'> ver cv</a>";
     conte_docente.append(new_card);
-
 }
 
 $(document).ready(function(){
-    buscarComunicadoWeb();
+    buscarMiCurso();
 })
 
-function buscarComunicadoWeb(){
+function buscarComunicadoWeb(curso){
     $.ajax({
-     url: "curso/getComunicadoWeb/9",
-     type:"GET",
-     dataType: "json",
-     success: function(data, textStatus, jqXHR){
-        console.log(data);
-        cargarComunicadoWeb(data);
-    },
-    error: function (jqXHR, textStatus, errorThrown)
-    {
-        var data = {};
-        console.log("fallo");
-        cargarComunicadoWeb(data);
-    }
-})
+         url: "curso/getComunicadoWeb/"+curso,
+         type:"GET",
+         dataType: "json",
+         success: function(data, textStatus, jqXHR){
+            console.log(data);
+            cargarComunicadoWeb(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            var data = {};
+            console.log("fallo");
+            cargarComunicadoWeb(data);
+        }
+    }) 
+}
 
+function buscarMiCurso(){
+    var fecha = new Date();
+    var año = fecha.getFullYear();
+    $.ajax({
+         url: "curso/getMiCurso/"+año,
+         type:"GET",
+         dataType: "json",
+         success: function(data, textStatus, jqXHR){
+            console.log(data);
+            $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" style="display: none;"></div>');
+            buscarComunicadoWeb(data[0].idCurso);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            var data = {};
+            console.log("fallo");
+            cargarComunicadoWeb(data);
+        }
+    }) 
 }
 
 function cargarComunicadoWeb(data){
@@ -690,10 +699,9 @@ $('#lista-mensajes h3').on('click',function(){
 })
 
 $('body').on('click', '#misDatos', function(){
-    //levantar el legajo de la cookie
-    var legajo_alumno = '100012';
+    
     $.ajax({
-        url : "alumno/getDatosAlumno/"+legajo_alumno,
+        url : "alumno/getDatosAlumno/",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
@@ -725,8 +733,7 @@ function cargarDatosAlumno(data){
 }
 
 $('body').on('click', '#misDocentes', function(){
-    // Buscar curso en las cookies
-    var idCurso = '1';
+    var idCurso = $('#curso-alumno').data('cursoid');
     $.ajax({
         url: 'curso/getMisDocentes/'+ idCurso,
         type: 'GET',
@@ -752,8 +759,7 @@ function cargarMisDocentes(data){
 }
 
 $('body').on('click', '#misHorarios', function(){
-    // Buscar curso en las cookies
-    var idCurso = '1';
+    var idCurso = $('#curso-alumno').data('cursoid');
     $.ajax({
         url: 'curso/getMisHorarios/'+ idCurso,
         type: 'GET',
@@ -769,6 +775,7 @@ $('body').on('click', '#misHorarios', function(){
 })
 
 function cargarMisHorarios(data){
+    console.log(data);
     var conte = $('.cuerpo-tabla-horarios');
     var newLine = "";
     for (var i = 0; i < data.Lunes.length; i++) {
@@ -780,10 +787,8 @@ function cargarMisHorarios(data){
 }
 
 $('body').on('click', '#misTutores', function(){
-    // Buscar curso en las cookies
-    var legajoAlumno = '100012';
     $.ajax({
-        url: 'alumno/getTutor/'+ legajoAlumno,
+        url: 'alumno/getTutor/',
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
@@ -799,6 +804,7 @@ $('body').on('click', '#misTutores', function(){
 })
 
 function cargarDatosTutor(data){
+    $('#idTutor').attr('data-idtutor', data[0].idTutor);
     $('#perfil-nombre-header').text(data[0].apellido+', '+data[0].nombre);
     $('#tutor-dni').val(data[0].nroDocumento);
     $('#tutor-sexo').val(data[0].sexo);
@@ -816,7 +822,7 @@ $('body').on('click', '#retirarPersonas', function(){
 })
 
 function cargarPersonasAutorizadas(){
-    var idTutor = '2';
+    var idTutor = $('#idTutor').data('idtutor');
     $.ajax({
         url: 'alumno/get_personasAutorizadas/'+ idTutor,
         type: 'GET',
@@ -827,7 +833,7 @@ function cargarPersonasAutorizadas(){
             conte.empty();
             var newLine = "";
             for (var i = 0; i < data.length; i++) {
-                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido_nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td><td><span class='button'>span</Edit></td></tr>";      
+                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido+"'></td><td><input type='text' value='"+data[i].nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td><td><span class='button'>span</Edit></td></tr>";      
                 conte.append(newLine);
             };
         },
@@ -869,9 +875,8 @@ $('body').on('click', '.eliminarAutorizado', function(){
 })
 
 $('body').on('click', '#agregarPermitidas', function(){
-    // Buscar tutor en las cookies
     var persona = {};
-    persona.idTutor = $('#permita-idTutor').val();
+    persona.idTutor = $('#idTutor').data('idtutor');
     persona.nombreCompleto = $('#permita-nombre').val();
     persona.nroDocumento = $('#permita-dni').val();
     persona.telefono = $('#permita-num').val();
@@ -905,7 +910,6 @@ $('body').on('click', '#enviarTemario', function(){
     temario.asignatura = $('#asignaturaTemario').children('option:selected').data('asignaturaid');
     temario.temaDictado = $('#temaDisctado').val();
     temario.fecha = $('#fechaDictado').val();
-    console.log(temario.fecha);
     $.ajax({
         url: 'curso/setTemasDictados/'+ temario.curso+"/"+ temario.asignatura +"/"+ temario.fecha +"/"+ temario.temaDictado +"/"+ temario.docente,
         type: 'POST',
