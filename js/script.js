@@ -26,6 +26,34 @@ app.home.openLogin = function(bandera){
 
 /*Home*/
 
+function cargarNovedades(){
+    $.ajax({
+        url : "home/getNovedades/",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {    
+            crearContenedorNovedad(data);
+            console.log("exito");
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+}
+
+function crearContenedorNovedad(data){
+    var conte_novedad = $('.home-novedades-contenedor');
+    conte_novedad.empty();
+    for(var i=0;i<2;i++){
+        var newBox ="<div class='home-novedades-contenedor-novedad'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+        
+        // var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
+        conte_info.append(newBox);
+    }
+}
+
 $(window).bind('scroll', function() {
     if ($(window).scrollTop() > 10) {
         $('#menu-home').animate({
@@ -610,6 +638,7 @@ function cargarInfoCursoGeneral(data){
 
 $(document).ready(function(){
     buscarMiCurso();
+    cargarNovedades();
 })
 
 function buscarComunicadoWeb(curso){
