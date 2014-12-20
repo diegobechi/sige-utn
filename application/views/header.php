@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Instituto Santa Teresita</title>
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/style-home.css">
+        <!--<link rel="stylesheet" type="text/css" href="../css/style-home.css">-->
         <link rel="stylesheet" type="text/css" href="css/animations.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">-->
