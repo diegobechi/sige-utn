@@ -15,15 +15,21 @@ class Alumno extends CI_Controller {
 		$this->load->helper('url');
 		if (!$this->session->userdata('logged_in')) {
             redirect('c_login', 'refresh');
-        }
-		$this->load->view('header');
-		$this->load->model('Student_Model');
-		if(empty($año)){
-            $año = getdate();
-            $año = $año['year'];
-        }
-		$this->load->view("alumno/main");
-		$this->load->view('footer');
+        }else{
+        	$session_data = $this->session->userdata('logged_in');
+        	if($session_data['tipo_usuario'] == 4){
+        		$this->load->view('header');
+				$this->load->model('Student_Model');
+				if(empty($año)){
+		            $año = getdate();
+		            $año = $año['year'];
+		        }
+				$this->load->view("alumno/main");
+				$this->load->view('footer');
+        	}else{
+        		redirect('docente', 'refresh');
+        	}        	
+        }		
 	}
 
 	public function getDatosAlumno(){
