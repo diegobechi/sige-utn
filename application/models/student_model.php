@@ -51,9 +51,8 @@ class Student_Model extends CI_Model {
                                               a.idAsignatura = hc.idAsignatura  and          
                                               c.cicloLectivo = $cicloLectivo and
                                               alu.legajoAlumno = $legajoAlumno");
-        $query = $string_query->result();
-        return $this->clear_result($query);
-    }
+        return $string_query->result();
+      }
 
    function get_mis_alumnos_a_cargo($idTutor){
         $tring_query = $this ->db->query("SELECT DISTINCT a.legajoAlumno,a.apellido, a.nombre
