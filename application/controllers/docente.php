@@ -45,6 +45,13 @@ class Docente extends CI_Controller {
 		$query = $this->Teacher_Model->get_asignaturas($this->legajoDocente, $idCurso);
 		echo json_encode($query);		
 	}
+
+	public function setNotasAsignaturaInicial($legajoAlumno, $idAsignatura, $fecha, $motivo, $calificacion, $idCurso, $etapa){
+		$this->load->model('Teacher_Model');
+		$query = $this->Teacher_Model->set_calificacion_inicial($this->legajoDocente,$legajoAlumno, $idAsignatura, $fecha, $motivo, $calificacion, $idCurso, $etapa);
+		echo json_encode($query);		
+	}
+
 	public function pruebaVista(){
 		$this->load->view("docente/info_curso");
 	}

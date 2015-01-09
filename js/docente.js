@@ -1,4 +1,4 @@
-$("#misCursos").on("click",function(){
+$(document).ready(function(){
     $.ajax({
         url : "docente/getCursos/10003/2014",
         type: "GET",
@@ -29,6 +29,7 @@ $('body').on("click",".box-curso-generic", function(event){
                 $('#selector-curso').hide();
                 $('.titulo-principal h1').text(nombre_curso);
                 cargarInfoCurso(numCurso);
+                cargarFiltroCursos();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
@@ -42,22 +43,76 @@ $('body').on("click",".box-curso-generic", function(event){
     }    
 });
 
-$('body').on('click','#cargarAlumnosInicial', function(){
+function cargarFiltroCursos(){
+    var cursos = $('.box-curso-generic');
+    var filtro_curso = $('#filtro_curso');
+    for (var i = 0; i < cursos.length; i++) {
+        var new_option = "<option data-idcurso='"+cursos.eq(i).data("idcurso")+"' data-nivel='"+cursos.eq(i).data("nivel")+"'>"+cursos.eq(i).text()+"</option>";
+        filtro_curso.append(new_option);
+    };
+    var idCurso = $('#filtro_curso').find(':selected').data('idcurso');
+    get_asignaturas_curso(idCurso);
+
+}
+
+function cargarFiltroAsignaturas(asignaturas){
+    var filtro_asignatura = $('#filtro_asignatura');
+    filtro_asignatura.empty();
+    if(asignaturas.length != 0){
+        for (var i = 0; i < asignaturas.length; i++) {
+            var new_option = "<option data-idAsignatura='"+asignaturas[i].idAsignatura+"'>"+asignaturas[i].Asignatura+"</option>";
+            filtro_asignatura.append(new_option);
+        };
+    }else{
+        filtro_asignatura.append("<option>Sin Asignaturas</option>");
+    }
+}
+
+$('body').on('change','#filtro_curso', function(){
+    var idCurso = $(this).find(':selected').data('idcurso');
+    var nivel = $(this).find(':selected').data('nivel');    
+    get_asignaturas_curso(idCurso);
+    cargarAlumnos(idCurso, nivel);    
+});
+
+function get_asignaturas_curso(idCurso){
     $.ajax({
-        url : "curso/notasPorAsignaturaInicial/$idCurso/$idAsignatura/$legajoAlumno/$etapa)",
+        url : "docente/getAsignaturas/"+idCurso,
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
             console.log(data);
-            listarAlumnosInicial(data);
+            cargarFiltroAsignaturas(data);
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
             console.log("fallo");
         }
     });
-})
+}
+
+function cargarAlumnos(idCurso, nivel){
+
+    $.ajax({
+        url : "curso/getAlumnosPorCurso/"+idCurso,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {
+            console.log(data);
+            if(nivel == 'Inicial'){
+                listarAlumnosInicial(data);
+            }else{
+                listarAlumnosNoInicial(data);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+}
 
 function cargarInfoCurso(numCurso){
     var nivel = $('#informacion-num-curso').text();
@@ -96,9 +151,41 @@ function listarAlumnosInicial(data){
     var conte_btn = $('.accordion.nivel-inicial');
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox='<div class="accordion-group"><div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'"><img src="../img/person.png"><span>'+data[i].nombre+'</span></a></div><div id="collapse'+i+'" class="accordion-body collapse"><div class="accordion-inner"><h4>'+data[i].etapa+'</h4><div><textarea>'+data[i].calificacion+'</textarea></div><input type="button" value="Guardar" data-legajoalumno="'+data[i].legajoAlumno+'"></div></div></div>';
+        var newBox='<div class="accordion-group '+data[i].legajoAlumno+' "><div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'"><img src="../img/person.png"><span>'+data[i].apellido+' '+data[i].nombre+'</span></a></div><div id="collapse'+i+'" class="accordion-body collapse"><div class="accordion-inner"><h4></h4><div><textarea></textarea></div><input type="button" value="Guardar" data-legajoalumno="'+data[i].legajoAlumno+'"></div></div></div>';
         conte_btn.append(newBox);
     }
+    buscarInfoNivel();
+}
+
+function buscarInfoNivel(){
+    var idCurso = $('#filtro_curso').find(':selected').data('idcurso');;
+    var idAsignatura = $('#filtro_asignatura').find(':selected').data('idasignatura');;
+    var etapa = $('#filtro_etapa').find(':selected').text();
+    $.ajax({
+        url : "curso/notasPorAsignaturaInicial/"+idCurso+"/"+idAsignatura+"/"+etapa,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {
+            console.log(data);
+            cargarInfoNivel(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+}
+
+function cargarInfoNivel(data){
+    for (var i = 0; i < data.length; i++) {
+        $('.accordion-group').each(function(){
+            if($(this).hasClass(data[i].legajoAlumno)){
+                $(this).find('textarea').text(''+data[i].calificacion+'');
+            }
+        })
+        
+    };
 }
 
 $('body').on('click','.box-asignatura-generica',function(){
@@ -112,10 +199,11 @@ $('body').on('click','.box-asignatura-generica',function(){
 
 function crearSelectorCurso(data){
     var conte_btn=$("#selectorBtnCurso");
+    var filtro_curso = $('#filtro_curso');
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<div class='box-curso-generic' data-idcurso='"+data[i].idCurso+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
-        conte_btn.append(newBox);
+        var newBox="<div class='box-curso-generic' data-idcurso='"+data[i].idCurso+"' data-nivel='"+data[i].nivel+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
+        conte_btn.append(newBox);        
     }
  }
 

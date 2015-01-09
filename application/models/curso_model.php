@@ -32,7 +32,7 @@ class Curso_Model extends CI_Model {
     }
 
     function get_all_asignaturas($idCurso, $año){
-      $string_query = $this->db->query("SELECT DISTINCT a.nombre as Asignaturas
+      $string_query = $this->db->query("SELECT DISTINCT a.nombre
                                         FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
                                         WHERE d.legajoDocente = ad.legajoDocente and 
                                           a.idAsignatura = ad.idAsignatura and
@@ -152,7 +152,7 @@ class Curso_Model extends CI_Model {
     }
 
     function getNotasPorAsignaturaInicial($idCurso, $idAsignatura, $etapa){
-      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion, a.idAsignatura
                                         FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
                                         WHERE c.idCurso = hc.idCurso and
                                            a.idAsignatura = hc.idAsignatura and

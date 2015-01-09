@@ -1,9 +1,8 @@
 
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<div class = "contenedor-info" style = "display:block;">  
-	<input type="button" value="Regresar" id="back-button">
-	<div class = "titulo-principal">
+<input type="button" value="Regresar" id="back-button">
+<div class = "contenedor-info" style = "display:block;"> <div class = "titulo-principal">
 		<span></span>
 		<h1 id="informacion-num-curso"><img src="img/curso.png"> INFORMACION DEL CURSO - </h1>
 	</div>
@@ -74,17 +73,14 @@
 		<div class="contenedor-principal cargarNotas" style="display:none;">
 			<div class="contenedor-filtros">
 				<h3>Curso:</h3>
-				<select>
-					<option>3° Grado</option>
-					<option>4° Grado</option>
+				<select id="filtro_curso">
+					
 				</select>
 				<h3>Asignatura</h3>
-				<select>
-					<option>Matematica</option>
-					<option>Lengua</option>
+				<select id="filtro_asignatura">
 				</select>
 				<h3>Etapa</h3>
-				<select>
+				<select id="filtro_etapa">
 					<option>Primera</option>
 					<option>Segunda</option>
 				</select>
