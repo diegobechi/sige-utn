@@ -14,7 +14,7 @@ class Curso extends CI_Controller {
 	{
 		
 	}
-
+	
 	/* Funciones usadas por todos */
 
 	public function getTemasDictados($idCurso, $idAsignatura){

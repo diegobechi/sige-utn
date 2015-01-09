@@ -1,7 +1,14 @@
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 
-
+<div class="contenedor-notas">
+  <textarea></textarea>
+  <div>
+    <span>nombre doncente mas hora de la ultima modificacio agregar campo a la base de datos
+    </span>
+    <button>Guardar</button>
+  </div>  
+</div>
 
 <style type="text/css">
 #informe-nivel-primaria,

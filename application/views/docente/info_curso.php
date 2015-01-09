@@ -8,23 +8,21 @@
 		<h1 id="informacion-num-curso"><img src="img/curso.png"> INFORMACION DEL CURSO - </h1>
 	</div>
 	<div style ="padding:20px">
-		<div class = "lista-opciones">
+		<ul class = "lista-opciones">
 			<li data-title="alumnos"> <img src="img/alumno.png"/>Alumnos</li>
 			<li data-title="asignaturas"> <img src="img/materia.png"/>Asignaturas</li>
 			<li data-title="cargarNotas"> <img src="img/mensajes.png"/>Cargar Notas</li>
 			<li data-title="temario"> <img src="img/mensajes.png"/>Temario</li>
 			<li data-title="listados"> <img src="img/listados.png"/>Listados</li>
 			<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>			
-		</div>	
+		</ul>	
 		<div class ="contenedor-principal alumnos">
 			<div class ="titulo-principal">
 				<span></span>
 				<h3> <img src="img/person.png"> Alumnos </h3>
 			</div>
-			<div class ="contenedor-de-alumnos">
-				<ul>
-				</ul>
-			</div>
+			<ul class ="contenedor-alumnos">
+			</ul>
 		</div>
 		<div class = "contenedor-principal asignaturas" style="display:none;">
 			<div class = "titulo-principal">

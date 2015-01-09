@@ -84,10 +84,10 @@ function cargarInfoCurso(numCurso){
 }
 
 function createBoxAlumnos(data){
-    var conte_info = $('.contenedor-de-alumnos ul');
+    var conte_info = $('ul.contenedor-alumnos');
     conte_info.empty();
     for(var i=0;i<data.length;i++){
-        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
+        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='../img/person.png'></div></a></li>";
         conte_info.append(newBox);
     }
 }
