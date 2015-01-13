@@ -32,16 +32,12 @@ class Curso_Model extends CI_Model {
     }
 
     function get_all_asignaturas($idCurso, $año){
-      $string_query = $this->db->query("SELECT DISTINCT a.nombre
-                                        FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
-                                        WHERE d.legajoDocente = ad.legajoDocente and 
-                                          a.idAsignatura = ad.idAsignatura and
-                                          ne.idNivelEducativo = a.idNivelEducativo and
-                                          ne.idNivelEducativo = c.idNivelEducativo and
-                                          c.idTurno = t.idTurno and
-                                          c.idCurso = $idCurso and
-                                          c.cicloLectivo= $año
-                                          order by a.nombre;");
+      $string_query = $this->db->query("SELECT  a.nombre as 'nom_asignatura', hc.diaSemana, SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio' ,  SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin', d.apellido, d.nombre,d.correoElectronico, d.curriculumVitae
+                                        FROM HorarioCurso hc, Docente d,Curso c, Asignatura a 
+                                        WHERE hc.legajoDocente = d.legajoDocente and 
+                                           hc.idCurso = c.idCurso and
+                                           hc.idAsignatura = a.idAsignatura and
+                                           c.idCurso = 4");
       return $string_query->result();  
     }
 
@@ -152,7 +148,7 @@ class Curso_Model extends CI_Model {
     }
 
     function getNotasPorAsignaturaInicial($idCurso, $idAsignatura, $etapa){
-      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion, a.idAsignatura
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion, a.idAsignatura, ce.modificacion
                                         FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
                                         WHERE c.idCurso = hc.idCurso and
                                            a.idAsignatura = hc.idAsignatura and

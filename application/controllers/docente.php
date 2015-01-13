@@ -9,6 +9,11 @@ class Docente extends CI_Controller {
         parent::__construct();
         $info_session = $this->session->userdata('logged_in');
 		$this->legajoDocente = $info_session['id_usuario'];
+		$this->nombreDocente = $info_session['nombre_usuario'];		
+	    //Establecemos zona horaria por defecto
+	    date_default_timezone_set('America/Argentina/Buenos_Aires');
+	    //preguntamos la zona horaria
+	    $zonahoraria = date_default_timezone_get();
     }
 
 	public function index(){
@@ -19,7 +24,6 @@ class Docente extends CI_Controller {
         	$session_data = $this->session->userdata('logged_in');
         	if($session_data['tipo_usuario'] == 2){
         		$this->load->view('header');
-				/*$this->load->view('docente/cargar_notas');*/
 				$this->load->view('docente/main');
 				$this->load->view('footer');
         	}else{
@@ -46,14 +50,40 @@ class Docente extends CI_Controller {
 		echo json_encode($query);		
 	}
 
-	public function setNotasAsignaturaInicial($legajoAlumno, $idAsignatura, $fecha, $motivo, $calificacion, $idCurso, $etapa){
+	public function setNotasAsignaturaInicial($legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa){
 		$this->load->model('Teacher_Model');
-		$query = $this->Teacher_Model->set_calificacion_inicial($this->legajoDocente,$legajoAlumno, $idAsignatura, $fecha, $motivo, $calificacion, $idCurso, $etapa);
+		$date = date("F j, Y, g:i a");
+		$legajoDocente = $this->legajoDocente;
+		$modificacion = " ".$this->nombreDocente." (".$legajoDocente .") - ".$date;
+		$query = $this->Teacher_Model->set_calificacion_inicial($legajoDocente,$legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa, $modificacion);
 		echo json_encode($query);		
+	}
+
+	public function updateNotasAsignaturaInicial($legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa){
+		$this->load->model('Teacher_Model');
+		$date = date("F j, Y, g:i a");
+		
+
+		$legajoDocente = $this->legajoDocente;
+		$modificacion = ''.$this->nombreDocente.' ('.$legajoDocente .') - '.$date;
+		$query = $this->Teacher_Model->update_calificacion_inicial($legajoDocente, $legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa, $modificacion);
+		echo json_encode($query);		
+	}
+
+	public function getNotasAsignaturaPrimario($idCurso, $idAsignatura, $etapa){
+		$this->load->model('Teacher_Model');
+		$query = $this->Teacher_Model->get_calificacion_primaria($idCurso, $idAsignatura, $etapa);
+		echo json_encode($query);
 	}
 
 	public function pruebaVista(){
 		$this->load->view("docente/info_curso");
+	}
+
+	public function getDatosAlumnoPorLegajo($legajo){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_student($legajo);
+		echo json_encode($query);
 	}
 
 }

@@ -723,7 +723,11 @@ border-radius: 5px;
     background-color: darkslategrey;
     border: 2px solid grey;
     width: 738px;
-    height: 200px;
+}
+
+.listado-asignaturas li {
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .box-asignatura-generica{
@@ -864,10 +868,9 @@ border-radius: 5px;
 .box-asignatura-generica,
 .box-curso-generic{
     background-color: aquamarine;
-    width: 150px;
+    width: 100%;
     text-align: center;
     display: inline-block;
-    height: 150px;
     margin: 20px;
 }
 

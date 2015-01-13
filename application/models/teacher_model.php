@@ -64,9 +64,31 @@ class Teacher_Model extends CI_Model {
                                                   d.legajoDocente = $legajoDocente");
     }
 
-    function set_calificacion_inicial($legajoDocente, $legajoAlumno, $idAsignatura, $fecha, $motivo, $calificacion, $idCurso, $etapa){
-        $string_query = $this->db->query("INSERT INTO CalificacionEscolar (idCurso, idAsignatura, legajoAlumno, etapa, nroCalificacion, motivo, calificacion)
-                                          VALUES ($idCurso, $idAsignatura, $legajoAlumno, $etapa, 1, $motivo, $calificacion)");
+    
+    function set_calificacion_inicial($legajoDocente, $legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa, $modificacion) {
+        $string_query = $this->db->query("INSERT INTO CalificacionEscolar (idCurso, idAsignatura, legajoAlumno, etapa, nroCalificacion, calificacion, modificacion)
+                                          VALUES ($idCurso, $idAsignatura, $legajoAlumno, '$etapa', 1, '$calificacion', '$modificacion')");
+    }
+    
+    function update_calificacion_inicial($legajoDocente, $legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa, $modificacion){
+        $string_query = $this->db->query("UPDATE CalificacionEscolar 
+                                          SET  idCurso =$idCurso, idAsignatura = $idAsignatura, legajoAlumno=$legajoAlumno, etapa='$etapa', nroCalificacion=1,calificacion='$calificacion', modificacion = '$modificacion' 
+                                          WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and legajoAlumno=$legajoAlumno and etapa = '$etapa' and nroCalificacion =1");
+    }
+
+    function get_calificacion_primaria($idCurso, $idAsignatura, $etapa){
+        $string_query = $this->db->query("SELECT  DISTINCT alu.legajoAlumno, ce.nroCalificacion , ce.etapa,  ce.motivo, ce.calificacion
+                                          FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
+                                          WHERE c.idCurso = hc.idCurso and
+                                                a.idAsignatura = hc.idAsignatura and
+                                                alu.legajoAlumno = ce.legajoAlumno and
+                                                a.idAsignatura = ce.idAsignatura and
+                                                alu.legajoAlumno=i.legajoAlumno and
+                                                c.idCurso = i.idCurso and
+                                                c.idCurso = $idCurso and
+                                                ce.etapa= '$etapa' and
+                                                a.idAsignatura = $idAsignatura");
+        return $string_query->result();
     }
 
     function clear_result($query){
