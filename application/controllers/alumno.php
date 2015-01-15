@@ -17,7 +17,7 @@ class Alumno extends CI_Controller {
             redirect('c_login', 'refresh');
         }else{
         	$session_data = $this->session->userdata('logged_in');
-        	if($session_data['tipo_usuario'] == 4){
+        	if($session_data['tipo_usuario'] == 2){
         		$this->load->view('header');
 				$this->load->model('Student_Model');
 				if(empty($año)){
