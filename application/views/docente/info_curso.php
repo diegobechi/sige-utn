@@ -66,10 +66,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="2">
@@ -78,10 +78,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="3">
@@ -90,10 +90,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="4">
@@ -102,10 +102,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="5">
@@ -114,10 +114,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="6">
@@ -126,10 +126,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="7">
@@ -138,10 +138,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="8">
@@ -150,10 +150,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="9">
@@ -162,10 +162,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 										<td data-nroCalificacion="10">
@@ -174,10 +174,10 @@
 												<option>E</option>
 												<option>EO</option>
 												<option>TP</option>
-												<option>TI</option>
-												<option>NC</option>
+												<option>TI</option>												
 												<option>R</option>
 												<option>C</option>
+												<option>NC</option>
 											</select>
 										</td>
 									</tr>
@@ -187,6 +187,9 @@
 							</table>
 						</div>
 					</div>
+				</div>
+				<div>
+					<input type="button" id="guardar-notas-primaria" value="Guardar">
 				</div>
 			</div>
 			<div class="inicial-notas" style="display:none;">
@@ -198,10 +201,8 @@
 		</div>
 		<div class="contenedor-principal temario" style="display:none;">
 			<div>
-				<select id="asignaturaTemario" class="">
-					<option data-asignaturaid="44">Matematica</option>
-					<option></option>
-					<option></option>
+				<input id="id-curso-temario" type="text" value="" style="display:none;"/>
+				<select id="asignaturaTemario">					
 				</select>
 			</div>
 			<div style="margin-top: 30px;">
@@ -256,6 +257,7 @@
 			<h4>MENSAJES</h4>
 			<div>
 				<div>
+					<input id="id-curso-comunicado" type="text" value="" style="display:none;"/>
 					<label>Escriba a continuacion el mensaje:</label>
 					<textarea id="temaComunicado"></textarea>
 					<input id="enviarComunicado" type="button" value="Enviar">

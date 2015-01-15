@@ -91,6 +91,26 @@ class Teacher_Model extends CI_Model {
         return $string_query->result();
     }
 
+    function insert_calificacion_primaria($string_insert){
+        $string_query = $this->db->query("INSERT INTO CalificacionEscolar (idCurso, idAsignatura, legajoAlumno, etapa, nroCalificacion, motivo, calificacion)
+                                          VALUES $string_insert");
+    }
+
+    function update_calificacion_primaria($idCurso, $idAsignatura, $legajoAlumno, $etapa, $nroCalificacion, $motivo, $calificacion){
+        $string_query = $this->db->query("UPDATE CalificacionEscolar 
+                                          SET  idCurso =$idCurso, idAsignatura = $idAsignatura, legajoAlumno=$legajoAlumno, etapa='$etapa', nroCalificacion=$nroCalificacion, motivo='$motivo', calificacion='$calificacion' 
+                                          WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and legajoAlumno=$legajoAlumno and etapa = '$etapa' and nroCalificacion =$nroCalificacion");        
+    }
+
+    function delete_calificacion_primaria($idCurso, $idAsignatura, $legajoAlumno, $etapa, $nroCalificacion, $motivo, $calificacion){
+        $string_query = $this->db->query("DELETE FROM CalificacionEscolar
+                                          WHERE idCurso = $idCurso and
+                                                idAsignatura= $idAsignatura and
+                                                legajoAlumno = $legajoAlumno and
+                                                etapa = '$etapa' and
+                                                nroCalificacion = $nroCalificacion");
+    }    
+
     function clear_result($query){
         for($i = 0; $i< count($query); $i++){
             $array_query[$i] = (array)$query[$i];
