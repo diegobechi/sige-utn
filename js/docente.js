@@ -110,12 +110,13 @@ function cargarFiltroCursos(idCurso){
 
 function cargarFiltroAsignaturas(asignaturas){
     var filtro_asignatura = $('#filtro_asignatura');
-    var filtro_asignatura = $('#asignaturaTemario');
+    var filtro_asignatura_temario = $('#asignaturaTemario');
     filtro_asignatura.empty();
     if(asignaturas.length != 0){
         for (var i = 0; i < asignaturas.length; i++) {
             var new_option = "<option data-idAsignatura='"+asignaturas[i].idAsignatura+"'>"+asignaturas[i].Asignatura+"</option>";
             filtro_asignatura.append(new_option);
+            filtro_asignatura_temario.append(new_option);
         };
     }else{
         filtro_asignatura.append("<option>Sin Asignaturas</option>");
