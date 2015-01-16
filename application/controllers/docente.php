@@ -125,4 +125,10 @@ class Docente extends CI_Controller {
 		echo json_encode($query);
 	}
 
+	public function getTutor($legajoAlumno){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_tutor($this->legajoAlumno);
+		echo json_encode($query);		
+	}
+
 }

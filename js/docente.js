@@ -31,6 +31,7 @@ $('body').on("click",".box-curso-generic", function(event){
                 cargarInfoCurso(numCurso);
                 cargarFiltroCursos(numCurso);
                 cargarAsignaturas(numCurso);
+                buscarAsistenciaCurso(numCurso);
 
             },
             error: function (jqXHR, textStatus, errorThrown){
@@ -665,12 +666,13 @@ function updateListaComunicados(){
     })
 }
 
+// Controlar para borrar
 function listarComunicados(data){
     var conte = $('#show-list-comunicados');
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        var newLine = "<div><p class='texto-temario'>"+data[i].temasClase+"</p><span class='firma-texto-temario'></span>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fechaPublicacion+"<span ><img src='' />EDIT</span><div class='separate-line'></div></div>";      
+        var newLine = "<div><p class='texto-temario'>"+data[i].comunicado+"</p><span class='firma-texto-temario'></span>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fechaPublicacion+"<span ><img src='' />EDIT</span><div class='separate-line'></div></div>";      
         conte.append(newLine);
     };
 }
@@ -680,7 +682,112 @@ function listarComunicadosWeb(data){
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        var newLine = "<div><p class='texto-temario'>"+data[i].temasClase+"</p><span class='firma-texto-temario'></span>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fechaPublicacion+"<span ><img src='' />EDIT</span><div class='separate-line'></div></div>";      
+        var newLine = "<div><p class='texto-temario'>"+data[i].comunicado+"</p><span class='firma-texto-temario'></span>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fecha+"<span ><img src='' />EDIT</span><div class='separate-line'></div></div>";      
         conte.append(newLine);
     };
 }
+
+function crearTablaAsistencia(data, bandera){
+    var conte = $('#listado-asistencia');
+    if (!bandera){
+        $('#listado-asistencia').addClass('editado');    
+    }
+    
+    conte.empty();    
+    var new_line = "";
+    for (var i = 0; i < data.length; i++) {
+        var asistencia = "checked";
+        var editable = "readonly";
+        var justificacion = "";
+        if (data[i].presente == 0){
+            asistencia = "";
+            justificacion = data[i].justificacion;
+            editable = "";
+        };
+        var new_line = '<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+''+data[i].nombre+'</td><td><input type="checkbox" '+asistencia+'></td><td><input type"text" value="'+justificacion+'" '+editable+'></td></tr>';
+
+        conte.append(new_line);
+    };
+}
+
+function buscarAlumnosCurso(curso){    
+    $.ajax({
+        url: 'curso/getAlumnosPorCurso/'+ curso,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){ 
+            crearTablaAsistencia(data, true);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+}
+
+function buscarAsistenciaCurso(curso){
+    $.ajax({
+        url: 'curso/getAsistenciaCursoPorFecha/'+ curso,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            if (data.length > 0){
+                crearTablaAsistencia(data, false);    
+            }else{
+                buscarAlumnosCurso(curso);
+            }            
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+}
+
+function guardarAsistenciaCurso(asistencia_alumnos){
+    var consulta = "insertAsistenciaCursoPorFecha";
+    if ( $('#listado-asistencia').hasClass('editado')){
+        consulta = "updateAsistenciaCursoPorFecha";
+    };
+    $.ajax({
+        url : "curso/"+consulta+"/",
+        type: "POST",
+        data: { data : asistencia_alumnos },
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            console.log(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+}
+
+$(document).ready(function(){
+
+    $('body').on('click','#listado-asistencia input[type="checkbox"]', function(){
+        if($(this).is(':checked')){
+            $(this).parent().parent().find('input').eq(1).val('').prop('readonly', true).attr('placeholder','');
+        }else{
+            $(this).parent().parent().find('input').eq(1).attr('placeholder','Ingrese una justificación').prop('readonly', false);
+        }
+    })
+
+
+    $('body').on('click','#guardar-asistencia', function(){
+        var alumnos = $('#listado-asistencia').children();
+        var asistencia_alumnos = [];
+        for (var i = 0; i < alumnos.length; i++) {
+            var presente = 1;
+            if (!$('#listado-asistencia').children().eq(i).children().eq(2).children().is(':checked')) {
+                presente = 0;
+            };
+            var alumno = {};
+            alumno.legajo = $('#listado-asistencia').children().eq(i).children().eq(0).text();
+            alumno.presente = presente;
+            alumno.justificacion = $('#listado-asistencia').children().eq(i).children().eq(3).children().val()            
+
+            asistencia_alumnos.push(alumno);
+        };
+
+        guardarAsistenciaCurso(asistencia_alumnos);
+    })
+})

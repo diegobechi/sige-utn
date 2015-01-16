@@ -252,6 +252,23 @@
 		    </div>
 		</div>
 		<div class="contenedor-principal inasistencias" style="display:none;">
+			<h4>Asistencia</h4>
+			<div>
+				<table>
+					<thead>
+						<tr>
+							<td>Legajo</td>
+							<td>Nombre Alumno</td>
+							<td>Asistencia</td>
+							<td>Justificacion</td>
+						</tr>
+					</thead>
+					<tbody id="listado-asistencia">
+					
+					</tbody>
+					<input type="button" value="Guardar" id="guardar-asistencia"/>
+				</table>
+			</div>
 		</div>
 		<div class="contenedor-principal mensajes" style="display:none;">
 			<h4>MENSAJES</h4>

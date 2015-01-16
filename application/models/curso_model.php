@@ -37,7 +37,7 @@ class Curso_Model extends CI_Model {
                                         WHERE hc.legajoDocente = d.legajoDocente and 
                                            hc.idCurso = c.idCurso and
                                            hc.idAsignatura = a.idAsignatura and
-                                           c.idCurso = 4");
+                                           c.idCurso = $idCurso");
       return $string_query->result();  
     }
 
@@ -53,10 +53,34 @@ class Curso_Model extends CI_Model {
       return $string_query->result();
     }
 
+    function get_asistencia_por_fecha($idCurs, $fecha){
+      $string_query = $this->db->query("SELECT alu.legajoAlumno, alu.apellido, alu.nombre, CONVERT (char(10),aa.fecha, 103) as fecha, aa.justificacion, aa.presente
+                                        FROM Alumno alu, AsistenciaAlumno aa, Inscripcion i, Curso c
+                                        WHERE alu.legajoAlumno = aa.legajoAlumno and 
+                                           alu.legajoAlumno = i.legajoAlumno and
+                                           c.idCurso = i.idCurso and
+                                           c.idCurso ='9' and
+                                           aa.fecha = '$fecha'
+                                           GROUP BY  alu.legajoAlumno, alu.apellido, alu.nombre, aa.fecha, aa.justificacion, aa.presente
+                                           ORDER BY  alu.apellido asc, alu.nombre asc");
+      return $string_query->result();
+    }
+
+    function insert_asistencia_por_fecha($string_insert){
+      $string_query = $this->db->query("INSERT INTO AsistenciaAlumno (legajoAlumno, fecha, presente, justificacion) 
+                                        VALUES $string_insert");      
+    }
+
+    function update_asistencia_por_fecha($legajoAlumno, $fecha, $presente, $justificacion){
+      $string_query = $this->db->query("UPDATE  AsistenciaAlumno
+                                        SET legajoAlumno = $legajoAlumno, fecha = '$fecha', presente = $presente, justificacion = '$justificacion' 
+                                        WHERE  legajoAlumno = $legajoAlumno and fecha = '$fecha'");      
+    }
+
     /* START COMUNICADOS WEB*/
     function set_comunicado($idCurso, $legajoDocente, $fecha, $comunicado){
       $string_query = $this->db->query("INSERT INTO ComunicadoWeb(idCurso, legajoDocente, fecha, comunicado) 
-                                        VALUES ($idCurso, $legajoDocente, $fecha, '$comunicado')");
+                                        VALUES ($idCurso, $legajoDocente, '$fecha', '$comunicado')");
     }
  
     function get_comunicado($idCurso, $startDate, $endDate){
