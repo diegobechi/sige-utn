@@ -4,27 +4,26 @@ app.sige = {};
 
 $('#contenedor-general').css('width',$(window).width());
 $('#contenedor-general').css('height',$(window).height());
-/*
-$('.home-top-item').live('click',function(){
-    $('.home-top-item').removeClass('active');
-    $(this).addClass('active');
-});*/
 
 app.home = {};
 
-app.home.openLogin = function(bandera){
-    if(!bandera){
-        $('.login-menu-container').animate({
-            'margin-top': '-315px'
-        }, 500);
-    }else{
-        $('.login-menu-container').animate({
-            'margin-top': '5px'
-        }, 500);        
-    }
-}
+// app.home.openLogin = function(bandera){
+//     if(!bandera){
+//         $('.login-menu-container').animate({
+//             'margin-top': '-315px'
+//         }, 500);
+//     }else{
+//         $('.login-menu-container').animate({
+//             'margin-top': '5px'
+//         }, 500);        
+//     }
+// }
 
 /*Home*/
+
+$(document).ready(function(){
+    cargarNovedades();
+});
 
 function cargarNovedades(){
     $.ajax({
@@ -43,37 +42,111 @@ function cargarNovedades(){
     });
 }
 
+// function crearContenedorNovedad(data){
+//     var conte_novedad = $('.home-novedades-contenedor');
+//     conte_novedad.empty();
+//     for(var i=0;i<data.length;i++){
+//         if (i<=3) {
+//             if (i>0 && i%2==1) {
+//                 var newBox ="<div class='home-novedades-contenedor-novedad' style='float: right;'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+
+//             }
+//             else{
+//                 var newBox ="<div class='home-novedades-contenedor-novedad'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+//             }            
+//         } 
+//         else{
+//             if (i%2==1) {
+//                 var newBox ="<div class='home-novedades-contenedor-novedad-vermas' style='float: right;'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+//             }
+//             else{
+//                 var newBox ="<div class='home-novedades-contenedor-novedad-vermas'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
+//             }
+//         }        
+//         conte_novedad.append(newBox);
+//     }
+// }
+
 function crearContenedorNovedad(data){
-    var conte_novedad = $('.home-novedades-contenedor');
-    conte_novedad.empty();
+    var conte_titulo = $('.news-headlines');
+    var conte_noticia = $('.news-preview');
+    conte_titulo.empty();
+    conte_noticia.empty();
+    
     for(var i=0;i<data.length;i++){
-        if (i>0 && i%2==1) {
-            var newBox ="<div class='home-novedades-contenedor-novedad' style='float: right;'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-        }else{
-            var newBox ="<div class='home-novedades-contenedor-novedad'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-        }
-        // var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='img/student_1.png'></div></a></li>";
-        conte_novedad.append(newBox);
+        // if (i<=3) {
+            if (i==0) {
+                var newBoxTitulo ="<li class='selected'><span>"+data[i].titulo+"</span></li>"; 
+                var newBoxNoticia= "<div class='news-content top-content'><img src='img/Colegio/frente%202.jpg'><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+            }
+            else{
+                var newBoxTitulo ="<li><span>"+data[i].titulo+"</span></li>";
+                var newBoxNoticia= "<div class='news-content'><img src='img/Colegio/frente%202.jpg'><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+            }            
+        // } 
+        // else{
+        //     var newBoxTitulo ="<li class='home-novedades-contenedor-titulo-vermas'>"+data[i].titulo+"</li>";
+        //     var newBoxNoticia= "<div class='news-content home-novedades-contenedor-noticia-vermas'><p><a href='#'>"+data[i].titulo+"</a></p><p>"+data[i].descripcion+"</p></div>";
+        // }
+
+        conte_titulo.append(newBoxTitulo);
+        conte_noticia.append(newBoxNoticia);
     }
+    $('head').append('<script src="js/vertical.news.slider.min.js"></script>');
 }
+
+$('.home-top-item').on('click',function(){
+    $('.home-top-item').removeClass('active');
+    
+    if($(this).hasClass('historia')){
+        $('#menu-institucion').addClass('active');
+    }
+    else if($(this).hasClass('naturaleza')){
+        $('#menu-institucion').addClass('active');
+    }
+    else if($(this).hasClass('formacion')){
+        $('#menu-institucion').addClass('active');
+    }
+    else if($(this).hasClass('simbolos')){
+        $('#menu-institucion').addClass('active');
+    }
+    else if($(this).hasClass('patronos')){
+        $('#menu-institucion').addClass('active');
+    }
+    else if($(this).hasClass('ubicacion')){
+        $('#menu-institucion').addClass('active');
+    }
+    else{
+        $(this).addClass('active');
+    }
+});
 
 $(window).bind('scroll', function() {
     if ($(window).scrollTop() > 10) {
         $('#menu-home').animate({
-            'margin-top': '-220px'
-        }, 1);
-        $('.row').animate({
-            'padding-top': '30px'
-        }, 1);  
+            'margin-top': '-197px'
+        }, 1);         
         $('#imagen-menu-escudo').css('display', 'block');
+        $('.contenedor-general').animate({
+            'padding-top': '20px'
+        }, 1);  
+        $('.buttons-menu-container').animate({
+            'margin-top': '-50px',
+            'margin-left': '251px',
+            'margin-right': '2px'
+        }, 1); 
     } else {    
         $('#menu-home').animate({
-            'margin-top': '20px'
-        }, 1);
-        $('.row').animate({
-            'padding-top': '100px'
+            'margin-top': '0px'
         }, 1);
         $('#imagen-menu-escudo').css('display', 'none');
+        $('.contenedor-general').animate({
+            'padding-top': '75px'
+        }, 1);
+        $('.buttons-menu-container').animate({
+            'margin-top': '-33px',
+            'margin-left': '319px'
+        }, 1);
     }
 });
 
@@ -82,7 +155,6 @@ $(".home-niveles-masinfo").on( "click", function() {
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
 
         $('.home-niveles-contenedor-masinfo').animate({
-            'height': '500px'
         }, 1); 
 
         $('.nivel-uno').css('display', 'block');
@@ -93,7 +165,6 @@ $(".home-niveles-masinfo").on( "click", function() {
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
 
         $('.home-niveles-contenedor-masinfo').animate({
-            'height': '585px'
         }, 1); 
 
         $('.nivel-dos').css('display', 'block');
@@ -104,7 +175,6 @@ $(".home-niveles-masinfo").on( "click", function() {
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
 
         $('.home-niveles-contenedor-masinfo').animate({
-            'height': '585px'
         }, 1); 
 
         $('.nivel-tres').css('display', 'block');
@@ -115,7 +185,6 @@ $(".home-niveles-masinfo").on( "click", function() {
         $('.home-niveles-contenedor-masinfo').css('display', 'block');
 
         $('.home-niveles-contenedor-masinfo').animate({
-            'height': '500px'
         }, 1); 
 
         $('.nivel-cuatro').css('display', 'block');
@@ -137,6 +206,38 @@ app.home.cerrarInfo = function() {
     $('.home-niveles-contenedor').animate({
     }, 1);  
 }
+
+// app.home.mostrarMasNovedades = function() {
+//     $('.home-novedades-contenedor-titulo-vermas').css('display', 'block');
+
+//     $('.home-novedades-contenedor-titulo-vermas').animate({
+//     }, 1);
+
+//     $('.home-novedades-contenedor-noticia-vermas').css('display', 'grid');
+
+//     $('.home-novedades-contenedor-noticia-vermas').animate({
+//     }, 1); 
+
+//     $('.home-novedades-contenedor-vermenos').css('display', 'block');
+
+//     $('.home-novedades-contenedor-vermenos').animate({
+//     }, 1);
+
+//     $('.home-novedades-contenedor-vermas').css('display', 'none');
+// }
+
+// app.home.mostrarMenosNovedades = function() {
+//     $('.home-novedades-contenedor-titulo-vermas').css('display', 'none');
+
+//     $('.home-novedades-contenedor-noticia-vermas').css('display', 'none'); 
+
+//     $('.home-novedades-contenedor-vermas').css('display', 'block');
+
+//     $('.home-novedades-contenedor-vermas').animate({
+//     }, 1);
+
+//     $('.home-novedades-contenedor-vermenos').css('display', 'none'); 
+// }
 
 app.home.mostrarInfoHistoria = function() {
     $('.home-institucion-contenedor-desplegable-historia').css('display', 'block');
@@ -168,13 +269,44 @@ app.home.ocultarInfoHistoria = function() {
     }, 1);
 }
 
+app.home.mostrarInfoNaturaleza = function() {
+    $('.home-institucion-contenedor-desplegable-naturaleza').css('display', 'block');
+
+    $('.home-institucion-contenedor-desplegable-naturaleza').animate({
+    }, 1); 
+
+    $('.home-institucion-contenedor-vermas-naturaleza').css('display', 'none');
+
+    $('.home-institucion-contenedor-naturaleza').animate({
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-naturaleza').animate({
+    }, 1);
+}
+
+app.home.ocultarInfoNaturaleza = function() {
+    $('.home-institucion-contenedor-desplegable-naturaleza').css('display', 'none');
+
+    $('.home-institucion-contenedor-vermas-naturaleza').css('display', 'block');
+
+    $('.home-institucion-contenedor-vermas-naturaleza').animate({
+    }, 1);
+
+    $('.home-institucion-contenedor-naturaleza').animate({
+    }, 1); 
+
+    $('.home-institucion-contenedor-contenido-naturaleza').animate({
+    }, 1);
+}
+
 app.home.mostrarInfoFormacion = function() {
     $('.home-institucion-contenedor-desplegable-formacion').css('display', 'block');
 
     $('.home-institucion-contenedor-desplegable-formacion').animate({
+        'margin-top': '-20px'
     }, 1); 
 
-    $('.home-institucion-contenedor-vermas-formacion').css('display', 'none');
+    $('.home-institucion-contenedor-vermas-formacion').css('display', 'none'); 
 
     $('.home-institucion-contenedor-formacion').animate({
     }, 1); 
@@ -241,6 +373,12 @@ app.home.mostrarInfoPatronos = function() {
 
     $('.home-institucion-contenedor-contenido-patronos').animate({
     }, 1);
+
+    $('#agustin').css('display', 'block');
+
+    $('#agustin').animate({
+    }, 1); 
+
 }
 
 app.home.ocultarInfoPatronos = function() {
@@ -256,6 +394,8 @@ app.home.ocultarInfoPatronos = function() {
 
     $('.home-institucion-contenedor-contenido-patronos').animate({
     }, 1);
+
+    $('#agustin').css('display', 'none');
 }
 
 /*Docente*/

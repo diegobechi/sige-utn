@@ -1,15 +1,18 @@
-<div id="top" style="height: 20px">
-</div>
 <div class="menu-superior-general">
-	<div >
-		<img src="img/Colegio/0. Escudo azul.jpg" style="float: left; max-width: 8%; margin-left: 15%; margin-top: 1%">
-		<label class="label-menu-superior-general">INSTITUTO<br><br>SANTA TERESITA</label>
-		<img src="img/Colegio/3. Foto esquina.jpg" style="float: left; max-width: 30%; margin-left: 7%; margin-top: 1%">
+	<div>
+		<img src="img/Colegio/0. Escudo.png" style="float: left; max-width: 12%; margin-left: 4%; margin-top: 2%">
+		<label class="label-menu-superior-general">
+			 <label style="color: #E1F5FE; font-size: 30px; line-height: 50px !important;">Instituto</label>
+			  <label style="font-size: 40px; color: #0D47A1; font-family: 'Luckiest Guy', cursive; font-family: 'Righteous', cursive;">SANTA TERESITA</label>
+		</label>
 	</div>
 	<div>
-		<div class="buttons-menu-container">
+		<img src="img/Colegio/3. Foto esquina.jpg" style="float: right; max-width: 30%; margin-left: 7%; margin-top: 0%; border-bottom-left-radius: 200px; border-top-left-radius: 200px; border-left: 15px solid #2980b9">
+	</div>
+	<div>
+		<!-- <div class="buttons-menu-container">
 			<a class="btn btn-primary" onclick="app.home.openLogin(true)"><i class="icon-user icon-white"></i></a>
-		</div>
+		</div> -->
 		<!-- <div id="login-menu-container" class="login-menu-container">
 			<input type="text" class="nombre-usuario-singin" placeholder="Nombre de Usuario">
 			<input type="password" class="nombre-usuario-singin" placeholder="Contraseña">
