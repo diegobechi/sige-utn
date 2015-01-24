@@ -4,7 +4,7 @@
 	<label class="label-menu-superior-general">Instituto Santa Teresita</label>
 	<ul class="nav nav-tabs" style="background-color: #000;">	
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
-		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
+		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MI CURSO</a></li>
 		<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
 		<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
 		<li><a id="misNotas"href="#tab_e" data-toggle="tab">MIS NOTAS</a></li>
@@ -19,7 +19,7 @@
 		<div class="tab-pane fade active in" id="tab_a">
 			<div class="contenedor-pestana-general">
 				<div class="box-generic asignaturas">
-					<h3>Welcome NOMBRE ALUMNO</h3>
+					<h3>Welcome <?php echo $nombre_usuario ?></h3>
 					<div>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					ac turpis egestas.</div>
 				</div>				

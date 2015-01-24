@@ -224,9 +224,7 @@ $('body').on('click','#programa', function(){
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-            console.log(data);
             cargarPrograma(data);
-
         },
         error: function (jqXHR, textStatus, errorThrown)
         {

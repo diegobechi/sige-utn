@@ -7,9 +7,8 @@
 	</div>
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
-			<li data-title="notas"> <img src="img/alumno.png"/>Notas</li>
 			<li data-title="temas-dictados" id="temas-dictados"> <img src="img/materia.png"/>Temas Dictados</li>
-			<li data-title="programa" id="programa"> <img src="img/listados.png"/>Programa</li>
+			<li data-title="programa" id="programa"> <img src="img/listados.png"/><a Programa</li>
 			<li data-title="general" id="info_general"> <img src="img/mensajes.png"/>General</li>
 		</div>	
 		<div class ="contenedor-principal alumnos">
