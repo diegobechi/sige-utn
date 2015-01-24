@@ -20,10 +20,7 @@
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: border-box;
-	border-top: 25px solid #607D8B;
-	border-bottom: 25px solid #607D8B;
-	border-left: 10px solid #607D8B;
-	border-right: 10px solid #607D8B;
+	border: 25px solid #607D8B;
 }
 
 * html #wowslider-container1{ width:800px }

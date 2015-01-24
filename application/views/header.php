@@ -22,10 +22,10 @@
         <link rel="stylesheet" type="text/css" href="css/vertical.news.slider.css">
         <style type="text/css">a#vlb{display:none}</style>
 
-        <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-        <script type="text/javascript" src="engine1/jquery.js"></script>
-
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Paytone+One|Shadows+Into+Light|Fredoka+One|Righteous|Nunito:400,700,300|Chewy|Luckiest+Guy|Montserrat|Exo+2|Raleway:400,900|Coming+Soon|Open+Sans:800,400|Roboto:400,900' rel='stylesheet' type='text/css'>
 
+        <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+        <script type="text/javascript" src="engine1/jquery.js"></script>
+        
     </head>
     <body>

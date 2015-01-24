@@ -7,7 +7,7 @@
 		</label>
 	</div>
 	<div>
-		<img src="img/Colegio/3. Foto esquina.jpg" style="float: right; max-width: 30%; margin-left: 7%; margin-top: 0%; border-bottom-left-radius: 200px; border-top-left-radius: 200px; border-left: 15px solid #2980b9">
+		<img src="img/Colegio/frente 5.jpg" style="float: right; max-width: 32%; margin-left: 7%; margin-top: 0%; border-bottom-left-radius: 200px; border-top-left-radius: 200px; border-left: 15px solid #2980b9">
 	</div>
 	<div>
 		<!-- <div class="buttons-menu-container">

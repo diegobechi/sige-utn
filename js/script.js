@@ -128,7 +128,7 @@ $(window).bind('scroll', function() {
         }, 1);         
         $('#imagen-menu-escudo').css('display', 'block');
         $('.contenedor-general').animate({
-            'padding-top': '20px'
+            'padding-top': '30px'
         }, 1);  
         $('.buttons-menu-container').animate({
             'margin-top': '-50px',
@@ -141,11 +141,12 @@ $(window).bind('scroll', function() {
         }, 1);
         $('#imagen-menu-escudo').css('display', 'none');
         $('.contenedor-general').animate({
-            'padding-top': '75px'
+            'padding-top': '85px'
         }, 1);
         $('.buttons-menu-container').animate({
-            'margin-top': '-33px',
-            'margin-left': '319px'
+            'margin-top': '-34px',
+            'margin-left': '319px',
+            'margin-right': '2px'
         }, 1);
     }
 });

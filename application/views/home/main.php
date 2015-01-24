@@ -5,50 +5,62 @@
     <menu id="home-top-menu">
         <ul>
             <img id="imagen-menu-escudo" src="img/Colegio/0. Escudo.png">
-            <li>
+            <li >
                 <a id="top-menu" href="#top" class="home-top-item active" style="padding-right: 5px; padding-left: 6px; margin-left: 2px;">
-                    <img src="http://www.flaticon.es/png/256/10774.png" style="max-width: 20px">
+                    <img style="max-width: 29%;" src="img/Icons/top.png">
                 </a>
             </li>
-            <li>
-                <a href="#niveles" class="home-top-item"><b>NIVELES ACADÉMICOS</b></a>
+            <li style="margin-left: -41px;">
+                <a href="#niveles" class="home-top-item">
+                    <img style="max-width: 10%; margin-right: 1%; margin-top: -2%; margin-left: -5px;" src="img/Icons/alumno2.png">
+                    NIVELES ACADÉMICOS
+                </a>
             </li>
-            <li>
-                <a href="#novedades" class="home-top-item"><b>NOVEDADES</b></a>
+            <li style="margin-left: -29px;">
+                <a href="#novedades" class="home-top-item">
+                    <img style="max-width: 14%; margin-right: 1%; margin-top: -3%; margin-left: -9px;" src="img/Icons/noti.png">
+                    NOVEDADES
+                </a>
             </li>
-            <li class="lista">
-                <a id="menu-institucion" href="#institucion" class="home-top-item"><b>INSTITUCIÓN</b></a>
+            <li class="lista" style="margin-left: -26px;">
+                <a id="menu-institucion" href="#institucion" class="home-top-item" >
+                    <img style="max-width: 14%; margin-right: 2%; margin-top: -3%; margin-left: -6px;" src="img/Icons/institucion.png">
+                    INSTITUCIÓN
+                </a>
                 <div id="submenu-top-menu" class="home-submenu-opciones">
                     <menu  style="margin-top: 2px; margin-left: 1px;">
                         <ul>
                             <li class="submenu-opcion">
-                                <a class="home-top-item historia" style="padding-right: 187px;" href="#historia" onclick="app.home.mostrarInfoHistoria()"><b>Historia</b></a>
+                                <a class="home-top-item historia" style="padding-right: 187px;" href="#historia" onclick="app.home.mostrarInfoHistoria()">Historia</a>
                             </li>
                             <li class="submenu-opcion">
-                                <a class="home-top-item naturaleza" style="padding-right: 167px;" href="#naturaleza" onclick="app.home.mostrarInfoNaturaleza()"><b>Naturaleza</b></a>
+                                <a class="home-top-item naturaleza" style="padding-right: 167px;" href="#naturaleza" onclick="app.home.mostrarInfoNaturaleza()">Naturaleza</a>
                             </li>
                             <li class="submenu-opcion">
-                                <a class="home-top-item formacion" style="padding-right: 15px;" href="#formacion" onclick="app.home.mostrarInfoFormacion()"><b>Estilo de formación y enseñanza</b></a>
+                                <a class="home-top-item formacion" style="padding-right: 15px;" href="#formacion" onclick="app.home.mostrarInfoFormacion()">Estilo de formación y enseñanza</a>
                             </li>
                             <li class="submenu-opcion">
-                                <a class="home-top-item simbolos" style="padding-right: 27px;" href="#simbolos" onclick="app.home.mostrarInfoSimbolos()"><b>Signos, símbolos y tradiciones</b></a>
+                                <a class="home-top-item simbolos" style="padding-right: 27px;" href="#simbolos" onclick="app.home.mostrarInfoSimbolos()">Signos, símbolos y tradiciones</a>
                             </li>
                             <li class="submenu-opcion">
-                                <a class="home-top-item patronos" style="padding-right: 178px;" href="#patronos" onclick="app.home.mostrarInfoPatronos()"><b>Patronos</b></a>
+                                <a class="home-top-item patronos" style="padding-right: 178px;" href="#patronos" onclick="app.home.mostrarInfoPatronos()">Patronos</a>
                             </li>
                             <li class="submenu-opcion" style="border-bottom: 2px solid #2980b9;">
-                                <a class="home-top-item ubicacion" style="padding-right: 172px;" href="#ubicacion"><b>Ubicación</b></a>
+                                <a class="home-top-item ubicacion" style="padding-right: 172px;" href="#ubicacion">Ubicación</a>
                             </li>
                         </ul>
                     </menu>
                 </div>                            
             </li>
-            <li>
-                <a href="#galeria" class="home-top-item"><b>GALERÍA</b></a>
+            <li style="margin-left: -26px">
+                <a href="#galeria" class="home-top-item" >
+                    <img style="max-width: 15%; margin-right: 3%; margin-top: -3%; margin-left: -3px;" src="img/Icons/galeria.png">
+                    GALERÍA
+                </a>
             </li>
         </ul>
         <div class="buttons-menu-container">
-            <a class="boton-signup" onclick="app.home.openLogin(true)"><i class="icon-user icon-white"></i></a>
+            <a class="boton-signup" href="index.php/c_login"><i class="icon-user icon-white"></i></a>
         </div>
     </menu>
 </div>
@@ -123,8 +135,9 @@
     </div>
 
     <!--NIVELES-->
-    <div id="niveles">
-        <div class="home-secciones" style="padding-top: 40px;"><b class="label-secciones">NIVELES ACADÉMICOS</b>
+    <div id="niveles" style="height: 50px; margin-top: -50px;"></div>
+    <div>
+        <div class="home-secciones" style="padding-top: 40px;"><span class="label-secciones">NIVELES ACADÉMICOS</span>
             <div class="linea-secciones">
             </div>
         </div>
@@ -132,28 +145,28 @@
             <div style="display: none" class="home-niveles-contenedor-masinfo">
                 <div class="home-niveles-contenedor-nivel-masinfo">
                     <div class="home-niveles-contenedor-nivel-titulo-masinfo nivel-uno" style="background-color: #81D4FA;">
-                        <b>NIVEL INICIAL</b>
+                        NIVEL INICIAL
                     </div>
                     <div class="home-niveles-contenedor-nivel-titulo-masinfo nivel-dos" style="background-color: #29B6F6">
-                        <b>NIVEL PRIMARIO</b>
+                        NIVEL PRIMARIO
                     </div>
 
                     <div class="home-niveles-contenedor-nivel-titulo-masinfo nivel-tres" style="background-color: #039BE5;">
-                        <b>NIVEL SECUNDARIO</b>
+                        NIVEL SECUNDARIO
                     </div>
 
                     <div class="home-niveles-contenedor-nivel-titulo-masinfo nivel-cuatro" style="background-color: #0277BD;">
-                        <b>NIVEL SUPERIOR</b>
+                        NIVEL SUPERIOR
                     </div>
 
                     <div class="home-niveles-contenedor-nivel-contenido-masinfo nivel-uno" style="display: none; border: 3px solid #81D4FA;"> 
                         <div style="float: left; width: 55%"><i style="font-weight: bold;">“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos”</i>&nbsp;Mt. 19,14.<br><br><br>
-                            <span style="color: #81D4FA;font-size: 25px; font-family: stars; font-weight: bold;">SUMATE!!</span><br><br>
+                            <span style="color: #81D4FA;font-size: 40px; font-family: baby; ">SUMATE!!</span><br><br>
                             •   Requisitos y ficha de inscripción - <a href="pdf/NIVEL INICIAL - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Uniforme y presentación personal - <a href="pdf/NIVEL INICIAL - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Normas de convivencia - <a href="pdf/NIVEL INICIAL - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Valores - <a href="pdf/NIVEL INICIAL - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br><br>
-                            <span style="color: #81D4FA;font-size: 25px; font-family: stars; font-weight: bold;">ACTIVIDADES</span><br>                     
+                            <span style="color: #81D4FA;font-size: 40px; font-family: baby; ">ACTIVIDADES</span><br>                     
                         </div>
                         <img src="img/Nivel inicial/Inicial.jpg" style="float: right; max-width: 40%; border: 1px solid #81D4FA"> 
 
@@ -192,75 +205,45 @@
                     <div class="home-niveles-contenedor-nivel-contenido-masinfo nivel-dos" style="display: none; border: 3px solid #29B6F6">
                         <div style="float: left; width: 55%"><b><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
                             al buen Dios lo que necesito y Él siempre me comprende.”</i></b><br><br><br>
-                            <span style="font-size: 40px; font-family: baby; color: #29B6F6">SUMATE!!</span><br><br>
+                            <span style="font-size: 25px; font-family: stars; color: #29B6F6; font-weight: bold;">SUMATE!!</span><br><br>
                             •   Requisitos y ficha de inscripción - <a href="pdf/NIVEL PRIMARIO - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Uniforme y presentación personal - <a href="pdf/NIVEL PRIMARIO - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Normas de convivencia - <a href="pdf/NIVEL PRIMARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Valores - <a href="pdf/NIVEL PRIMARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   AGREGAR FICHA INSCRIPCIÓN!!!!!!<br><br><br>
-                            <span style="font-size: 40px; font-family: baby; color: #29B6F6">ACTIVIDADES</span><br>                                
+                            <span style="font-size: 25px; font-family: stars; font-weight: bold; color: #29B6F6">ACTIVIDADES</span><br>                                
                         </div>
                         <img src="img/Nivel primario/Primario.jpg" style="float: right; max-width: 40%; border: 1px solid #29B6F6">
 
-                        <div id="galeriaPrimario" class="home-galeria-contenedor nivel-dos" style="display: none; margin-top: 290px;">
+                        <div id="galeriaPrimario" class="home-galeria-contenedor nivel-dos" style="display: none; margin-top: 330px;">
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Festejando el día del niño.jpg" title="Festejando el día del niño" data-gallery='primario'>
+                                <img src="img/Nivel primario/Festejando el día del niño.jpg" alt="Festejando el día del niño">
+                            </a>
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Observando bichos en el laboratorio.jpg" title="Observando bichos en el laboratorio" data-gallery='primario'>
+                                <img src="img/Nivel primario/Observando bichos en el laboratorio.jpg" alt="Observando bichos en el laboratorio">
+                            </a>
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Preparando chimichurri para regalar.jpg" title="Preparando chimichurri para regalar" data-gallery='primario'>
+                                <img src="img/Nivel primario/Preparando chimichurri para regalar.jpg" alt="Preparando chimichurri para regalar">
+                            </a>
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Presentando a los estudiantes de Primer Grado.jpg" title="Presentando a los niños de Primer Grado" data-gallery='primario'>
+                                <img src="img/Nivel primario/Presentando a los estudiantes de Primer Grado.jpg" alt="Presentando a los niños de Primer Grado">
+                            </a>
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Prometiendo lealtad a la bandera.jpg" title="Prometiendo lealtad a la bandera" data-gallery='primario'>
+                                <img src="img/Nivel primario/Prometiendo lealtad a la bandera.jpg" alt="Prometiendo lealtad a la bandera">
+                            </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Recorriendo el barrio.jpg" title="Recorriendo el barrio" data-gallery='primario'>
                                 <img src="img/Nivel primario/Recorriendo el barrio.jpg" alt="Recorriendo el barrio">
                             </a>
-                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Promesa de Lealtad a la Bandera.jpg" title="Promesa de lealtad a la Bandera" data-gallery='primario'>
-                                <img src="img/Nivel primario/Promesa de Lealtad a la Bandera.jpg" alt="Promesa de lealtad a la Bandera">
-                            </a>
-                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Durante un proyecto de alfabetización Inicial.jpg" title="Proyecto de Alfabetización Inicial" data-gallery='primario'>
-                                <img src="img/Nivel primario/Durante un proyecto de alfabetización Inicial.jpg" alt="Proyecto de Alfabetización Inicial">
-                            </a>
-<!--                        <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En el acto del Dia de la Diversidad.jpg" title="Acto del Día de la Diversidad" data-gallery>
-                                <img src="img/Nivel primario/En el acto del Dia de la Diversidad.jpg" alt="Acto del Día de la Diversidad">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En el laboratorio observando bichos.jpg" title="Observando bichos en el laboratorio" data-gallery>
-                                <img src="img/Nivel primario/En el laboratorio observando bichos.jpg" alt="Observando bichos en el laboratorio">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En la Kermese.jpg" title="Kermese" data-gallery>
-                                <img src="img/Nivel primario/En la Kermese.jpg" alt="Kermese">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En la Kermese (2).jpg" title="Kermese" data-gallery>
-                                <img src="img/Nivel primario/En la Kermese (2).jpg" alt="Kermese">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En la Kermese (3).jpg" title="Kermese" data-gallery>
-                                <img src="img/Nivel primario/En la Kermese (3).jpg" alt="Kermese">
-                            </a> -->
-                            <!-- <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En la Kermese (4).jpg" title="Kermese" data-gallery>
-                                <img src="img/Nivel primario/En la Kermese (4).jpg" alt="Kermese">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/En la preparación de las invitaciones al circo.jpg" title="Preparando las invitaciones al circo" data-gallery>
-                                <img src="img/Nivel primario/En la preparación de las invitaciones al circo.jpg" alt="Preparando las invitaciones al circo">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Aquí, los personajes del circo.jpg" title="Personajes del circo" data-gallery>
-                                <img src="img/Nivel primario/Aquí, los personajes del circo.jpg" alt="Personajes del circo">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Festejando el día del niño.jpg" title="Día del niño" data-gallery>
-                                <img src="img/Nivel primario/Festejando el día del niño.jpg" alt="Día del niño">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Participando en un concurso del diario La Voz.jpg" title="Participando en un concurso del diario La Voz" data-gallery>
-                                <img src="img/Nivel primario/Participando en un concurso del diario La Voz.jpg" alt="Participando en un concurso del diario La Voz">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Preparando chimichurri para regalar.jpg" title="Preparando chimichurri para regalar" data-gallery>
-                                <img src="img/Nivel primario/Preparando chimichurri para regalar.jpg" alt="Preparando chimichurri para regalar">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Presentando a los estudiantes de 1°.jpg" title="Presentando a los estudiantes de 1°" data-gallery>
-                                <img src="img/Nivel primario/Presentando a los estudiantes de 1°.jpg" alt="Presentando a los estudiantes de 1°">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Presentando un espectáculo de magia.jpg" title="Presentando un espectáculo de magia" data-gallery>
-                                <img src="img/Nivel primario/Presentando un espectáculo de magia.jpg" alt="Presentando un espectáculo de magia">
-                            </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Producciones grupales.jpg" title="Producciones grupales" data-gallery>
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Producciones grupales.jpg" title="Producciones grupales" data-gallery='primario'>
                                 <img src="img/Nivel primario/Producciones grupales.jpg" alt="Producciones grupales">
                             </a>
-                            <a class="home-galeria-contenedor-imagen" href="img/Nivel primario/Visitando un comercio.jpg" title="Visitando un comercio" data-gallery>
-                                <img src="img/Nivel primario/Visitando un comercio.jpg" alt="Visitando un comercio">
-                            </a >-->
+                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel primario/Personajes del circo.jpg" title="Personajes del circo" data-gallery='primario'>
+                                <img src="img/Nivel primario/Personajes del circo.jpg" alt="Personajes del circo">
+                            </a>                           
                         </div>
 
                         <div class="home-niveles-menosinfo" style="background-color: #29B6F6" onclick="app.home.cerrarInfo()">
-                            "<< Volver"
+                            << Volver
                         </div>
                     </div>
 
@@ -280,9 +263,6 @@
                         <div id="galeriaSecundario" class="home-galeria-contenedor nivel-tres" style="display: none; margin-top: 330px;">
                             <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel secundario/Armando frazadas.jpg" title="Armando frazadas" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Armando frazadas.jpg" alt="Armando frazadas">
-                            </a>
-                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel secundario/Cerca de la desembocadura.jpg" title="Compartiendo el lema" data-gallery='secundario'>
-                                <img src="img/Nivel secundario/Cerca de la desembocadura.jpg" alt="Compartiendo el lema">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel secundario/Día en la naturaleza.jpg" title="Día en la naturaleza" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Día en la naturaleza.jpg" alt="Día en la naturaleza">
@@ -308,9 +288,6 @@
                             <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel secundario/Guardería (1).jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
                                 <img src="img/Nivel secundario/Guardería (1).jpg" alt="Jugando en la Guardería Municipal">
                             </a>
-                            <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel secundario/Guardería (2).jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
-                                <img src="img/Nivel secundario/Guardería (2).jpg" alt="Jugando en la Guardería Municipal">
-                            </a>
                         </div> 
 
                         <div class="home-niveles-menosinfo" style="background-color: #039BE5;" onclick="app.home.cerrarInfo()">
@@ -320,16 +297,16 @@
 
                     <div class="home-niveles-contenedor-nivel-contenido-masinfo nivel-cuatro" style="display: none; border: 3px solid #0277BD">
                         <div style="float: left; width: 55%"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.”</i>&nbsp;Ef. 4,4<br><br><br>
-                            <SPAN style="color: #0277BD;font-size: 35px; font-family: lines;">SUMATE!!</SPAN><br><br>
+                            <SPAN style="color: #0277BD;font-size: 33px; font-family: lines;">SUMATE!!</SPAN><br><br>
                             •   Requisitos de inscripción - <a href="pdf/NIVEL SUPERIOR - Requisitos.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   Uniforme - <a href="pdf/NIVEL SUPERIOR - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   <a href="http://santateresita.cba.infd.edu.ar/sitio/" class="home-niveles-descargar" target="_blank"><b>Más información</b></a><br><br><br>
-                            <SPAN style="color: #0277BD;font-size: 35px; font-family: lines;">ACTIVIDADES</SPAN><br>
+                            <SPAN style="color: #0277BD;font-size: 33px; font-family: lines;">ACTIVIDADES</SPAN><br>
                             <br>
                         </div>
                         <img src="img/Nivel superior/Superior.jpg" style="float: right; max-width: 40%; border: 1px solid #0277BD">
 
-                        <div id="galeriaSuperior" class="home-galeria-contenedor nivel-cuatro" style="display: none; margin-top: 275px;">
+                        <div id="galeriaSuperior" class="home-galeria-contenedor nivel-cuatro" style="display: none; margin-top: 280px;">
                             <a class="home-nivel-contenedor-masinfo-galeria" href="img/Nivel superior/Acompañando proyectos de alfabtización.jpg" title="Acompañando proyectos de alfabtización" data-gallery='superior'>
                                 <img src="img/Nivel superior/Acompañando proyectos de alfabtización.jpg" alt="Acompañando proyectos de alfabtización">
                             </a>
@@ -359,7 +336,7 @@
 
             <div class="home-niveles-contenedor">
                 <div class="home-niveles-contenedor-nivel" style="margin-right: 20px;">
-                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #81D4FA;"><b>NIVEL INICIAL</b>
+                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #81D4FA;">NIVEL INICIAL
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido" style="border: 2px solid #81D4FA;"> 
                         <img src="img/Nivel inicial/NI. bebe con juguetes.jpg" style="max-width: 47%; margin-top: 2%; margin-left: 25%;">                        
@@ -375,7 +352,7 @@
                     </div>                  
                 </div>
                 <div class="home-niveles-contenedor-nivel" style="margin-right: 20px;">
-                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #29B6F6;"><b>NIVEL PRIMARIO</b>
+                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #29B6F6;">NIVEL PRIMARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido" style="border: 2px solid #29B6F6;"> 
                         <img src="img/Nivel primario/NP. papel y lapiz.jpg" style="max-width: 55%; margin-top: 5%; margin-left: 25%;">
@@ -390,7 +367,7 @@
                     </div>
                 </div>
                 <div class="home-niveles-contenedor-nivel" style="margin-right: 20px;">
-                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #039BE5;"><b>NIVEL SECUNDARIO</b>
+                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #039BE5;">NIVEL SECUNDARIO
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido" style="border: 2px solid #039BE5"> 
                         <img src="img/Nivel secundario/NSe. estudiando.jpg" style="max-width: 33%; margin-top: 1%; margin-left: 33%;">
@@ -406,7 +383,7 @@
                     </div>
                 </div>
                 <div class="home-niveles-contenedor-nivel">
-                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #0277BD;"><b>NIVEL SUPERIOR</b>
+                    <div class="home-niveles-contenedor-nivel-titulo" style="background-color: #0277BD;">NIVEL SUPERIOR
                     </div>
                     <div class="home-niveles-contenedor-nivel-contenido" style="border: 2px solid #0277BD"> 
                         <img src="img/Nivel superior/NS. enseñando.jpg" style="max-width: 55%; margin-top: 2%; margin-left: 25%;">     
@@ -426,8 +403,9 @@
     </div> <!--Niveles-->
 
     <!--NOVEDADES-->
-    <div id="novedades">
-        <div class="home-secciones"><b class="label-secciones">NOVEDADES</b>
+    <div id="novedades" style="height: 50px; margin-top: -50px;"></div>
+    <div >
+        <div class="home-secciones"><span class="label-secciones">NOVEDADES</span>
             <div class="linea-secciones">
             </div>
         </div>
@@ -460,13 +438,15 @@
     </div> <!--Novedades-->
 
     <!--INSTITUCIÓN-->
-    <div id="institucion">
-        <div  class="home-secciones"><b class="label-secciones">INSTITUCIÓN</b>
+    <div id="institucion" style="height: 50px; margin-top: -50px;"></div>
+    <div >
+        <div  class="home-secciones"><span class="label-secciones">INSTITUCIÓN</span>
             <div class="linea-secciones">
             </div>
         </div>
-        <div id="historia" class="home-institucion-contenedor-historia">
-            <div class="home-institucion-contenedor-titulo"><b>HISTORIA</b>
+        <div id="historia" style="height: 50px; margin-top: -50px;"></div>
+        <div  class="home-institucion-contenedor-historia">
+            <div class="home-institucion-contenedor-titulo">HISTORIA
             </div>
             <div class="home-institucion-contenedor-contenido-historia"> 
                 Verano de 1930. Con más expectativas que certezas, un ya lejano 29 de enero, llegaban a Balnearia las primeras religiosas de la Congregación de las Hermanas de
@@ -476,7 +456,7 @@
                 acabando de conocer el viejo hotel en desuso que sería su hogar, las religiosas se sentaron sobre sus baúles y lloraron.<br><br>
 
                 <div onclick="app.home.mostrarInfoHistoria()">
-                    <a class="home-institucion-contenedor-vermas-historia"><b>Ver más</b></a>
+                    <a class="home-institucion-contenedor-vermas-historia">Ver más</a>
                 </div>
 
                 <div class="home-institucion-contenedor-desplegable-historia" style="width: 100%; display:none;" >
@@ -512,14 +492,14 @@
                     otorgar títulos de Profesor de Primero y Segundo Ciclo de E.G.B. <br><br>En la actualidad se está dictando el Profesorado de Biología, atendiendo a las demandas que surgen en el momento.<br><br>
                     
                     <div onclick="app.home.ocultarInfoHistoria()">
-                        <a class="home-institucion-contenedor-vermenos-historia" href="#historia"><b>Ver menos</b></a>
+                        <a class="home-institucion-contenedor-vermenos-historia" href="#historia">Ver menos</a>
                     </div>
                 </div>                                   
             </div>
         </div>
-        <hr/>
-        <div id="naturaleza" class="home-institucion-contenedor-naturaleza">
-            <div class="home-institucion-contenedor-titulo"><b>NATURALEZA</b>
+        <div id="naturaleza" style="height: 50px; margin-top: -50px;"></div>
+        <div  class="home-institucion-contenedor-naturaleza">
+            <div class="home-institucion-contenedor-titulo">NATURALEZA
             </div>
             <div class="home-institucion-contenedor-contenido-naturaleza"> 
                 <div>El <b>Instituto Santa Teresita</b> es un centro educativo de la Iglesia Católica al servicio de la formación de la niñez, la adolescencia y la juventud. Está dirigido por 
@@ -530,7 +510,7 @@
                 </div>
 
                 <div onclick="app.home.mostrarInfoNaturaleza()">
-                    <a class="home-institucion-contenedor-vermas-naturaleza"><b>Ver más</b></a>
+                    <a class="home-institucion-contenedor-vermas-naturaleza">Ver más</a>
                 </div>
 
                 <div class="home-institucion-contenedor-desplegable-naturaleza" style="width: 100%; display:none;" >
@@ -541,14 +521,14 @@
                     Italia, dos en Canadá, uno en Rumania y uno en Etiopía, además de realizar otras obras de servicio y de caridad.<br><br>
                     
                     <div onclick="app.home.ocultarInfoNaturaleza()">
-                        <a class="home-institucion-contenedor-vermenos-naturaleza" href="#naturaleza"><b>Ver menos</b></a>
+                        <a class="home-institucion-contenedor-vermenos-naturaleza" href="#naturaleza">Ver menos</a>
                     </div>
                 </div>
             </div>
         </div>
-        <hr/>
-        <div id="formacion" class="home-institucion-contenedor-formacion">
-            <div class="home-institucion-contenedor-titulo"><b>ESTILO DE FORMACIÓN Y ENSEÑANZA</b>
+        <div id="formacion" style="height: 50px; margin-top: -50px;"></div>
+        <div  class="home-institucion-contenedor-formacion">
+            <div class="home-institucion-contenedor-titulo">ESTILO DE FORMACIÓN Y ENSEÑANZA
             </div>
             <div class="home-institucion-contenedor-contenido-formacion"> 
                 <div>El estilo de formación del Instituto Santa Teresita se caracteriza por “la caridad en el ocultamiento” que ha de animar a todos los miembros de la comunidad educativa 
@@ -557,7 +537,7 @@
                 </div>
 
                 <div style="margin-top: 20px" onclick="app.home.mostrarInfoFormacion()">
-                    <a class="home-institucion-contenedor-vermas-formacion" ><b>Ver más</b></a>
+                    <a class="home-institucion-contenedor-vermas-formacion" >Ver más</a>
                 </div>
 
                 <div class="home-institucion-contenedor-desplegable-formacion" style="display:none; width: 100%">
@@ -588,14 +568,14 @@
                     <br><br>
                     
                     <div onclick="app.home.ocultarInfoFormacion()">
-                        <a class="home-institucion-contenedor-vermenos-formacion" href="#formacion"><b>Ver menos</b></a>
+                        <a class="home-institucion-contenedor-vermenos-formacion" href="#formacion">Ver menos</a>
                     </div>
                 </div>                
             </div>
         </div>
-        <hr/>
-        <div id="simbolos" class="home-institucion-contenedor-simbolos">
-            <div class="home-institucion-contenedor-titulo"><b>SIGNOS, SÍMBOLOS Y TRADICIONES</b>
+        <div id="simbolos" style="height: 50px; margin-top: -50px;"></div>
+        <div  class="home-institucion-contenedor-simbolos">
+            <div class="home-institucion-contenedor-titulo">SIGNOS, SÍMBOLOS Y TRADICIONES
             </div>
             <div class="home-institucion-contenedor-contenido-simbolos"> 
                 <div style="width: 100%"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada<br>
@@ -603,7 +583,7 @@
                 </div>
                 
                 <div onclick="app.home.mostrarInfoSimbolos()">
-                    <a class="home-institucion-contenedor-vermas-simbolos"><b>Ver más</b></a>
+                    <a class="home-institucion-contenedor-vermas-simbolos">Ver más</a>
                 </div>
                 
                 <div class="home-institucion-contenedor-desplegable-simbolos" style="display:none; width: 100%">
@@ -628,14 +608,14 @@
                     parroquiales.<br>•   Ministerios misioneros y catequísticos.<br>•   Facilitación del edificio y algunos recursos escolares  para diversos eventos.<br>•   Copa de leche, ropero escolar, útiles 
                     escolares y ayuda económica para alumnos carenciados y familias carenciadas<br>•   Ayuda espiritual  a familias necesitadas.<br>•   Sistema tutorial para alumnos  del nivel superior<br><br>
                     <div onclick="app.home.ocultarInfoSimbolos()">
-                        <a class="home-institucion-contenedor-vermenos-simbolos" href="#simbolos"><b>Ver menos</b></a>
+                        <a class="home-institucion-contenedor-vermenos-simbolos" href="#simbolos">Ver menos</a>
                     </div>
                 </div>
             </div>
         </div>
-        <hr/>
-        <div id="patronos" class="home-institucion-contenedor-patronos">
-            <div class="home-institucion-contenedor-titulo"><b>PATRONOS</b>
+        <div id="patronos" style="height: 50px; margin-top: -50px;"></div>
+        <div  class="home-institucion-contenedor-patronos">
+            <div class="home-institucion-contenedor-titulo">PATRONOS
             </div>
             <div class="home-institucion-contenedor-contenido-patronos"> 
                 <div style="float: left; width: 100%" ><b>SAN AGUSTÍN ROSCELLI - Fundador de la Congregación de las Hermanas de la Inmaculada de Génova</b><br><br><i>"Deben adquirir y perfeccionar más en las virtudes 
@@ -649,7 +629,7 @@
                 </div>
 
                 <div onclick="app.home.mostrarInfoPatronos()">
-                    <a class="home-institucion-contenedor-vermas-patronos"><b>Ver más</b></a>
+                    <a class="home-institucion-contenedor-vermas-patronos">Ver más</a>
                 </div>
 
                 <div class="home-institucion-contenedor-desplegable-patronos" style="display:none; width: 100%">
@@ -674,14 +654,14 @@
                         a quien un día le consagraría su vida entera.<br><br>
                     </div>
                     <div onclick="app.home.ocultarInfoPatronos()">
-                        <a class="home-institucion-contenedor-vermenos-patronos" href="#patronos"><b>Ver menos</b></a>
+                        <a class="home-institucion-contenedor-vermenos-patronos" href="#patronos">Ver menos</a>
                     </div>
                 </div>                                    
             </div>
         </div>
-        <hr/>
-        <div id="ubicacion" class="home-institucion-contenedor-ubicacion">
-            <div class="home-institucion-contenedor-titulo"><b>UBICACIÓN</b>
+        <div id="ubicacion" style="height: 50px; margin-top: -50px;"></div>
+        <div  class="home-institucion-contenedor-ubicacion">
+            <div class="home-institucion-contenedor-titulo">UBICACIÓN
             </div>
             <div class="home-institucion-contenedor-contenido-ubicacion">                 
                 <iframe style="float: right; margin-left: 20px;" src="https://mapsengine.google.com/map/embed?mid=z-qJCuWCDqZY.kBBPyAV0j_kg"></iframe>
@@ -694,22 +674,62 @@
     </div> <!--Institución-->
 
     <!--GALERÍA-->
-    <div id="galeria">
-        <div class="home-secciones"><b class="label-secciones">GALERÍA</b>
+    <div id="galeria" style="height: 50px; margin-top: -50px;"></div>
+    <div >
+        <div class="home-secciones"><span class="label-secciones">GALERÍA</span>
             <div class="linea-secciones">
             </div>
         </div>
 
         <div id="galeriaHome" class="home-galeria-contenedor">
-            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Banana" data-gallery='home'>
-                <img src="img/Colegio/3. Foto esquina.jpg" alt="Banana">
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/1. frente.jpg" title="El Colegio" data-gallery='home'>
+                <img src="img/Colegio/1. frente.jpg" alt="El Colegio">
             </a>
-            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Apple" data-gallery='home'>
-                <img src="img/Colegio/3. Foto esquina.jpg" alt="Apple">
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/2. entrada.jpg" title="Entrada" data-gallery='home'>
+                <img src="img/Colegio/2. entrada.jpg" alt="Entrada">
             </a>
-            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. Foto esquina.jpg" title="Orange" data-gallery='home'>
-                <img src="img/Colegio/3. Foto esquina.jpg" alt="Orange">
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/3. aula.jpg" title="Una de las aulas" data-gallery='home'>
+                <img src="img/Colegio/3. aula.jpg" alt="Una de las aulas">
             </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/5. patio.jpg" title="Patio de recreo" data-gallery='home'>
+                <img src="img/Colegio/5. patio.jpg" alt="Patio de recreo">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/7. virgen.jpg" title="Virgencita" data-gallery='home'>
+                <img src="img/Colegio/7. virgen.jpg" alt="Virgencita">
+            </a>
+<!--             <a class="home-galeria-contenedor-imagen" href="img/Colegio/8. Biblioteca.jpg" title="Biblioteca" data-gallery='home'>
+                <img src="img/Colegio/8. Biblioteca.jpg" alt="Biblioteca">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/9. canchita.jpg" title="Canchita" data-gallery='home'>
+                <img src="img/Colegio/9. canchita.jpg" alt="Canchita">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/10. laboratorio.jpg" title="Laboratorio" data-gallery='home'>
+                <img src="img/Colegio/10. laboratorio.jpg" alt="Laboratorio">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/11. Sala de computacion.jpg" title="Sala de Computación" data-gallery='home'>
+                <img src="img/Colegio/11. Sala de computacion.jpg" alt="Sala de Computación">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/12. produccion.jpg" title="Sala de Producción" data-gallery='home'>
+                <img src="img/Colegio/12. produccion.jpg" alt="Sala de Producción">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/13. productos.jpg" title="Algunos de los productos que elaboramos" data-gallery='home'>
+                <img src="img/Colegio/13. productos.jpg" alt="Algunos de los productos que elaboramos">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/14. pastor.jpg" title="Pastorcito" data-gallery='home'>
+                <img src="img/Colegio/14. pastor.jpg" alt="Pastorcito">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/15. salon.jpg" title="Salón de actos" data-gallery='home'>
+                <img src="img/Colegio/15. salon.jpg" alt="Salón de actos">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/16. superior.jpg" title="Instituto Superior de Formación Docente" data-gallery='home'>
+                <img src="img/Colegio/16. superior.jpg" alt="Instituto Superior de Formación Docente">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/17. capilla.jpg" title="Capilla" data-gallery='home'>
+                <img src="img/Colegio/17. capilla.jpg" alt="Capilla">
+            </a>
+            <a class="home-galeria-contenedor-imagen" href="img/Colegio/18. Virgen capilla.jpg" title="Virgencita" data-gallery='home'>
+                <img src="img/Colegio/18. Virgen capilla.jpg" alt="Virgencita">
+            </a> -->
         </div>  
     </div> <!--Galería-->
 
@@ -728,21 +748,21 @@
         <div class="modal fade" style="background-color: rgba(255, 255, 255, 0);">
             <div class="modal-dialog">
                 <div class="modal-content" style="border-radius: 5px">
-                    <div class="modal-header" style="border-bottom: 1px solid rgb(0, 1, 94);">
+                    <div class="modal-header" style="border-bottom: 1px solid #1A237E;">
                         <!-- <button type="button" class="close" style="font-size: 25px; color: rgb(0, 1, 94);" aria-hidden="true">&times;</button> -->
-                        <h4 class="modal-title" style="font-size: 30px; color: rgb(171, 171, 171); background-color: rgba(0, 1, 94, 0.62); padding: 15px;"></h4>
+                        <h4 class="modal-title" style="font-size: 30px; color: rgb(171, 171, 171); background-color: #0277BD; padding: 25px; text-transform: uppercase;"></h4>
                     </div>
-                    <div class="modal-body next" style="margin: 10px;">
-                    </div>
-                    <div class="modal-footer" style="height: 30px; background-color: rgba(255, 255, 255, 0); border-top: 1px solid rgb(0, 1, 94); box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0); ">
-                        <button type="button" class="btn btn-primary prev" style="width: 85px; height: 30px; padding-top: 5px; float: left; margin-left: 35%; background-color: rgb(0, 1, 94); background-image: linear-gradient(to bottom, rgb(0, 1, 94), rgb(0, 1, 94)); color: rgb(171, 171, 171);">
-                            <i class="glyphicon glyphicon-chevron-left"></i>
-                            Anterior
+                    <div class="modal-body next" style="margin: 10px; overflow: visible">
+                        <button type="button" class="btn boton-galeria prev" style="float: left; margin-left: -13%">
+                            <!-- <i class="glyphicon glyphicon-chevron-left"></i> -->
+                            <img class="galeria-flecha-izquierda" src="img/Icons/Flecha-izquierda.png">
                         </button>
-                        <button type="button" class="btn btn-primary next" style="margin-right: 35%; background-color: rgb(0, 1, 94); background-image: linear-gradient(to bottom, rgb(0, 1, 94), rgb(0, 1, 94)); color: rgb(171, 171, 171);">
-                            Siguiente
+                        <button type="button" class="btn boton-galeria next" style="float: right; margin-right: -13%">
                             <i class="glyphicon glyphicon-chevron-right"></i>
+                            <img class="galeria-flecha-derecha" src="img/Icons/Flecha-derecha.png">
                         </button>
+                    </div>
+                    <div class="modal-footer" style="background-color: rgba(255, 255, 255, 0); border-top: 1px solid #1A237E; box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0); ">
                     </div>
                 </div>
             </div>
