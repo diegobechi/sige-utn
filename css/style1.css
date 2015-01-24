@@ -646,27 +646,32 @@ border-radius: 5px;
 }
 
 .lista-opciones{
-    width: 150px;
-    background-color:gainsboro;
     float: left;
-    margin-right: 10px;
+    margin: 0 10px;
+    list-style: none;
 }
-
+.lista-opciones li{
+    width: 150px;
+    background-color: cadetblue;
+    border: 1px solid #F9F5F5;
+    padding: 5px;
+    color: #fff;
+    padding-left: 26px;
+    cursor: pointer;
+}
+.lista-opciones li:hover{
+    background-color: rgb(215, 223, 231);
+    color: black;
+}
 .contenedor-principal{
     display: inline-block;
-    width: 740px;
-    height: 250px;
     border: 2px solid grey;
     margin: 0;
     background-color: gainsboro;
 }
 
-.contenedor-de-alumnos{
-    background-color: darkslategrey;
-    border: 2px solid grey;
-    width: 725px;
-    margin-right: 10px;
-    margin-left: 10px;
+.contenedor-alumnos{
+    margin: 0;
 }
 
 .box-alumno{
@@ -676,14 +681,25 @@ border-radius: 5px;
 .box-alumno-generic  {
     background-color: white;
     width: 150px;
+    height: 150px;
     display: inline-block;
     border: 2px solid orange;
+    float: left;
+    margin: 10px;
 }
 
 .box-alumno-generic a {
     text-align: center;
 }
 
+.box-alumno-generic h2{
+    font-size: 18px;
+    line-height: 18px;
+}
+.box-alumno-generic h3{
+    font-size: 16px;
+    line-height: 16px;
+}
 .contenedor-de-listados{
     background-color: darkslategrey;
     border: 2px solid grey;
@@ -707,7 +723,11 @@ border-radius: 5px;
     background-color: darkslategrey;
     border: 2px solid grey;
     width: 738px;
-    height: 200px;
+}
+
+.listado-asignaturas li {
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .box-asignatura-generica{
@@ -848,10 +868,9 @@ border-radius: 5px;
 .box-asignatura-generica,
 .box-curso-generic{
     background-color: aquamarine;
-    width: 150px;
+    width: 100%;
     text-align: center;
     display: inline-block;
-    height: 150px;
     margin: 20px;
 }
 

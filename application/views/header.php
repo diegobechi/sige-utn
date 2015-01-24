@@ -11,12 +11,12 @@
         <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">-->
        
 
-        <script src="js/libs/bootstrap.js"></script>
-        <script src="js/libs/bootstrap.min.js"></script>
+        <script src="../js/libs/bootstrap.js"></script>
+        <script src="../js/libs/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"> 
-        <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.css"> 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-image-gallery.css">
+        <link rel="stylesheet" type="text/css" href="../css/blueimp-gallery.css"> 
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-image-gallery.css">
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" type="text/css" href="css/vertical.news.slider.css">

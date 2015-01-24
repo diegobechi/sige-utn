@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../js/alumno.js"></script>
 <label class="label-menu-superior-general">INSTITUTO SANTA TERESITA</label>
 <ul class="nav nav-tabs" style="background-color: #000;">	
 	<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>

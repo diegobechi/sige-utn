@@ -31,24 +31,28 @@ function crearListadoAportes(data){
     
 }
 
-$("#misAsignaturas").on("click",function(){
-    var fecha = new Date();
-    var año = fecha.getFullYear();
-    $.ajax({
-        url : "alumno/getAsignaturas/"+año,
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR)
-        {    
-            crearSelectorAsignatura(data);
-            console.log("exito");
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            console.log("fallo");
-        }
-    });
-});
+$(document).ready(function(){
+    $('body').find("#misAsignaturas").on("click",function(){
+        var fecha = new Date();
+        var año = fecha.getFullYear();
+        $.ajax({
+            url : "alumno/getAsignaturas/"+año,
+            type: "GET",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR)
+            {    
+                crearSelectorAsignatura(data);
+                console.log("exito");
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log("fallo");
+            }
+        });
+    });   
+})
+
+
 
 function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
@@ -170,6 +174,7 @@ function buscarMiCurso(){
     var año = fecha.getFullYear();
     $.ajax({
          url: "curso/getMiCurso/"+año,
+         url: "curso/getMiCurso/2014",
          type:"GET",
          dataType: "json",
          success: function(data, textStatus, jqXHR){

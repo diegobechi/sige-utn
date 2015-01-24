@@ -32,16 +32,12 @@ class Curso_Model extends CI_Model {
     }
 
     function get_all_asignaturas($idCurso, $año){
-      $string_query = $this->db->query("SELECT DISTINCT a.nombre as Asignaturas
-                                        FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
-                                        WHERE d.legajoDocente = ad.legajoDocente and 
-                                          a.idAsignatura = ad.idAsignatura and
-                                          ne.idNivelEducativo = a.idNivelEducativo and
-                                          ne.idNivelEducativo = c.idNivelEducativo and
-                                          c.idTurno = t.idTurno and
-                                          c.idCurso = $idCurso and
-                                          c.cicloLectivo= $año
-                                          order by a.nombre;");
+      $string_query = $this->db->query("SELECT  a.nombre as 'nom_asignatura', hc.diaSemana, SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio' ,  SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin', d.apellido, d.nombre,d.correoElectronico, d.curriculumVitae
+                                        FROM HorarioCurso hc, Docente d,Curso c, Asignatura a 
+                                        WHERE hc.legajoDocente = d.legajoDocente and 
+                                           hc.idCurso = c.idCurso and
+                                           hc.idAsignatura = a.idAsignatura and
+                                           c.idCurso = $idCurso");
       return $string_query->result();  
     }
 
@@ -57,17 +53,42 @@ class Curso_Model extends CI_Model {
       return $string_query->result();
     }
 
+    function get_asistencia_por_fecha($idCurs, $fecha){
+      $string_query = $this->db->query("SELECT alu.legajoAlumno, alu.apellido, alu.nombre, CONVERT (char(10),aa.fecha, 103) as fecha, aa.justificacion, aa.presente
+                                        FROM Alumno alu, AsistenciaAlumno aa, Inscripcion i, Curso c
+                                        WHERE alu.legajoAlumno = aa.legajoAlumno and 
+                                           alu.legajoAlumno = i.legajoAlumno and
+                                           c.idCurso = i.idCurso and
+                                           c.idCurso ='9' and
+                                           aa.fecha = '$fecha'
+                                           GROUP BY  alu.legajoAlumno, alu.apellido, alu.nombre, aa.fecha, aa.justificacion, aa.presente
+                                           ORDER BY  alu.apellido asc, alu.nombre asc");
+      return $string_query->result();
+    }
+
+    function insert_asistencia_por_fecha($string_insert){
+      $string_query = $this->db->query("INSERT INTO AsistenciaAlumno (legajoAlumno, fecha, presente, justificacion) 
+                                        VALUES $string_insert");      
+    }
+
+    function update_asistencia_por_fecha($legajoAlumno, $fecha, $presente, $justificacion){
+      $string_query = $this->db->query("UPDATE  AsistenciaAlumno
+                                        SET legajoAlumno = $legajoAlumno, fecha = '$fecha', presente = $presente, justificacion = '$justificacion' 
+                                        WHERE  legajoAlumno = $legajoAlumno and fecha = '$fecha'");      
+    }
+
     /* START COMUNICADOS WEB*/
     function set_comunicado($idCurso, $legajoDocente, $fecha, $comunicado){
-      $string_query = $this->db->query("INSERT INTO ComunicadoWeb(idCurso, legajoDocente, fecha, comunicado) VALUES ($idCurso, $legajoDocente, $fecha, ' $comunicado ')");
+      $string_query = $this->db->query("INSERT INTO ComunicadoWeb(idCurso, legajoDocente, fecha, comunicado) 
+                                        VALUES ($idCurso, $legajoDocente, '$fecha', '$comunicado')");
     }
  
     function get_comunicado($idCurso, $startDate, $endDate){
-      $consulta = "SELECT CONVERT (char(10),cw.fecha, 103) as fecha,cw.comunicado, d.apellido, d.nombre
+      $consulta = "SELECT cw.fecha,cw.comunicado, d.apellido, d.nombre
                                         FROM ComunicadoWeb cw, Docente d, Curso c
                                         WHERE cw.legajoDocente = d.legajoDocente and
                                             cw.idCurso = c.idCurso and
-                                            cw.fecha between  $startDate  and  $endDate and
+                                            (cw.fecha between ' $startDate ' and ' $endDate ' )and
                                             c.idCurso = $idCurso";
       $string_query = $this->db->query($consulta);
       return $string_query->result();
@@ -79,9 +100,9 @@ class Curso_Model extends CI_Model {
     /* END COMUNICADOS WEB*/
 
     /* START TEMARIO DICTADO*/
-    function set_temario_dictado($idCurso, $idAsignatura, $fecha, $temasClase, $legajoDocente){      
-      $string_query = $this->db->query("INSERT INTO TemarioDictado(idCurso, idAsignatura, fecha, temasClase, legajoDocente) 
-                                        VALUES ($idCurso, $idAsignatura, '$fecha', ' $temasClase ', $legajoDocente)");
+    function set_temario_dictado($idCurso, $idAsignatura, $fecha, $temasClase, $legajoDocente){ 
+      $string_query = $this->db->query("INSERT INTO TemarioDictado (idCurso, idAsignatura, fecha, temasClase, legajoDocente) 
+                                        VALUES ($idCurso, $idAsignatura, CONVERT(VARCHAR(12), ' $fecha ', 111), '$temasClase', $legajoDocente)");
       return $string_query;
 
     }
@@ -152,7 +173,7 @@ class Curso_Model extends CI_Model {
     }
 
     function getNotasPorAsignaturaInicial($idCurso, $idAsignatura, $etapa){
-      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre,ce.etapa,  ce.motivo, ce.calificacion, a.idAsignatura, ce.modificacion
                                         FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
                                         WHERE c.idCurso = hc.idCurso and
                                            a.idAsignatura = hc.idAsignatura and
