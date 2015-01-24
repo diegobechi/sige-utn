@@ -12,10 +12,12 @@ class Curso_Model extends CI_Model {
     }
 
     function get_curso($legajoAlumno, $año){
-      $string_query = $this->db->query("SELECT i.idCurso
-                                        FROM Inscripcion i, Alumno a
+      $string_query = $this->db->query("SELECT i.idCurso, n.nombre
+                                        FROM Inscripcion i, Alumno a, Curso c, NivelEducativo n
                                         WHERE i.legajoAlumno = a.legajoAlumno and
                                               a.legajoAlumno = $legajoAlumno and
+                                              n.idNivelEducativo = c.idNivelEducativo and
+                                              i.idCurso = c.idCurso and
                                               YEAR(i.fecha) = $año");
       return $string_query->result();
     }
@@ -84,18 +86,23 @@ class Curso_Model extends CI_Model {
     }
  
     function get_comunicado($idCurso, $startDate, $endDate){
-      $consulta = "SELECT cw.fecha,cw.comunicado, d.apellido, d.nombre
-                                        FROM ComunicadoWeb cw, Docente d, Curso c
-                                        WHERE cw.legajoDocente = d.legajoDocente and
-                                            cw.idCurso = c.idCurso and
-                                            (cw.fecha between ' $startDate ' and ' $endDate ' )and
-                                            c.idCurso = $idCurso";
+      $consulta = "SELECT CONVERT(CHAR(12),cw.fecha,111) as fecha,cw.comunicado, d.apellido, d.nombre, cw.idComunicadoWeb
+                  FROM ComunicadoWeb cw, Docente d, Curso c
+                  WHERE cw.legajoDocente = d.legajoDocente and
+                      cw.idCurso = c.idCurso and
+                      (cw.fecha between '$startDate' and '$endDate' )and
+                      c.idCurso = 9
+                  ORDER BY cw.fecha DESC";
       $string_query = $this->db->query($consulta);
       return $string_query->result();
     }
 
-    function update_comunicado($idComunicado){
-      $string_query = $this->db->query("UPDATE ComunicadoWeb SET comunicado = $comunicado WHERE idComunicado = $idComunicado");
+    function update_comunicado($idComunicadoWeb, $textoComunicado, $date, $legajoDocente){
+      $string_query = $this->db->query("UPDATE ComunicadoWeb  
+                                        SET legajoDocente = $legajoDocente, fecha = '$date', comunicado = '$textoComunicado'
+                                        WHERE idComunicadoWeb = $idComunicadoWeb");
+
+      return $string_query;
     }
     /* END COMUNICADOS WEB*/
 
@@ -115,9 +122,13 @@ class Curso_Model extends CI_Model {
                                               a.idAsignatura = $idAsignatura;");
       return $string_query->result();
     }
-    function update_temario_dictado($idCurso, $idAsignatura, $temasDictado){
-      $string_query = $this->db->query("UPDATE TemarioDictado SET temasDictado = $temasDictado WHERE idCurso = $idCurso and 
-                                        idAsignatura = $idAsignatura");
+    function update_temario_dictado($idAsignatura, $idCurso, $fecha, $temasClase, $legajoDocente){
+      $consulta = "UPDATE  TemarioDictado 
+                                        SET  temasClase = '$temasClase', legajoDocente = $legajoDocente 
+                                        WHERE  idcurso = $idCurso  and CONVERT(VARCHAR(11),fecha, 106) = '$fecha' and idAsignatura = $idAsignatura";
+      var_dump($consulta);
+      $string_query = $this->db->query($consulta);
+      return $string_query;
     }
     /* END TEMARIO DICTADO*/
 

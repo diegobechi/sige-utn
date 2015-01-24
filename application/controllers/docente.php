@@ -22,10 +22,11 @@ class Docente extends CI_Controller {
             redirect('c_login', 'refresh');
         }else{
         	$session_data = $this->session->userdata('logged_in');
+        	$data['nombre_usuario'] = $this->nombreDocente;
         	
         	if($session_data['tipo_usuario'] == 2){
         		$this->load->view('header');
-				$this->load->view('docente/main');
+				$this->load->view('docente/main', $data);
 				$this->load->view('footer');
         	}else{
         		redirect('alumno', 'refresh');
@@ -62,8 +63,7 @@ class Docente extends CI_Controller {
 
 	public function updateNotasAsignaturaInicial($legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa){
 		$this->load->model('Teacher_Model');
-		$date = date("F j, Y, g:i a");
-		
+		$date = date("F j, Y, g:i a");	
 
 		$legajoDocente = $this->legajoDocente;
 		$modificacion = ''.$this->nombreDocente.' ('.$legajoDocente .') - '.$date;
@@ -127,8 +127,17 @@ class Docente extends CI_Controller {
 
 	public function getTutor($legajoAlumno){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->get_tutor($this->legajoAlumno);
+		$query = $this->Student_Model->get_tutor($legajoAlumno);
 		echo json_encode($query);		
+	}
+
+	public function actualizarUltimaModificacion($idCurso,$idAsignatura,$etapa){
+		$this->load->model('Teacher_Model');
+		$date = date("F j, Y, g:i a");
+		$legajoDocente = $this->legajoDocente;
+		$modificacion = ''.$this->nombreDocente.' ('.$legajoDocente .') - '.$date;
+
+		$query = $this->Teacher_Model->actualizarUltimaModificacion($idCurso, $idAsignatura, $etapa, $modificacion);		
 	}
 
 }

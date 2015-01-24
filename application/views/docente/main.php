@@ -1,11 +1,17 @@
 <script type="text/javascript" src="../js/docente.js"></script>
-<label class="label-menu-superior-general">INSTITUTO SANTA TERESITA</label>
-<ul class="nav nav-tabs"  style="background-color: #000;">		
-	<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
-	<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
-	<li><a href="#tab_c" data-toggle="tab">MIS DATOS</a></li>
-	<li><a href="c_home/logout">Logout</a></li>
-</ul>
+<div class="header-menu">
+	<label class="label-menu-superior-general">Instituto Santa Teresita</label>
+	<ul class="nav nav-tabs">		
+		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
+		<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
+		<li><a href="#tab_c" data-toggle="tab">MIS DATOS</a></li>
+		<div class="user-right">
+			<span><?php echo $nombre_usuario ?></span>
+			<a href="c_home/logout">Logout</a>
+		</div>
+	</ul>
+	
+</div>
 <div class="tab-content">	
 		<div class="tab-pane fade active in" id="tab_a">
 			<div class="contenedor-pestana-general">
@@ -69,6 +75,18 @@
 </div><!-- tab content -->
 
 <style>
+
+.header-menu{
+	background-color: #000;
+	color: #FFF;
+}
+
+.user-right{
+	display: inline-block;
+	float: right;
+	margin: 8px 50px;
+}
+
 .contenedor-pestañas{
 	width: 80%;
 	margin: 0 auto;
@@ -98,6 +116,21 @@
 	background-color: #efefef;
 	color: #62687e;
 	border-bottom: 1px solid rgba(221,221,221,0.5);
+}
+
+span.Presente{
+	color: green;
+	padding-left: 15px;
+}
+
+span.Ausente{
+	color: red;
+	padding-left: 15px;
+}
+
+#listado-asistencia input[type="checkbox"]{
+	margin-top: 0px;
+	height: 16px;
 }
 </style>
 
