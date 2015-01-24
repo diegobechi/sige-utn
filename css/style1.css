@@ -753,7 +753,6 @@ border-radius: 5px;
     z-index: 99;
 }
 
-.perfil-tutor-container,
 .perfil-alumno-container{
     width: 800px;
     margin: 0 auto;
@@ -886,10 +885,9 @@ border-radius: 5px;
 }
 .datos-tutor label{
     display: inline-block;
+    width: 150px;
 }
-.datos-tutor{
-    float: left;
-}
+
 .foto-tutor{
     width: 120px;
     margin: 15px;

@@ -77,7 +77,7 @@ class Teacher_Model extends CI_Model {
     }
 
     function get_calificacion_primaria($idCurso, $idAsignatura, $etapa){
-        $string_query = $this->db->query("SELECT  DISTINCT alu.legajoAlumno, ce.nroCalificacion , ce.etapa,  ce.motivo, ce.calificacion
+        $string_query = $this->db->query("SELECT  DISTINCT alu.legajoAlumno, ce.nroCalificacion , ce.etapa,  ce.motivo, ce.calificacion, ce.modificacion
                                           FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
                                           WHERE c.idCurso = hc.idCurso and
                                                 a.idAsignatura = hc.idAsignatura and
@@ -109,7 +109,13 @@ class Teacher_Model extends CI_Model {
                                                 legajoAlumno = $legajoAlumno and
                                                 etapa = '$etapa' and
                                                 nroCalificacion = $nroCalificacion");
-    }    
+    }
+
+    function actualizarUltimaModificacion($idCurso,$idAsignatura,$etapa,$modificacion){
+        $string_query = $this->db->query("UPDATE CalificacionEscolar
+                                          SET modificacion = '$modificacion'
+                                          WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and etapa = '$etapa'");
+    }
 
     function clear_result($query){
         for($i = 0; $i< count($query); $i++){

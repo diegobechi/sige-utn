@@ -32,27 +32,152 @@ function crearListadoAportes(data){
 }
 
 $(document).ready(function(){
-    $('body').find("#misAsignaturas").on("click",function(){
+    $('body').find("#misAsignaturas, #misNotas").on("click",function(){
         var fecha = new Date();
         var año = fecha.getFullYear();
+        var origen = $(this).attr('id');
         $.ajax({
-            url : "alumno/getAsignaturas/"+año,
+            //url : "alumno/getAsignaturas/"+año,
+            url : "alumno/getAsignaturas/2014",
             type: "GET",
             dataType: "json",
-            success: function(data, textStatus, jqXHR)
-            {    
-                crearSelectorAsignatura(data);
-                console.log("exito");
+            success: function(data, textStatus, jqXHR){
+                if( origen == 'misNotas'){                    
+                    crearTablaNotasAsignaturas(data);                    
+                }else{
+                    crearSelectorAsignatura(data);
+                }
             },
-            error: function (jqXHR, textStatus, errorThrown)
-            {
+            error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
             }
         });
     });   
 })
 
+function crearTablaNotasAsignaturas(asignaturas){
+    var nivel = $('#curso-alumno').data('nivel');
+    $.ajax({
+            //url : "alumno/getAsignaturas/"+año,
+            url : "alumno/getNotasAlumno/2014",
+            type: "GET",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR){
+                if (nivel != "Inicial"){
+                    $('#informe-nivel-primaria').show();
+                    $('#informe-nivel-inicial').hide();
+                    if($('#listado-primario-notas').children().size() < 1){    
+                        var cant_columns = checkMayorCantNotas(data);
+                        cargarInfoTablaNotas(asignaturas, data, cant_columns);
+                    }    
+                }else{                    
+                    $('#informe-nivel-inicial').show();
+                    $('#informe-nivel-primaria').hide();
+                    if($('.accordion-group').size() < 1){
+                        cargarNotasInicial(asignaturas, data);    
+                    }                    
+                }                
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        });
+}
 
+function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
+    var conte = $('#listado-primario-notas');
+    conte.empty();
+    //Creamos la cabecera
+    var conteCabecera = $('#cabecera-notas');
+    cant_columns = cant_columns + 3;
+    var new_cabecera = "";
+    for (var i = 0; i < cant_columns; i++) {
+        if(i == 0){
+            new_cabecera = "<td>Asignatura</td>";
+        }else{
+            if(i+1 != cant_columns){
+                new_cabecera = "<td>Nota</td>";
+            }else{
+                new_cabecera = "<td>Promedio</td>";
+            }
+        }
+        conteCabecera.append(new_cabecera);    
+    };
+
+    for (var i = 0; i < asignaturas.length; i++) {
+        var new_line = "<tr>";
+        var conta = 0;
+        var idAsignatura = asignaturas[i].idAsignatura;        
+        new_line += "<td>"+asignaturas[i].nombre+"</td>";
+        var array_notas = getArrayNotas(notas, idAsignatura);
+        console.log('Asignatura: '+asignaturas[i].nombre);
+        for (var j = 0; j < cant_columns-1; j++) {
+            if(typeof array_notas[j] != "undefined"){
+                console.log('calificacion: '+array_notas[j].calificacion);
+                new_line += "<td>"+array_notas[j].calificacion+"</td>";
+                conta++;
+            }else{
+                new_line += "<td></td>";                
+            }            
+        };
+        new_line += "</tr>";
+        console.log('Fin fila');
+        conte.append(new_line);
+    };
+}
+
+function cargarNotasInicial(asignaturas, notas){
+    var conte_btn = $('.accordion.nivel-inicial');
+    conte_btn.empty();
+    for (var i=0; i<asignaturas.length;i++){
+        var idAsignatura = asignaturas[i].idAsignatura;
+        var array_notas = getArrayNotas(notas, idAsignatura);
+        var primera = " ";
+        var segunda = " ";
+        if (array_notas.length > 0){
+            primera = (typeof array_notas[0] != "undefined") ? array_notas[0].calificacion : " ";
+            segunda = (typeof array_notas[1] != "undefined") ? array_notas[1].calificacion : " ";
+        };
+        var newBox='<div class="accordion-group '+asignaturas[i].idAsignatura+' "><div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+i+'"><img src="../img/person.png"><span>'+asignaturas[i].nombre+'</span></a></div><div id="collapse'+i+'" class="accordion-body collapse"><div class="accordion-inner"><h4></h4><div><textarea disabled>'+primera+'</textarea></div><div><textarea disabled>'+segunda+'</textarea></div><span id="modificadoPor"></div></div></div>';
+        conte_btn.append(newBox);
+    }
+
+}
+
+function getArrayNotas(notas, idAsignatura){
+    var notas_arr = [];
+    for (var i = 0; i < notas.length; i++) {
+        if(notas[i].idAsignatura == idAsignatura){
+            notas_arr.push(notas[i]);
+        }
+    };
+    return notas_arr;
+}
+
+function checkMayorCantNotas(data){
+    var idAsignatura = "";
+    var contador = 0;
+    var mayor = {};
+    mayor.cont = 0;
+    for (var i = 0; i < data.length; i++) {
+        if(i == 0){
+            var idAsignatura = data[i].idAsignatura;
+            contador++;
+        }else{
+            if(data[i].idAsignatura == idAsignatura){
+                contador++;
+            }else{
+                if(contador > mayor.cont){
+                    mayor.id = idAsignatura;
+                    mayor.cont = contador;
+                }                
+                var idAsignatura = data[i].idAsignatura;
+                contador = 1;
+            }
+        }
+    };
+    return mayor.cont;
+}
 
 function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
@@ -99,9 +224,7 @@ $('body').on('click','#programa', function(){
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-            console.log(data);
             cargarPrograma(data);
-
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -149,6 +272,15 @@ function cargarInfoCursoGeneral(data){
 
 $(document).ready(function(){
     buscarMiCurso();
+
+    $('body').find('#lista-mensajes h3').on('click',function(){
+        if($('#page-wrap').hasClass('vertical')){
+            $('#page-wrap').removeClass('vertical');
+        }else{
+            $('#page-wrap').addClass('vertical');
+        }
+    })
+
 })
 
 function buscarComunicadoWeb(curso){
@@ -157,29 +289,41 @@ function buscarComunicadoWeb(curso){
          type:"GET",
          dataType: "json",
          success: function(data, textStatus, jqXHR){
-            console.log(data);
             cargarComunicadoWeb(data);
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
             var data = {};
-            console.log("fallo");
             cargarComunicadoWeb(data);
         }
     }) 
+}
+
+function cargarComunicadoWeb(data){
+    var conte = $("#lista-mensajes");
+    if(data.length >= 1){
+        $("#cantMensajes").text("(" + data.length+")");
+        for (var i = 0 ; i<data.length; i++){
+            var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+            conte.append(nuevaLinea);
+        }
+    }else{
+        var sinMensajes = "<div class='contenedor-comunicados sin-comunicados' > Este curso no tiene mensajes nuevos </div>";
+        conte.append(sinMensajes);
+    }
 }
 
 function buscarMiCurso(){
     var fecha = new Date();
     var año = fecha.getFullYear();
     $.ajax({
-         url: "curso/getMiCurso/"+año,
+         //url: "curso/getMiCurso/"+año,
          url: "curso/getMiCurso/2014",
          type:"GET",
          dataType: "json",
          success: function(data, textStatus, jqXHR){
             console.log(data);
-            $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" style="display: none;"></div>');
+            $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" data-nivel="'+data[0].nombre+'" style="display: none;"></div>');
             buscarComunicadoWeb(data[0].idCurso);
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -191,16 +335,9 @@ function buscarMiCurso(){
     }) 
 }
 
-$('#lista-mensajes h3').on('click',function(){
-    if($('#page-wrap').hasClass('vertical')){
-        $('#page-wrap').removeClass('vertical');
-    }else{
-        $('#page-wrap').addClass('vertical');
-    }
-})
 
-$('body').on('click', '#misDatos', function(){
-    
+
+$('body').on('click', '#misDatos', function(){    
     $.ajax({
         url : "alumno/getDatosAlumno/",
         type: "GET",
@@ -275,6 +412,36 @@ $('body').on('click', '#misHorarios', function(){
         }
     })
 })
+
+$('body').on('click', '#temas-dictados', function(){
+    updateListaTemario();
+})
+
+function updateListaTemario(){    
+    var curso = $('#curso-alumno').data('cursoid');
+    var asignatura = $('.contenedor-info').find('h1').data('idasignatura')
+    $.ajax({
+        url: 'curso/getTemasDictados/'+ curso+"/"+asignatura,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){            
+            listarTemasAsignatura(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    })
+}
+
+function listarTemasAsignatura(data){
+    var conte = $('#listadoTemasDictados');
+        conte.empty();
+    var newLine = "";
+    for (var i = 0; i < data.length; i++) {
+        newLine="<div class='tema-dictado'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span>"+data[i].fechaPublicacion+"</span><div class='separate-line'></div></div>";
+        conte.append(newLine);
+    };
+}
 
 function cargarMisHorarios(data){
     console.log(data);

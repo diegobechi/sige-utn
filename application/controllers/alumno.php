@@ -8,6 +8,7 @@ class Alumno extends CI_Controller {
         parent::__construct();
         $info_session = $this->session->userdata('logged_in');
 		$this->legajoAlumno = $info_session['id_usuario'];
+		$this->nombreAlumno = $info_session['nombre_usuario'];	
     }
 
 	public function index()
@@ -17,6 +18,7 @@ class Alumno extends CI_Controller {
             redirect('c_login', 'refresh');
         }else{
         	$session_data = $this->session->userdata('logged_in');
+        	$data['nombre_usuario'] = $this->nombreAlumno;
         	if($session_data['tipo_usuario'] == 4){
         		$this->load->view('header');
 				$this->load->model('Student_Model');
@@ -24,7 +26,7 @@ class Alumno extends CI_Controller {
 		            $año = getdate();
 		            $año = $año['year'];
 		        }
-				$this->load->view("alumno/main");
+				$this->load->view("alumno/main", $data);
 				$this->load->view('footer');
         	}else{
         		redirect('docente', 'refresh');
@@ -42,6 +44,12 @@ class Alumno extends CI_Controller {
 		$this->load->model('Student_Model');
 		$query = $this->Student_Model->get_asignaturas($this->legajoAlumno, $año);
 		echo json_encode($query);		
+	}
+
+	public function getNotasAlumno($año){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_notas_alumno($this->legajoAlumno, $año);
+		echo json_encode($query);			
 	}
 
 	public function getNotasAsignatura($idAsignatura, $año){

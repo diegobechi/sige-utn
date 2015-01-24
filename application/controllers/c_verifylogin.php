@@ -14,7 +14,8 @@ class C_verifyLogin extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
 
         if($this->form_validation->run() == FALSE) {
-            $this->load->view('v_login');
+            $this->load->view('header');
+            $this->load->view('v_login');   
         } else {
             //Go to private area
             $tipoPerfil = $this->check_tipo_usuario();

@@ -1,17 +1,25 @@
 <script type="text/javascript" src="../js/alumno.js"></script>
-<label class="label-menu-superior-general">INSTITUTO SANTA TERESITA</label>
-<ul class="nav nav-tabs" style="background-color: #000;">	
-	<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
-	<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MIS ASIGNATURAS</a></li>
-	<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
-	<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
-	<li><a href="c_home/logout">Logout</a></li>
-</ul>
+
+<div class="header-menu">
+	<label class="label-menu-superior-general">Instituto Santa Teresita</label>
+	<ul class="nav nav-tabs" style="background-color: #000;">	
+		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
+		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MI CURSO</a></li>
+		<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
+		<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
+		<li><a id="misNotas"href="#tab_e" data-toggle="tab">MIS NOTAS</a></li>
+		<div class="user-right">
+			<span><?php echo $nombre_usuario ?></span>
+			<a href="c_home/logout">Logout</a>
+		</div>
+	</ul>
+</div>
+
 <div class="tab-content">
 		<div class="tab-pane fade active in" id="tab_a">
 			<div class="contenedor-pestana-general">
 				<div class="box-generic asignaturas">
-					<h3>Welcome NOMBRE ALUMNO</h3>
+					<h3>Welcome <?php echo $nombre_usuario ?></h3>
 					<div>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					ac turpis egestas.</div>
 				</div>				
@@ -192,6 +200,37 @@
 				</div>
 			</div>
 		</div><!-- tab content -->
+		<div class="tab-pane fade" id="tab_e">
+			<div class="contenedor-principal cargarNotas" style="display:block;">
+				<div class="grilla-notas" style="display:block;">
+					<div>					
+						<div id="contenedor-informe-progreso">
+							<h1> Listado de Asignaturas</h1>
+							<div id="informe-nivel-primaria" style="display:none;">
+								<table> 
+									<thead>
+										<tr id="cabecera-notas">
+										</tr>
+									</thead>
+									<tbody id="listado-primario-notas">									
+									</tbody>
+								</table>
+							</div>
+							<div id="informe-nivel-inicial" style="display:none;">
+								<div class="accordion nivel-inicial" id="accordion2">
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="inicial-notas" style="display:none;">
+					<div id="informe-nivel-inicial">
+						<div class="accordion nivel-inicial" id="accordion2">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="page-wrap" class="vertical">
 		<div id="lista-mensajes">
@@ -200,6 +239,18 @@
 	</div>
 
 	<style>
+
+	.header-menu{
+		background-color: #000;
+		color: #FFF;
+	}
+
+	.user-right{
+		display: inline-block;
+		float: right;
+		margin: 8px 50px;
+	}
+
 
 	#listadoAutorizados input{
 		width: 100px;
@@ -355,6 +406,27 @@
 		display: inline-block;
 		height: 150px;
 		margin: 20px;
+	}
+
+	#informe-nivel-primaria,
+	#informe-nivel-inicial{
+		width: 80%;
+		margin: 0 auto;
+		padding: 40px;
+		margin: 40px;
+		background-color: #FFF;
+		border: 1px solid #CCC;
+	}
+
+	#informe-nivel-primaria input,
+	#informe-nivel-primaria select{
+		width: 60px;
+		margin: 0;
+		border: none;
+	}
+
+	#informe-nivel-primaria td{
+		border: 1px solid #DDD;
 	}
 
 	</style>
