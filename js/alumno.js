@@ -17,7 +17,8 @@ $('body').on('click', '#misAportes', function(){
 })
 
 function crearListadoAportes(data){
-    var conte = $('.aportes-alumno');
+    var conte = $('.aportes-alumno');    
+    conte.empty();
     if(data.length >= 1){
         for(var i=0; i < data.length; i++){
             var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+parseFloat(data[i].importe).toFixed(2)+'</td><td>'+data[i].fecha+'</td></tr>';

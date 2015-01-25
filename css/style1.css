@@ -730,15 +730,6 @@ border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.box-asignatura-generica{
-    background-color: white;
-    border: 2px solid orange;
-}
-
-.box-asignatura-generica a{
-    text-align: center;
-}
-
 .box-asignatura{
     text-decoration: none;
 }
@@ -864,7 +855,6 @@ border-radius: 5px;
     visibility: hidden;
 }
 
-.box-asignatura-generica,
 .box-curso-generic{
     background-color: aquamarine;
     width: 100%;

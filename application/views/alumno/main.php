@@ -8,9 +8,14 @@
 		<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
 		<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
 		<li><a id="misNotas"href="#tab_e" data-toggle="tab">MIS NOTAS</a></li>
-		<div class="user-right">
+		<div class="user-right">			
 			<span><?php echo $nombre_usuario ?></span>
-			<a href="c_home/logout">Logout</a>
+			<img src="../img/arrow-down.png"/>			
+			<ul>
+				<li><span>Perfil</span></li>
+				<li><span>Cambiar contraseña</span></li>
+				<li><a href="c_home/logout">Logout</a></li>
+			</ul>
 		</div>
 	</ul>
 </div>
@@ -239,6 +244,8 @@
 	</div>
 
 	<style>
+
+	.change_pass:{}
 
 	.header-menu{
 		background-color: #000;

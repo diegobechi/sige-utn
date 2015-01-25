@@ -6,9 +6,15 @@
 		<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
 		<li><a href="#tab_c" data-toggle="tab">MIS DATOS</a></li>
 		<div class="user-right">
-			<span><?php echo $nombre_usuario ?></span>
-			<a href="c_home/logout">Logout</a>
+			<span><?php echo $nombre_usuario ?></span>			
+			<img src="../img/arrow-down.png"/>
 		</div>
+					
+		<ul class="user-options">
+			<li><span>Perfil</span></li>
+			<li><span>Cambiar contraseña</span></li>
+			<li><a href="c_home/logout">Logout</a></li>
+		</ul>
 	</ul>
 	
 </div>
@@ -84,9 +90,37 @@
 .user-right{
 	display: inline-block;
 	float: right;
-	margin: 8px 50px;
+	margin: 8px 30px;
 }
 
+.user-right img{
+	width: 20px;
+	margin-top: -4px;
+	margin-left: 15px;
+}
+
+.user-options{
+	display: none;
+	position: absolute;
+	background-color: white;
+	color: black;
+	list-style: none;
+	padding: 10px 16px;
+	border: 1px solid #DDD;
+	margin: 38px 29px 0 0;
+	box-shadow: 0px 2px 6px #CCC;
+	right: 0;
+}
+.user-options li{
+	cursor: pointer;
+	padding: 0 16px;
+	line-height: 30px;
+}
+
+.user-options li:hover{
+	color: #FFFFFF;
+	background-color: #909090;
+}
 .contenedor-pestañas{
 	width: 80%;
 	margin: 0 auto;

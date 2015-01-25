@@ -15,6 +15,20 @@ $(document).ready(function(){
     });
 });
 
+$('body').on('click', '.user-right img', function(event){
+    event.stopPropagation();
+    if($('.user-options').is(':visible')){
+        $('.user-options').hide();
+    }else{
+        $('.user-options').show()
+    }
+
+    $('html').one('click', function(){
+        $('.user-options').hide();
+    })
+    
+})
+
 $('body').on("click",".box-curso-generic", function(event){    
     var conte_info = $('.contenedor-info');
     var numCurso = $(this).data('idcurso');
