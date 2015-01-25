@@ -1,0 +1,159 @@
+.news-holder p {
+    margin-bottom: 10px;
+}
+
+.news-holder {
+    max-width: 100%;
+    font-family: Calibri, Helvatica, Sans-serif;
+    font-size: 13px;
+}
+
+.news-holder * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+  color: #336699;
+  text-decoration: none;
+}
+
+
+
+.news-headlines {
+  list-style: none;
+  position: relative;
+}
+
+  .news-headlines li {
+    padding: 5px 20px 5px 24px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 20;
+    color: white;
+  }
+
+  .nh-anim {
+    -webkit-transition: all .75s ease-out;
+    -moz-transition: all .75s ease-out;
+    -o-transition: all .75s ease-out;
+    transition: all .75s ease-out;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    background-color: grey;
+    font-size: 13px;
+  }
+  
+  .news-headlines li:before {
+    content: "";
+    display: inline-block;
+    /*background: #888;*/
+    vertical-align: middle;
+    margin-left: -5px;
+  }
+
+  .news-headlines li:hover, a:hover {
+      cursor: pointer;
+      /*background-color: rgba(0, 0, 255, 0.39);*/
+  }
+  
+  .news-headlines .highlight {
+     width: 100%;
+     background: #ededed;
+     border-top: solid 1px #999;
+     border-left: solid 1px #999;
+     border-bottom: solid 1px #999;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 10;
+  }
+
+  .news-headlines .highlight:before {
+    display: none;
+  }
+
+.news-headlines {
+   float: left;
+   width: 30%;
+}
+
+.news-preview {
+   float: left;
+   border: solid 5px rgba(0, 0, 255, 0.67);
+   width: 70%;
+   background: #ededed;
+   position: relative;
+   z-index: 5;
+   height: 240px !important;
+   position: relative;
+}
+
+  .news-preview img {
+    display: block;
+    border: solid 1px rgba(0, 0, 255, 0.67);
+    width: 100%;
+    max-width: 40%;
+    margin: 0 auto 5px auto;
+    margin-left: 20px;
+    float: right;
+  } 
+
+.news-content {
+    position: absolute;
+    background: #ededed;
+    z-index: 10;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+}
+
+.top-content {
+    display: block;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.selected{
+  background-color: rgba(0, 0, 255, 0.67);
+  font-weight: bolder;
+}
+
+.titulo{
+  color: rgba(0, 0, 255, 0.67);
+  /*text-decoration: underline;*/
+  font-weight: bolder;
+  font-size: 16px;
+}

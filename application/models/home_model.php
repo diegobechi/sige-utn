@@ -8,8 +8,10 @@ class Home_Model extends CI_Model {
     }
 
     function get_novedades(){
-        $string_query = $this->db->query("SELECT fecha, titulo, descripcion, rutaArchivo
-                                          FROM Novedad");                                          
+        $string_query = $this->db->query("SELECT *
+                                          FROM   Novedad
+                                          WHERE  YEAR (fecha) = YEAR (getdate())
+                                          ORDER BY idNovedad DESC");                                          
         return $string_query->result();        
     }
     
