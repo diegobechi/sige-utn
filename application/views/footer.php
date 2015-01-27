@@ -1,16 +1,6 @@
-		<script src="js/libs/jquery-ui-1.8.22.custom.min.js"></script>
-		<script src="js/libs/jquery.jscrollpane.min.js"></script>
-		<script src="js/libs/highcharts.js"></script>
-		<script type="text/javascript" src="../js/script.js"></script>		
-		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-		<script src="js/bootstrap-image-gallery.min.js"></script>
-
-		<script type="text/javascript" src="engine1/wowslider.js"></script>
-		<script type="text/javascript" src="engine1/script.js"></script>
-		
 		<div class="foot">			
 			<div style="height: 73%; border-bottom: 1px solid; margin-left: 10px; margin-right: 10px;">
-				<img id="imagen-footer" src="img/Colegio/0. Escudo.png" >
+				<img id="imagen-footer" src="../img/Colegio/0. Escudo.png" >
 				<div class="label-foot-menu" >				
 					<label>
 						<a href="#top" style="color: gray; font-weight: bold; font-family: 'Exo 2', sans-serif;">Top</a>
@@ -49,7 +39,7 @@
 			</div>
 			<div class="label-foot-sige">
 				<div>
-					<img id="imagen-footer" src="img/SIGE.png" style="max-width: 4%;">
+					<img id="imagen-footer" src="../img/SIGE.png" style="max-width: 4%;">
 					<b style="float: left; padding-top: 12px; margin-left: 10px;">© 2014 SIGE - Todos los derechos reservados</b>
 				</div>				
 			</div>

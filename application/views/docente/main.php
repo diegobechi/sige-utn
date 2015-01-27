@@ -1,4 +1,5 @@
 <script type="text/javascript" src="../js/docente.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/style1.css">
 <div class="header-menu">
 	<label class="label-menu-superior-general">Instituto Santa Teresita</label>
 	<ul class="nav nav-tabs">		
