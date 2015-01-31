@@ -312,7 +312,10 @@
 }
 #wowslider-container1 .ws-title span{
 	font-size: 2.4em;
-}#wowslider-container1 .ws_images > ul{
+	transform: translate3d(0px, 0px, 0px) !important;
+}
+
+#wowslider-container1 .ws_images > ul{
 	animation: wsBasic 205.8s infinite;
 	-moz-animation: wsBasic 205.8s infinite;
 	-webkit-animation: wsBasic 205.8s infinite;

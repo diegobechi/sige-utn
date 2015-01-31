@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 function cargarNovedades(){
     $.ajax({
-        url : "index.php/home/getNovedades/",
+        url : "home/getNovedades/",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -37,7 +37,7 @@ function cargarNovedades(){
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
-            console.log("fallo noveadd");
+            console.log("fallo noved ad");
         }
     });
 }
@@ -344,6 +344,10 @@ app.home.mostrarInfoSimbolos = function() {
 
     $('.home-institucion-contenedor-contenido-simbolos').animate({
     }, 1);
+
+    $('.escudo').animate({
+        'width': '82%'
+    }, 1);
 }
 
 app.home.ocultarInfoSimbolos = function() {
@@ -358,6 +362,10 @@ app.home.ocultarInfoSimbolos = function() {
     }, 1); 
 
     $('.home-institucion-contenedor-contenido-simbolos').animate({
+    }, 1);
+
+    $('.escudo').animate({
+        'width': '100%'
     }, 1);
 }
 
