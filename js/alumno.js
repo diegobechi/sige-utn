@@ -7,7 +7,6 @@ $('body').on('click', '#misAportes', function(){
             dataType: "json",
             success: function(data, textStatus, jqXHR){    
                 crearListadoAportes(data);
-                console.log("exito");
             },
             error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
@@ -184,37 +183,44 @@ function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<div class='box-asignatura-generica' data-idasignatura='"+data[i].idAsignatura+"'>"+data[i].nombre+"</div>";
+        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'>"+data[i].nombre+"<span class='option-asignaturas'>XXX<div class='show-opciones' style='display:none;'><ul><li><a class='ver-temario'>Temario Dictado</a></li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li><a class='info_curso'>Info General</a></li></ul></div></span></li>";
         conte_btn.append(newBox);
     }
  }
 
-$('body').on("click",".box-asignatura-generica", function(event){    
-    
-    var conte_info = $('.contenedor-info');
-    var numAsignatura= $(this).data('idasignatura');
-    var nombre_asignatura = $(this).text();
-    if(!conte_info.size() > 0){        
-        $.ajax({
-            url : "alumno/cargar_vista_asignatura",
-            type: "GET",
-            dataType: "html",
-            success: function(data, textStatus, jqXHR){            
-                $('#asignatura-info-container').append(data);
-                $('#selector-asignatura').hide();
-                $('.titulo-principal h1').text(nombre_asignatura);
-                $('.titulo-principal h1').attr('data-idasignatura', numAsignatura);
-                cargarInfoAsignatura(numAsignatura);
-            },
-            error: function (jqXHR, textStatus, errorThrown){
-                console.log("fallo");
-            }
-        });
-    }else{        
-        $('#selector-asignatura').hide();
-        conte_info.show();
-        cargarInfoAsignatura(numAsignatura);
+$('body').on('click', '.user-right img', function(event){
+    event.stopPropagation();
+    if($('.user-options').is(':visible')){
+        $('.user-options').hide();
+    }else{
+        $('.user-options').show()
     }
+
+    $('html').one('click', function(){
+        $('.user-options').hide();
+    })
+    
+})
+
+$('body').on('click', '#change-user-pass', function(){
+    $('.overlay-change-pass').show();
+    $('.change-pass-container').show();
+})
+
+$('body').on("mouseover",".asignaturas-curso", function(event){    
+    $(this).children().show();
+});
+
+$('body').on("mouseleave",".asignaturas-curso", function(event){    
+    $(this).children().hide();
+});
+
+
+$('body').on("mouseover",".option-asignaturas", function(event){    
+    $(this).children().show();
+});
+$('body').on("mouseleave",".option-asignaturas", function(event){    
+    $(this).children().hide();
 });
 
 $('body').on('click','#programa', function(){
@@ -251,7 +257,6 @@ $('body').on('click','#info_general', function(){
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-            console.log(data);
             cargarInfoCursoGeneral(data);
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -300,13 +305,24 @@ function buscarComunicadoWeb(curso){
     }) 
 }
 
+$('body').on('click')
+
 function cargarComunicadoWeb(data){
     var conte = $("#lista-mensajes");
+    var conte_popup = $("#mensajes_popup");
     if(data.length >= 1){
+        var cant = data.length;
+        if(data.length > 3 ){
+            cant = 3;
+        }
         $("#cantMensajes").text("(" + data.length+")");
-        for (var i = 0 ; i<data.length; i++){
+        for (var i = 0 ; i<cant; i++){
             var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
             conte.append(nuevaLinea);
+        }
+        for (var i = 0 ; i<data.length; i++){
+            var newMensaje = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+            conte_popup.append(newMensaje);
         }
     }else{
         var sinMensajes = "<div class='contenedor-comunicados sin-comunicados' > Este curso no tiene mensajes nuevos </div>";
@@ -323,7 +339,6 @@ function buscarMiCurso(){
          type:"GET",
          dataType: "json",
          success: function(data, textStatus, jqXHR){
-            console.log(data);
             $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" data-nivel="'+data[0].nombre+'" style="display: none;"></div>');
             buscarComunicadoWeb(data[0].idCurso);
         },
@@ -344,7 +359,6 @@ $('body').on('click', '#misDatos', function(){
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-            console.log(data);
             cargarDatosAlumno(data);
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -379,7 +393,6 @@ $('body').on('click', '#misDocentes', function(){
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito");
             cargarMisDocentes(data);
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -405,7 +418,6 @@ $('body').on('click', '#misHorarios', function(){
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito");
             cargarMisHorarios(data);
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -462,7 +474,6 @@ $('body').on('click', '#misTutores', function(){
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito");
             cargarDatosTutor(data);            
             $(".overlay-popup").show();
             $(".perfil-tutor-container").show();
@@ -498,7 +509,6 @@ function cargarPersonasAutorizadas(){
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito");
             var conte = $('#listadoAutorizados');
             conte.empty();
             var newLine = "";
@@ -535,7 +545,6 @@ $('body').on('click', '.eliminarAutorizado', function(){
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito");
             cargarPersonasAutorizadas();
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -557,7 +566,6 @@ $('body').on('click', '#agregarPermitidas', function(){
         type: 'POST',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito Guardando");
         },
         error: function (jqXHR, textStatus, errorThrown){
             console.log("Fallo Guardando");

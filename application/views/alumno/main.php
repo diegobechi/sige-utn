@@ -1,21 +1,23 @@
 <script type="text/javascript" src="../js/alumno.js"></script>
-
+<link rel="stylesheet" type="text/css" href="../css/style1.css">
 <div class="header-menu">
-	<label class="label-menu-superior-general">Instituto Santa Teresita</label>
+	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
+	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
 	<ul class="nav nav-tabs" style="background-color: #000;">	
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MI CURSO</a></li>
 		<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
 		<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
 		<li><a id="misNotas"href="#tab_e" data-toggle="tab">MIS NOTAS</a></li>
-		<div class="user-right">			
-			<span><?php echo $nombre_usuario ?></span>
-			<img src="../img/arrow-down.png"/>			
-			<ul>
-				<li><span>Perfil</span></li>
-				<li><span>Cambiar contraseña</span></li>
-				<li><a href="c_home/logout">Logout</a></li>
-			</ul>
+		<div class="user-right">
+			<span><?php echo $nombre_usuario ?></span>			
+			<img src="../img/arrow-down.png"/>
+		</div>					
+		<ul class="user-options">
+			<li><span>Perfil</span></li>
+			<li><span id="change-user-pass">Cambiar contraseña</span></li>
+			<li><a href="c_home/logout">Logout</a></li>
+		</ul>
 		</div>
 	</ul>
 </div>
@@ -36,8 +38,8 @@
 				</div>
 				<div id="selector-asignatura" class="box-generic asignaturas">
 					<h3><img src="">Asignaturas del curso</h3>
-					<div id="selectorBtnAsignatura">
-					</div>
+					<ul id="selectorBtnAsignatura">
+					</ul>
 				</div>
 			</div>			
 		</div>
@@ -61,17 +63,6 @@
 
 					</tbody>
 				</table>
-				<div class="pagination pagination-centered">
-				    <ul>
-				      <li class="disabled"><a href="#">Prev</a></li>
-				      <li class="active"><a href="#">1</a></li>
-				      <li class="disabled"><a href="#">2</a></li>
-				      <li class="disabled"><a href="#">3</a></li>
-				      <li class="disabled"><a href="#">4</a></li>
-				      <li class="disabled"><a href="#">5</a></li>
-				      <li class="disabled"><a href="#">Next</a></li>
-				    </ul>
-				  </div>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_d">
@@ -238,14 +229,38 @@
 		</div>
 	</div>
 	<div id="page-wrap" class="vertical">
-		<div id="lista-mensajes">
-			<h3>Mensajes <span id= 'cantMensajes'></span> </h3>
+		<div id="lista-mensajes">			
 		</div>
+	</div>
+	<div class="overlay-change-pass" style="display:none;">
+	</div>
+	<div class="change-pass-container" style="display:none;">
+		<form>
+			<label>Ingrese la nueva contraseña</label>		
+			<input type="password" placeholder=""/>
+			<label>Confirmmar Contraseña</label>
+			<input type="password" placeholder=""/><br>
+			<input type="button" class="btn btn-danger" value="Cancelar"/>
+			<input type="button" class="btn btn-primary" value="Confirmar"/>
+		</form>
+	</div>
+	<div>
+		<div class="overlay"></div>
+		<div id="conte_popup"></div>
+	</div>
+	<div>
+	</div>
+	<div class="popup-opciones-asignatura">
+		
 	</div>
 
 	<style>
 
-	.change_pass:{}
+	.icono-escudo{
+		width: 45px;
+		float: left;
+		margin: 10px;
+	}	
 
 	.header-menu{
 		background-color: #000;
@@ -258,6 +273,44 @@
 		margin: 8px 50px;
 	}
 
+	.user-options{
+		display: none;
+		position: absolute;
+		background-color: white;
+		color: black;
+		list-style: none;
+		padding: 10px 16px;
+		border: 1px solid #DDD;
+		margin: 38px 29px 0 0;
+		box-shadow: 0px 2px 6px #CCC;
+		right: 0;
+	}
+	.user-options li{
+		cursor: pointer;
+		padding: 0 16px;
+		line-height: 30px;
+	}
+
+	.user-options li:hover{
+		color: #FFFFFF;
+		background-color: #909090;
+	}
+
+	.change-pass-container{
+		width: 230px;
+		top: 0;
+		left: 0;
+		margin: auto;
+		bottom: 0;
+		right: 0;
+		height: 170px;
+		position: absolute;
+		border: 1px solid #D5D5D5;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0px 1px 21px -2px;
+		background-color: #FFFFFF;
+	}
 
 	#listadoAutorizados input{
 		width: 100px;

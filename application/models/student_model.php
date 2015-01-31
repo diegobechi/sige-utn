@@ -43,7 +43,7 @@ class Student_Model extends CI_Model {
   }
 
   function get_asignaturas($legajoAlumno, $cicloLectivo){
-    $string_query = $this->db->query("SELECT DISTINCT a.idAsignatura, a.nombre
+    $string_query = $this->db->query("SELECT DISTINCT a.idAsignatura, a.nombre, a.programa
                                       FROM Asignatura a, Alumno alu, Inscripcion i, Curso c, HorarioCurso hc
                                       WHERE alu.legajoAlumno = i.legajoAlumno and
                                       i.idCurso = c.idCurso and

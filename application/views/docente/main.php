@@ -1,11 +1,12 @@
 <script type="text/javascript" src="../js/docente.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
 <div class="header-menu">
-	<label class="label-menu-superior-general">Instituto Santa Teresita</label>
+	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
+	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
 	<ul class="nav nav-tabs">		
 		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
 		<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
-		<li><a href="#tab_c" data-toggle="tab">MIS DATOS</a></li>
+		<li><a id="misDatos" href="#tab_c" data-toggle="tab">MIS DATOS</a></li>
 		<div class="user-right">
 			<span><?php echo $nombre_usuario ?></span>			
 			<img src="../img/arrow-down.png"/>
@@ -13,7 +14,7 @@
 					
 		<ul class="user-options">
 			<li><span>Perfil</span></li>
-			<li><span>Cambiar contraseña</span></li>
+			<li><span id="change-user-pass">Cambiar contraseña</span></li>
 			<li><a href="c_home/logout">Logout</a></li>
 		</ul>
 	</ul>
@@ -59,13 +60,6 @@
 						<h3>Datos academicos generales</h3>
 						<label>Legajo</label><input id="perfil-legajo" type="text"><br>
 						<label>Cursos</label><input id="perfil-curso"type="text"><br>
-					</div>
-					<div class="box-generic acciones">
-						<h3>Acciones</h3>
-						<div class="botones-datos-personales">
-							<input id="misTutores" type="button" value="Cargar CV">
-							<input id="misHorarios" type="button" value="Mis Cursos">
-						</div>
 					</div>						
 				</div>
 			</div>
@@ -80,7 +74,18 @@
 			</div>			
 		</div>		
 </div><!-- tab content -->
-
+<div class="overlay-change-pass" style="display:none;">
+</div>
+<div class="change-pass-container" style="display:none;">
+	<form>
+		<label>Ingrese la nueva contraseña</label>		
+		<input type="password" placeholder=""/>
+		<label>Confirmmar Contraseña</label>
+		<input type="password" placeholder=""/><br>
+		<input type="button" class="btn btn-danger" value="Cancelar"/>
+		<input type="button" class="btn btn-primary" value="Confirmar"/>
+	</form>
+</div>
 <style>
 
 .header-menu{
@@ -99,7 +104,10 @@
 	margin-top: -4px;
 	margin-left: 15px;
 }
-
+.box-generic.personales{
+		float: left;
+		width: 450px;
+	}
 .user-options{
 	display: none;
 	position: absolute;
@@ -137,6 +145,7 @@
 	display: inline-block;
 	height: 150px;
 	margin: 20px;
+	float: left;
 }
 .box-generic{
 	background-color: #FFFFFF;
@@ -166,6 +175,22 @@ span.Ausente{
 #listado-asistencia input[type="checkbox"]{
 	margin-top: 0px;
 	height: 16px;
+}
+
+.change-pass-container{
+	width: 230px;
+	top: 0;
+	left: 0;
+	margin: auto;
+	bottom: 0;
+	right: 0;
+	height: 170px;
+	position: absolute;
+	border: 1px solid #D5D5D5;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0px 1px 21px -2px;
+	background-color: #FFFFFF;
 }
 </style>
 

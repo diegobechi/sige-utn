@@ -12,15 +12,10 @@ class Teacher_Model extends CI_Model {
     }
     
     function get_docente($legajoDocente){
-        $string_query = $this->db->query("SELECT d.apellido, d.nombre, d.nroDocumento, d.lugarNacimiento,CONVERT(VARCHAR(11),d.fechaNacimiento, 106) as 'fecha nacimiento', d.nacionalidad,d.legajoDocente,dom.calle, dom.numero, dom.departamento, dom.piso, dom.numero, d.telefonoFijo, d.telefonoMovil, d.correoElectronico
+        $string_query = $this->db->query("SELECT d.apellido, d.nombre, d.nroDocumento, d.lugarNacimiento, d.sexo ,CONVERT(VARCHAR(11),d.fechaNacimiento, 106) as 'fechaNacimiento', d.nacionalidad,d.legajoDocente,dom.calle, dom.numero, dom.departamento, dom.piso, dom.numero, d.telefonoFijo, d.telefonoMovil, d.correoElectronico
                                           FROM Docente d, Domicilio dom
                                           WHERE d.idDomicilio = dom.idDomicilio and
                                                 d.legajoDocente = $legajoDocente");
-        return $string_query->result();
-    }
-
-    function get_teacher($legajoDocente){
-        $string_query = $this->db->query("SELECT * FROM Docente WHERE legajoDocente = $legajoDocente");
         return $string_query->result();
     }
 

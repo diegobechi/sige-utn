@@ -27,7 +27,6 @@ class Alumno extends CI_Controller {
 		            $año = $año['year'];
 		        }
 				$this->load->view("alumno/main", $data);
-				$this->load->view('footer');
         	}else{
         		redirect('docente', 'refresh');
         	}        	

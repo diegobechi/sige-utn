@@ -124,9 +124,8 @@ class Curso_Model extends CI_Model {
     }
     function update_temario_dictado($idAsignatura, $idCurso, $fecha, $temasClase, $legajoDocente){
       $consulta = "UPDATE  TemarioDictado 
-                                        SET  temasClase = '$temasClase', legajoDocente = $legajoDocente 
-                                        WHERE  idcurso = $idCurso  and CONVERT(VARCHAR(11),fecha, 106) = '$fecha' and idAsignatura = $idAsignatura";
-      var_dump($consulta);
+                  SET  temasClase = '$temasClase', legajoDocente = $legajoDocente 
+                  WHERE  idcurso = $idCurso  and CONVERT(VARCHAR(11), fecha , 106) = '$fecha' and idAsignatura = $idAsignatura";
       $string_query = $this->db->query($consulta);
       return $string_query;
     }

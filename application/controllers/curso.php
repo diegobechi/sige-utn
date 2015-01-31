@@ -50,7 +50,8 @@ class Curso extends CI_Controller {
 
 	public function updateTemario($idAsignatura, $idCurso, $fechaPublicacion, $texto_tema_dictado){
 		$this->load->model('Curso_Model');
-		$query = $this->Curso_Model->update_temario_dictado($idAsignatura, $idCurso, $fechaPublicacion, $texto_tema_dictado, $this->legajo);
+		$fecha = urldecode($fechaPublicacion);		
+		$query = $this->Curso_Model->update_temario_dictado($idAsignatura, $idCurso, $fecha, $texto_tema_dictado, $this->legajo);
 		echo json_encode($query);
 	}
 

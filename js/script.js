@@ -1,4 +1,4 @@
-/* Author: Diego Bechi */
+
 var app = app || {};
 app.sige = {};
 
@@ -399,22 +399,5 @@ app.home.ocultarInfoPatronos = function() {
     $('#agustin').css('display', 'none');
 }
 
-/*Docente*/
 
 
-$('body').on('click','#back-button', function(){
-    $('#selector-curso').show();
-    $('#selector-asignatura').show();
-    $('.contenedor-info').hide();
-})
-
-$('body').on('click', '.lista-opciones li', function(){
-    var name=$(this).data('title');
-    $('.contenedor-principal').each(function(){
-        if($(this).hasClass(name)){
-            $('.contenedor-principal').hide();
-            $(this).show();
-        }
-    })
-
-});

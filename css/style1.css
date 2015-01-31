@@ -213,7 +213,7 @@ html,body{
     color: white;
     float: left;
     float: left;
-    margin: 9px 15px 9px 5px;
+    margin: 16px 15px 9px 5px;
 }
 
 menu#home-top-menu {
@@ -755,8 +755,9 @@ border-radius: 5px;
 }
 
 .popup-header{
-        background-color: #000;
-        border-radius: 10px 10px 0 0;
+    background-color: #3A88FF;
+    border-radius: 10px 10px 0 0;
+    padding: 3px 20px;
 }
 
 .popup-header h2{
@@ -775,7 +776,7 @@ border-radius: 5px;
 
 .popup-body{
     padding: 30px 0;
-    background-color: #d1d1d1;
+    background-color: #FFFFFF;
     border-radius: 0 0 10px 10px;
     min-height: 400px;
 }
@@ -810,6 +811,7 @@ border-radius: 5px;
     border-top: 0;
     background-color: #fff;
     padding: 10px;
+    height: 421px;
 }
 
 .container-right .nav.nav-tabs{
@@ -863,6 +865,7 @@ border-radius: 5px;
     margin: 20px;
 }
 
+.overlay-change-pass,
 .overlay-perfil-tutor{
     display: none;
     background-color: black;
@@ -871,7 +874,7 @@ border-radius: 5px;
     right: 0;
     bottom: 0;
     position: fixed;
-    opacity: 0.7;
+    opacity: 0.4;
 }
 .datos-tutor label{
     display: inline-block;
@@ -901,3 +904,9 @@ border-radius: 5px;
     width: 80%;
     margin: 0 auto;
 }
+
+.option-asignaturas{
+    float: right; 
+    display:none;
+}
+

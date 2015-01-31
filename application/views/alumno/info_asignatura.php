@@ -8,20 +8,10 @@
 	<div style ="padding:20px">
 		<div class = "lista-opciones">
 			<li data-title="temas-dictados" id="temas-dictados"> <img src="img/materia.png"/>Temas Dictados</li>
-			<li data-title="programa" id="programa"> <img src="img/listados.png"/><a Programa</li>
+			<li data-title="programa" id="programa"> <img src="img/listados.png"/><a href="http://red.ilce.edu.mx/sitios/micrositios/cortazar_aniv/pdf/8_Cielo_Rayuela_libro.pdf" id="link_programa" target="_blank"> Programa</a></li>
 			<li data-title="general" id="info_general"> <img src="img/mensajes.png"/>General</li>
-		</div>	
-		<div class ="contenedor-principal alumnos">
-			<div class ="titulo-principal">
-				<span></span>
-				<h3> <img src="img/person.png"> Mis Notas </h3>
-			</div>
-			<div class ="contenedor-de-alumnos">
-				<ul>
-				</ul>
-			</div>
-		</div>
-		<div class = "contenedor-principal temas-dictados" style="display:none;">
+		</div>		
+		<div class = "contenedor-principal temas-dictados" style="display:block;">
 			<div class = "titulo-principal">
 		  	  <span></span>
 		  	   <h1><img src="img/book_1.png"> Temas Dictados</h1> 
@@ -43,6 +33,7 @@
 					</select>
 				</h1>
 		    </div>
+		    <div>
 		    	<div class="contenedor-programa">			     	
 			     </div> 
 		    </div>

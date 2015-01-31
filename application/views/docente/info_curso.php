@@ -12,7 +12,7 @@
 		<li data-title="asignaturas"> <img src="img/materia.png"/>Asignaturas</li>
 		<li data-title="cargarNotas"> <img src="img/cargarnotas.png"/>Cargar Notas</li>
 		<li data-title="temario"> <img src="img/temario.png"/>Temario</li>
-		<li data-title="listados"> <img src="img/listados.png"/>Listados</li>
+		<li data-title="listados" style="display:none;"> <img src="img/listados.png"/>Listados</li>
 		<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>
 		<li data-title="mensajes"> <img src="img/mensajes.png"/>Mensajes</li>
 	</ul>
@@ -224,17 +224,7 @@
 										</select>
 									</td>
 									<td data-nroCalificacion="10">
-										<select>
-											<option>P</option>
-											<option>E</option>
-											<option>EO</option>
-											<option>TP</option>
-											<option>TI</option>												
-											<option>R</option>
-											<option>C</option>
-											<option>NC</option>
-											<option>LO</option>
-										</select>
+										<label>Prom</label>
 									</td>
 								</tr>
 							</thead>
@@ -356,7 +346,7 @@
 	<div class="popup-body">
 		<div class="container-left">
 			<img class="profile-picture" src="../img/profile-temp.png">
-			<div>
+			<div class="linea-separacion">
 				<h4>Tutores</h4>
 			</div>
 			<img class="tutores-alumno" src="../img/profile-temp.png">
@@ -438,5 +428,10 @@
 	width: 120px;
 	margin: 15px;
 	float: left;
+}
+
+.linea-separacion{
+	border-top: 1px dashed #999;
+	margin-top: 20px;
 }
 </style>

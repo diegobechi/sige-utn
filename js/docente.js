@@ -6,7 +6,6 @@ $(document).ready(function(){
         success: function(data, textStatus, jqXHR)
         {    
             crearSelectorCurso(data);
-            console.log("exito");
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -27,6 +26,11 @@ $('body').on('click', '.user-right img', function(event){
         $('.user-options').hide();
     })
     
+})
+
+$('body').on('click', '#change-user-pass', function(){
+    $('.overlay-change-pass').show();
+    $('.change-pass-container').show();
 })
 
 $('body').on("click",".box-curso-generic", function(event){    
@@ -108,6 +112,24 @@ function crearAsignaturas(data){
     
 }
 
+$('body').on('click','#back-button', function(){
+    $('#selector-curso').show();
+    $('#selector-asignatura').show();
+    $('.contenedor-info').hide();
+    $('#back-button').hide();
+})
+
+$('body').on('click', '.lista-opciones li', function(){
+    var name=$(this).data('title');
+    $('.contenedor-principal').each(function(){
+        if($(this).hasClass(name)){
+            $('.contenedor-principal').hide();
+            $(this).show();
+        }
+    })
+
+});
+
 function cargarFiltroCursos(idCurso){
     var cursos = $('.box-curso-generic');
     var filtro_curso = $('#filtro_curso');
@@ -157,8 +179,7 @@ function get_asignaturas_curso(idCurso){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
-            console.log(data);
-            cargarFiltroAsignaturas(data);
+          cargarFiltroAsignaturas(data);
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -175,7 +196,6 @@ function cargarAlumnos(idCurso, nivel){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
-            console.log(data);
             if(nivel == 'Inicial'){
                 listarAlumnosInicial(data);                
             }else{
@@ -249,8 +269,7 @@ function buscarInfoNivel(){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
-            console.log(data);
-            cargarInfoNivel(data);
+          cargarInfoNivel(data);
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -299,7 +318,6 @@ function buscarInfoNivelPrimaria(){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
-            console.log(data);
             cargarCabeceraNotas(data);
             cargarInfoNivelPrimaria(data);
         },
@@ -414,7 +432,6 @@ $('body').on('click', '#guardar-notas-primaria', function(){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
-            console.log(data);
             actualizarUltimaModificacion(calificacionesCurso);
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -432,7 +449,7 @@ function actualizarUltimaModificacion(calificacionesCurso){
         dataType: "json",
         success: function(data, textStatus, jqXHR)
         {
-            console.log(data);
+            
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -477,9 +494,7 @@ function guardarNotasInicial(insert,calificacionEscolar){
         type: 'POST',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito Guardando");
-            buscarInfoNivel();
-
+          buscarInfoNivel();
         },
         error: function (jqXHR, textStatus, errorThrown){
             console.log("Fallo Guardando");
@@ -546,7 +561,6 @@ $('body').on('click', '.box-alumno-generic', function(){
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-            console.log(data);
             limpiarPerfilAlumno(data);
             $(".overlay-popup").show();
             $(".perfil-alumno-container").show();
@@ -557,6 +571,34 @@ $('body').on('click', '.box-alumno-generic', function(){
         }
     });
 });
+
+$('body').on('click', '#misDatos', function(){
+    $.ajax({
+        url : "docente/getDocente/",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            cargarDatosPersonales(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+})
+
+function cargarDatosPersonales(data){
+    console.log(data);
+    $("#perfil-nombre-completo").val(data[0].apellido+', '+data[0].nombre);
+    $("#perfil-dni").val(data[0].nroDocumento);
+    $("#perfil-sexo").val(data[0].sexo);
+    $("#perfil-fecha-nac").val(data[0].fechaNacimiento);
+    $("#perfil-nacionalidad").val(data[0].nacionalidad);
+    $("#perfil-domicilio").val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
+    $("#perfil-tel-fijo").val(data[0].telefonoFijo);
+    $("#perfil-tel-movil").val(data[0].telefonoMovil);
+    $("#perfil-mail").val(data[0].correoElectronico);
+    $("#perfil-lugar-nac").val(data[0].lugarNacimiento);
+}
 
 $('body').on('click','.close-popup', function(){
     $('.overlay-popup').hide();
@@ -616,7 +658,6 @@ $('body').on('click', '#enviarTemario', function(){
         type: 'POST',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito TEMARIO");
             updateListaTemario();
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -642,6 +683,7 @@ $('body').on('click', '#updateTemario', function(){
     var idAsignatura = $('#asignaturaTemario').children(':selected').attr('data-idasignatura');
     var idCurso = $('#id-curso-temario').val();
     var fechaPublicacion = $('#updateTemario').data('fechapubli');
+    console.log(fechaPublicacion);
     var texto_tema_dictado = $('#temaDictado').val();
     $.ajax({
         url: 'curso/updateTemario/'+ idAsignatura +'/'+idCurso+'/'+fechaPublicacion+'/'+texto_tema_dictado,
@@ -698,7 +740,6 @@ $('body').on('click', '#enviarComunicado', function(){
         type: 'POST',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
-            console.log("Exito COMUNICADO");
             $('#temaComunicado').val('');
             updateListaComunicados();
         },
@@ -734,7 +775,6 @@ function updateListaComunicados(){
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){            
-            console.log(data);
             listarComunicadosWeb(data);
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -845,7 +885,6 @@ function guardarAsistenciaCurso(asistencia_alumnos){
         data: { data : asistencia_alumnos },
         dataType: "json",
         success: function(data, textStatus, jqXHR){
-            console.log(data);
         },
         error: function (jqXHR, textStatus, errorThrown){
             console.log("fallo");
