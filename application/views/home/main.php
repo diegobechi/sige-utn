@@ -4,10 +4,10 @@
 <div id="menu-home" class="home-menu-opciones">
     <menu id="home-top-menu">
         <ul>
-            <img id="imagen-menu-escudo" src="../../img/Colegio/0. Escudo.png">
+            <img id="imagen-menu-escudo" src="../img/Colegio/0. Escudo.png">
             <li >
                 <a id="top-menu" href="#top" class="home-top-item active" style="padding-right: 5px; padding-left: 6px; margin-left: 2px;">
-                    <img style="max-width: 29%;" src="../../img/Icons/top.png">
+                    <img style="max-width: 29%;" src="../img/Icons/top.png">
                 </a>
             </li>
             <li style="margin-left: -41px;">
@@ -108,7 +108,7 @@
                 <li><img src="../data1/images/participacin_en_olimpadas_de_matemtica.jpg" alt="Participación en Olimpíadas de Matemática" title="Participación en Olimpíadas de Matemática" id="wows1_9"/></li>
                 <li><img src="../data1/images/actividades_solidarias.jpg" alt="Actividades Solidarias" title="Actividades Solidarias" id="wows1_10"/></li>
                 <li><img src="../data1/images/taller_de_arte.jpg" alt="Taller de Arte" title="Taller de Arte" id="wows1_11"/></li>
-                <li><a href="http://wowslider.com/vf"><img src="../data1/images/cooperativa_escolar.jpg" alt="full screen slider" title="full screen slider" id="wows1_12"/></a></li>
+                <li><img src="../data1/images/cooperativa_escolar.jpg" alt="Cooperativa Escolar" title="Cooperativa Escolar" id="wows1_12"/></a></li>
                 <li><img src="../data1/images/gestin_agroambiental_y_biotecnologa.jpg" alt="Gestión Agro-Ambiental y Biotecnología" title="Gestión Agro-Ambiental y Biotecnología" id="wows1_13"/></li>
             </ul>
         </div>
@@ -126,7 +126,7 @@
                 <a href="#" title="Participación en Olimpíadas de Matemática"><img src="../data1/tooltips/participacin_en_olimpadas_de_matemtica.jpg" alt="Participación en Olimpíadas de Matemática"/>10</a>
                 <a href="#" title="Actividades Solidarias"><img src="../data1/tooltips/actividades_solidarias.jpg" alt="Actividades Solidarias"/>11</a>
                 <a href="#" title="Taller de Arte"><img src="../data1/tooltips/taller_de_arte.jpg" alt="Taller de Arte"/>12</a>
-                <a href="#" title="full screen slider"><img src="../data1/tooltips/cooperativa_escolar.jpg" alt="full screen slider"/>13</a>
+                <a href="#" title="Cooperativa Escolar"><img src="../data1/tooltips/cooperativa_escolar.jpg" alt="Cooperativa Escolar"/>13</a>
                 <a href="#" title="Gestión Agro-Ambiental y Biotecnología"><img src="../data1/tooltips/gestin_agroambiental_y_biotecnologa.jpg" alt="Gestión Agro-Ambiental y Biotecnología"/>14</a>
             </div>
         </div>
@@ -578,8 +578,8 @@
             <div class="home-institucion-contenedor-titulo">SIGNOS, SÍMBOLOS Y TRADICIONES
             </div>
             <div class="home-institucion-contenedor-contenido-simbolos"> 
-                <div style="width: 100%"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada<br>
-                    y la luz que emana de la estrella, dan vida al alma. Del Monte Santo de Dios desciende la gracia que hace fecunda la vida del cristiano<br>en el inmenso campo de la Iglesia.<br><br>
+                <div class="escudo"><b>ESCUDO DEL INSTITUTO</b><br><br>El escudo del Instituto es simple y elocuente. Está dominado por la Cruz, símbolo universal de vida cristiana. El nombre de María Inmaculada
+                    y la luz que emana de la estrella, dan vida al alma. Del Monte Santo de Dios desciende la gracia que hace fecunda la vida del cristiano en el inmenso campo de la Iglesia.<br><br>
                 </div>
                 
                 <div onclick="app.home.mostrarInfoSimbolos()">
@@ -587,7 +587,7 @@
                 </div>
                 
                 <div class="home-institucion-contenedor-desplegable-simbolos" style="display:none; width: 100%">
-                    <img src="../img/Colegio/0. Escudo.jpg" style="float: right; max-width: 15%; margin-left: 1%; margin-top: -120px;">
+                    <img src="../img/Colegio/0. Escudo.png" style="float: right; max-width: 15%; margin-left: 1%; margin-top: -120px;">
                     <b>HIMNO AL COLEGIO</b><br><br>Cantemos el himno de historia gloriosa<br>Colegio Santa Teresita,<br>recinto que entregas en vida armoniosa<br>sueños e ideales de paz y de amor.<br><br>Al 
                     amparo de la Inmaculada<br>los niños confían su amor a Jesús,<br>y siguiendo su ejemplo que es guía<br>los jóvenes llevan al mundo su luz.<br><br>Al abrigo de sus bellos muros<br>viven la 
                     esperanza y el saber,<br>que serán la herencia y el camino<br>que todo cristiano ha de tener.<br><br>

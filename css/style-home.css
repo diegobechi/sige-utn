@@ -57,8 +57,8 @@ font-family: 'Source Sans Pro', sans-serif;*/
 
 html,body{
     margin-bottom: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     height: 100%;
     /*background: url('../Fondos/blu_stripes.png');*/
     /*background: url('../Fondos/lightpaperfibers.png');*/
@@ -159,7 +159,7 @@ menu#home-top-menu {
 
 .home-menu-opciones{
     display: table-row;
-    width: 80%;
+    width: 81%;
     background-color: white;
     position: fixed;
     border-bottom: 2px solid #2980b9;
@@ -225,10 +225,10 @@ menu#home-top-menu {
 }
 
 .label-foot-menu{
-    font-family: Arial;
-    font-size: 10px;
-    font-weight: bold;
-    color: gray;
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: gray !important;
     margin-top: 1%;
     margin-left: 4%;
     float: left;
@@ -237,10 +237,9 @@ menu#home-top-menu {
 }
 
 .label-foot-contacto{
-    font-family: Arial;
-    font-size: 6px;
-    font-weight: bold;
-    color: gray;
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 13px;
+    color: gray !important;
     margin-top: 2%;
     float: right;
     margin-right: -3%;
@@ -786,6 +785,10 @@ hr:after {
     padding-left: 10px;
     padding-right: 10px; 
     font-weight: bold;  
+}
+
+.escudo{
+    width: 100%;
 }
 
 /*Galería*/
