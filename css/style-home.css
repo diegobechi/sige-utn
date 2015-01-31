@@ -15,17 +15,27 @@ font-family: 'Shadows Into Light', cursive;
 font-family: 'Paytone One', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;*/
 
-@font-face {
- font-family: baby; 
- src: url('../fonts/Baby-stars.ttf');          
-}
+/*background: url('../Fondos/blu_stripes.png');*/
+/*background: url('../Fondos/lightpaperfibers.png');*/
+/*background: url('../Fondos/fabric_of_squares_gray.png');*/
+/*background: url('../Fondos/fresh_snow.png');*/
+/*background: url('../Fondos/furley_bg.png');*/
+/*background: url('../Fondos/grey.png');*/
+/*background: url('../Fondos/greyzz.png');*/
+/*background: url('../Fondos/groovepaper.png');*/
+/*background: url('../Fondos/grunge_wall.png');*/
+/*background: url('../Fondos/handmadepaper.png');*/
+/*background: url('../Fondos/lightpaperfibers.png');*/
+/*background: url('../Fondos/paper_fibers.png');*/
+/*background: url('../Fondos/redox_01.png');*/
+/*background: url('../Fondos/ricepaper.png');*/
+/*background: url('../Fondos/snow.png');*/
+/*background: url('../Fondos/subtle_white_feathers.png');*/
+/*background: url('../Fondos/wavegrid.png');*/
+/*background: url('../Fondos/wet_snow.png');*/
+/*background: url('../Fondos/white_texture.png');*/
 
-@font-face {
- font-family: stars;
- src: url('../fonts/Full-stars.ttf');          
-}
-
-@font-face {
+/*@font-face {
  font-family: points; 
  src: url('../fonts/Full-points.ttf');              
 }
@@ -33,16 +43,6 @@ font-family: 'Source Sans Pro', sans-serif;*/
 @font-face {
  font-family: eyes; 
  src: url('../fonts/Full-eyes.ttf');          
-}
-
-@font-face {
- font-family: lines; 
- src: url('../fonts/Full-lines.ttf');          
-}
-
-@font-face {
- font-family: pelis; 
- src: url('../fonts/Full-pelis.ttf');          
 }
 
 @font-face {
@@ -54,32 +54,34 @@ font-family: 'Source Sans Pro', sans-serif;*/
  font-family: ruls; 
  src: url('../fonts/Full-ruls.ttf');         
 }
+*/
+
+@font-face {
+ font-family: baby; 
+ src: url('../fonts/Baby-stars.ttf');          
+}
+
+@font-face {
+ font-family: stars;
+ src: url('../fonts/Full-stars.ttf');          
+}
+
+@font-face {
+ font-family: pelis; 
+ src: url('../fonts/Full-pelis.ttf');          
+}
+
+@font-face {
+ font-family: lines; 
+ src: url('../fonts/Full-lines.ttf');          
+}
 
 html,body{
     margin-bottom: 20px;
     margin-left: 5%;
     margin-right: 5%;
     height: 100%;
-    /*background: url('../Fondos/blu_stripes.png');*/
-    /*background: url('../Fondos/lightpaperfibers.png');*/
-    /*background: url('../Fondos/fabric_of_squares_gray.png');*/
-    /*background: url('../Fondos/fresh_snow.png');*/
-    /*background: url('../Fondos/furley_bg.png');*/
-    /*background: url('../Fondos/grey.png');*/
-    /*background: url('../Fondos/greyzz.png');*/
-    /*background: url('../Fondos/groovepaper.png');*/
-    /*background: url('../Fondos/grunge_wall.png');*/
-    /*background: url('../Fondos/handmadepaper.png');*/
-    /*background: url('../Fondos/lightpaperfibers.png');*/
-    /*background: url('../Fondos/paper_fibers.png');*/
-    /*background: url('../Fondos/redox_01.png');*/
-    /*background: url('../Fondos/ricepaper.png');*/
-    /*background: url('../Fondos/snow.png');*/
     background: url('../Fondos/square_bg.png');
-    /*background: url('../Fondos/subtle_white_feathers.png');*/
-    /*background: url('../Fondos/wavegrid.png');*/
-    /*background: url('../Fondos/wet_snow.png');*/
-    /*background: url('../Fondos/white_texture.png');*/
     background-repeat: repeat;
     color: #777777 !important;  
 }

@@ -7,18 +7,6 @@ $('#contenedor-general').css('height',$(window).height());
 
 app.home = {};
 
-// app.home.openLogin = function(bandera){
-//     if(!bandera){
-//         $('.login-menu-container').animate({
-//             'margin-top': '-315px'
-//         }, 500);
-//     }else{
-//         $('.login-menu-container').animate({
-//             'margin-top': '5px'
-//         }, 500);        
-//     }
-// }
-
 /*Home*/
 
 $(document).ready(function(){
@@ -42,31 +30,6 @@ function cargarNovedades(){
     });
 }
 
-// function crearContenedorNovedad(data){
-//     var conte_novedad = $('.home-novedades-contenedor');
-//     conte_novedad.empty();
-//     for(var i=0;i<data.length;i++){
-//         if (i<=3) {
-//             if (i>0 && i%2==1) {
-//                 var newBox ="<div class='home-novedades-contenedor-novedad' style='float: right;'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-
-//             }
-//             else{
-//                 var newBox ="<div class='home-novedades-contenedor-novedad'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-//             }            
-//         } 
-//         else{
-//             if (i%2==1) {
-//                 var newBox ="<div class='home-novedades-contenedor-novedad-vermas' style='float: right;'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-//             }
-//             else{
-//                 var newBox ="<div class='home-novedades-contenedor-novedad-vermas'><div class='home-novedades-contenedor-novedad-titulo'>"+data[i].titulo+"</div><div class='home-novedades-contenedor-novedad-contenido'>"+data[i].descripcion+"</div></div>";
-//             }
-//         }        
-//         conte_novedad.append(newBox);
-//     }
-// }
-
 function crearContenedorNovedad(data){
     var conte_titulo = $('.news-headlines');
     var conte_noticia = $('.news-preview');
@@ -77,11 +40,11 @@ function crearContenedorNovedad(data){
         // if (i<=3) {
             if (i==0) {
                 var newBoxTitulo ="<li class='selected'><span>"+data[i].titulo+"</span></li>"; 
-                var newBoxNoticia= "<div class='news-content top-content'><img src='img/Colegio/frente%202.jpg'><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+                var newBoxNoticia= "<div class='news-content top-content'><img src=''><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
             }
             else{
                 var newBoxTitulo ="<li><span>"+data[i].titulo+"</span></li>";
-                var newBoxNoticia= "<div class='news-content'><img src='img/Colegio/frente%202.jpg'><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+                var newBoxNoticia= "<div class='news-content'><img src=''><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
             }            
         // } 
         // else{
@@ -92,7 +55,7 @@ function crearContenedorNovedad(data){
         conte_titulo.append(newBoxTitulo);
         conte_noticia.append(newBoxNoticia);
     }
-    $('head').append('<script src="js/vertical.news.slider.min.js"></script>');
+    $('head').append('<script src="../js/vertical.news.slider.min.js"></script>');
 }
 
 $('.home-top-item').on('click',function(){
@@ -207,38 +170,6 @@ app.home.cerrarInfo = function() {
     $('.home-niveles-contenedor').animate({
     }, 1);  
 }
-
-// app.home.mostrarMasNovedades = function() {
-//     $('.home-novedades-contenedor-titulo-vermas').css('display', 'block');
-
-//     $('.home-novedades-contenedor-titulo-vermas').animate({
-//     }, 1);
-
-//     $('.home-novedades-contenedor-noticia-vermas').css('display', 'grid');
-
-//     $('.home-novedades-contenedor-noticia-vermas').animate({
-//     }, 1); 
-
-//     $('.home-novedades-contenedor-vermenos').css('display', 'block');
-
-//     $('.home-novedades-contenedor-vermenos').animate({
-//     }, 1);
-
-//     $('.home-novedades-contenedor-vermas').css('display', 'none');
-// }
-
-// app.home.mostrarMenosNovedades = function() {
-//     $('.home-novedades-contenedor-titulo-vermas').css('display', 'none');
-
-//     $('.home-novedades-contenedor-noticia-vermas').css('display', 'none'); 
-
-//     $('.home-novedades-contenedor-vermas').css('display', 'block');
-
-//     $('.home-novedades-contenedor-vermas').animate({
-//     }, 1);
-
-//     $('.home-novedades-contenedor-vermenos').css('display', 'none'); 
-// }
 
 app.home.mostrarInfoHistoria = function() {
     $('.home-institucion-contenedor-desplegable-historia').css('display', 'block');
@@ -408,7 +339,6 @@ app.home.ocultarInfoPatronos = function() {
 }
 
 /*Docente*/
-
 
 $('body').on('click','#back-button', function(){
     $('#selector-curso').show();
