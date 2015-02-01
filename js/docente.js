@@ -1,3 +1,18 @@
+$(document).ready(function(){
+    $.ajax({
+        url : "docente/getCursos/10003/2014",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {    
+            crearSelectorCurso(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+});
 
 $('body').on('click', '.user-right img', function(event){
     event.stopPropagation();
@@ -915,18 +930,3 @@ $(document).ready(function(){
     })
 })
 
-$(document).ready(function(){
-    $.ajax({
-        url : "docente/getCursos/10003/2014",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR)
-        {    
-            crearSelectorCurso(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            console.log("fallo");
-        }
-    });
-});

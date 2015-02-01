@@ -1,5 +1,7 @@
 <script type="text/javascript" src="../js/docente.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
+</head>
+<body>
 <div class="header-menu">
 	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
 	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
@@ -194,3 +196,6 @@ span.Ausente{
 </style>
 
 
+	</body> 
+
+</html>

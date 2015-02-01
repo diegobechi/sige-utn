@@ -1,19 +1,254 @@
-$('body').on('click', '#misAportes', function(){
-    var aportes = $('.aportes-alumno tr').size()
-    if(aportes== 0){   
+$(document).ready(function(){
+    buscarMiCurso();
+
+    $('body').find('#lista-mensajes h3').on('click',function(){
+        if($('#page-wrap').hasClass('vertical')){
+            $('#page-wrap').removeClass('vertical');
+        }else{
+            $('#page-wrap').addClass('vertical');
+        }
+    })
+
+    $('body').on('click', '#misAportes', function(){
+        var aportes = $('.aportes-alumno tr').size()
+        if(aportes== 0){   
+            $.ajax({
+                url: "alumno/getAportes/",
+                type: "GET",
+                dataType: "json",
+                success: function(data, textStatus, jqXHR){    
+                    crearListadoAportes(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    console.log("fallo");
+                }
+            })
+        }
+    })
+
+    $('body').on('click', '#misDatos', function(){    
         $.ajax({
-            url: "alumno/getAportes/",
+            url : "alumno/getDatosAlumno/",
             type: "GET",
             dataType: "json",
-            success: function(data, textStatus, jqXHR){    
-                crearListadoAportes(data);
+            success: function(data, textStatus, jqXHR){
+                cargarDatosAlumno(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        });
+    });
+
+
+    $('body').on('click', '#misDocentes', function(){
+        var idCurso = $('#curso-alumno').data('cursoid');
+        $.ajax({
+            url: 'curso/getMisDocentes/'+ idCurso,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+                cargarMisDocentes(data);
             },
             error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
             }
         })
-    }
-})
+    })
+
+    $('body').on('click', '#misHorarios', function(){
+        var idCurso = $('#curso-alumno').data('cursoid');
+        $.ajax({
+            url: 'curso/getMisHorarios/'+ idCurso,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+                cargarMisHorarios(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        })
+    })
+
+    $('body').on('click', '#temas-dictados', function(){
+        updateListaTemario();
+    })
+
+    $('body').on('click','#misAsignaturas, #misNotas',function(){
+        var fecha = new Date();
+        var año = fecha.getFullYear();
+        var origen = $(this).attr('id');
+        $.ajax({
+            //url : "alumno/getAsignaturas/"+año,
+            url : "alumno/getAsignaturas/2014",
+            type: "GET",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR){
+                if( origen == 'misNotas'){                    
+                    crearTablaNotasAsignaturas(data);                    
+                }else{
+                    crearSelectorAsignatura(data);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        });
+    });
+
+    $('body').on('click', '.user-right img', function(event){
+        event.stopPropagation();
+        if($('.user-options').is(':visible')){
+            $('.user-options').hide();
+        }else{
+            $('.user-options').show()
+        }
+
+        $('html').one('click', function(){
+            $('.user-options').hide();
+        })
+        
+    })
+
+    $('body').on('click', '#change-user-pass', function(){
+        $('.overlay-change-pass').show();
+        $('.change-pass-container').show();
+    })
+
+    $('body').on("mouseover",".asignaturas-curso", function(event){    
+        $(this).find('.option-asignaturas').show();
+    });
+
+    $('body').on("mouseleave",".asignaturas-curso", function(event){    
+        $(this).find('.option-asignaturas').hide();
+    });
+
+    $('body').on("mouseleave",".show-opciones", function(event){    
+        $(this).hide();
+    });
+
+    $('body').on("mouseover",".option-asignaturas", function(event){    
+        $(this).parent().find('.show-opciones').show();
+    });
+
+    $('body').on("mouseleave",".option-asignaturas", function(event){    
+        if($(this).parent().find('.show-opciones').is(':hover')){
+
+        }else{
+            $(this).parent().find('.show-opciones').hide();
+        }    
+    });
+
+    $('body').on('click','#programa', function(){
+        var numAsignatura = $('.titulo-principal h1').data('idasignatura');
+        var numCurso = 9;
+        $.ajax({
+            url: "curso/getProgramaAsignatura/"+numCurso+"/"+numAsignatura+"",
+            type: "GET",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR){
+                cargarPrograma(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log("fallo");
+            }
+        })
+    })
+
+    $('body').on('click','#info_general', function(){
+        var numAsignatura = $('.titulo-principal h1').data('idasignatura');
+        var numCurso = $('#curso-alumno').data('cursoid');
+        $.ajax({
+            url: "curso/getDatosAsignaturas/"+numCurso+"/"+numAsignatura+"",
+            type: "GET",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR){
+                cargarInfoCursoGeneral(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        })
+    })
+
+    $('body').on('click', '#misTutores', function(){
+        $.ajax({
+            url: 'alumno/getTutor/',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+                cargarDatosTutor(data);            
+                $(".overlay-popup").show();
+                $(".perfil-tutor-container").show();
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        })
+    })
+
+    $('body').on('click', '#retirarPersonas', function(){
+        // Buscar tutor en las cookies
+        cargarPersonasAutorizadas();
+    })
+    $('body').on('click', '.editarAutorizado', function(){
+        // Buscar tutor en las cookies
+        var infoAutorizado = $(this).parent().parent();
+        var persona = {};
+        persona.idTutor = infoAutorizado.data('tutor');
+        persona.nombreCompleto = infoAutorizado.children().children().eq(0).val();
+        persona.nroDocumento = infoAutorizado.children().children().eq(1).val();
+        persona.telefono = infoAutorizado.children().children().eq(2).val();
+        persona.relacion = infoAutorizado.children().children().eq(3).val();
+
+        console.log(persona);
+    })
+
+    $('body').on('click', '.eliminarAutorizado', function(){
+        // Buscar tutor en las cookies
+        var idTutor = $(this).parent().parent().data('tutor');
+        var nroDoc = $(this).parent().parent().data('autorizado');
+        $.ajax({
+            url: 'alumno/delete_personasAutorizadas/'+ idTutor+"/"+nroDoc,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+                cargarPersonasAutorizadas();
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        })
+    })
+
+    $('body').on('click', '#agregarPermitidas', function(){
+        var persona = {};
+        persona.idTutor = $('#idTutor').data('idtutor');
+        persona.nombreCompleto = $('#permita-nombre').val();
+        persona.nroDocumento = $('#permita-dni').val();
+        persona.telefono = $('#permita-num').val();
+        persona.relacion = $('#permita-relacion').val();
+
+        $.ajax({
+            url: 'alumno/set_personasAutorizadas/'+ persona.idTutor+"/"+ persona.nombreCompleto+"/"+ persona.nroDocumento+"/"+ persona.telefono+"/"+ persona.relacion,
+            type: 'POST',
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("Fallo Guardando");
+                cargarPersonasAutorizadas();
+                $('#permita-idTutor').val('');
+                $('#permita-nombre').val('');
+                $('#permita-dni').val('');
+                $('#permita-num').val('');
+                $('#permita-relacion').val('');
+            }
+        })
+    })
+});
 
 function crearListadoAportes(data){
     var conte = $('.aportes-alumno');    
@@ -28,28 +263,6 @@ function crearListadoAportes(data){
         conte.append(sinAportes);
     }
 }
-
-$('body').on('click','#misAsignaturas, #misNotas',function(){
-    var fecha = new Date();
-    var año = fecha.getFullYear();
-    var origen = $(this).attr('id');
-    $.ajax({
-        //url : "alumno/getAsignaturas/"+año,
-        url : "alumno/getAsignaturas/2014",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){
-            if( origen == 'misNotas'){                    
-                crearTablaNotasAsignaturas(data);                    
-            }else{
-                crearSelectorAsignatura(data);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    });
-});
 
 function crearTablaNotasAsignaturas(asignaturas){
     var nivel = $('#curso-alumno').data('nivel');
@@ -184,66 +397,6 @@ function crearSelectorAsignatura(data){
     }
  }
 
-$('body').on('click', '.user-right img', function(event){
-    event.stopPropagation();
-    if($('.user-options').is(':visible')){
-        $('.user-options').hide();
-    }else{
-        $('.user-options').show()
-    }
-
-    $('html').one('click', function(){
-        $('.user-options').hide();
-    })
-    
-})
-
-$('body').on('click', '#change-user-pass', function(){
-    $('.overlay-change-pass').show();
-    $('.change-pass-container').show();
-})
-
-$('body').on("mouseover",".asignaturas-curso", function(event){    
-    $(this).find('.option-asignaturas').show();
-});
-
-$('body').on("mouseleave",".asignaturas-curso", function(event){    
-    $(this).find('.option-asignaturas').hide();
-});
-
-$('body').on("mouseleave",".show-opciones", function(event){    
-    $(this).hide();
-});
-
-$('body').on("mouseover",".option-asignaturas", function(event){    
-    $(this).parent().find('.show-opciones').show();
-});
-
-$('body').on("mouseleave",".option-asignaturas", function(event){    
-    if($(this).parent().find('.show-opciones').is(':hover')){
-
-    }else{
-        $(this).parent().find('.show-opciones').hide();
-    }    
-});
-
-$('body').on('click','#programa', function(){
-    var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = 9;
-    $.ajax({
-        url: "curso/getProgramaAsignatura/"+numCurso+"/"+numAsignatura+"",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){
-            cargarPrograma(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            console.log("fallo");
-        }
-    })
-})
-
 function cargarPrograma(data){
     var conte = $('.contenedor-programa');
     conte.empty();
@@ -251,23 +404,6 @@ function cargarPrograma(data){
     var new_line = "<div><iframe src='http://red.ilce.edu.mx/sitios/micrositios/cortazar_aniv/pdf/8_Cielo_Rayuela_libro.pdf' style='width:600px; height:500px;' frameborder='0'></iframe></div>";
     conte.append(new_line);
 }
-
-
-$('body').on('click','#info_general', function(){
-    var numAsignatura = $('.titulo-principal h1').data('idasignatura');
-    var numCurso = $('#curso-alumno').data('cursoid');
-    $.ajax({
-        url: "curso/getDatosAsignaturas/"+numCurso+"/"+numAsignatura+"",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){
-            cargarInfoCursoGeneral(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    })
-})
 
 function cargarInfoCursoGeneral(data){
     var conte_horarios = $('.info_horarios');
@@ -279,19 +415,6 @@ function cargarInfoCursoGeneral(data){
     var new_card="<img src=''><label>"+data[0].apellido+", "+data[0].nombre+" </br> "+data[0].correoElectronico+"</label><label></label></br><a target='_blank' href='"+data[0].curriculumVitae+"'> ver cv</a>";
     conte_docente.append(new_card);
 }
-
-$(document).ready(function(){
-    buscarMiCurso();
-
-    $('body').find('#lista-mensajes h3').on('click',function(){
-        if($('#page-wrap').hasClass('vertical')){
-            $('#page-wrap').removeClass('vertical');
-        }else{
-            $('#page-wrap').addClass('vertical');
-        }
-    })
-
-})
 
 function buscarComunicadoWeb(curso){
     $.ajax({
@@ -308,8 +431,6 @@ function buscarComunicadoWeb(curso){
         }
     }) 
 }
-
-$('body').on('click')
 
 function cargarComunicadoWeb(data){
     var conte = $("#lista-mensajes");
@@ -355,22 +476,6 @@ function buscarMiCurso(){
     }) 
 }
 
-
-
-$('body').on('click', '#misDatos', function(){    
-    $.ajax({
-        url : "alumno/getDatosAlumno/",
-        type: "GET",
-        dataType: "json",
-        success: function(data, textStatus, jqXHR){
-            cargarDatosAlumno(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    });
-});
-
 function cargarDatosAlumno(data){
     $('#perfil-nombre-completo').val(data[0].apellido+', '+data[0].nombre);   
     $('#perfil-dni').val(data[0].nroDocumento);
@@ -389,22 +494,6 @@ function cargarDatosAlumno(data){
     $('#perfil-curso').val(data[0].division +' '+data[0].seccion);    
 }
 
-
-$('body').on('click', '#misDocentes', function(){
-    var idCurso = $('#curso-alumno').data('cursoid');
-    $.ajax({
-        url: 'curso/getMisDocentes/'+ idCurso,
-        type: 'GET',
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR){
-            cargarMisDocentes(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    })
-})
-
 function cargarMisDocentes(data){
     var conte = $('#listadoDocentes');
     for (var i = 0; i < data.length; i++) {
@@ -414,25 +503,6 @@ function cargarMisDocentes(data){
     $('#conte-listado-docentes').show();
     $('.overlay-popup').show();
 }
-
-$('body').on('click', '#misHorarios', function(){
-    var idCurso = $('#curso-alumno').data('cursoid');
-    $.ajax({
-        url: 'curso/getMisHorarios/'+ idCurso,
-        type: 'GET',
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR){
-            cargarMisHorarios(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    })
-})
-
-$('body').on('click', '#temas-dictados', function(){
-    updateListaTemario();
-})
 
 function updateListaTemario(){    
     var curso = $('#curso-alumno').data('cursoid');
@@ -472,22 +542,6 @@ function cargarMisHorarios(data){
     $('.overlay-popup').show();
 }
 
-$('body').on('click', '#misTutores', function(){
-    $.ajax({
-        url: 'alumno/getTutor/',
-        type: 'GET',
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR){
-            cargarDatosTutor(data);            
-            $(".overlay-popup").show();
-            $(".perfil-tutor-container").show();
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    })
-})
-
 function cargarDatosTutor(data){
     $('#idTutor').attr('data-idtutor', data[0].idTutor);
     $('#perfil-nombre-header').text(data[0].apellido+', '+data[0].nombre);
@@ -500,11 +554,6 @@ function cargarDatosTutor(data){
     $('#tutor-tel-movil').val(data[0].telefonoMovil);
     $('#tutor-mail').val(data[0].correoElectronico);  
 }
-
-$('body').on('click', '#retirarPersonas', function(){
-    // Buscar tutor en las cookies
-    cargarPersonasAutorizadas();
-})
 
 function cargarPersonasAutorizadas(){
     var idTutor = $('#idTutor').data('idtutor');
@@ -526,59 +575,3 @@ function cargarPersonasAutorizadas(){
         }
     })
 }
-
-$('body').on('click', '.editarAutorizado', function(){
-    // Buscar tutor en las cookies
-    var infoAutorizado = $(this).parent().parent();
-    var persona = {};
-    persona.idTutor = infoAutorizado.data('tutor');
-    persona.nombreCompleto = infoAutorizado.children().children().eq(0).val();
-    persona.nroDocumento = infoAutorizado.children().children().eq(1).val();
-    persona.telefono = infoAutorizado.children().children().eq(2).val();
-    persona.relacion = infoAutorizado.children().children().eq(3).val();
-
-    console.log(persona);
-})
-
-$('body').on('click', '.eliminarAutorizado', function(){
-    // Buscar tutor en las cookies
-    var idTutor = $(this).parent().parent().data('tutor');
-    var nroDoc = $(this).parent().parent().data('autorizado');
-    $.ajax({
-        url: 'alumno/delete_personasAutorizadas/'+ idTutor+"/"+nroDoc,
-        type: 'GET',
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR){
-            cargarPersonasAutorizadas();
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
-        }
-    })
-})
-
-$('body').on('click', '#agregarPermitidas', function(){
-    var persona = {};
-    persona.idTutor = $('#idTutor').data('idtutor');
-    persona.nombreCompleto = $('#permita-nombre').val();
-    persona.nroDocumento = $('#permita-dni').val();
-    persona.telefono = $('#permita-num').val();
-    persona.relacion = $('#permita-relacion').val();
-
-    $.ajax({
-        url: 'alumno/set_personasAutorizadas/'+ persona.idTutor+"/"+ persona.nombreCompleto+"/"+ persona.nroDocumento+"/"+ persona.telefono+"/"+ persona.relacion,
-        type: 'POST',
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR){
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            console.log("Fallo Guardando");
-            cargarPersonasAutorizadas();
-            $('#permita-idTutor').val('');
-            $('#permita-nombre').val('');
-            $('#permita-dni').val('');
-            $('#permita-num').val('');
-            $('#permita-relacion').val('');
-        }
-    })
-})

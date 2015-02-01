@@ -6,7 +6,7 @@
         <title>Instituto Santa Teresita</title>
         <meta name="viewport" content="width=device-width">
         <!-- <link rel="stylesheet" type="text/css" href="../css/animations.css"> -->
-
+        <link rel="icon" type="image/png" href="../img/icons/SIGE.ico">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>            
         <script src="../js/libs/bootstrap.min.js"></script>     
         <!-- <script src="../js/libs/jquery-ui-1.8.22.custom.min.js"></script> -->

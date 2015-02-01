@@ -1,5 +1,8 @@
+
 <script type="text/javascript" src="../js/alumno.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
+</head>
+<body>
 <div class="header-menu">
 	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
 	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
@@ -26,9 +29,8 @@
 		<div class="tab-pane fade active in" id="tab_a">
 			<div class="contenedor-pestana-general">
 				<div class="box-generic asignaturas">
-					<h3>Welcome <?php echo $nombre_usuario ?></h3>
-					<div>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					ac turpis egestas.</div>
+					<h3>Bienvenido, <?php echo $nombre_usuario ?></h3>
+					<img src="http://lecturalab.org/userfiles/tt_estrategias_alumnos_clase.jpg" style="height: 450px; width: 100%;">
 				</div>				
 			</div>		
 		</div>
@@ -336,7 +338,7 @@
 		background-color: white;
 		color: black;
 		list-style: none;
-		padding: 10px 16px;
+		padding: 10px 0px;
 		border: 1px solid #DDD;
 		margin: 38px 29px 0 0;
 		box-shadow: 0px 2px 6px #CCC;
@@ -465,6 +467,7 @@
 		background-color: #efefef;
 		color: #62687e;
 		border-bottom: 1px solid rgba(221,221,221,0.5);
+		box-shadow: 1px 1px 15px 1px #CCC;
 	}
 
 	#lista-mensajes{
@@ -548,3 +551,6 @@
 
 	</style>
 </div>
+	</body> 
+
+</html>
