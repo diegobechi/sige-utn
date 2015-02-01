@@ -312,7 +312,7 @@
 }
 #wowslider-container1 .ws-title span{
 	font-size: 2.4em;
-	transform: translate3d(0px, 0px, 0px) !important;
+	transform: translate3d(50px, 0px, 0px) !important;
 }
 
 #wowslider-container1 .ws_images > ul{

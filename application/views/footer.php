@@ -1,7 +1,4 @@
-		<script type="text/javascript" src="../js/script.js"></script>
-		<script type="text/javascript" src="../engine1/wowslider.js"></script>
-        <script type="text/javascript" src="../engine1/script.js"></script>        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>     
+
 
 		<div class="foot">			
 			<div style="height: 73%; border-bottom: 1px solid; margin-left: 10px; margin-right: 10px;">

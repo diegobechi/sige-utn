@@ -106,13 +106,13 @@ a {
 
 .news-content {
     position: absolute;
-    background: #ededed;
     z-index: 10;
     padding: 20px;
     top: 0;
     left: 0;
     display: none;
     width: 100%;
+    color: #455A64;
 }
 
 .top-content {
