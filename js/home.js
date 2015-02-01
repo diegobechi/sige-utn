@@ -38,13 +38,14 @@ function crearContenedorNovedad(data){
     
     for(var i=0;i<data.length;i++){
         // if (i<=3) {
-            if (i==0) {
+            var ruta_imagen= ".."+data[i].rutaArchivo.substring(20);
+            if (i==0) {                
                 var newBoxTitulo ="<li class='selected'><span>"+data[i].titulo+"</span></li>"; 
-                var newBoxNoticia= "<div class='news-content top-content'><img src=''><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+                var newBoxNoticia= "<div class='news-content top-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
             }
             else{
                 var newBoxTitulo ="<li><span>"+data[i].titulo+"</span></li>";
-                var newBoxNoticia= "<div class='news-content'><img src=''><p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+                var newBoxNoticia= "<div class='news-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
             }            
         // } 
         // else{
