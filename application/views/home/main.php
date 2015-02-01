@@ -162,38 +162,38 @@
                     <div class="home-niveles-contenedor-nivel-contenido-masinfo nivel-uno" style="display: none; border: 3px solid #81D4FA;"> 
                         <div style="float: left; width: 55%"><i style="font-weight: bold;">“Dejen que los niños vengan a mí y no se lo impidan, porque de los que son como ellos es el reino de los cielos”</i>&nbsp;Mt. 19,14.<br><br><br>
                             <span style="color: #81D4FA;font-size: 40px; font-family: baby; ">SUMATE!!</span><br><br>
-                            •   Requisitos y ficha de inscripción - <a href="pdf/NIVEL INICIAL - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Uniforme y presentación personal - <a href="pdf/NIVEL INICIAL - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Normas de convivencia - <a href="pdf/NIVEL INICIAL - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Valores - <a href="pdf/NIVEL INICIAL - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br><br>
+                            •   Requisitos y ficha de inscripción - <a href="../pdf/NIVEL INICIAL - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Uniforme y presentación personal - <a href="../pdf/NIVEL INICIAL - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Normas de convivencia - <a href="../pdf/NIVEL INICIAL - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Valores - <a href="../pdf/NIVEL INICIAL - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br><br>
                             <span style="color: #81D4FA;font-size: 40px; font-family: baby; ">ACTIVIDADES</span><br>                     
                         </div>
                         <img src="../img/Nivel inicial/Inicial.jpg" style="float: right; max-width: 40%; border: 1px solid #81D4FA"> 
 
                         <div id="galeriaInicial" class="home-galeria-contenedor nivel-uno" style="display: none; margin-top: 290px;">                             
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/Abuela cuenta cuentos.jpg" title="Abuela cuenta cuentos" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/Abuela cuenta cuentos.jpg" alt="Abuela cuenta cuentos">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/Abuela cuenta cuentos.jpg" alt="Abuela cuenta cuentos">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/En el día de las mascotas.jpg" title="Día de las mascotas" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/En el día de las mascotas.jpg" alt="Día de las mascotas">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/En el día de las mascotas.jpg" alt="Día de las mascotas">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/En la kermese.jpg" title="Kermese" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/En la kermese.jpg" alt="Kermese">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/En la kermese.jpg" alt="Kermese">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/En la kermese (2).jpg" title="Kermese" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/En la kermese (2).jpg" alt="Kermese">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/En la kermese (2).jpg" alt="Kermese">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/En la kermese (3).jpg" title="Kermese" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/En la kermese (3).jpg" alt="Kermese">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/En la kermese (3).jpg" alt="Kermese">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/En momentos de experiencias en conjunto.jpg" title="Momentos de experiencias en conjunto" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/En momentos de experiencias en conjunto.jpg" alt="Momentos de experiencias en conjunto">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/En momentos de experiencias en conjunto.jpg" alt="Momentos de experiencias en conjunto">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/En una dramatización.jpg" title="Dramatización" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/En una dramatización.jpg" alt="Dramatización">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/En una dramatización.jpg" alt="Dramatización">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel inicial/Preparando el regalo del Día del Padre.jpg" title="Preparando el regalo del Día del Padre" data-gallery='inicial'>
-                                <img src="../img/Nivel inicial/Preparando el regalo del Día del Padre.jpg" alt="Preparando el regalo del Día del Padre">
+                                <img style="border: 1px solid #81D4FA" src="../img/Nivel inicial/Preparando el regalo del Día del Padre.jpg" alt="Preparando el regalo del Día del Padre">
                             </a>
                         </div> 
 
@@ -206,39 +206,38 @@
                         <div style="float: left; width: 55%"><b><i>“No poseo el valor para buscar plegarias hermosas en los libros; al no saber cuáles escoger, reacciono como los niños; le digo sencillamente 
                             al buen Dios lo que necesito y Él siempre me comprende.”</i></b><br><br><br>
                             <span style="font-size: 25px; font-family: stars; color: #29B6F6; font-weight: bold;">SUMATE!!</span><br><br>
-                            •   Requisitos y ficha de inscripción - <a href="pdf/NIVEL PRIMARIO - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Uniforme y presentación personal - <a href="pdf/NIVEL PRIMARIO - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Normas de convivencia - <a href="pdf/NIVEL PRIMARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Valores - <a href="pdf/NIVEL PRIMARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   AGREGAR FICHA INSCRIPCIÓN!!!!!!<br><br><br>
+                            •   Requisitos y ficha de inscripción - <a href="../pdf/NIVEL PRIMARIO - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Uniforme y presentación personal - <a href="../pdf/NIVEL PRIMARIO - Uniforme y presentación personal.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Normas de convivencia - <a href="../pdf/NIVEL PRIMARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Valores - <a href="../pdf/NIVEL PRIMARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br><br>
                             <span style="font-size: 25px; font-family: stars; font-weight: bold; color: #29B6F6">ACTIVIDADES</span><br>                                
                         </div>
                         <img src="../img/Nivel primario/Primario.jpg" style="float: right; max-width: 40%; border: 1px solid #29B6F6">
 
-                        <div id="galeriaPrimario" class="home-galeria-contenedor nivel-dos" style="display: none; margin-top: 330px;">
+                        <div id="galeriaPrimario" class="home-galeria-contenedor nivel-dos" style="display: none; margin-top: 295px;">
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Festejando el día del niño.jpg" title="Festejando el día del niño" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Festejando el día del niño.jpg" alt="Festejando el día del niño">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Festejando el día del niño.jpg" alt="Festejando el día del niño">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Observando bichos en el laboratorio.jpg" title="Observando bichos en el laboratorio" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Observando bichos en el laboratorio.jpg" alt="Observando bichos en el laboratorio">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Observando bichos en el laboratorio.jpg" alt="Observando bichos en el laboratorio">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Preparando chimichurri para regalar.jpg" title="Preparando chimichurri para regalar" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Preparando chimichurri para regalar.jpg" alt="Preparando chimichurri para regalar">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Preparando chimichurri para regalar.jpg" alt="Preparando chimichurri para regalar">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Presentando a los estudiantes de Primer Grado.jpg" title="Presentando a los niños de Primer Grado" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Presentando a los estudiantes de Primer Grado.jpg" alt="Presentando a los niños de Primer Grado">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Presentando a los estudiantes de Primer Grado.jpg" alt="Presentando a los niños de Primer Grado">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Prometiendo lealtad a la bandera.jpg" title="Prometiendo lealtad a la bandera" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Prometiendo lealtad a la bandera.jpg" alt="Prometiendo lealtad a la bandera">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Prometiendo lealtad a la bandera.jpg" alt="Prometiendo lealtad a la bandera">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Recorriendo el barrio.jpg" title="Recorriendo el barrio" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Recorriendo el barrio.jpg" alt="Recorriendo el barrio">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Recorriendo el barrio.jpg" alt="Recorriendo el barrio">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Producciones grupales.jpg" title="Producciones grupales" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Producciones grupales.jpg" alt="Producciones grupales">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Producciones grupales.jpg" alt="Producciones grupales">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel primario/Personajes del circo.jpg" title="Personajes del circo" data-gallery='primario'>
-                                <img src="../img/Nivel primario/Personajes del circo.jpg" alt="Personajes del circo">
+                                <img style="border: 1px solid #29B6F6" src="../img/Nivel primario/Personajes del circo.jpg" alt="Personajes del circo">
                             </a>                           
                         </div>
 
@@ -248,45 +247,45 @@
                     </div>
 
                     <div class="home-niveles-contenedor-nivel-contenido-masinfo nivel-tres" style="display: none; border: 3px solid #039BE5">
-                        <div style="float: left; width: 55%"><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito."</i>&nbsp;L.M. López<br><br><br>
+                        <div style="float: left; width: 55%"><b><i>"Dar lo mejor de nosotros mismos, sin condiciones, sin reproches, sin esperar nada a cambio. Ésa es la clave para alcanzar el éxito."</i></b>&nbsp;L.M. López<br><br><br>
                             <span style="color: #039BE5;font-size: 35px; font-family: pelis;">SUMATE!!</span><br><br>
-                            •   Requisitos y ficha de inscripción - <a href="pdf/NIVEL SECUNDARIO - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Uniforme - <a href="pdf/NIVEL SECUNDARIO - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Especialidad "Agro y Ambiente" y espacio curricular - <a href="pdf/NIVEL SECUNDARIO - Especialidad y Espacio curricular.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Cooperativa Escolar - <a href="pdf/NIVEL SECUNDARIO - Cooperativa escolar.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Normas de convivencia - <a href="pdf/NIVEL SECUNDARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Valores - <a href="pdf/NIVEL SECUNDARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br><br>
+                            •   Requisitos y ficha de inscripción - <a href="../pdf/NIVEL SECUNDARIO - Requisitos y Ficha de inscripción.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Uniforme - <a href="../pdf/NIVEL SECUNDARIO - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Especialidad "Agro y Ambiente" y espacio curricular - <a href="../pdf/NIVEL SECUNDARIO - Especialidad y Espacio curricular.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Cooperativa Escolar - <a href="../pdf/NIVEL SECUNDARIO - Cooperativa escolar.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Normas de convivencia - <a href="../pdf/NIVEL SECUNDARIO - Normas de convivencia.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Valores - <a href="../pdf/NIVEL SECUNDARIO - Valores.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br><br><br>
                             <span style="color: #039BE5;font-size: 35px; font-family: pelis;">ACTIVIDADES</span><br>
                         </div>
                         <img src="../img/Nivel secundario/Secundario.jpg" style="float: right; max-width: 40%; border: 1px solid #039BE5">
 
                         <div id="galeriaSecundario" class="home-galeria-contenedor nivel-tres" style="display: none; margin-top: 330px;">
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Armando frazadas.jpg" title="Armando frazadas" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Armando frazadas.jpg" alt="Armando frazadas">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Armando frazadas.jpg" alt="Armando frazadas">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Día en la naturaleza.jpg" title="Día en la naturaleza" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Día en la naturaleza.jpg" alt="Día en la naturaleza">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Día en la naturaleza.jpg" alt="Día en la naturaleza">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/En el acantonamiento.jpg" title="Acantonamiento" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/En el acantonamiento.jpg" alt="Acantonamiento">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/En el acantonamiento.jpg" alt="Acantonamiento">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/En servicio.jpg" title="En servicio" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/En servicio.jpg" alt="En servicio">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/En servicio.jpg" alt="En servicio">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Participando de la Eucaristía.jpg" title="Participando de la Eucaristía" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Participando de la Eucaristía.jpg" alt="Participando de la Eucaristía">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Participando de la Eucaristía.jpg" alt="Participando de la Eucaristía">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Construyendo una casa.jpg" title="Construyendo una casa" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Construyendo una casa.jpg" alt="Construyendo una casa">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Construyendo una casa.jpg" alt="Construyendo una casa">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Jugando en la guardería Municipal.jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Jugando en la guardería Municipal.jpg" alt="Jugando en la Guardería Municipal">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Jugando en la guardería Municipal.jpg" alt="Jugando en la Guardería Municipal">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Guardería.jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Guardería.jpg" alt="Jugando en la Guardería Municipal">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Guardería.jpg" alt="Jugando en la Guardería Municipal">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel secundario/Guardería (1).jpg" title="Jugando en la Guardería Municipal" data-gallery='secundario'>
-                                <img src="../img/Nivel secundario/Guardería (1).jpg" alt="Jugando en la Guardería Municipal">
+                                <img style="border: 1px solid #039BE5" src="../img/Nivel secundario/Guardería (1).jpg" alt="Jugando en la Guardería Municipal">
                             </a>
                         </div> 
 
@@ -296,10 +295,10 @@
                     </div>
 
                     <div class="home-niveles-contenedor-nivel-contenido-masinfo nivel-cuatro" style="display: none; border: 3px solid #0277BD">
-                        <div style="float: left; width: 55%"><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.”</i>&nbsp;Ef. 4,4<br><br><br>
+                        <div style="float: left; width: 55%"><b><i>“Hay un solo Cuerpo y un solo Espíritu, así como hay una misma esperanza, a la que ustedes han sido llamados de acuerdo con la vocación recibida.”</i></b>&nbsp;Ef. 4,4<br><br><br>
                             <SPAN style="color: #0277BD;font-size: 33px; font-family: lines;">SUMATE!!</SPAN><br><br>
-                            •   Requisitos de inscripción - <a href="pdf/NIVEL SUPERIOR - Requisitos.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
-                            •   Uniforme - <a href="pdf/NIVEL SUPERIOR - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Requisitos de inscripción - <a href="../pdf/NIVEL SUPERIOR - Requisitos.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
+                            •   Uniforme - <a href="../pdf/NIVEL SUPERIOR - Uniforme.pdf" class="home-niveles-descargar" target="_blank"><b>Descargar</b></a><br>
                             •   <a href="http://santateresita.cba.infd.edu.ar/sitio/" class="home-niveles-descargar" target="_blank"><b>Más información</b></a><br><br><br>
                             <SPAN style="color: #0277BD;font-size: 33px; font-family: lines;">ACTIVIDADES</SPAN><br>
                             <br>
@@ -308,22 +307,22 @@
 
                         <div id="galeriaSuperior" class="home-galeria-contenedor nivel-cuatro" style="display: none; margin-top: 280px;">
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel superior/Acompañando proyectos de alfabtización.jpg" title="Acompañando proyectos de alfabtización" data-gallery='superior'>
-                                <img src="../img/Nivel superior/Acompañando proyectos de alfabtización.jpg" alt="Acompañando proyectos de alfabtización">
+                                <img style="border: 1px solid #0277BD" src="../img/Nivel superior/Acompañando proyectos de alfabtización.jpg" alt="Acompañando proyectos de alfabtización">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg" title="Actividad con los niños de la Escuela Especial" data-gallery='superior'>
-                                <img src="../img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg" alt="Actividad con los niños de la Escuela Especial">
+                                <img style="border: 1px solid #0277BD" src="../img/Nivel superior/Actividad con los niños de la Escuela Especial.jpg" alt="Actividad con los niños de la Escuela Especial">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel superior/Animando la Fiesta de la Primavera.jpg" title="Animando la Fiesta de la Primavera" data-gallery='superior'>
-                                <img src="../img/Nivel superior/Animando la Fiesta de la Primavera.jpg" alt="Animando la Fiesta de la Primavera">
+                                <img style="border: 1px solid #0277BD" src="../img/Nivel superior/Animando la Fiesta de la Primavera.jpg" alt="Animando la Fiesta de la Primavera">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel superior/Clases en el laboratorio.jpg" title="Clases en el laboratorio" data-gallery='superior'>
-                                <img src="../img/Nivel superior/Clases en el laboratorio.jpg" alt="Clases en el laboratorio">
+                                <img style="border: 1px solid #0277BD" src="../img/Nivel superior/Clases en el laboratorio.jpg" alt="Clases en el laboratorio">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel superior/En acompañamiento pedagógico.jpg" title="Realizando acompañamiento pedagógico" data-gallery='superior'>
-                                <img src="../img/Nivel superior/En acompañamiento pedagógico.jpg" alt="Realizando acompañamiento pedagógico">
+                                <img style="border: 1px solid #0277BD" src="../img/Nivel superior/En acompañamiento pedagógico.jpg" alt="Realizando acompañamiento pedagógico">
                             </a>
                             <a class="home-nivel-contenedor-masinfo-galeria" href="../img/Nivel superior/En Taller de TICS.jpg" title="En el Taller de TICS" data-gallery='superior'>
-                                <img src="../img/Nivel superior/En Taller de TICS.jpg" alt="En el Taller de TICS">
+                                <img style="border: 1px solid #0277BD" src="../img/Nivel superior/En Taller de TICS.jpg" alt="En el Taller de TICS">
                             </a>                           
                         </div> 
 
