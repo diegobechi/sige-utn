@@ -27,33 +27,29 @@ function crearListadoAportes(data){
         var sinAportes = "Usted no ha realizado aportes al dia de la fecha.";
         conte.append(sinAportes);
     }
-    
-    
 }
 
-$(document).ready(function(){
-    $('body').find("#misAsignaturas, #misNotas").on("click",function(){
-        var fecha = new Date();
-        var año = fecha.getFullYear();
-        var origen = $(this).attr('id');
-        $.ajax({
-            //url : "alumno/getAsignaturas/"+año,
-            url : "alumno/getAsignaturas/2014",
-            type: "GET",
-            dataType: "json",
-            success: function(data, textStatus, jqXHR){
-                if( origen == 'misNotas'){                    
-                    crearTablaNotasAsignaturas(data);                    
-                }else{
-                    crearSelectorAsignatura(data);
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown){
-                console.log("fallo");
+$('body').on('click','#misAsignaturas, #misNotas',function(){
+    var fecha = new Date();
+    var año = fecha.getFullYear();
+    var origen = $(this).attr('id');
+    $.ajax({
+        //url : "alumno/getAsignaturas/"+año,
+        url : "alumno/getAsignaturas/2014",
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            if( origen == 'misNotas'){                    
+                crearTablaNotasAsignaturas(data);                    
+            }else{
+                crearSelectorAsignatura(data);
             }
-        });
-    });   
-})
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+});
 
 function crearTablaNotasAsignaturas(asignaturas){
     var nivel = $('#curso-alumno').data('nivel');
@@ -183,7 +179,7 @@ function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'>"+data[i].nombre+"<span class='option-asignaturas'>XXX<div class='show-opciones' style='display:none;'><ul><li><a class='ver-temario'>Temario Dictado</a></li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li><a class='info_curso'>Info General</a></li></ul></div></span></li>";
+        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'><label>"+data[i].nombre+"</label><img src='../img/setting.png' class='option-asignaturas'/><span><div class='show-opciones' style='display:none;'><ul><li><a class='ver-temario'>Temario Dictado</a></li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li><a class='info_curso'>Info General</a></li></ul></div></span></li>";
         conte_btn.append(newBox);
     }
  }
@@ -208,19 +204,27 @@ $('body').on('click', '#change-user-pass', function(){
 })
 
 $('body').on("mouseover",".asignaturas-curso", function(event){    
-    $(this).children().show();
+    $(this).find('.option-asignaturas').show();
 });
 
 $('body').on("mouseleave",".asignaturas-curso", function(event){    
-    $(this).children().hide();
+    $(this).find('.option-asignaturas').hide();
 });
 
+$('body').on("mouseleave",".show-opciones", function(event){    
+    $(this).hide();
+});
 
 $('body').on("mouseover",".option-asignaturas", function(event){    
-    $(this).children().show();
+    $(this).parent().find('.show-opciones').show();
 });
+
 $('body').on("mouseleave",".option-asignaturas", function(event){    
-    $(this).children().hide();
+    if($(this).parent().find('.show-opciones').is(':hover')){
+
+    }else{
+        $(this).parent().find('.show-opciones').hide();
+    }    
 });
 
 $('body').on('click','#programa', function(){

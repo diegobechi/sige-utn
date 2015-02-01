@@ -29,6 +29,7 @@ html,body{
     font-weight: normal;
     font-style: normal;
 }
+@import url(http://fonts.googleapis.com/css?family=Lato|Roboto:300,400);
 
 .home-wrapper{
     height: 100%;
@@ -207,19 +208,82 @@ html,body{
 }
 
 .label-menu-superior-general{
-    font-family: Arial;
-    font-size: 24px;
+    font-family: 'Lato';
+    font-size: 29px;
     font-weight: bold;
     color: white;
     float: left;
     float: left;
-    margin: 16px 15px 9px 5px;
+    margin: 11px 45px 9px 5px;
+    line-height: 32px;
+}
+
+.menu-main{
+    background-color: #063053;
+    background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0.32, #063053), color-stop(0.66, #395873), color-stop(0.83, #5c7c99));
+    background-image: -webkit-linear-gradient(#063053, #395873, #5c7c99);
+    background-image: -moz-linear-gradient(top,#063053, #395873, #5c7c99);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#063053', endColorstr='#395873');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#063053', endColorstr='#395873')";
+    background-image: -ms-linear-gradient(#063053, #395873, #5c7c99);
+    background-image: -o-linear-gradient(#063053, #395873, #5c7c99);
+    background-image: linear-gradient(#063053, #395873, #5c7c99);
+}
+
+.menu-main li a {
+    height: 74px;
+    width: 110px;
+    text-align: center;
+    border-radius: 0;
+    border-left: 1px solid #BBB;
+    margin: 0;
+    color: #FFFFFF;
+    font-family: 'Lato';
+    font-size: 16px;
+    border-bottom: none;
+}
+
+.menu-main li img{
+    width: 70px;
+    display: block;
+    margin: auto;
+    margin-top: -12px;
+    margin-bottom: -12px;
+}
+
+.menu-main li a:last-child{
+    border-right: 1px solid #BBB;
+}
+
+.menu-main li a:hover{
+    background-color: rgba(238, 238, 238, 0.45) !important;
+    border-top: none;
+    color: #FFFFFF !important;
+}
+
+.menu-main li.active a{
+    background-color: rgba(238, 238, 238, 0.45) !important;
+    color: #FFF !important;
+    border-top: none;
+    border-bottom: none;
 }
 
 menu#home-top-menu {
     float: left;
     padding-left: 0px;
 }
+
+.icono-escudo{
+    width: 60px;
+    float: left;
+    margin: 10px;
+}   
+
+.header-menu{
+    background-color: #000;
+    color: #FFF;
+}
+
 #home-top-menu > ul {
     margin: 0;
     padding: 0;
@@ -906,7 +970,9 @@ border-radius: 5px;
 }
 
 .option-asignaturas{
-    float: right; 
-    display:none;
+    float: right;
+    position: relative;
+    display: none;
+    width: 30px;
 }
 

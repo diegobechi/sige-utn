@@ -3,20 +3,20 @@
 <div class="header-menu">
 	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
 	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
-	<ul class="nav nav-tabs" style="background-color: #000;">	
-		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
-		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab">MI CURSO</a></li>
-		<li><a id="misAportes" href="#tab_c" data-toggle="tab">MIS APORTES</a></li>
-		<li><a id="misDatos"href="#tab_d" data-toggle="tab">MIS DATOS</a></li>
-		<li><a id="misNotas"href="#tab_e" data-toggle="tab">MIS NOTAS</a></li>
+	<ul class="nav nav-tabs menu-main">	
+		<li class="active"><a href="#tab_a" data-toggle="tab"><img src="../img/white-icons/appbar.home.png">Inicio</a></li>
+		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab"><img src="../img/white-icons/appbar.book.png">Mi Curso</a></li>
+		<li><a id="misAportes" href="#tab_c" data-toggle="tab"><img src="../img/white-icons/appbar.money.png">Mis Aportes</a></li>
+		<li><a id="misDatos"href="#tab_d" data-toggle="tab"><img src="../img/white-icons/appbar.people.profile.png">Mis Datos</a></li>
+		<li><a id="misNotas"href="#tab_e" data-toggle="tab"><img src="../img/white-icons/appbar.clipboard.variant.edit.png">Mis Notas</a></li>
 		<div class="user-right">
 			<span><?php echo $nombre_usuario ?></span>			
-			<img src="../img/arrow-down.png"/>
+			<img src="../img/white-icons/appbar.list.png"/>
 		</div>					
 		<ul class="user-options">
 			<li><span>Perfil</span></li>
 			<li><span id="change-user-pass">Cambiar contraseña</span></li>
-			<li><a href="c_home/logout">Logout</a></li>
+			<li><a href="c_home/logout">Cerrar sesion</a></li>
 		</ul>
 		</div>
 	</ul>
@@ -177,7 +177,7 @@
 							</table>
 							<div class="footer-horarios">
 								<div>
-									<img src="../img/Colegio/0. Escudo.jpg">
+									<img src="../img/Colegio/0. Escudo.png">
 									<label>Instituto Santa Teresita</label>
 								</div>
 								<div>
@@ -251,13 +251,70 @@
 	<div>
 	</div>
 	<div class="popup-opciones-asignatura">
-		
+
 	</div>
 
 	<style>
 
+	.asignaturas-curso label{
+		display: inline-block;
+	}
+	.asignaturas-curso:hover > label{
+		color: #FFFFFF;
+	}
+
+	#selectorBtnAsignatura{
+		list-style: none;
+		margin: 0;
+		padding: 15px;		
+		background-color: #CCC;		
+	}
+
+	#selectorBtnAsignatura li{
+		line-height: 30px;
+		cursor: pointer;
+		padding: 15px;
+	}
+
+	#selectorBtnAsignatura li:hover{
+		background-color: #333;
+	}
+	
+	.show-opciones{
+		display: block;
+		float: right;
+		background-color: #FFFFFF;
+		border: 1px solid#CCC;
+		border-radius: 5px;
+	}
+
+	.show-opciones ul{
+		list-style: none;
+		margin: 0;
+	}
+
+	.show-opciones ul a{
+		margin: 0;		
+	}
+
+	.show-opciones ul a:hover{
+		text-decoration: none;
+	}
+
+	.show-opciones ul li:hover{
+		background-color: #D5D5D5 !important;
+	}
+
+	.show-opciones ul li{
+		padding: 0px 15px !important;
+	}
+
+	#selectorBtnAsignatura li:hover > span{
+		color: white;
+	}
+
 	.icono-escudo{
-		width: 45px;
+		width: 60px;
 		float: left;
 		margin: 10px;
 	}	

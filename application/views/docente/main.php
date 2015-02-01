@@ -3,19 +3,19 @@
 <div class="header-menu">
 	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
 	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
-	<ul class="nav nav-tabs">		
-		<li class="active"><a href="#tab_a" data-toggle="tab">INICIO</a></li>
-		<li><a id="misCursos" href="#tab_b" data-toggle="tab">MIS CURSOS</a></li>
-		<li><a id="misDatos" href="#tab_c" data-toggle="tab">MIS DATOS</a></li>
+	<ul class="nav nav-tabs menu-main">		
+		<li class="active"><a href="#tab_a" data-toggle="tab"><img src="../img/white-icons/appbar.home.png">Inicio</a></li>
+		<li><a id="misCursos" href="#tab_b" data-toggle="tab"><img src="../img/white-icons/appbar.book.png">Mis Cursos</a></li>
+		<li><a id="misDatos" href="#tab_c" data-toggle="tab"><img src="../img/white-icons/appbar.people.profile.png">Mis Datos</a></li>
 		<div class="user-right">
 			<span><?php echo $nombre_usuario ?></span>			
-			<img src="../img/arrow-down.png"/>
+			<img src="../img/white-icons/appbar.list.png"/>
 		</div>
 					
 		<ul class="user-options">
 			<li><span>Perfil</span></li>
 			<li><span id="change-user-pass">Cambiar contraseña</span></li>
-			<li><a href="c_home/logout">Logout</a></li>
+			<li><a href="c_home/logout">Cerrar sesion</a></li>
 		</ul>
 	</ul>
 	
@@ -24,8 +24,8 @@
 		<div class="tab-pane fade active in" id="tab_a">
 			<div class="contenedor-pestana-general">
 				<div class="box-generic">
-					<h3>Welcome NOMBRE DOCENTE</h3>
-					<img class="img-cover"src="img/smart-teacher.jpg">
+					<h3>Welcome <?php echo $nombre_usuario ?></h3>
+					<img class="img-cover"src="../img/smart-teacher.jpg">
 				</div>
 			</div>			
 		</div>
@@ -100,7 +100,6 @@
 }
 
 .user-right img{
-	width: 20px;
 	margin-top: -4px;
 	margin-left: 15px;
 }

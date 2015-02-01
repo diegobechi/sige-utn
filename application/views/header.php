@@ -3,11 +3,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Instituto Santa Teresita</title>
+        <title>Instituto Santa Teresita - SIGE</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="../css/animations.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">-->       
+
+        <link rel="icon" type="image/png" href="../img/icons/SIGE.ico">
 
         <script src="../js/libs/bootstrap.js"></script>
         <script src="../js/libs/bootstrap.min.js"></script>
@@ -28,8 +30,5 @@
         <script src="../js/libs/highcharts.js"></script>      
         <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
         <script src="../js/bootstrap-image-gallery.min.js"></script>
-
-        
-        
     </head>
     <body>
