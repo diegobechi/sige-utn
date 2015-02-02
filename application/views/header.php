@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Instituto Santa Teresita</title>
+        <title>Instituto Santa Teresita - SIGE</title>
         <meta name="viewport" content="width=device-width">
         <!-- <link rel="stylesheet" type="text/css" href="../css/animations.css"> -->
         <link rel="icon" type="image/png" href="../img/icons/SIGE.ico">

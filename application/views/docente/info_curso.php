@@ -1,20 +1,18 @@
 
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 <input type="button" value="Regresar" id="back-button">
-<div class = "contenedor-info" style = "display:block;"> <div class = "titulo-principal">
+<div class = "contenedor-info container" style = "display:block;"> <div class = "titulo-principal">
 	<span></span>
 	<h1 id="informacion-num-curso"><img src="img/curso.png"> INFORMACION DEL CURSO - </h1>
 </div>
 <div style ="padding:20px">
 	<ul class = "lista-opciones">
-		<li data-title="alumnos"> <img src="img/alumno.png"/>Alumnos</li>
-		<li data-title="asignaturas"> <img src="img/materia.png"/>Asignaturas</li>
-		<li data-title="cargarNotas"> <img src="img/cargarnotas.png"/>Cargar Notas</li>
-		<li data-title="temario"> <img src="img/temario.png"/>Temario</li>
-		<li data-title="listados" style="display:none;"> <img src="img/listados.png"/>Listados</li>
-		<li data-title="inasistencias"> <img src="img/inasistencias.png"/>Inasistencias</li>
-		<li data-title="mensajes"> <img src="img/mensajes.png"/>Mensajes</li>
+		<li data-title="alumnos"> <img src="../img/white-icons/appbar.people.multiple.png"/>Alumnos</li>
+		<li data-title="asignaturas"> <img src="../img/white-icons/appbar.book.list.png"/>Asignaturas</li>
+		<li data-title="cargarNotas"> <img src="../img/white-icons/appbar.grade.a.plus.png"/>Cargar Notas</li>
+		<li data-title="temario"> <img src="../img/white-icons/appbar.calendar.day.png"/>Temario</li>
+		<li data-title="listados" style="display:none;"> <img src="img/listados.png">Listados</li>
+		<li data-title="inasistencias"> <img src="../img/white-icons/appbar.clipboard.paper.check.png"/>Inasistencias</li>
+		<li data-title="mensajes"> <img src="../img/white-icons/appbar.chat.png"/>Mensajes</li>
 	</ul>
 	<div class="contenedor-principal alumnos">
 		<div class ="titulo-principal">
@@ -33,24 +31,25 @@
 		</div>
 		<div class="contenedor-asignaturas">
 			<div class="listado-asignaturas">
-				<ul style="margin: 10px;">			     			
+				<ul style="margin: 10px;list-style: none;color: #FFF;">			     			
 				</ul>
 			</div> 
 		</div>
 	</div>
-	<div class="contenedor-principal cargarNotas" style="display:none;">
-		<div class="contenedor-filtros">
-			<!--<h3>Curso:</h3>-->
+	<div class="contenedor-principal cargarNotas" style="display:none;">		
+		<div class="grilla-notas" style="display:none;">
+			<div class="contenedor-filtros">
 			<select id="filtro_curso" style="display:none;">					
 			</select>
-			<h3>Asignatura</h3>
+			<label>Asignatura</label>
 			<select id="filtro_asignatura">
 			</select>
-			<h3>Etapa</h3>
+			<label>Etapa</label>
 			<select id="filtro_etapa">					
 			</select>
-
-			<table>
+		</div>
+		<div class="tabla-abreviaturas">
+			<table id="abreviaturas">
 				<thead>
 					<tr>
 						<td colspan="2">Abreviaturas</td>						
@@ -95,9 +94,7 @@
 					</tr>
 				</tbody>
 			</table>
-
 		</div>
-		<div class="grilla-notas" style="display:none;">
 			<div>					
 				<div id="contenedor-informe-progreso">
 					<div id="informe-nivel-primaria">
@@ -185,45 +182,6 @@
 										</select>
 									</td>
 									<td data-nroCalificacion="7">
-										<select>
-											<option>P</option>
-											<option>E</option>
-											<option>EO</option>
-											<option>TP</option>
-											<option>TI</option>												
-											<option>R</option>
-											<option>C</option>
-											<option>NC</option>
-											<option>LO</option>
-										</select>
-									</td>
-									<td data-nroCalificacion="8">
-										<select>
-											<option>P</option>
-											<option>E</option>
-											<option>EO</option>
-											<option>TP</option>
-											<option>TI</option>												
-											<option>R</option>
-											<option>C</option>
-											<option>NC</option>
-											<option>LO</option>
-										</select>
-									</td>
-									<td data-nroCalificacion="9">
-										<select>
-											<option>P</option>
-											<option>E</option>
-											<option>EO</option>
-											<option>TP</option>
-											<option>TI</option>												
-											<option>R</option>
-											<option>C</option>
-											<option>NC</option>
-											<option>LO</option>
-										</select>
-									</td>
-									<td data-nroCalificacion="10">
 										<label>Prom</label>
 									</td>
 								</tr>
@@ -231,13 +189,14 @@
 							<tbody id="listado-primario-notas">									
 							</tbody>
 						</table>
+						<div>
+							<span id="modificacion-primaria"></span>
+							<input type="button" class="btn" id="guardar-notas-primaria" value="Guardar">
+						</div>
 					</div>
 				</div>
 			</div>
-			<div>
-				<span id="modificacion-primaria"></span>
-				<input type="button" id="guardar-notas-primaria" value="Guardar">
-			</div>
+			
 		</div>
 		<div class="inicial-notas" style="display:none;">
 			<div id="informe-nivel-inicial">
@@ -255,47 +214,12 @@
 		<div style="margin-top: 30px;">
 			<label>Escriba a continuacion el mensaje:</label>
 			<textarea id="temaDictado"></textarea>
-			<input id="enviarTemario" type="button" value="Enviar">
-			<input id="updateTemario" type="button" value="Update" style="display:none;">
+			<input id="enviarTemario" type="button" class="btn" value="Enviar">
+			<input id="updateTemario" type="button" class="btn" value="Update" style="display:none;">
 		</div>
 		<div>			
 			<div id="show-list-items">
 			</div>
-		</div>
-	</div>
-	<div class="contenedor-principal listados" style="display:none;">
-		<div class = "titulo-principal">
-			<span></span>
-			<h1><img src="img/book_1.png"> Listados</h1> 
-		</div>
-
-		<div class = "contenedor-de-listados">
-			<ul>
-				<li class = "box-listado">
-					<a id="curso" href="#" class="box-alumno">
-						<div>
-							<img src="img/listado.png">
-							<h6> Listado de Alumnos</h6>
-						</div>
-					</a>
-				</li>
-				<li class = "box-listado">
-					<a id="curso" href="#" class="box-alumno">
-						<div>
-							<img src="img/listado.png">
-							<h6> Inasistencias por fecha</h6>
-						</div>
-					</a>
-				</li>
-				<li class = "box-listado">
-					<a id="curso" href="#" class="box-alumno">
-						<div>
-							<img src="img/listado.png">
-							<h6> Licencias otorgadas</h6>
-						</div>
-					</a>
-				</li>
-			</ul>
 		</div>
 	</div>
 	<div class="contenedor-principal inasistencias" style="display:none;">
@@ -313,7 +237,7 @@
 				<tbody id="listado-asistencia">
 					
 				</tbody>
-				<input type="button" value="Guardar" id="guardar-asistencia"/>
+				<input type="button" class="btn" value="Guardar" id="guardar-asistencia"/>
 			</table>
 		</div>
 	</div>
@@ -324,8 +248,8 @@
 				<input id="id-curso-comunicado" type="text" value="" style="display:none;"/>
 				<label>Escriba a continuacion el mensaje:</label>
 				<textarea id="temaComunicado"></textarea>
-				<input id="enviarComunicado" type="button" value="Enviar">
-				<input id="updateComunicado" type="button" value="Update" style="display:none;">
+				<input id="enviarComunicado" type="button" class="btn" value="Enviar">
+				<input id="updateComunicado" type="button" class="btn" value="Update" style="display:none;">
 			</div>
 			<div>
 				<div id="show-list-comunicados">
@@ -403,7 +327,7 @@
 
 #informe-nivel-primaria input,
 #informe-nivel-primaria select{
-	width: 60px;
+	width: 47px;
 	margin: 0;
 	border: none;
 }

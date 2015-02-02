@@ -3,32 +3,31 @@
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
 </head>
 <body>
-<div class="header-menu">
-	<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
-	<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
-	<ul class="nav nav-tabs menu-main">	
-		<li class="active"><a href="#tab_a" data-toggle="tab"><img src="../img/white-icons/appbar.home.png">Inicio</a></li>
-		<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab"><img src="../img/white-icons/appbar.book.png">Mi Curso</a></li>
-		<li><a id="misAportes" href="#tab_c" data-toggle="tab"><img src="../img/white-icons/appbar.money.png">Mis Aportes</a></li>
-		<li><a id="misDatos"href="#tab_d" data-toggle="tab"><img src="../img/white-icons/appbar.people.profile.png">Mis Datos</a></li>
-		<li><a id="misNotas"href="#tab_e" data-toggle="tab"><img src="../img/white-icons/appbar.clipboard.variant.edit.png">Mis Notas</a></li>
-		<div class="user-right">
-			<span><?php echo $nombre_usuario ?></span>			
-			<img src="../img/white-icons/appbar.list.png"/>
-		</div>					
+	<div class="header-menu">
+		<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
+		<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
+		<ul class="nav nav-tabs menu-main">	
+			<li class="active"><a href="#tab_a" data-toggle="tab"><img src="../img/white-icons/appbar.home.png">Inicio</a></li>
+			<li><a id="misAsignaturas" href="#tab_b" data-toggle="tab"><img src="../img/white-icons/appbar.book.png">Mi Curso</a></li>
+			<li><a id="misAportes" href="#tab_c" data-toggle="tab"><img src="../img/white-icons/appbar.money.png">Mis Aportes</a></li>
+			<li><a id="misNotas"href="#tab_e" data-toggle="tab"><img src="../img/white-icons/appbar.grade.a.plus.png">Mis Notas</a></li>
+			<li class="lastone"><a id="misDatos"href="#tab_d" data-toggle="tab"><img src="../img/white-icons/appbar.people.profile.png">Mis Datos</a></li>
+			<div class="user-right">
+				<span><?php echo $nombre_usuario ?></span>			
+				<img src="../img/white-icons/appbar.list.png"/>
+			</div>
+		</ul>					
 		<ul class="user-options">
 			<li><span>Perfil</span></li>
 			<li><span id="change-user-pass">Cambiar contraseña</span></li>
 			<li><a href="c_home/logout">Cerrar sesion</a></li>
 		</ul>
-		</div>
-	</ul>
-</div>
+	</div>
 
-<div class="tab-content">
+	<div class="tab-content container">
 		<div class="tab-pane fade active in" id="tab_a">
 			<div class="contenedor-pestana-general">
-				<div class="box-generic asignaturas">
+				<div class="box-generic bienvenido">
 					<h3>Bienvenido, <?php echo $nombre_usuario ?></h3>
 					<img src="http://lecturalab.org/userfiles/tt_estrategias_alumnos_clase.jpg" style="height: 450px; width: 100%;">
 				</div>				
@@ -115,46 +114,46 @@
 						</div>
 						<div class="container-right">
 							<ul class="nav nav-tabs" role="tablist">
-							  <li class="active"><a href="#profile" role="tab" data-toggle="tab">Informacion Personal</a></li>
-							  <li class=""><a id="retirarPersonas" href="#personas-premitidas" role="tab" data-toggle="tab">Personas Retirar</a></li>
-							  <li class=""><a class="nueva-permitida" href="#nueva-premitida" role="tab" data-toggle="tab" style="display:none;">Asociar Nueva Persona</a></li>
+								<li class="active"><a href="#profile" role="tab" data-toggle="tab">Informacion Personal</a></li>
+								<li class=""><a id="retirarPersonas" href="#personas-premitidas" role="tab" data-toggle="tab">Personas Retirar</a></li>
+								<li class=""><a class="nueva-permitida" href="#nueva-premitida" role="tab" data-toggle="tab" style="display:none;">Asociar Nueva Persona</a></li>
 							</ul>
 							<div class="tab-content">
-							  <div class="tab-pane active" id="profile">							  	
-							  	<label>Nro Documento</label><input id="tutor-dni" type="text"><br>
-							  	<label>Sexo</label><input id="tutor-sexo" type="text"><br>
-							  	<label>Fecha de Nacimiento</label><input id="tutor-fecha-nac" type="text"><br>
-							  	<label>Estado Civil</label><input id="tutor-estado-civil" type="text"><br>							  	
-							  	<label>Domicilio</label><input id="tutor-domicilio" type="text"><br>							  	
-							  	<label>Telefono Fijo</label><input id="tutor-tel-fijo" type="text"><br>
-							  	<label>Telefono Movil</label><input id="tutor-tel-movil" type="text"><br>
-							  	<label>Correo Electronico</label><input id="tutor-mail" type="text"><br>
-							  	
-							  </div>
-							  <div class="tab-pane " id="personas-premitidas">							  	
-							  	<table>
-							  		<thead>
-							  			<tr>
-							  				<td></td>
-							  				<td>Nombre Completo</td>
-							  				<td>Nro Documento</td>
-							  				<td>Telefono</td>
-							  				<td>Relacion</td>
-							  				<td></td>
-							  				<td></td>
-							  			</tr>
-							  		</thead>
-							  		<tbody id="listadoAutorizados">
-							  		</tbody>
-							  	</table>
-							  	<div class="nuevaPersonaPermitida">
-							  		<input id="permita-nombre" type="text" placeholder="Nombre completo...">
-								  	<input id="permita-dni" type="text" placeholder="Nro documento.."> <br>
-								  	<input id="permita-num" type="text" placeholder="Telefono...">
-								  	<input id="permita-relacion" type="text" placeholder="Relación..."> <br>
-								  	<input type="button" value="Agregar" id="agregarPermitidas">
-							  	</div>							  	
-							  </div>
+								<div class="tab-pane active" id="profile">							  	
+									<label>Nro Documento</label><input id="tutor-dni" type="text"><br>
+									<label>Sexo</label><input id="tutor-sexo" type="text"><br>
+									<label>Fecha de Nacimiento</label><input id="tutor-fecha-nac" type="text"><br>
+									<label>Estado Civil</label><input id="tutor-estado-civil" type="text"><br>							  	
+									<label>Domicilio</label><input id="tutor-domicilio" type="text"><br>							  	
+									<label>Telefono Fijo</label><input id="tutor-tel-fijo" type="text"><br>
+									<label>Telefono Movil</label><input id="tutor-tel-movil" type="text"><br>
+									<label>Correo Electronico</label><input id="tutor-mail" type="text"><br>
+
+								</div>
+								<div class="tab-pane " id="personas-premitidas">							  	
+									<table>
+										<thead>
+											<tr>
+												<td></td>
+												<td>Nombre Completo</td>
+												<td>Nro Documento</td>
+												<td>Telefono</td>
+												<td>Relacion</td>
+												<td></td>
+												<td></td>
+											</tr>
+										</thead>
+										<tbody id="listadoAutorizados">
+										</tbody>
+									</table>
+									<div class="nuevaPersonaPermitida">
+										<input id="permita-nombre" type="text" placeholder="Nombre completo...">
+										<input id="permita-dni" type="text" placeholder="Nro documento.."> <br>
+										<input id="permita-num" type="text" placeholder="Telefono...">
+										<input id="permita-relacion" type="text" placeholder="Relación..."> <br>
+										<input type="button" value="Agregar" id="agregarPermitidas">
+									</div>							  	
+								</div>
 							</div>
 						</div>
 					</div>
@@ -326,35 +325,6 @@
 		color: #FFF;
 	}
 
-	.user-right{
-		display: inline-block;
-		float: right;
-		margin: 8px 50px;
-	}
-
-	.user-options{
-		display: none;
-		position: absolute;
-		background-color: white;
-		color: black;
-		list-style: none;
-		padding: 10px 0px;
-		border: 1px solid #DDD;
-		margin: 38px 29px 0 0;
-		box-shadow: 0px 2px 6px #CCC;
-		right: 0;
-	}
-	.user-options li{
-		cursor: pointer;
-		padding: 0 16px;
-		line-height: 30px;
-	}
-
-	.user-options li:hover{
-		color: #FFFFFF;
-		background-color: #909090;
-	}
-
 	.change-pass-container{
 		width: 230px;
 		top: 0;
@@ -449,26 +419,6 @@
 		float: left;
 		width: 450px;
 	}
-	.box-generic.academicos{
-		float: right;
-		width: 450px;
-	}
-
-	.box-generic{
-		background-color: #FFFFFF;
-		margin-bottom: 25px;
-		border: 1px solid rgba(221,221,221,0.5);
-	}
-	.box-generic h3{
-		margin: 0px;
-		padding: 10px 20px;
-		font-size: 20px;
-		line-height: 20px;
-		background-color: #efefef;
-		color: #62687e;
-		border-bottom: 1px solid rgba(221,221,221,0.5);
-		box-shadow: 1px 1px 15px 1px #CCC;
-	}
 
 	#lista-mensajes{
 		display: block;
@@ -551,6 +501,6 @@
 
 	</style>
 </div>
-	</body> 
+</body> 
 
 </html>

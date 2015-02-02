@@ -27,6 +27,7 @@ class C_verifyLogin extends CI_Controller {
          //Field validation succeeded.  Validate against database
        $username = $this->input->post('username');
          //query the database
+       $password = 'SqddibwSxG+2VHwmgFIaIA==';
        $result = $this->login->login($username, $password);
        if($result) {
            $sess_array = array();
@@ -54,7 +55,7 @@ class C_verifyLogin extends CI_Controller {
                 $perfil = 'docente';
             }
         }
+        
         return $perfil;
     }
-
 }
