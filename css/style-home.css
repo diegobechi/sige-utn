@@ -805,7 +805,6 @@ hr:after {
     width: 10%;
     display: inline-block;
     border: 2px solid rgb(2, 17, 97);
-    border-radius: 5px;
     margin: 1px;
 }
 

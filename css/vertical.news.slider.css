@@ -1,5 +1,6 @@
 .news-holder p {
     margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 .news-holder {
@@ -21,11 +22,12 @@ a {
   text-decoration: none;
 }
 
-
-
 .news-headlines {
   list-style: none;
   position: relative;
+  margin-top: 20px;
+  float: left;
+  width: 30%;
 }
 
   .news-headlines li {
@@ -45,21 +47,23 @@ a {
     -moz-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
-    background-color: grey;
-    font-size: 13px;
+    background-color: #B0BEC5;
+    font-size: 11px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    font-family: 'Righteous', cursive;
+    font-weight: normal;
   }
   
   .news-headlines li:before {
     content: "";
     display: inline-block;
-    /*background: #888;*/
     vertical-align: middle;
     margin-left: -5px;
   }
 
   .news-headlines li:hover, a:hover {
       cursor: pointer;
-      /*background-color: rgba(0, 0, 255, 0.39);*/
   }
   
   .news-headlines .highlight {
@@ -78,41 +82,39 @@ a {
     display: none;
   }
 
-.news-headlines {
-   float: left;
-   width: 30%;
-}
-
 .news-preview {
-   float: left;
-   border: solid 5px rgba(0, 0, 255, 0.67);
-   width: 70%;
-   background: #ededed;
-   position: relative;
-   z-index: 5;
-   height: 240px !important;
-   position: relative;
+    float: left;
+    border: solid 7px #29B6F6;
+    width: 70%;
+    background: white;
+    z-index: 5;
+    height: 287px !important;
+    position: relative;
+    border-radius: 10px;
 }
 
   .news-preview img {
     display: block;
-    border: solid 1px rgba(0, 0, 255, 0.67);
+    border: solid 1px #29B6F6;
     width: 100%;
-    max-width: 40%;
-    margin: 0 auto 5px auto;
-    margin-left: 20px;
+    max-width: 45%;
+    margin: 25px 5px -5px 5px;
     float: right;
   } 
 
 .news-content {
     position: absolute;
     z-index: 10;
-    padding: 20px;
+    padding: 13px;
     top: 0;
     left: 0;
     display: none;
-    width: 100%;
     color: #455A64;
+    margin: 7px;
+    background-color: rgba(236, 239, 241, 0.38);
+    border-radius: 5px;
+    width: 98%;
+    height: 260px;
 }
 
 .top-content {
@@ -128,6 +130,7 @@ a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
@@ -147,13 +150,22 @@ a {
 }
 
 .selected{
-  background-color: rgba(0, 0, 255, 0.67);
-  font-weight: bolder;
+  background-color: #29B6F6;
+}
+
+.fecha{
+  font-size: smaller;
 }
 
 .titulo{
-  color: rgba(0, 0, 255, 0.67);
-  /*text-decoration: underline;*/
+  color: #29B6F6;
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 17px;
+  font-family: 'Righteous', cursive;
+}
+
+.descripcion{
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
 }

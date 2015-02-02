@@ -41,11 +41,11 @@ function crearContenedorNovedad(data){
             var ruta_imagen= ".."+data[i].rutaArchivo.substring(20);
             if (i==0) {                
                 var newBoxTitulo ="<li class='selected'><span>"+data[i].titulo+"</span></li>"; 
-                var newBoxNoticia= "<div class='news-content top-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+                var newBoxNoticia= "<div class='news-content top-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p class='descripcion'>"+data[i].descripcion+"</p></div>";
             }
             else{
                 var newBoxTitulo ="<li><span>"+data[i].titulo+"</span></li>";
-                var newBoxNoticia= "<div class='news-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p>"+data[i].descripcion+"</p></div>";
+                var newBoxNoticia= "<div class='news-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p class='descripcion'>"+data[i].descripcion+"</p></div>";
             }            
         // } 
         // else{
