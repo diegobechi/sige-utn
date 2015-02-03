@@ -113,7 +113,8 @@ class Curso extends CI_Controller {
 	public function setComunicadoWeb($idCurso, $comunicado){	 	
 	 	$this->load->model('Curso_Model');
 	 	$date = date('j M Y');
-		$query = $this->Curso_Model->set_comunicado($idCurso, $this->legajo, $date, $comunicado);
+	 	$comunicado_web = str_replace(' ', '%20', $comunicado);
+		$query = $this->Curso_Model->set_comunicado($idCurso, $this->legajo, $date, $comunicado_web);
 		echo json_encode($query);
 	}
 

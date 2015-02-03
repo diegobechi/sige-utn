@@ -15,9 +15,9 @@
 			</div>
 		</ul>
 		<ul class="user-options">
-			<li><span>Perfil</span></li>
-			<li><span id="change-user-pass">Cambiar contraseña</span></li>
-			<li><a href="c_home/logout">Cerrar sesion</a></li>
+			<li class="mi_perfil"><span>Mis Datos</span></li>
+			<li class="pass_change"><span>Cambiar contraseña</span></li>
+			<li class="logout"><span>Cerrar sesion</span></li>
 		</ul>
 	</div>
 	<div class="tab-content container">	
@@ -65,15 +65,17 @@
 	<div class="overlay-change-pass" style="display:none;">
 	</div>
 	<div class="change-pass-container" style="display:none;">
+		<img src="../img/Icons/cross-black.png">
 		<form>
 			<label>Ingrese la nueva contraseña</label>		
 			<input type="password" placeholder=""/>
 			<label>Confirmmar Contraseña</label>
 			<input type="password" placeholder=""/><br>
-			<input type="button" class="btn btn-danger" value="Cancelar"/>
+			<input type="button" class="btn btn-danger cancelar" value="Cancelar"/>
 			<input type="button" class="btn btn-primary" value="Confirmar"/>
 		</form>
 	</div>
+
 	<style>
 
 	.header-menu{
@@ -91,13 +93,7 @@
 		margin-top: -4px;
 		margin-left: 15px;
 	}
-	.box-generic.personales{
-		float: left;
-		width: 543px;
-		margin-left: 1%;
-		margin-top: 30px;
-		box-shadow: 0px 0px 9px 4px #CCC;
-	}
+	
 	.box-generic.personales label{
 		display: inline-block;
 		width: 150px
@@ -120,15 +116,13 @@
 		background-color: white;
 		color: black;
 		list-style: none;
-		padding: 10px 16px;
-		border: 1px solid #DDD;
-		margin: 38px 29px 0 0;
-		box-shadow: 0px 2px 6px #CCC;
+		border: none;
+		margin: -32px 48px 0 0;
 		right: 0;
 	}
 	.user-options li{
 		cursor: pointer;
-		padding: 0 16px;
+		padding: 5px 16px;
 		line-height: 30px;
 	}
 	.contenedor-principal.cargarNotas{
@@ -149,13 +143,18 @@
 		height: auto;
 	}
 	.box-curso-generic{
-		background-color: aquamarine;
+		background-color: rgb(72, 163, 133);
 		width: 150px;
 		text-align: center;
 		display: inline-block;
 		height: 150px;
 		margin: 20px;
 		float: left;
+		color: #FFFFFF;
+	}
+
+	.asignatura-titulo h3{
+		margin-bottom: 0;
 	}
 
 	span.Presente{
@@ -173,21 +172,7 @@
 		height: 16px;
 	}
 
-	.change-pass-container{
-		width: 230px;
-		top: 0;
-		left: 0;
-		margin: auto;
-		bottom: 0;
-		right: 0;
-		height: 170px;
-		position: absolute;
-		border: 1px solid #D5D5D5;
-		padding: 30px;
-		border-radius: 5px;
-		box-shadow: 0px 1px 21px -2px;
-		background-color: #FFFFFF;
-	}
+	
 	</style>
 
 

@@ -34,7 +34,7 @@
 			</div>		
 		</div>
 		<div class="tab-pane fade" id="tab_b">
-			<div class="contenedor-pestana-general">
+			<div class="contenedor-pestana-general materias">
 				<div id="asignatura-info-container">
 				</div>
 				<div id="selector-asignatura" class="box-generic asignaturas">
@@ -70,7 +70,7 @@
 			<div class="pestana-datos-alumno">
 				<div class="box-generic personales">
 					<h3>Datos personales</h3>
-					<div>
+					<div style="padding: 30px;">
 						<label>Nombre y Apellido</label><input id="perfil-nombre-completo" type="text"><br>
 						<label>Nro Documento</label><input id="perfil-dni" type="text"><br>
 						<label>Sexo</label><input id="perfil-sexo" type="text"><br>
@@ -83,22 +83,25 @@
 						<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text"><br>
 					</div>
 				</div>
-				
-				<div class="box-generic academicos">
-					<h3>Datos academicos generales</h3>
-					<label>Legajo</label><input id="perfil-legajo" type="text"><br>
-					<label>Curso</label><input id="perfil-curso"type="text"><br>
-					<label>Inasistencias</label><input id="perfil-inasistencias"type="text"><br>
-					<label>Promedio general</label><input id="perfil-promedio"type="text"><br>
-					<label>Estado Academico</label><input id="perfil-estado"type="text"><br>
-				</div>
+				<div style="float: right;width: 40%;margin-right: 1%;margin-top: 30px;">
+					<div class="box-generic academicos" style="box-shadow: 0px 0px 9px 4px #CCC;">
+						<h3>Datos academicos generales</h3>
+						<div style="padding: 30px;">							
+							<label>Legajo</label><input id="perfil-legajo" type="text"><br>
+							<label>Curso</label><input id="perfil-curso"type="text"><br>
+							<label>Inasistencias</label><input id="perfil-inasistencias"type="text"><br>
+							<label>Promedio general</label><input id="perfil-promedio"type="text"><br>
+							<label>Estado Academico</label><input id="perfil-estado"type="text"><br>
+						</div>
+					</div>
 
-				<div class="box-generic academicos">
-					<h3>Acciones</h3>
-					<div class="botones-datos-personales">
-						<input id="misTutores" type="button" value="Tutor / Autorizados">
-						<input id="misHorarios" type="button" value="Mis Horarios">					
-						<input id="misDocentes" type="button" value="Mis Docentes">
+					<div class="box-generic academicos" style="box-shadow: 0px 0px 9px 4px #CCC;">
+						<h3>Más informacion</h3>
+						<div class="botones-datos-personales">
+							<input id="misTutores" type="button" value="Tutor / Autorizados">
+							<input id="misHorarios" type="button" value="Mis Horarios" style="display:none;">					
+							<input id="misDocentes" type="button" value="Mis Docentes" style="display:none;">
+						</div>
 					</div>
 				</div>
 				<div class="overlay-popup"style = "display:none;"></div>
@@ -128,7 +131,6 @@
 									<label>Telefono Fijo</label><input id="tutor-tel-fijo" type="text"><br>
 									<label>Telefono Movil</label><input id="tutor-tel-movil" type="text"><br>
 									<label>Correo Electronico</label><input id="tutor-mail" type="text"><br>
-
 								</div>
 								<div class="tab-pane " id="personas-premitidas">							  	
 									<table>
@@ -236,12 +238,13 @@
 	<div class="overlay-change-pass" style="display:none;">
 	</div>
 	<div class="change-pass-container" style="display:none;">
+		<img src="../img/Icons/cross-black.png">
 		<form>
 			<label>Ingrese la nueva contraseña</label>		
 			<input type="password" placeholder=""/>
 			<label>Confirmmar Contraseña</label>
 			<input type="password" placeholder=""/><br>
-			<input type="button" class="btn btn-danger" value="Cancelar"/>
+			<input type="button" class="btn btn-danger cancelar" value="Cancelar"/>
 			<input type="button" class="btn btn-primary" value="Confirmar"/>
 		</form>
 	</div>
@@ -249,10 +252,15 @@
 		<div class="overlay"></div>
 		<div id="conte_popup"></div>
 	</div>
-	<div>
-	</div>
-	<div class="popup-opciones-asignatura">
 
+
+	<div class="overlay-popup" style = "display:none;"></div>
+	<div class="optiones-materias" style = "display:none;">
+		<img src="../img/Icons/cross-black.png">
+		<h3></h3>
+		<div id="opciones-materias-contenedor">
+
+		</div>
 	</div>
 
 	<style>
@@ -323,22 +331,6 @@
 	.header-menu{
 		background-color: #000;
 		color: #FFF;
-	}
-
-	.change-pass-container{
-		width: 230px;
-		top: 0;
-		left: 0;
-		margin: auto;
-		bottom: 0;
-		right: 0;
-		height: 170px;
-		position: absolute;
-		border: 1px solid #D5D5D5;
-		padding: 30px;
-		border-radius: 5px;
-		box-shadow: 0px 1px 21px -2px;
-		background-color: #FFFFFF;
 	}
 
 	#listadoAutorizados input{

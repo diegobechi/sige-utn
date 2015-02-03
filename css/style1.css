@@ -726,15 +726,14 @@ border-radius: 5px;
 
 .titulo-principal h1{
     margin-top: 0;
-    background-color: orange;
     color: #fff;
     font-size: 20px;
-    padding-left: 10px;
+    text-align: center;
 }
 
 .titulo-principal h3{
     margin-top: 0;
-    background-color: orange;
+    background-color: rgb(60, 60, 60);
     color: #fff;
     font-size: 20px;
     padding-left: 10px;
@@ -749,6 +748,18 @@ border-radius: 5px;
     margin: 0 10px;
     list-style: none;
 }
+.contenedor-filtros,
+table#abreviaturas{
+    float: left;
+    margin-left: 40px;
+}
+
+table#abreviaturas td {
+    text-align: center;
+    border: 1px solid;
+    padding: 0px 30px;
+}
+
 .lista-opciones li{
     width: 150px;
     background-color: cadetblue;
@@ -777,25 +788,92 @@ border-radius: 5px;
     width: 70%;
 }
 
+.contenedor-principal.temario,
 .contenedor-principal.mensajes{
     text-align: center;
-    border: none;    
+    border: none;
+    width: 70%;
+    background-color: transparent; 
+}
+
+.contenedor-principal.temario textarea,
+.contenedor-principal.mensajes textarea{
+    width: 80%;
+    height: 100px;
+}
+
+.contenedor-principal.temario input[type="button"],
+.contenedor-principal.mensajes input[type="button"]{
+    width: 40%;
+}
+
+.contenedor-principal.inasistencias{
+    border: none;
+    background-color: transparent;
+}
+
+#listado-asistencia td input[type="text"]{
+    padding: 5px;
+}
+
+#listado-asistencia td {
+    border: 1px solid #999;
+}
+
+.contenedor-principal.inasistencias table td{
+    padding: 10px;
+}
+.contenedor-principal.inasistencias table thead{
+    text-align: center;
 }
 
 .contenedor-alumnos{
     margin: 0;
 }
 
+.contenedor-principal.asignaturas{
+    width: 70%;
+    margin: 0;
+}
+
+#guardar-notas-primaria {
+    width: 70px !important;
+    margin-top: 20px !important;
+    display: block;
+}
+
 .box-alumno{
     text-decoration: none;
 }
 
+.change-pass-container img{    
+    right: 8px;
+    top: 8px;
+    position: absolute;
+    width: 18px;
+}
+
+.change-pass-container{
+    width: 220px;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    height: 155px;
+    position: absolute;
+    border: 1px solid #D5D5D5;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 21px -2px;
+    background-color: #FFFFFF;
+}
 .box-alumno-generic  {
     background-color: white;
     width: 150px;
     height: 150px;
     display: inline-block;
-    border: 2px solid orange;
+    border: 2px solid rgb(60, 60, 60);
     float: left;
     margin: 10px;
 }
@@ -829,12 +907,51 @@ border-radius: 5px;
     border: 2px solid black;
 }
 
-.contenedor-asignaturas{
+.box-asignatura-generica{
+    color: #000;
+    background-color: rgb(72, 163, 133);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.contenedor-pestana-general.materias{
+    width: 50%;
+}
+
+.box-generic.personales{
+    float: left;
+    width: 543px;
+    margin-left: 1%;
+    margin-top: 30px;
+    box-shadow: 0px 0px 9px 4px #CCC;
+}
+
+.optiones-materias{
+    width: 40%;
+    background-color: #FFF;
+    height: 450px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    text-align: center;
+    padding: 30px;
+}
+
+.optiones-materias img {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.asignatura-titulo h3{
     margin-top: 0px;
-    display: inline-block;
-    background-color: darkslategrey;
-    border: 2px solid grey;
-    width: 738px;
 }
 
 .listado-asignaturas li {
@@ -858,13 +975,14 @@ border-radius: 5px;
     background-color: white;
     color: black;
     list-style: none;
-    border: 1px solid #DDD;
-    margin: -25px 49px 0 0;
+    border: none;
+    margin: -32px 48px 0 0;
     right: 0;
 }
+
 .user-options li{
     cursor: pointer;
-    padding: 0 16px;
+    padding: 5px 16px;
     line-height: 30px;
 }
 
@@ -883,6 +1001,28 @@ border-radius: 5px;
     z-index: 99;
     left: 0;
     right: 0;
+}
+.comunicado-web  span,
+.tema-dictado span {
+    font-size: 13px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.edit-comunicado img,
+.edit-temario img{
+    margin-top: -5px;
+    margin-left: 10px;
+}
+.tema-dictado,
+.comunicado-web {
+    border-bottom: 1px dashed #767676;
+    padding: 10px;
+}
+
+.tema-dictado:last-child,
+.comunicado-web:last-child {
+    border-bottom: none;
 }
 
 #abreviaturas{

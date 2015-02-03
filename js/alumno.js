@@ -40,7 +40,6 @@ $(document).ready(function(){
         });
     });
 
-
     $('body').on('click', '#misDocentes', function(){
         var idCurso = $('#curso-alumno').data('cursoid');
         $.ajax({
@@ -107,8 +106,7 @@ $(document).ready(function(){
 
         $('html').one('click', function(){
             $('.user-options').hide();
-        })
-        
+        })        
     })
 
     $('body').on('click', '#change-user-pass', function(){
@@ -193,6 +191,7 @@ $(document).ready(function(){
         // Buscar tutor en las cookies
         cargarPersonasAutorizadas();
     })
+
     $('body').on('click', '.editarAutorizado', function(){
         // Buscar tutor en las cookies
         var infoAutorizado = $(this).parent().parent();
@@ -248,7 +247,77 @@ $(document).ready(function(){
             }
         })
     })
+
+    $('body').on('click', '.ver_temario, .ver_info_curso', function(){
+        if($(this).hasClass('ver_temario')){
+            var curso = $('#curso-alumno').data('cursoid');
+            var idAsignatura = $(this).closest('.asignaturas-curso').data('idasignatura');
+            $.ajax({
+                url: 'curso/getTemasDictados/'+ curso+"/"+idAsignatura,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data, textStatus, jqXHR){            
+                    listarTemas(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    console.log("fallo");
+                }
+
+            })
+        }else{
+            var curso = $('#curso-alumno').data('cursoid');
+            $.ajax({
+                url: 'curso/getComunicadoWeb/'+ curso,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data, textStatus, jqXHR){            
+                    listarComuni(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    console.log("fallo");
+                }
+            })
+        }
+    })
+
+    $('body').on('click', '.optiones-materias img', function(){
+        $('.overlay-popup').hide();
+        $('.optiones-materias').hide();
+    })
+
+    $('body').on('click', '.change-pass-container img, .btn-danger.cancelar', function(){
+        $('.overlay-change-pass').hide();
+        $('.change-pass-container').hide();
+    })
+
 });
+
+function listarComuni(data){
+    var conte = $('#opciones-materias-contenedor');
+    conte.empty();
+    $('.optiones-materias h3').html('Comunicados enviados por los docentes del curso');   
+    var newLine = "";
+    for (var i = 0; i < data.length; i++) {
+        var newLine = "<div class='comunicado-web'><p class='texto-temario'>"+data[i].comunicado.replace(/%20/g, " ")+"</p><span class='firma-texto-temario'>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fecha+"</span></div>";
+        conte.append(newLine);
+    };    
+    $('.optiones-materias').show();
+    $('.overlay-popup').show();
+}
+
+function listarTemas(data){
+    var conte = $('#opciones-materias-contenedor');
+    conte.empty();
+    $('.optiones-materias h3').html('Temas dictados');    
+    var newLine = "";
+    for (var i = 0; i < data.length; i++) {
+        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span></div>";
+        conte.append(newLine);
+    };
+    $('.optiones-materias').show();
+    $('.overlay-popup').show();
+}
+
 
 function crearListadoAportes(data){
     var conte = $('.aportes-alumno');    
@@ -392,10 +461,10 @@ function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'><label>"+data[i].nombre+"</label><img src='../img/setting.png' class='option-asignaturas'/><span><div class='show-opciones' style='display:none;'><ul><li><a class='ver-temario'>Temario Dictado</a></li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li><a class='info_curso'>Info General</a></li></ul></div></span></li>";
+        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'><label>"+data[i].nombre+"</label><img src='../img/setting.png' class='option-asignaturas'/><span><div class='show-opciones' style='display:none;'><ul><li><a class='ver_temario'>Temario Dictado</a></li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li><a class='ver_info_curso'>Info General</a></li></ul></div></span></li>";
         conte_btn.append(newBox);
     }
- }
+}
 
 function cargarPrograma(data){
     var conte = $('.contenedor-programa');
@@ -418,18 +487,18 @@ function cargarInfoCursoGeneral(data){
 
 function buscarComunicadoWeb(curso){
     $.ajax({
-         url: "curso/getComunicadoWeb/"+curso,
-         type:"GET",
-         dataType: "json",
-         success: function(data, textStatus, jqXHR){
-            cargarComunicadoWeb(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            var data = {};
-            cargarComunicadoWeb(data);
-        }
-    }) 
+     url: "curso/getComunicadoWeb/"+curso,
+     type:"GET",
+     dataType: "json",
+     success: function(data, textStatus, jqXHR){
+        cargarComunicadoWeb(data);
+    },
+    error: function (jqXHR, textStatus, errorThrown)
+    {
+        var data = {};
+        cargarComunicadoWeb(data);
+    }
+}) 
 }
 
 function cargarComunicadoWeb(data){
@@ -522,7 +591,7 @@ function updateListaTemario(){
 
 function listarTemasAsignatura(data){
     var conte = $('#listadoTemasDictados');
-        conte.empty();
+    conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
         newLine="<div class='tema-dictado'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span>"+data[i].fechaPublicacion+"</span><div class='separate-line'></div></div>";

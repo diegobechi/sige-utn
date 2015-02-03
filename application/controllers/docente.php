@@ -24,7 +24,7 @@ class Docente extends CI_Controller {
         	$session_data = $this->session->userdata('logged_in');
         	$data['nombre_usuario'] = $this->nombreDocente;
         	
-        	if($session_data['tipo_usuario'] == 2){
+        	if($session_data['tipo_usuario'] == 3){
         		$this->load->view('header');
 				$this->load->view('docente/main', $data);
         	}else{

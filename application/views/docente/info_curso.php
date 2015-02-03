@@ -1,5 +1,3 @@
-
-<input type="button" value="Regresar" id="back-button">
 <div class = "contenedor-info container" style = "display:block;"> <div class = "titulo-principal">
 	<span></span>
 	<h1 id="informacion-num-curso"><img src="img/curso.png"> INFORMACION DEL CURSO - </h1>
@@ -9,10 +7,10 @@
 		<li data-title="alumnos"> <img src="../img/white-icons/appbar.people.multiple.png"/>Alumnos</li>
 		<li data-title="asignaturas"> <img src="../img/white-icons/appbar.book.list.png"/>Asignaturas</li>
 		<li data-title="cargarNotas"> <img src="../img/white-icons/appbar.grade.a.plus.png"/>Cargar Notas</li>
-		<li data-title="temario"> <img src="../img/white-icons/appbar.calendar.day.png"/>Temario</li>
+		<li data-title="temario" class="temas_dictados"> <img src="../img/white-icons/appbar.calendar.day.png"/>Temario</li>
 		<li data-title="listados" style="display:none;"> <img src="img/listados.png">Listados</li>
 		<li data-title="inasistencias"> <img src="../img/white-icons/appbar.clipboard.paper.check.png"/>Inasistencias</li>
-		<li data-title="mensajes"> <img src="../img/white-icons/appbar.chat.png"/>Mensajes</li>
+		<li data-title="mensajes" class="mensajes_enviados"> <img src="../img/white-icons/appbar.chat.png"/>Mensajes</li>
 	</ul>
 	<div class="contenedor-principal alumnos">
 		<div class ="titulo-principal">
@@ -23,12 +21,7 @@
 		</ul>
 	</div>
 	<div class="contenedor-principal asignaturas" style="display:none;">
-		<div class="titulo-principal">
-			<h1> <img src="img/book_1.png">  Asignaturas 
-				<select>
-				</select>
-			</h1>
-		</div>
+		
 		<div class="contenedor-asignaturas">
 			<div class="listado-asignaturas">
 				<ul style="margin: 10px;list-style: none;color: #FFF;">			     			
@@ -97,7 +90,7 @@
 		</div>
 			<div>					
 				<div id="contenedor-informe-progreso">
-					<div id="informe-nivel-primaria">
+					<div id="informe-nivel-primaria" style="float:left;">
 						<table> Listado de alumnos
 							<thead>
 								<tr id="cabecera-notas">
@@ -206,14 +199,15 @@
 		</div>
 	</div>
 	<div class="contenedor-principal temario" style="display:none;">
-		<div>
+		<h4>Seleccione una asignatura</h4>
+		<div>			
 			<input id="id-curso-temario" type="text" value="" style="display:none;"/>
 			<select id="asignaturaTemario">					
 			</select>
 		</div>
 		<div style="margin-top: 30px;">
 			<label>Escriba a continuacion el mensaje:</label>
-			<textarea id="temaDictado"></textarea>
+			<textarea id="temaDictado" maxlength="180"></textarea><br>
 			<input id="enviarTemario" type="button" class="btn" value="Enviar">
 			<input id="updateTemario" type="button" class="btn" value="Update" style="display:none;">
 		</div>
@@ -234,11 +228,10 @@
 						<td>Justificacion</td>
 					</tr>
 				</thead>
-				<tbody id="listado-asistencia">
-					
-				</tbody>
-				<input type="button" class="btn" value="Guardar" id="guardar-asistencia"/>
+				<tbody id="listado-asistencia">					
+				</tbody>				
 			</table>
+			<input type="button" class="btn" value="Guardar" id="guardar-asistencia"/>
 		</div>
 	</div>
 	<div class="contenedor-principal mensajes" style="display:none;">
@@ -247,7 +240,7 @@
 			<div>
 				<input id="id-curso-comunicado" type="text" value="" style="display:none;"/>
 				<label>Escriba a continuacion el mensaje:</label>
-				<textarea id="temaComunicado"></textarea>
+				<textarea id="temaComunicado" maxlength="180"></textarea><br>
 				<input id="enviarComunicado" type="button" class="btn" value="Enviar">
 				<input id="updateComunicado" type="button" class="btn" value="Update" style="display:none;">
 			</div>
@@ -342,11 +335,7 @@
 }
 
 .contenedor-filtros{
-	margin: 40px !important;
-	padding: 40px;
-	width: 80%;
-	background-color: #fff;
-	margin: auto;
+
 }
 .foto-tutor{
 	width: 120px;

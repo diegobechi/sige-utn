@@ -91,7 +91,7 @@ class Curso_Model extends CI_Model {
                   WHERE cw.legajoDocente = d.legajoDocente and
                       cw.idCurso = c.idCurso and
                       (cw.fecha between '$startDate' and '$endDate' )and
-                      c.idCurso = 9
+                      c.idCurso = $idCurso
                   ORDER BY cw.fecha DESC";
       $string_query = $this->db->query($consulta);
       return $string_query->result();

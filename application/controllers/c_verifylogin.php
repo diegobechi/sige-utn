@@ -49,13 +49,12 @@ class C_verifyLogin extends CI_Controller {
         if($this->session->userdata('logged_in')){
             $session_data = $this->session->userdata('logged_in');
             $data['tipo_usuario'] = $session_data['tipo_usuario'];            
-            if($data['tipo_usuario'] == 4){
+            if($data['tipo_usuario'] == 2){
                 $perfil = 'alumno';
-            }elseif ($data['tipo_usuario'] == 2) {
+            }elseif ($data['tipo_usuario'] == 3) {
                 $perfil = 'docente';
             }
-        }
-        
+        }        
         return $perfil;
     }
 }

@@ -15,9 +15,25 @@ $(document).ready(function(){
         
     })
 
-    $('body').on('click', '#change-user-pass', function(){
+    $('body').on('click', '.mi_perfil', function(){
+        $('#misDatos').click();
+    })
+
+    $('body').on('click', '.logout', function(){
+        window.location = "c_home/logout";
+    })
+
+    $('body').on('click', '.pass_change', function(){
         $('.overlay-change-pass').show();
         $('.change-pass-container').show();
+    })
+
+    $('body').on('click','.temas_dictados, .mensajes_enviados', function(){
+        if($(this).data('title') == 'temario'){
+            updateListaTemario();
+        }else{
+            updateListaComunicados();
+        }
     })
 
     $('body').on('click','#listado-asistencia input[type="checkbox"]', function(){
@@ -88,11 +104,10 @@ $(document).ready(function(){
         }    
     });
 
-    $('body').on('click','#back-button', function(){
+    $('body').on('click','#misCursos', function(){
         $('#selector-curso').show();
         $('#selector-asignatura').show();
         $('.contenedor-info').hide();
-        $('#back-button').hide();
     })
 
     $('body').on('click', '.lista-opciones li', function(){
@@ -345,6 +360,11 @@ $(document).ready(function(){
         $('#updateComunicado').show();
         $('#updateComunicado').attr('data-idcomunicado', '');
         $('#updateComunicado').attr('data-idcomunicado', id_comunicado);
+    })
+
+    $('body').on('click', '.change-pass-container img, .btn-danger.cancelar', function(){
+        $('.overlay-change-pass').hide();
+        $('.change-pass-container').hide();
     })
 });
 
@@ -798,7 +818,7 @@ function listarTemasCurso(data){
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span>"+data[i].fechaPublicacion+"</span> <span class='edit-temario'><img src='../img/white-icons/appbar.draw.pencil.reflection.png'/></span><div class='separate-line'></div></div>";
+        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span> <span class='edit-temario'><img src='../img/edit.png'/></span><div class='separate-line'></div></div>";
         conte.append(newLine);
     };
 }
@@ -823,7 +843,7 @@ function listarComunicadosWeb(data){
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        var newLine = "<div class='comunicado-web'><p class='texto-temario'>"+data[i].comunicado.replace(/%20/g, " ")+"</p><span class='firma-texto-temario'>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fecha+"</span><span class='edit-comunicado' data-idcomunicado='"+ data[i].idComunicadoWeb +"' ><img src='../img/white-icons/appbar.draw.pencil.reflection.png'/></span><div class='separate-line'></div></div>";
+        var newLine = "<div class='comunicado-web'><p class='texto-temario'>"+data[i].comunicado.replace(/%20/g, " ")+"</p><span class='firma-texto-temario'>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fecha+"</span><span class='edit-comunicado' data-idcomunicado='"+ data[i].idComunicadoWeb +"' ><img src='../img/edit.png'/></span><div class='separate-line'></div></div>";
         conte.append(newLine);
     };
 }
