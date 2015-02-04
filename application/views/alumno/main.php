@@ -137,7 +137,8 @@
 										<thead>
 											<tr>
 												<td></td>
-												<td>Nombre Completo</td>
+												<td>Nombre</td>
+												<td>Apellido</td>
 												<td>Nro Documento</td>
 												<td>Telefono</td>
 												<td>Relacion</td>
@@ -149,7 +150,8 @@
 										</tbody>
 									</table>
 									<div class="nuevaPersonaPermitida">
-										<input id="permita-nombre" type="text" placeholder="Nombre completo...">
+										<input id="permita-nombre" type="text" placeholder="Nombre...">
+										<input id="permita-apellido" type="text" placeholder="Apellido...">
 										<input id="permita-dni" type="text" placeholder="Nro documento.."> <br>
 										<input id="permita-num" type="text" placeholder="Telefono...">
 										<input id="permita-relacion" type="text" placeholder="Relación..."> <br>
@@ -231,8 +233,9 @@
 			</div>
 		</div>
 	</div>
-	<div id="page-wrap" class="vertical">
-		<div id="lista-mensajes">			
+	<div id="page-wrap" class="vertical">		
+		<div id="lista-mensajes">
+			<h3>Mensajes <span id= 'cantMensajes'></span> </h3>			
 		</div>
 	</div>
 	<div class="overlay-change-pass" style="display:none;">

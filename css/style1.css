@@ -1029,6 +1029,7 @@ table#abreviaturas td {
 
 }
 
+.perfil-tutor-container,
 .perfil-alumno-container{
     width: 800px;
     margin: 0 auto;
@@ -1037,6 +1038,9 @@ table#abreviaturas td {
     left: 0;
     right: 0;
     top: 50px;
+}
+.perfil-tutor-container{
+    width: 900px;
 }
 
 .popup-header{
@@ -1087,7 +1091,7 @@ table#abreviaturas td {
 }
 
 .container-right{
-    width: 590px;
+    width: 670px;
     display: inline-block;
 }
 

@@ -125,6 +125,11 @@ $(document).ready(function(){
         mostrarNotasInicial();
     });
 
+    $('body').on('change', '#asignaturaTemario', function(){
+        updateListaTemario();
+    })
+
+
     $('body').on('click', '#guardar-notas-primaria', function(){
         var calificacionesCurso = {};
         calificacionesCurso.idCurso = $('#filtro_curso').find(':selected').data('idcurso');;
@@ -797,6 +802,8 @@ function cargarComunicadoWeb(data){
     }
 }
 
+
+
 function updateListaTemario(){    
     var curso = $('#id-curso-temario').val();
     var asignatura = $('#asignaturaTemario').children('option:selected').data('idasignatura');
@@ -818,7 +825,7 @@ function listarTemasCurso(data){
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span> <span class='edit-temario'><img src='../img/edit.png'/></span><div class='separate-line'></div></div>";
+        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase.replace(/%20/g, " ")+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span> <span class='edit-temario'><img src='../img/edit.png'/></span><div class='separate-line'></div></div>";
         conte.append(newLine);
     };
 }
@@ -867,7 +874,7 @@ function crearTablaAsistencia(data, bandera){
             editable = "";
             var presente = "Ausente";
         };
-        var new_line = '<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+''+data[i].nombre+'</td><td><input type="checkbox" '+asistencia+'><span class="'+presente+'">'+presente+'</span></td><td><input type"text" value="'+justificacion+'" '+editable+'></td></tr>';
+        var new_line = '<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+', '+data[i].nombre+'</td><td><input type="checkbox" '+asistencia+'><span class="'+presente+'">'+presente+'</span></td><td><input type"text" value="'+justificacion+'" '+editable+'></td></tr>';
 
         conte.append(new_line);
     };

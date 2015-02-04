@@ -78,15 +78,15 @@ class Alumno extends CI_Controller {
 		echo json_encode($query);	
 	}
 
-	public function set_personasAutorizadas($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+	public function set_personasAutorizadas($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->set_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion);
+		$query = $this->Student_Model->set_autorizados($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion);
 		echo json_encode($query);	
 	}
 
-	public function update_personasAutorizadas($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+	public function update_personasAutorizadas($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion){
 		$this->load->model('Student_Model');
-		$query = $this->Student_Model->update_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion);
+		$query = $this->Student_Model->update_autorizados($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion);
 		echo json_encode($query);	
 	}
 

@@ -25,15 +25,13 @@ class Teacher_Model extends CI_Model {
     }
 
     function get_asignaturas($legajoDocente, $idCurso){
-        $string_query = $this->db->query("SELECT DISTINCT a.nombre as Asignatura, a.idAsignatura, ne.division, c.seccion, t.nombre, ne.nombre as nivel
-                                            FROM Docente d, AsignaturaPorDocente ad, Asignatura a, NivelEducativo ne, Curso c, Turno t
-                                            WHERE d.legajoDocente = ad.legajoDocente and 
-                                              a.idAsignatura = ad.idAsignatura and
-                                              ne.idNivelEducativo = a.idNivelEducativo and
-                                              ne.idNivelEducativo = c.idNivelEducativo and
-                                              c.idTurno = t.idTurno and
-                                              c.idCurso = $idCurso and
-                                              d.legajoDocente = $legajoDocente");
+        $string_query = $this->db->query("SELECT DISTINCT a.idAsignatura, a.nombre as Asignatura  
+                                          FROM AsignaturaPorDocente ad, Asignatura a, HorarioCurso hc
+                                          WHERE ad.legajoDocente = $legajoDocente and
+                                                ad.idAsignatura = a.idAsignatura and
+                                                hc.legajoDocente = ad.legajoDocente and
+                                                hc.idCurso = $idCurso and
+                                                hc.idAsignatura = ad.idAsignatura");
         return $string_query->result();        
     }
 

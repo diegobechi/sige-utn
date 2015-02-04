@@ -19,7 +19,7 @@ class Student_Model extends CI_Model {
   }
 
   function get_student($legajoAlumno){
-    $string_query = $this->db->query("SELECT a.apellido, a.nombre,a.nroDocumento, a.sexo,CONVERT(VARCHAR(11),a.fechaNacimiento, 106) as 'fecha nacimiento',a.nacionalidad, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento, a.telefonoFijo, a.telefonoMovil,a.lugarNacimiento,a.legajoAlumno, ne.division, e.nombre as 'estado', c.seccion, a.observaciones
+    $string_query = $this->db->query("SELECT a.apellido, a.nombre,a.nroDocumento, a.sexo,CONVERT(VARCHAR(11),a.fechaNacimiento, 106) as 'fechaNacimiento',a.nacionalidad, a.correoElectronico, d.calle,d.numero,d.piso,d.departamento, a.telefonoFijo, a.telefonoMovil,a.lugarNacimiento,a.legajoAlumno, ne.division, e.nombre as 'estado', c.seccion, a.observaciones
                                       FROM Alumno a , Domicilio d, Inscripcion i, Curso c, NivelEducativo ne, Estado e
                                       WHERE  a.idDomicilio = d.idDomicilio and
                                       a.legajoAlumno = i.legajoAlumno and
@@ -131,15 +131,15 @@ class Student_Model extends CI_Model {
     return $string_query->result();
   }
 
-  function set_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
-    $string_query = $this->db->query("INSERT INTO PersonaAutorizada (idtutor, apellido_nombre, nroDocumento, telefono, relacion)
-      VALUES ('$idTutor', '$nombreCompleto', '$nroDocumento', '$telefono', '$relacion')");
+  function set_autorizados($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion){
+    $string_query = $this->db->query("INSERT INTO PersonaAutorizada (idtutor, nombre, apellido, nroDocumento, telefono, relacion)
+      VALUES ('$idTutor', '$nombre', '$apellido', '$nroDocumento', '$telefono', '$relacion')");
     return $string_query->result();
   }
 
-  function update_autorizados($idTutor,$nombreCompleto,$nroDocumento,$telefono,$relacion){
+  function update_autorizados($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion){
     $string_query = $this->db->query("UPDATE PersonaAutorizada 
-      SET idTutor = '$idTutor', nroDocumento = '$nroDocumento', apellido_nombre = '$nombreCompleto', telefono = '$telefono', relacion = '$relacion' 
+      SET idTutor = '$idTutor', nroDocumento = '$nroDocumento', nombre='$nombre', apellido= '$apellido',  telefono = '$telefono', relacion = '$relacion' 
       WHERE idTutor= $idtutor");
     return $string_query->result();
   }

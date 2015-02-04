@@ -30,8 +30,7 @@
 		</div>
 	</div>
 	<div class="contenedor-principal cargarNotas" style="display:none;">		
-		<div class="grilla-notas" style="display:none;">
-			<div class="contenedor-filtros">
+		<div class="contenedor-filtros">
 			<select id="filtro_curso" style="display:none;">					
 			</select>
 			<label>Asignatura</label>
@@ -41,53 +40,54 @@
 			<select id="filtro_etapa">					
 			</select>
 		</div>
-		<div class="tabla-abreviaturas">
-			<table id="abreviaturas">
-				<thead>
-					<tr>
-						<td colspan="2">Abreviaturas</td>						
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>P</td>
-						<td>Prueba</td>
-					</tr>
-					<tr>
-						<td>E</td>
-						<td>Examén</td>
-					</tr>
-					<tr>
-						<td>EO</td>
-						<td>Exposición Oral</td>
-					</tr>
-					<tr>
-						<td>TP</td>
-						<td>Trabajo Práctico</td>
-					</tr>
-					<tr>
-						<td>TI</td>
-						<td>Trabajo Integrador</td>
-					</tr>
-					<tr>
-						<td>R</td>
-						<td>Recuperatorio</td>
-					</tr>
-					<tr>
-						<td>C</td>
-						<td>Coloquio</td>
-					</tr>
-					<tr>
-						<td>NC</td>
-						<td>Nota de Concepto</td>
-					</tr>
-					<tr>
-						<td>LO</td>
-						<td>Lección Oral</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<div class="grilla-notas" style="display:none;">			
+			<div class="tabla-abreviaturas">
+				<table id="abreviaturas">
+					<thead>
+						<tr>
+							<td colspan="2">Abreviaturas</td>						
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>P</td>
+							<td>Prueba</td>
+						</tr>
+						<tr>
+							<td>E</td>
+							<td>Examén</td>
+						</tr>
+						<tr>
+							<td>EO</td>
+							<td>Exposición Oral</td>
+						</tr>
+						<tr>
+							<td>TP</td>
+							<td>Trabajo Práctico</td>
+						</tr>
+						<tr>
+							<td>TI</td>
+							<td>Trabajo Integrador</td>
+						</tr>
+						<tr>
+							<td>R</td>
+							<td>Recuperatorio</td>
+						</tr>
+						<tr>
+							<td>C</td>
+							<td>Coloquio</td>
+						</tr>
+						<tr>
+							<td>NC</td>
+							<td>Nota de Concepto</td>
+						</tr>
+						<tr>
+							<td>LO</td>
+							<td>Lección Oral</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<div>					
 				<div id="contenedor-informe-progreso">
 					<div id="informe-nivel-primaria" style="float:left;">
@@ -289,6 +289,7 @@
 				</div>
 				<div class="tab-pane" id="datostutor">
 					<div class="datos-tutor">
+						<label>Nombre y Apellido</label><input id="perfil-nombre-t" type="text"><br>
 						<label>Nro Documento</label><input id="perfil-dni-t" type="text"><br>
 						<label>Sexo</label><input id="perfil-sexo-t" type="text"><br>
 						<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac-t" type="text"><br>

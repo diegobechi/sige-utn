@@ -110,21 +110,8 @@
 		max-height: 532px;
 		box-shadow: 0px 0px 9px 4px #CCC;
 	}
-	.user-options{
-		display: none;
-		position: absolute;
-		background-color: white;
-		color: black;
-		list-style: none;
-		border: none;
-		margin: -32px 48px 0 0;
-		right: 0;
-	}
-	.user-options li{
-		cursor: pointer;
-		padding: 5px 16px;
-		line-height: 30px;
-	}
+	
+	
 	.contenedor-principal.cargarNotas{
 		width: 70%;
 		background-color: transparent;

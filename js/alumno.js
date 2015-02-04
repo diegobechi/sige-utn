@@ -79,8 +79,7 @@ $(document).ready(function(){
         var año = fecha.getFullYear();
         var origen = $(this).attr('id');
         $.ajax({
-            //url : "alumno/getAsignaturas/"+año,
-            url : "alumno/getAsignaturas/2014",
+            url : "alumno/getAsignaturas/"+año,
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){
@@ -177,7 +176,8 @@ $(document).ready(function(){
             type: 'GET',
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
-                cargarDatosTutor(data);            
+                cargarDatosTutor(data); 
+                cargarPersonasAutorizadas();           
                 $(".overlay-popup").show();
                 $(".perfil-tutor-container").show();
             },
@@ -225,13 +225,14 @@ $(document).ready(function(){
     $('body').on('click', '#agregarPermitidas', function(){
         var persona = {};
         persona.idTutor = $('#idTutor').data('idtutor');
-        persona.nombreCompleto = $('#permita-nombre').val();
+        persona.nombre= $('#permita-nombre').val();
+        persona.apellido= $('#permita-apellido').val();
         persona.nroDocumento = $('#permita-dni').val();
         persona.telefono = $('#permita-num').val();
         persona.relacion = $('#permita-relacion').val();
 
         $.ajax({
-            url: 'alumno/set_personasAutorizadas/'+ persona.idTutor+"/"+ persona.nombreCompleto+"/"+ persona.nroDocumento+"/"+ persona.telefono+"/"+ persona.relacion,
+            url: 'alumno/set_personasAutorizadas/'+ persona.idTutor+"/"+ persona.nombre+"/"+ persona.apellido+"/"+ persona.nroDocumento+"/"+ persona.telefono+"/"+ persona.relacion,
             type: 'POST',
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
@@ -241,6 +242,7 @@ $(document).ready(function(){
                 cargarPersonasAutorizadas();
                 $('#permita-idTutor').val('');
                 $('#permita-nombre').val('');
+                $('#permita-apellido').val('');
                 $('#permita-dni').val('');
                 $('#permita-num').val('');
                 $('#permita-relacion').val('');
@@ -290,6 +292,11 @@ $(document).ready(function(){
         $('.change-pass-container').hide();
     })
 
+    $('body').on('click','.close-popup', function(){
+        $('.overlay-popup').hide();
+        $(this).parent().parent().hide();
+    });
+
 });
 
 function listarComuni(data){
@@ -335,9 +342,10 @@ function crearListadoAportes(data){
 
 function crearTablaNotasAsignaturas(asignaturas){
     var nivel = $('#curso-alumno').data('nivel');
+    var fecha = new Date();
+    var año = fecha.getFullYear();
     $.ajax({
-            //url : "alumno/getAsignaturas/"+año,
-            url : "alumno/getNotasAlumno/2014",
+            url : "alumno/getNotasAlumno/"+año,
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){
@@ -367,6 +375,7 @@ function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
     conte.empty();
     //Creamos la cabecera
     var conteCabecera = $('#cabecera-notas');
+    conteCabecera.empty();
     cant_columns = cant_columns + 3;
     var new_cabecera = "";
     for (var i = 0; i < cant_columns; i++) {
@@ -528,8 +537,7 @@ function buscarMiCurso(){
     var fecha = new Date();
     var año = fecha.getFullYear();
     $.ajax({
-         //url: "curso/getMiCurso/"+año,
-         url: "curso/getMiCurso/2014",
+         url: "curso/getMiCurso/"+año,
          type:"GET",
          dataType: "json",
          success: function(data, textStatus, jqXHR){
@@ -635,7 +643,7 @@ function cargarPersonasAutorizadas(){
             conte.empty();
             var newLine = "";
             for (var i = 0; i < data.length; i++) {
-                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><span class='eliminarAutorizado button'> X </span></td><td><input type='text' value='"+data[i].apellido+"'></td><td><input type='text' value='"+data[i].nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td><td><span class='button'>span</Edit></td></tr>";      
+                var newLine = "<tr data-tutor='"+data[i].idTutor+"' data-autorizado='"+data[i].nroDocumento+"'><td><img class='eliminarAutorizado button' src='../img/Icons(cross-red.png'/></td><td><input type='text' value='"+data[i].apellido+"'></td><td><input type='text' value='"+data[i].nombre+"'></td><td><input type='text' value='"+data[i].nroDocumento+"'</td><td><input type='text' value='"+data[i].telefono+"'</td><td><input type='text' value='"+data[i].relacion+"'</td><td><span class='editarAutorizado button'>Update</span></td><td><span class='button'>span</Edit></td></tr>";      
                 conte.append(newLine);
             };
         },
