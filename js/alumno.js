@@ -2,15 +2,35 @@ $(document).ready(function(){
     buscarMiCurso();
 
     $('body').find('#lista-mensajes h3').on('click',function(){
+        event.stopPropagation();
         if($('#page-wrap').hasClass('vertical')){
             $('#page-wrap').removeClass('vertical');
         }else{
             $('#page-wrap').addClass('vertical');
         }
+        $('html').one('click', function(){
+            if($('#page-wrap').hasClass('vertical') == false){
+                $('#page-wrap').addClass('vertical');
+            }
+        }) 
+    })
+
+    $('body').on('click', '.user-right img', function(event){
+        event.stopPropagation();
+        if($('.user-options').is(':visible')){
+            $('.user-options').hide();
+        }else{
+            $('.user-options').show()
+        }
+
+        $('html').one('click', function(){
+            $('.user-options').hide();
+        })        
     })
 
     $('body').on('click', '#misAportes', function(){
-        var aportes = $('.aportes-alumno tr').size()
+        var aportes = $('.aportes-alumno tr').size();
+        $('#loading').show();
         if(aportes== 0){   
             $.ajax({
                 url: "alumno/getAportes/",
@@ -18,6 +38,7 @@ $(document).ready(function(){
                 dataType: "json",
                 success: function(data, textStatus, jqXHR){    
                     crearListadoAportes(data);
+                    $('#loading').hide();
                 },
                 error: function (jqXHR, textStatus, errorThrown){
                     console.log("fallo");
@@ -26,13 +47,15 @@ $(document).ready(function(){
         }
     })
 
-    $('body').on('click', '#misDatos', function(){    
+    $('body').on('click', '#misDatos', function(){
+        $('#loading').show();    
         $.ajax({
             url : "alumno/getDatosAlumno/",
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){
                 cargarDatosAlumno(data);
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
@@ -78,35 +101,24 @@ $(document).ready(function(){
         var fecha = new Date();
         var año = fecha.getFullYear();
         var origen = $(this).attr('id');
+        $('#loading').show();
         $.ajax({
             url : "alumno/getAsignaturas/"+año,
             type: "GET",
             dataType: "json",
             success: function(data, textStatus, jqXHR){
-                if( origen == 'misNotas'){                    
+                if( origen == 'misNotas'){
                     crearTablaNotasAsignaturas(data);                    
                 }else{
                     crearSelectorAsignatura(data);
                 }
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
             }
         });
     });
-
-    $('body').on('click', '.user-right img', function(event){
-        event.stopPropagation();
-        if($('.user-options').is(':visible')){
-            $('.user-options').hide();
-        }else{
-            $('.user-options').show()
-        }
-
-        $('html').one('click', function(){
-            $('.user-options').hide();
-        })        
-    })
 
     $('body').on('click', '#change-user-pass', function(){
         $('.overlay-change-pass').show();
@@ -251,6 +263,7 @@ $(document).ready(function(){
     })
 
     $('body').on('click', '.ver_temario, .ver_info_curso', function(){
+        $('#loading').show();
         if($(this).hasClass('ver_temario')){
             var curso = $('#curso-alumno').data('cursoid');
             var idAsignatura = $(this).closest('.asignaturas-curso').data('idasignatura');
@@ -260,6 +273,7 @@ $(document).ready(function(){
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR){            
                     listarTemas(data);
+                    $('#loading').hide();
                 },
                 error: function (jqXHR, textStatus, errorThrown){
                     console.log("fallo");
@@ -268,18 +282,24 @@ $(document).ready(function(){
             })
         }else{
             var curso = $('#curso-alumno').data('cursoid');
+            var idAsignatura = $(this).closest('.asignaturas-curso').data('idasignatura');
             $.ajax({
-                url: 'curso/getComunicadoWeb/'+ curso,
+                url: 'alumno/getInfoAsignatura/'+ curso +'/'+idAsignatura,
                 type: 'GET',
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR){            
-                    listarComuni(data);
+                    listarinfoAsignatura(data);
+                    $('#loading').hide();
                 },
                 error: function (jqXHR, textStatus, errorThrown){
                     console.log("fallo");
                 }
             })
         }
+    })
+
+    $('body').on('click', '.logout', function(){
+        window.location = "c_home/logout";
     })
 
     $('body').on('click', '.optiones-materias img', function(){
@@ -297,17 +317,58 @@ $(document).ready(function(){
         $(this).parent().parent().hide();
     });
 
+    $('body').on('click', '#misInasistencias', function(){
+        $('.overlay-popup').show();
+        $('#conte-listado-inasistencias').show();
+        $.ajax({
+            url: 'alumno/getAsistencia/',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+                mostrarAsistencias(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown){
+                console.log("fallo");
+            }
+        })
+    })
+
 });
 
-function listarComuni(data){
+function mostrarAsistencias(data){
+    var conte = $('#listadoInasistencias tbody');
+    conte.empty();
+    for (var i = 0; i < data.length; i++) {
+        var new_line = "<tr><td>"+data[i].fecha+"</td><td>"+data[i].justificacion+"</td></tr>";
+        conte.append(new_line);
+    };
+
+}
+
+function listarinfoAsignatura(data){
     var conte = $('#opciones-materias-contenedor');
     conte.empty();
-    $('.optiones-materias h3').html('Comunicados enviados por los docentes del curso');   
-    var newLine = "";
-    for (var i = 0; i < data.length; i++) {
-        var newLine = "<div class='comunicado-web'><p class='texto-temario'>"+data[i].comunicado.replace(/%20/g, " ")+"</p><span class='firma-texto-temario'>"+data[i].apellido+", "+data[i].nombre+" - "+data[i].fecha+"</span></div>";
-        conte.append(newLine);
-    };    
+    $('.optiones-materias h3').html('Info Curso');   
+    
+    if(data.length > 0){
+        var tabla = "<h4>Horarios</h4><table id='horario_general'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4>Docentes</h4><table id='docentes_general'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table>";
+        conte.append(tabla);
+        var conteFilas = $('#horario_general tbody');
+        var conteDocentes = $('#docentes_general tbody');
+        var nuevaFila = "<tr><td>"+data[0].diaSemana+"</td><td>"+data[0].horaInicio+"</td><td>"+data[0].horaFin+"</td></tr>";
+        conteFilas.append(nuevaFila);
+        var nuevoDocente = "<tr><td>"+data[0].legajoDocente+"</td><td>"+data[0].apellido+", "+data[0].nombre+"</td><td>"+data[0].correoElectronico+"</td></tr>";
+        conteDocentes.append(nuevoDocente);
+        for (var i = 1; i < data.length; i++) {
+            nuevaFila = "<tr><td>"+data[i].diaSemana+"</td><td>"+data[i].horaInicio+"</td><td>"+data[i].horaFin+"</td></tr>";
+            conteFilas.append(nuevaFila);
+            if(data[i].legajoDocente != data[i-1].legajoDocente){
+                nuevoDocente = "<tr><td>"+data[0].legajoDocente+"</td><td>"+data[0].apellido+", "+data[0].nombre+"</td><td>"+data[0].correoElectronico+"</td></tr>";
+                conteDocentes.append(nuevoDocente);
+            }
+        };
+    }
+
     $('.optiones-materias').show();
     $('.overlay-popup').show();
 }
@@ -335,8 +396,10 @@ function crearListadoAportes(data){
             conte.append(new_line);
         }
     }else{
-        var sinAportes = "Usted no ha realizado aportes al dia de la fecha.";
-        conte.append(sinAportes);
+        $('#sin-aranceles').empty();
+        var sinAportes = " Usted no ha realizado aportes al dia de la fecha ";
+        $('#sin-aranceles').append(sinAportes);
+        $('#con-aranceles').hide();
     }
 }
 
@@ -520,11 +583,11 @@ function cargarComunicadoWeb(data){
         }
         $("#cantMensajes").text("(" + data.length+")");
         for (var i = 0 ; i<cant; i++){
-            var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+            var nuevaLinea = "<div class='contenedor-comunicados'><p>"+data[i].comunicado.replace(/%20/g, " ")+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
             conte.append(nuevaLinea);
         }
         for (var i = 0 ; i<data.length; i++){
-            var newMensaje = "<div class='contenedor-comunicados'><p>"+data[i].comunicado+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
+            var newMensaje = "<div class='contenedor-comunicados'><p>"+data[i].comunicado.replace(/%20/g, " ")+" </p><p><strong>"+data[i].apellido+" "+data[i].nombre+" - "+data[i].fecha+" </strong></p></div>";
             conte_popup.append(newMensaje);
         }
     }else{

@@ -34,13 +34,15 @@ class Curso_Model extends CI_Model {
     }
 
     function get_all_asignaturas($idCurso, $año){
-      $string_query = $this->db->query("SELECT  a.nombre as 'nom_asignatura', hc.diaSemana, SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio' ,  SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin', d.apellido, d.nombre,d.correoElectronico, d.curriculumVitae
+      $string_query = $this->db->query("SELECT  a.nombre as 'nom_asignatura', hc.diaSemana, SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio' ,  SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin', d.apellido, d.nombre,d.correoElectronico, d.legajoDocente
                                         FROM HorarioCurso hc, Docente d,Curso c, Asignatura a 
                                         WHERE hc.legajoDocente = d.legajoDocente and 
                                            hc.idCurso = c.idCurso and
                                            hc.idAsignatura = a.idAsignatura and
                                            c.idCurso = $idCurso");
-      return $string_query->result();  
+      $query = $string_query->result();
+      $query = $this->clear_result($query);
+      return $query;  
     }
 
     function get_asistencia_curso($idCurso, $año){

@@ -138,6 +138,7 @@
 		margin: 20px;
 		float: left;
 		color: #FFFFFF;
+		cursor: pointer;
 	}
 
 	.asignatura-titulo h3{

@@ -39,10 +39,48 @@ class Alumno extends CI_Controller {
 		echo json_encode($query);
 	}
 
+	public function getAsistencia(){
+		$this->load->model('Student_Model');
+		$año = date("Y");
+		$query = $this->Student_Model->get_asistencia($this->legajoAlumno, $año);
+		echo json_encode($query);
+	}
+
 	public function getAsignaturas($año){
 		$this->load->model('Student_Model');
 		$query = $this->Student_Model->get_asignaturas($this->legajoAlumno, $año);
 		echo json_encode($query);		
+	}
+
+	public function getInfoAsignatura($idCurso, $idAsignatura){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->get_info_asignatura($idCurso, $idAsignatura);
+		$semana = array(   
+	        0=>"Lunes",  
+	        1=>"Martes",  
+	        2=>"Miércoles",  
+	        3=>"Jueves",
+	        4=>"Viernes"
+		);
+		$horarios = array();
+		$cont = 0;
+		for ($j=0; $j < sizeof($semana) ; $j++) {
+			$nombreDia = $semana[$j];			
+			for ($i = 0; $i < sizeof($query); $i++){
+				$diaSemana = $query[$i]['diaSemana'];
+			    if($diaSemana == $nombreDia){
+			    	$horarios[$j]['horaInicio'] = $query[$i]['horaInicio'];
+			    	$horarios[$j]['horaFin'] = $query[$i]['horaFin'];
+			    	$horarios[$j]['diaSemana'] = $query[$i]['diaSemana'];
+			    	$horarios[$j]['nombre'] = $query[$i]['nombre'];
+			    	$horarios[$j]['apellido'] = $query[$i]['apellido'];
+			    	$horarios[$j]['correoElectronico'] = $query[$i]['correoElectronico'];
+			    	$cont++;
+			    }				
+			}
+			$cont = 0;
+		}
+		echo json_encode($horarios);
 	}
 
 	public function getNotasAlumno($año){

@@ -18,9 +18,9 @@
 			</div>
 		</ul>					
 		<ul class="user-options">
-			<li><span>Perfil</span></li>
-			<li><span id="change-user-pass">Cambiar contraseña</span></li>
-			<li><a href="c_home/logout">Cerrar sesion</a></li>
+			<li class="mi_perfil"><span>Mis Datos</span></li>
+			<li class="pass_change"><span>Cambiar contraseña</span></li>
+			<li class="logout"><span>Cerrar sesion</span></li>
 		</ul>
 	</div>
 
@@ -47,23 +47,25 @@
 		<div class="tab-pane fade" id="tab_c">
 
 			<div id="aportes-info-container"  class="contenedor-pestana-general">
-				<div>
-					<h1>Listado de aranceles:</h1>
+				<div id="sin-aranceles">
 				</div>
-				<div> <input type="button" value="Imprimir en PDF"></div>
-				<table id="tablaAportes">
-					<thead>
-						<tr>
-							<td>Ticket</td>
-							<td>Arancel</td>
-							<td>Precio</td>
-							<td>Fecha</td>
-						</tr>
-					</thead>
-					<tbody class="aportes-alumno">
+				<div id="con-aranceles">
+					<h1>Listado de aranceles:</h1>				
+					<table id="tablaAportes">
+						<thead>
+							<tr>
+								<td>Ticket</td>
+								<td>Arancel</td>
+								<td>Precio</td>
+								<td>Fecha</td>
+							</tr>
+						</thead>
+						<tbody class="aportes-alumno">
 
-					</tbody>
-				</table>
+						</tbody>
+
+					</table>
+				</div>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="tab_d">
@@ -89,8 +91,6 @@
 						<div style="padding: 30px;">							
 							<label>Legajo</label><input id="perfil-legajo" type="text"><br>
 							<label>Curso</label><input id="perfil-curso"type="text"><br>
-							<label>Inasistencias</label><input id="perfil-inasistencias"type="text"><br>
-							<label>Promedio general</label><input id="perfil-promedio"type="text"><br>
 							<label>Estado Academico</label><input id="perfil-estado"type="text"><br>
 						</div>
 					</div>
@@ -99,8 +99,8 @@
 						<h3>Más informacion</h3>
 						<div class="botones-datos-personales">
 							<input id="misTutores" type="button" value="Tutor / Autorizados">
-							<input id="misHorarios" type="button" value="Mis Horarios" style="display:none;">					
-							<input id="misDocentes" type="button" value="Mis Docentes" style="display:none;">
+							<input id="misInasistencias" type="button" value="Historial Inasistencias" style="margin-top: 15px;
+">
 						</div>
 					</div>
 				</div>
@@ -162,41 +162,23 @@
 						</div>
 					</div>
 				</div>
-				<div id="conte-listado-horarios" style="display:none;">
+				<div id="conte-listado-inasistencias" class="optiones-materias"style="display:none;">
+					<img src="../img/Icons/cross-black.png">
 					<div>
-						<div class="close-popup"><img src="../img/close.png"></div>
-						<h3>Mis Horarios</h3>
-						<div id="listadoHorarios">
-							<table id="tablaHorarios">
+						<h3>Mis Inasistencias</h3>
+						<div id="listadoInasistencias">
+							<table>
 								<thead>
 									<tr>
-										<td>Lunes</td>
-										<td>Martes</td>
-										<td>Miercoles</td>
-										<td>Jueves</td>
-										<td>Viernes</td>
+										<td>Fecha</td>
+										<td>Motivo</td>
 									</tr>
 								</thead>
-								<tbody class="cuerpo-tabla-horarios">
+								<tbody>									
 								</tbody>
 							</table>
-							<div class="footer-horarios">
-								<div>
-									<img src="../img/Colegio/0. Escudo.png">
-									<label>Instituto Santa Teresita</label>
-								</div>
-								<div>
-									<span>Telefono: 0351-153240621</span>
-									<span>Mail: santateresita@gmail.com</span>
-								</div>
-							</div>
 						</div>
-					</div>
-				</div>
-				<div id="conte-listado-docentes" style="display:none;">
-					<div>
-						<h3>Mis Docentes</h3>
-						<div id="listadoDocentes"></div>
+
 					</div>
 				</div>
 			</div>
@@ -255,7 +237,11 @@
 		<div class="overlay"></div>
 		<div id="conte_popup"></div>
 	</div>
-
+	<div id="loading" style="display:none;">
+		<div>
+			<img src="../img/loading.gif">
+		</div>
+	</div>
 
 	<div class="overlay-popup" style = "display:none;"></div>
 	<div class="optiones-materias" style = "display:none;">
@@ -278,8 +264,7 @@
 	#selectorBtnAsignatura{
 		list-style: none;
 		margin: 0;
-		padding: 15px;		
-		background-color: #CCC;		
+		padding: 15px;
 	}
 
 	#selectorBtnAsignatura li{
@@ -343,8 +328,16 @@
 	#aportes-info-container{
 		width: 500px;
 		margin: 0 auto;
-		background-color: #fff;
 		padding: 15px;
+	}
+
+	#sin-aranceles{
+		padding: 40px;
+		font-family: 'Lato';
+		font-size: 28px;
+		line-height: 30px;
+		text-align: center;
+		border: 1px solid #000;
 	}
 
 	.aportes-alumno td{
@@ -353,10 +346,9 @@
 	}
 
 	#misTutores,
-	#misHorarios,
-	#misDocentes{
-		height: 100px;
-		width: 100px;
+	#misInasistencias{
+		height: 45px;
+		width: 100%;
 	}
 
 	#misHorarios{
@@ -415,6 +407,10 @@
 		width: 450px;
 	}
 
+	.box-generic.asignaturas{
+		box-shadow: 0px 0px 9px 4px #CCC;
+	}
+
 	#lista-mensajes{
 		display: block;
 		position: relative;
@@ -459,9 +455,7 @@
 		-ms-transform: rotate(90deg);
 		-o-transform: rotate(90deg);
 	}
-
 	</style>
-
 
 	<style>
 	.box-curso-generic{

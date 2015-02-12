@@ -149,8 +149,51 @@ class Curso extends CI_Controller {
 
 	public function getAsignaturasCurso($idCurso){
 		$this->load->model('Curso_Model');
-		$query = $this->Curso_Model->get_all_asignaturas($idCurso,"2014");
-		echo json_encode($query);	
+		$query = $this->Curso_Model->get_all_asignaturas($idCurso,"2015");
+		$semana = array(   
+	        0=>"Lunes",  
+	        1=>"Martes",  
+	        2=>"Miércoles",  
+	        3=>"Jueves",
+	        4=>"Viernes"
+		);
+		$horarios = array();
+		$asignaturas = array();
+		$aux = 0;
+		for($ix=0; $ix < sizeof($query); $ix++) { 
+			if($ix==0){
+				$asignaturas[$aux] = $query[$ix]['nom_asignatura'];
+				$aux++;
+			}else{
+				if($query[$ix]['nom_asignatura'] != $query[$ix-1]['nom_asignatura']){
+					$asignaturas[$aux] = $query[$ix]['nom_asignatura'];
+					$aux++;
+				}
+			}
+		}
+		$cont=0;
+		for ($z = 0; $z < sizeof($asignaturas); $z++){
+			$nombreAsignatura = $asignaturas[$z];
+			for ($j=0; $j < sizeof($semana) ; $j++) {
+				$nombreDia = $semana[$j];			
+				for ($i = 0; $i < sizeof($query); $i++){
+					$diaSemana = $query[$i]['diaSemana'];
+					$asignatura = $query[$i]['nom_asignatura'];
+				    if($diaSemana == $nombreDia && $asignatura == $nombreAsignatura){
+				    	$horarios[$cont]['horaInicio'] = $query[$i]['horaInicio'];
+				    	$horarios[$cont]['horaFin'] = $query[$i]['horaFin'];
+				    	$horarios[$cont]['diaSemana'] = $query[$i]['diaSemana'];
+				    	$horarios[$cont]['nombre'] = $query[$i]['nombre'];
+				    	$horarios[$cont]['apellido'] = $query[$i]['apellido'];
+				    	$horarios[$cont]['correoElectronico'] = $query[$i]['correoElectronico'];
+				    	$horarios[$cont]['legajoDocente'] = $query[$i]['legajoDocente'];
+				    	$horarios[$cont]['nom_asignatura'] = $query[$i]['nom_asignatura'];
+				    	$cont++;
+				    }				
+				}				
+			}
+		}
+		echo json_encode($horarios);	
 	}
 
 	public function getMisDocentes($idCurso){

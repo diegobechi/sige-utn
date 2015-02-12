@@ -112,6 +112,8 @@ $(document).ready(function(){
 
     $('body').on('click', '.lista-opciones li', function(){
         var name=$(this).data('title');
+        $('.lista-opciones li').removeClass('active');
+        $(this).addClass('active');
         $('.contenedor-principal').each(function(){
             if($(this).hasClass(name)){
                 $('.contenedor-principal').hide();
@@ -406,30 +408,43 @@ function cargarAsignaturas(numCurso){
 function crearAsignaturas(data){
     var asignatura_cont = $('.contenedor-asignaturas ul');
     var new_array = []; 
-    var indice = 0;       
+    var indice = 0;
+    asignatura_cont.empty();       
     for (var i = 0; i < data.length; i++) {
         if( i == 0){
             var new_asignatura='<li class="box-asignatura-generica '+data[i].nom_asignatura.replace(/\s/g,'')+' "><div class="asignatura-titulo"><h3>'+data[i].nom_asignatura+'</h3></div></li>';
-            new_array[indice] = '<div class="asignatura-body" style = "display:none;">'+data[i].diaSemana+' - Desde las '+data[i].horaInicio +' hasta las '+ data[i].horaFin +' - '+data[i].apellido+' '+data[i].nombre+' - '+ data[i].correoElectronico+'</div>';
             asignatura_cont.append(new_asignatura);
-            indice++;
+            var tabla = "<div class='asignatura-body'><h4>Horarios</h4><table class='horario_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4>Docentes</h4><table class='docentes_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table></div>";
+            var conte = $(".box-asignatura-generica."+data[i].nom_asignatura.replace(/\s/g,'')+"");
+            conte.append(tabla);
+            var conteFilas = $('.horario_general.'+data[i].nom_asignatura.replace(/\s/g,'')+' tbody');
+            var conteDocentes = $('.docentes_general.'+data[i].nom_asignatura.replace(/\s/g,'')+' tbody');
+            var nuevaFila = "<tr><td>"+data[0].diaSemana+"</td><td>"+data[0].horaInicio+"</td><td>"+data[0].horaFin+"</td></tr>";
+            conteFilas.append(nuevaFila);
+            var nuevoDocente = "<tr><td>"+data[0].legajoDocente+"</td><td>"+data[0].apellido+", "+data[0].nombre+"</td><td>"+data[0].correoElectronico+"</td></tr>";
+            conteDocentes.append(nuevoDocente);
         }else{
             if(data[i].nom_asignatura.replace(/\s/g,'') == data[i-1].nom_asignatura.replace(/\s/g,'')){
-                new_array[indice] ='<div class="asignatura-body" style = "display:none;">'+data[i].diaSemana+' - Desde las '+data[i].horaInicio +' hasta las '+ data[i].horaFin +' - '+data[i].apellido+' '+data[i].nombre+' - '+ data[i].correoElectronico+'</div>';
-                indice++;
+                nuevaFila = "<tr><td>"+data[i].diaSemana+"</td><td>"+data[i].horaInicio+"</td><td>"+data[i].horaFin+"</td></tr>";
+                conteFilas.append(nuevaFila);
+                if(data[i].legajoDocente != data[i-1].legajoDocente){
+                    nuevoDocente = "<tr><td>"+data[0].legajoDocente+"</td><td>"+data[0].apellido+", "+data[0].nombre+"</td><td>"+data[0].correoElectronico+"</td></tr>";
+                    conteDocentes.append(nuevoDocente);
+                }
             }else{
-                $('.box-asignatura-generica.'+data[i-1].nom_asignatura.replace(/\s/g,'')+' ').append(new_array);
-                new_array = [];
-                indice = 0;
                 var new_asignatura='<li class="box-asignatura-generica '+data[i].nom_asignatura.replace(/\s/g,'')+' "><div class="asignatura-titulo"><h3>'+data[i].nom_asignatura+'</h3></div></li>';
-                new_array[indice] = '<div class="asignatura-body" style = "display:none;">'+data[i].diaSemana+' - Desde las '+data[i].horaInicio +' hasta las '+ data[i].horaFin +' - '+data[i].apellido+' '+data[i].nombre+' - '+ data[i].correoElectronico+'</div>';
                 asignatura_cont.append(new_asignatura);
-                indice++;
+                var tabla = "<div class='asignatura-body'><h4>Horarios</h4><table class='horario_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4>Docentes</h4><table class='docentes_general "+data[i].nom_asignatura+"'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table></div>";
+                var conte = $(".box-asignatura-generica."+data[i].nom_asignatura.replace(/\s/g,'')+"");
+                conte.append(tabla);
+                var conteFilas = $('.horario_general.'+data[i].nom_asignatura.replace(/\s/g,'')+' tbody');
+                var conteDocentes = $('.docentes_general.'+data[i].nom_asignatura.replace(/\s/g,'')+' tbody');
+                var nuevaFila = "<tr><td>"+data[i].diaSemana+"</td><td>"+data[i].horaInicio+"</td><td>"+data[i].horaFin+"</td></tr>";
+                conteFilas.append(nuevaFila);
+                var nuevoDocente = "<tr><td>"+data[i].legajoDocente+"</td><td>"+data[i].apellido+", "+data[i].nombre+"</td><td>"+data[i].correoElectronico+"</td></tr>";
+                conteDocentes.append(nuevoDocente);
             }
-        }
-        if(data.length-1 == i){
-            $('.box-asignatura-generica.'+data[i].nom_asignatura.replace(/\s/g,'')+' ').append(new_array);
-        }        
+        }     
     }        
 }
 
@@ -579,10 +594,12 @@ function cargarInfoNivel(data){
     for (var i = 0; i < data.length; i++) {
         $('.accordion-group').each(function(){
             if($(this).hasClass(data[i].legajoAlumno)){
-                $(this).find('textarea').text(''+decodeURIComponent(data[i].calificacion)+'');
-                $(this).find('#modificadoPor').text('Última modificación: '+data[i].modificacion);
+                $(this).find('textarea').text(''+decodeURIComponent(data[i].calificacion)+'');                
                 if(data[i].modificacion != ""){
                     $(this).find('.guardar_nota').attr('data-modificado','true');
+                    $(this).find('#modificadoPor').text('');
+                }else{
+                    $(this).find('#modificadoPor').text('Última modificación: '+data[i].modificacion);
                 }
             }
         })

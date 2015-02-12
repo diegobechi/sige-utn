@@ -1,21 +1,21 @@
 <div class = "contenedor-info container" style = "display:block;"> <div class = "titulo-principal">
 	<span></span>
-	<h1 id="informacion-num-curso"><img src="img/curso.png"> INFORMACION DEL CURSO - </h1>
+	<h1 id="informacion-num-curso"><img src=""> INFORMACION DEL CURSO - </h1>
 </div>
 <div style ="padding:20px">
 	<ul class = "lista-opciones">
-		<li data-title="alumnos"> <img src="../img/white-icons/appbar.people.multiple.png"/>Alumnos</li>
+		<li data-title="alumnos" class="active"> <img src="../img/white-icons/appbar.people.multiple.png"/>Alumnos</li>
 		<li data-title="asignaturas"> <img src="../img/white-icons/appbar.book.list.png"/>Asignaturas</li>
 		<li data-title="cargarNotas"> <img src="../img/white-icons/appbar.grade.a.plus.png"/>Cargar Notas</li>
 		<li data-title="temario" class="temas_dictados"> <img src="../img/white-icons/appbar.calendar.day.png"/>Temario</li>
-		<li data-title="listados" style="display:none;"> <img src="img/listados.png">Listados</li>
+		<li data-title="listados" style="display:none;"> <img src="">Listados</li>
 		<li data-title="inasistencias"> <img src="../img/white-icons/appbar.clipboard.paper.check.png"/>Inasistencias</li>
 		<li data-title="mensajes" class="mensajes_enviados"> <img src="../img/white-icons/appbar.chat.png"/>Mensajes</li>
 	</ul>
 	<div class="contenedor-principal alumnos">
 		<div class ="titulo-principal">
 			<span></span>
-			<h3> <img src="img/person.png"> Alumnos </h3>
+			<h3> <img src=""> Alumnos </h3>
 		</div>
 		<ul class ="contenedor-alumnos">
 		</ul>

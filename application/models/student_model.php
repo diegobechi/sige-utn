@@ -55,7 +55,7 @@ class Student_Model extends CI_Model {
   }
 
   function get_notas_alumno($legajoAlumno, $cicloLectivo){
-    $string_query = $this->db->query("SELECT asi.idAsignatura, asi.nombre as 'Asignatura' , ce.calificacion, ce.modificacion
+    $string_query = $this->db->query("SELECT DISTINCT asi.idAsignatura, asi.nombre as 'Asignatura' , ce.calificacion, ce.modificacion
                                       FROM CalificacionEscolar ce, Inscripcion i, Alumno a, Asignatura asi, CicloLectivo cl, Curso c
                                       WHERE a.legajoAlumno = i.legajoAlumno  and
                                             a.legajoAlumno = ce.legajoAlumno and
@@ -76,13 +76,27 @@ class Student_Model extends CI_Model {
                                       t.idTutor = $idTutor;");
   }
 
-  function get_assistence($legajoAlumno, $año){       
-    $string_query = $this->db->query("SELECT a.* 
-                                      FROM AsistenciaAlumno a, Alumno alu 
+  function get_asistencia($legajoAlumno, $año){       
+    $string_query = $this->db->query("SELECT a.legajoAlumno, CONVERT(VARCHAR(11), a.fecha, 106) as fecha, a.presente, a.justificacion
+                                      FROM AsistenciaAlumno a
                                       WHERE a.legajoAlumno = $legajoAlumno and 
-                                            YEAR(a.fecha) = $año");
+                                            YEAR(a.fecha) = $año and
+                                            a.presente = 0");
     $query = $string_query->result();
     return $this->clear_result($query);
+  }
+
+  function get_info_asignatura($idCurso, $idAsignatura){
+    $string_query = $this->db->query("SELECT a.nombre as 'nom_asignatura', hc.diaSemana, SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio' ,  SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin', d.apellido, d.nombre,d.correoElectronico, d.legajoDocente
+                                      FROM HorarioCurso hc, Docente d,Curso c, Asignatura a 
+                                      WHERE hc.legajoDocente = d.legajoDocente and 
+                                         hc.idCurso = c.idCurso and
+                                         hc.idAsignatura = a.idAsignatura and
+                                         c.idCurso = $idCurso and
+                                         a.idAsignatura = $idAsignatura");
+    $query = $string_query->result();
+    $query = $this->clear_result($query);
+    return $query;  
   }
 
   function get_notas_por_materia($legajoAlumno, $idAsignatura, $año){
