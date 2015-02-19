@@ -224,9 +224,12 @@ $(document).ready(function(){
     $('body').on('click','.box-asignatura-generica',function(){
         if($(this).children('.asignatura-body').is(':visible')){
             $(this).children('.asignatura-body').hide();
+            $(this).children('.asignatura-titulo').children().css('text-decoration', 'none');
         }else{
             $('.asignatura-body').hide();
             $(this).children('.asignatura-body').show();
+            $('.asignatura-titulo').children().css('text-decoration', 'none');
+            $(this).children('.asignatura-titulo').children().css('text-decoration', 'underline');
         }
     });
 
@@ -377,7 +380,7 @@ $(document).ready(function(){
 
 function buscarMisCursos(){
     $.ajax({
-        url : "docente/getCursos/10003/2014",
+        url : "docente/getCursos/",
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -414,7 +417,7 @@ function crearAsignaturas(data){
         if( i == 0){
             var new_asignatura='<li class="box-asignatura-generica '+data[i].nom_asignatura.replace(/\s/g,'')+' "><div class="asignatura-titulo"><h3>'+data[i].nom_asignatura+'</h3></div></li>';
             asignatura_cont.append(new_asignatura);
-            var tabla = "<div class='asignatura-body'><h4>Horarios</h4><table class='horario_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4>Docentes</h4><table class='docentes_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table></div>";
+            var tabla = "<div class='asignatura-body'><div class='columna-izquierda'><h4>Horarios</h4><table class='horario_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table></div><div class='columna-derecha'><h4>Docentes</h4><table class='docentes_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table><div></div>";
             var conte = $(".box-asignatura-generica."+data[i].nom_asignatura.replace(/\s/g,'')+"");
             conte.append(tabla);
             var conteFilas = $('.horario_general.'+data[i].nom_asignatura.replace(/\s/g,'')+' tbody');
@@ -434,7 +437,7 @@ function crearAsignaturas(data){
             }else{
                 var new_asignatura='<li class="box-asignatura-generica '+data[i].nom_asignatura.replace(/\s/g,'')+' "><div class="asignatura-titulo"><h3>'+data[i].nom_asignatura+'</h3></div></li>';
                 asignatura_cont.append(new_asignatura);
-                var tabla = "<div class='asignatura-body'><h4>Horarios</h4><table class='horario_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4>Docentes</h4><table class='docentes_general "+data[i].nom_asignatura+"'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table></div>";
+                var tabla = "<div class='asignatura-body'><div class='columna-izquierda'><h4>Horarios</h4><table class='horario_general "+data[i].nom_asignatura.replace(/\s/g,'')+"'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table></div><div class='columna-derecha'><h4>Docentes</h4><table class='docentes_general "+data[i].nom_asignatura+"'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table></div></div>";
                 var conte = $(".box-asignatura-generica."+data[i].nom_asignatura.replace(/\s/g,'')+"");
                 conte.append(tabla);
                 var conteFilas = $('.horario_general.'+data[i].nom_asignatura.replace(/\s/g,'')+' tbody');

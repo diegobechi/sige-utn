@@ -348,10 +348,10 @@ function mostrarAsistencias(data){
 function listarinfoAsignatura(data){
     var conte = $('#opciones-materias-contenedor');
     conte.empty();
-    $('.optiones-materias h3').html('Info Curso');   
+    $('.optiones-materias h2').html('Informacion General - '+data[0].asignatura);   
     
-    if(data.length > 0){
-        var tabla = "<h4>Horarios</h4><table id='horario_general'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4>Docentes</h4><table id='docentes_general'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table>";
+    if(data[0].size > 0){
+        var tabla = "<h4>Horarios</h4><table id='horario_general'><thead><tr><td>Dia de la semana</td><td>Hora Inicio</td><td>Hora Fin</td></tr></thead><tbody></tbody></table><h4 style='margin-top: 30px;'>Docentes</h4><table id='docentes_general'><thead><tr><td>Legajo</td><td>Apellido y nombre</td><td>Mail</td></tr></thead><tbody></tbody></table>";
         conte.append(tabla);
         var conteFilas = $('#horario_general tbody');
         var conteDocentes = $('#docentes_general tbody');
@@ -376,10 +376,14 @@ function listarinfoAsignatura(data){
 function listarTemas(data){
     var conte = $('#opciones-materias-contenedor');
     conte.empty();
-    $('.optiones-materias h3').html('Temas dictados');    
+    if(data[0].length > 0){
+        $('.optiones-materias h2').html('Temas dictados en '+ data[0].asignatura);        
+    }else{
+        $('.optiones-materias h2').html('Temas dictados');
+    }    
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span></div>";
+        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase.replace(/%20/g, " ")+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span></div>";
         conte.append(newLine);
     };
     $('.optiones-materias').show();
@@ -460,10 +464,8 @@ function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
         var idAsignatura = asignaturas[i].idAsignatura;        
         new_line += "<td>"+asignaturas[i].nombre+"</td>";
         var array_notas = getArrayNotas(notas, idAsignatura);
-        console.log('Asignatura: '+asignaturas[i].nombre);
         for (var j = 0; j < cant_columns-1; j++) {
             if(typeof array_notas[j] != "undefined"){
-                console.log('calificacion: '+array_notas[j].calificacion);
                 new_line += "<td>"+array_notas[j].calificacion+"</td>";
                 conta++;
             }else{
@@ -471,7 +473,6 @@ function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
             }            
         };
         new_line += "</tr>";
-        console.log('Fin fila');
         conte.append(new_line);
     };
 }
@@ -533,7 +534,7 @@ function crearSelectorAsignatura(data){
     var conte_btn=$("#selectorBtnAsignatura");
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'><label>"+data[i].nombre+"</label><img src='../img/setting.png' class='option-asignaturas'/><span><div class='show-opciones' style='display:none;'><ul><li><a class='ver_temario'>Temario Dictado</a></li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li><a class='ver_info_curso'>Info General</a></li></ul></div></span></li>";
+        var newBox="<li class='asignaturas-curso' data-idasignatura='"+data[i].idAsignatura+"'><label>"+data[i].nombre+"</label><img src='../img/setting.png' class='option-asignaturas'/><span><div class='show-opciones' style='display:none;'><ul><li class='ver_temario'>Temario Dictado</li><li><a target='_blank' href='"+data[i].programa+"'>Programa</a></li><li class='ver_info_curso'>Info General</li></ul></div></span></li>";
         conte_btn.append(newBox);
     }
 }
@@ -604,7 +605,8 @@ function buscarMiCurso(){
          type:"GET",
          dataType: "json",
          success: function(data, textStatus, jqXHR){
-            $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" data-nivel="'+data[0].nombre+'" style="display: none;"></div>');
+            $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" data-nivel="'+data[0].nivel+'" style="display: none;"></div>');
+            $('#selector-asignatura h3').text('Asignaturas del curso:  '+data[0].division+' '+data[0].seccion+' '+data[0].nombre);
             buscarComunicadoWeb(data[0].idCurso);
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -665,7 +667,7 @@ function listarTemasAsignatura(data){
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        newLine="<div class='tema-dictado'><div class='texto_tema_dictado'>"+data[i].temasClase+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span>"+data[i].fechaPublicacion+"</span><div class='separate-line'></div></div>";
+        newLine="<div class='tema-dictado'><div class='texto_tema_dictado'>"+data[i].temasClase.replace(/%20/g, " ")+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span>"+data[i].fechaPublicacion+"</span><div class='separate-line'></div></div>";
         conte.append(newLine);
     };
 }
@@ -715,3 +717,4 @@ function cargarPersonasAutorizadas(){
         }
     })
 }
+

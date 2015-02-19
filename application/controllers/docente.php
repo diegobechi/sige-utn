@@ -39,7 +39,8 @@ class Docente extends CI_Controller {
 		echo json_encode($query);		
 	}
 
-	public function getCursos($año){
+	public function getCursos(){
+		$año = date("Y");
 		$this->load->model('Teacher_Model');
 		$query = $this->Teacher_Model->get_my_cursos($this->legajoDocente, $año);
 		echo json_encode($query);		

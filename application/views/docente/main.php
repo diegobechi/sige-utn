@@ -109,8 +109,7 @@
 		margin-top: 30px;
 		max-height: 532px;
 		box-shadow: 0px 0px 9px 4px #CCC;
-	}
-	
+	}	
 	
 	.contenedor-principal.cargarNotas{
 		width: 70%;

@@ -11,12 +11,13 @@ class Curso_Model extends CI_Model {
         parent::__construct();
     }
 
-    function get_curso($legajoAlumno, $año){
-      $string_query = $this->db->query("SELECT i.idCurso, n.nombre
-                                        FROM Inscripcion i, Alumno a, Curso c, NivelEducativo n
+    function get_curso($legajoAlumno, $año){ 
+      $string_query = $this->db->query("SELECT c.idCurso, n.division, c.seccion, t.nombre, n.nombre as nivel
+                                        FROM Inscripcion i, Alumno a, Curso c, NivelEducativo n, Turno t
                                         WHERE i.legajoAlumno = a.legajoAlumno and
                                               a.legajoAlumno = $legajoAlumno and
                                               n.idNivelEducativo = c.idNivelEducativo and
+                                              c.idTurno = t.idTurno and
                                               i.idCurso = c.idCurso and
                                               YEAR(i.fecha) = $año");
       return $string_query->result();
@@ -116,7 +117,7 @@ class Curso_Model extends CI_Model {
 
     }
     function get_temario_dictado($idCurso, $idAsignatura){
-      $string_query = $this->db->query("SELECT CONVERT(VARCHAR(11),tm.fecha, 106) as 'fechaPublicacion'  , tm.temasClase , d.apellido , d.nombre
+      $string_query = $this->db->query("SELECT a.nombre as 'asignatura', CONVERT(VARCHAR(11),tm.fecha, 106) as 'fechaPublicacion'  , tm.temasClase , d.apellido , d.nombre
                                         FROM TemarioDictado tm, Docente d , Asignatura a
                                         WHERE tm.legajoDocente = d.legajoDocente and
                                               tm.idAsignatura = a.idAsignatura and

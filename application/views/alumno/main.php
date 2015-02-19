@@ -186,9 +186,9 @@
 		<div class="tab-pane fade" id="tab_e">
 			<div class="contenedor-principal cargarNotas" style="display:block;">
 				<div class="grilla-notas" style="display:block;">
-					<div>					
-						<div id="contenedor-informe-progreso">
-							<h1> Listado de Asignaturas</h1>
+					<div style="background-color:rgb(248, 248, 248);">					
+						<div id="contenedor-informe-progreso" class="box-generic progreso">
+							<h3> Mis notas de este año </h3>
 							<div id="informe-nivel-primaria" style="display:none;">
 								<table> 
 									<thead>
@@ -245,10 +245,13 @@
 
 	<div class="overlay-popup" style = "display:none;"></div>
 	<div class="optiones-materias" style = "display:none;">
-		<img src="../img/Icons/cross-black.png">
-		<h3></h3>
-		<div id="opciones-materias-contenedor">
-
+		<div class="popup-header">
+			<img src="../img/close.png">
+			<h2></h2>
+		</div>
+		<div class="popup-body">
+			<div id="opciones-materias-contenedor">
+			</div>
 		</div>
 	</div>
 
@@ -283,6 +286,7 @@
 		background-color: #FFFFFF;
 		border: 1px solid#CCC;
 		border-radius: 5px;
+		color: #000000;
 	}
 
 	.show-opciones ul{
@@ -291,7 +295,8 @@
 	}
 
 	.show-opciones ul a{
-		margin: 0;		
+		margin: 0;
+		color: #000000;	
 	}
 
 	.show-opciones ul a:hover{
@@ -467,7 +472,7 @@
 		margin: 20px;
 	}
 
-	#informe-nivel-primaria,
+	
 	#informe-nivel-inicial{
 		width: 80%;
 		margin: 0 auto;
@@ -477,7 +482,7 @@
 		border: 1px solid #CCC;
 	}
 
-	#informe-nivel-primaria input,
+	
 	#informe-nivel-primaria select{
 		width: 60px;
 		margin: 0;
