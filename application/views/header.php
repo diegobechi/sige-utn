@@ -13,5 +13,5 @@
 
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Paytone+One|Shadows+Into+Light|Fredoka+One|Righteous|Nunito:400,700,300|Chewy|Luckiest+Guy|Montserrat|Exo+2|Raleway:400,900|Coming+Soon|Open+Sans:800,400|Roboto:400,900' rel='stylesheet' type='text/css'>  
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Paytone+One|Shadows+Into+Light|Fredoka+One|Righteous|Nunito:400,700,300|Chewy|Luckiest+Guy|Montserrat|Exo+2|Raleway:400,900|Coming+Soon|Open+Sans:800,400|Roboto:400,900|Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>  
           

@@ -69,7 +69,7 @@
 		<form>
 			<label>Ingrese la nueva contraseña</label>		
 			<input type="password" placeholder=""/>
-			<label>Confirmmar Contraseña</label>
+			<label>Confirmar Contraseña</label>
 			<input type="password" placeholder=""/><br>
 			<input type="button" class="btn btn-danger cancelar" value="Cancelar"/>
 			<input type="button" class="btn btn-primary" value="Confirmar"/>

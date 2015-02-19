@@ -136,4 +136,10 @@ class Alumno extends CI_Controller {
 		echo json_encode($query);	
 	}
 
+	public function getProgramaNuevo(){
+		$this->load->model('Student_Model');
+		$query = $this->Student_Model->getProgramaNuevo();
+		echo json_encode($query);	
+	}
+
 }

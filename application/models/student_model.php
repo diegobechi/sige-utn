@@ -165,4 +165,8 @@ class Student_Model extends CI_Model {
 
   /* END AMB Personas Autorizadas */
 
+  function getProgramaNuevo(){
+    $string_query = $this->db->query("SELECT * FROM Asignatura WHERE idAsignatura = 44");
+    return $string_query->result(); 
+  }
 }
