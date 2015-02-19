@@ -42,16 +42,16 @@
 			<div class="box-generic personales">
 				<h3>Datos personales</h3>
 				<div class="datos-personales">
-					<label>Nombre y Apellido</label><input id="perfil-nombre-completo" type="text"><br>
-					<label>Nro Documento</label><input id="perfil-dni" type="text"><br>
-					<label>Sexo</label><input id="perfil-sexo" type="text"><br>
-					<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac" type="text"><br>
-					<label>Nacionalidad</label><input id="perfil-nacionalidad" type="text"><br>
-					<label>Domicilio</label><input id="perfil-domicilio" type="text"><br>
-					<label>Telefono Fijo</label><input id="perfil-tel-fijo" type="text"><br>
-					<label>Telefono Movil</label><input id="perfil-tel-movil" type="text"><br>
-					<label>Mail</label><input id="perfil-mail" type="text"><br>
-					<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text"><br>
+					<label>Nombre y Apellido</label><input id="perfil-nombre-completo-docente" type="text"><br>
+					<label>Nro Documento</label><input id="perfil-dni-docente" type="text"><br>
+					<label>Sexo</label><input id="perfil-sexo-docente" type="text"><br>
+					<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac-docente" type="text"><br>
+					<label>Nacionalidad</label><input id="perfil-nacionalidad-docente" type="text"><br>
+					<label>Domicilio</label><input id="perfil-domicilio-docente" type="text"><br>
+					<label>Telefono Fijo</label><input id="perfil-tel-fijo-docente" type="text"><br>
+					<label>Telefono Movil</label><input id="perfil-tel-movil-docente" type="text"><br>
+					<label>Mail</label><input id="perfil-mail-docente" type="text"><br>
+					<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac-docente" type="text"><br>
 				</div>
 			</div>
 			<div class="box-generic curriculum">

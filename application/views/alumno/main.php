@@ -163,9 +163,11 @@
 					</div>
 				</div>
 				<div id="conte-listado-inasistencias" class="optiones-materias"style="display:none;">
-					<img src="../img/Icons/cross-black.png">
-					<div>
-						<h3>Mis Inasistencias</h3>
+					<div class="popup-header">
+						<h2 class="faltas">Mis Inasistencias</h2>
+						<div class="close-popup"><img src="../img/close.png"></div>
+					</div>
+					<div class="popup-body">
 						<div id="listadoInasistencias">
 							<table>
 								<thead>
@@ -178,7 +180,6 @@
 								</tbody>
 							</table>
 						</div>
-
 					</div>
 				</div>
 			</div>

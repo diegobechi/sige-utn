@@ -769,16 +769,16 @@ function limpiarPerfilAlumno(data){
 }
 
 function cargarDatosPersonales(data){
-    $("#perfil-nombre-completo").val(data[0].apellido+', '+data[0].nombre);
-    $("#perfil-dni").val(data[0].nroDocumento);
-    $("#perfil-sexo").val(data[0].sexo);
-    $("#perfil-fecha-nac").val(data[0].fechaNacimiento);
-    $("#perfil-nacionalidad").val(data[0].nacionalidad);
-    $("#perfil-domicilio").val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
-    $("#perfil-tel-fijo").val(data[0].telefonoFijo);
-    $("#perfil-tel-movil").val(data[0].telefonoMovil);
-    $("#perfil-mail").val(data[0].correoElectronico);
-    $("#perfil-lugar-nac").val(data[0].lugarNacimiento);
+    $("#perfil-nombre-completo-docente").val(data[0].apellido+', '+data[0].nombre);
+    $("#perfil-dni-docente").val(data[0].nroDocumento);
+    $("#perfil-sexo-docente").val(data[0].sexo);
+    $("#perfil-fecha-nac-docente").val(data[0].fechaNacimiento);
+    $("#perfil-nacionalidad-docente").val(data[0].nacionalidad);
+    $("#perfil-domicilio-docente").val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
+    $("#perfil-tel-fijo-docente").val(data[0].telefonoFijo);
+    $("#perfil-tel-movil-docente").val(data[0].telefonoMovil);
+    $("#perfil-mail-docente").val(data[0].correoElectronico);
+    $("#perfil-lugar-nac-docente").val(data[0].lugarNacimiento);
 }
 
 function buscarDatosTutor(){

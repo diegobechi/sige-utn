@@ -271,7 +271,8 @@ $(document).ready(function(){
                 url: 'curso/getTemasDictados/'+ curso+"/"+idAsignatura,
                 type: 'GET',
                 dataType: 'json',
-                success: function(data, textStatus, jqXHR){            
+                success: function(data, textStatus, jqXHR){
+
                     listarTemas(data);
                     $('#loading').hide();
                 },
@@ -337,6 +338,7 @@ $(document).ready(function(){
 
 function mostrarAsistencias(data){
     var conte = $('#listadoInasistencias tbody');
+    $('.optiones-materias h2.faltas').html('Mis Inasistencias');
     conte.empty();
     for (var i = 0; i < data.length; i++) {
         var new_line = "<tr><td>"+data[i].fecha+"</td><td>"+data[i].justificacion+"</td></tr>";
@@ -376,7 +378,7 @@ function listarinfoAsignatura(data){
 function listarTemas(data){
     var conte = $('#opciones-materias-contenedor');
     conte.empty();
-    if(data[0].length > 0){
+    if(data.length > 0){
         $('.optiones-materias h2').html('Temas dictados en '+ data[0].asignatura);        
     }else{
         $('.optiones-materias h2').html('Temas dictados');
