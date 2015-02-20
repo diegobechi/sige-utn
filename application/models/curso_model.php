@@ -58,13 +58,13 @@ class Curso_Model extends CI_Model {
       return $string_query->result();
     }
 
-    function get_asistencia_por_fecha($idCurs, $fecha){
+    function get_asistencia_por_fecha($idCurso, $fecha){
       $string_query = $this->db->query("SELECT alu.legajoAlumno, alu.apellido, alu.nombre, CONVERT (char(10),aa.fecha, 103) as fecha, aa.justificacion, aa.presente
                                         FROM Alumno alu, AsistenciaAlumno aa, Inscripcion i, Curso c
                                         WHERE alu.legajoAlumno = aa.legajoAlumno and 
                                            alu.legajoAlumno = i.legajoAlumno and
                                            c.idCurso = i.idCurso and
-                                           c.idCurso ='9' and
+                                           c.idCurso = $idCurso and
                                            aa.fecha = '$fecha'
                                            GROUP BY  alu.legajoAlumno, alu.apellido, alu.nombre, aa.fecha, aa.justificacion, aa.presente
                                            ORDER BY  alu.apellido asc, alu.nombre asc");

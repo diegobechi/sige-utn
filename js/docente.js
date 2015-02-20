@@ -943,6 +943,7 @@ function guardarAsistenciaCurso(asistencia_alumnos){
         data: { data : asistencia_alumnos },
         dataType: "json",
         success: function(data, textStatus, jqXHR){
+            showNotification('Asistencias registradas con exito');
         },
         error: function (jqXHR, textStatus, errorThrown){
             console.log("fallo");
