@@ -399,13 +399,15 @@ function crearListadoAportes(data){
     if(data.length >= 1){
         for(var i=0; i < data.length; i++){
             var new_line = '<tr><td>'+data[i].nroComprobante+'</td><td>'+data[i].descripcion+'</td><td>'+parseFloat(data[i].importe).toFixed(2)+'</td><td>'+data[i].fecha+'</td></tr>';
-            conte.append(new_line);
-        }
+            conte.append(new_line);            
+        }        
+        $('#con-aranceles').show();
     }else{
         $('#sin-aranceles').empty();
         var sinAportes = " Usted no ha realizado aportes al dia de la fecha ";
         $('#sin-aranceles').append(sinAportes);
         $('#con-aranceles').hide();
+        $('#sin-aranceles').show();
     }
 }
 

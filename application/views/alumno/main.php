@@ -2,7 +2,7 @@
 <script type="text/javascript" src="../js/alumno.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
 </head>
-<body>
+<body style="background-image: url('../img/fondo-1.jpg');">
 	<div class="header-menu">
 		<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
 		<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
@@ -47,24 +47,28 @@
 		<div class="tab-pane fade" id="tab_c">
 
 			<div id="aportes-info-container"  class="contenedor-pestana-general">
-				<div id="sin-aranceles">
+				<div id="sin-aranceles" style="display:none;">
 				</div>
-				<div id="con-aranceles">
-					<h1>Listado de aranceles:</h1>				
-					<table id="tablaAportes">
-						<thead>
-							<tr>
-								<td>Ticket</td>
-								<td>Arancel</td>
-								<td>Precio</td>
-								<td>Fecha</td>
-							</tr>
-						</thead>
-						<tbody class="aportes-alumno">
+				<div id="con-aranceles" style="display:none;">
+					<div class="box-generic aranceles">
+						<h3>Listado de aranceles</h3>
+						<div style="padding: 30px;">
+							<table id="tablaAportes">
+								<thead style="text-align: center;">
+									<tr>
+										<td>Ticket</td>
+										<td>Arancel</td>
+										<td>Precio</td>
+										<td>Fecha</td>
+									</tr>
+								</thead>
+								<tbody class="aportes-alumno">
 
-						</tbody>
+								</tbody>
 
-					</table>
+							</table>
+						</div>
+					</div>				
 				</div>
 			</div>
 		</div>
@@ -86,7 +90,7 @@
 					</div>
 				</div>
 				<div style="float: right;width: 40%;margin-right: 1%;margin-top: 30px;">
-					<div class="box-generic academicos" style="box-shadow: 0px 0px 9px 4px #CCC;">
+					<div class="box-generic academicos" style="box-shadow: 0px 0px 25px 1px #CCC;">
 						<h3>Datos academicos generales</h3>
 						<div style="padding: 30px;">							
 							<label>Legajo</label><input id="perfil-legajo" type="text"><br>
@@ -95,7 +99,7 @@
 						</div>
 					</div>
 
-					<div class="box-generic academicos" style="box-shadow: 0px 0px 9px 4px #CCC;">
+					<div class="box-generic academicos" style="box-shadow: 0px 0px 25px 1px #CCC;">
 						<h3>Más informacion</h3>
 						<div class="botones-datos-personales">
 							<input id="misTutores" type="button" value="Tutor / Autorizados">
@@ -187,7 +191,7 @@
 		<div class="tab-pane fade" id="tab_e">
 			<div class="contenedor-principal cargarNotas" style="display:block;">
 				<div class="grilla-notas" style="display:block;">
-					<div style="background-color:rgb(248, 248, 248);">					
+					<div>					
 						<div id="contenedor-informe-progreso" class="box-generic progreso">
 							<h3> Mis notas de este año </h3>
 							<div id="informe-nivel-primaria" style="display:none;">
@@ -309,7 +313,7 @@
 	}
 
 	.show-opciones ul li{
-		padding: 0px 15px !important;
+		padding: 10px 35px !important;
 	}
 
 	#selectorBtnAsignatura li:hover > span{
@@ -332,7 +336,7 @@
 	}
 
 	#aportes-info-container{
-		width: 500px;
+		width: 540px;
 		margin: 0 auto;
 		padding: 15px;
 	}
@@ -414,7 +418,7 @@
 	}
 
 	.box-generic.asignaturas{
-		box-shadow: 0px 0px 9px 4px #CCC;
+		box-shadow: 0px 0px 25px 1px #CCC;
 	}
 
 	#lista-mensajes{

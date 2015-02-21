@@ -148,19 +148,19 @@ class Student_Model extends CI_Model {
   function set_autorizados($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion){
     $string_query = $this->db->query("INSERT INTO PersonaAutorizada (idtutor, nombre, apellido, nroDocumento, telefono, relacion)
       VALUES ('$idTutor', '$nombre', '$apellido', '$nroDocumento', '$telefono', '$relacion')");
-    return $string_query->result();
+    return $string_query;
   }
 
   function update_autorizados($idTutor,$nombre,$apellido,$nroDocumento,$telefono,$relacion){
     $string_query = $this->db->query("UPDATE PersonaAutorizada 
       SET idTutor = '$idTutor', nroDocumento = '$nroDocumento', nombre='$nombre', apellido= '$apellido',  telefono = '$telefono', relacion = '$relacion' 
       WHERE idTutor= $idtutor");
-    return $string_query->result();
+    return $string_query;
   }
 
   function delete_autorizados($idTutor,$nroDocumento){
     $string_query = $this->db->query("DELETE FROM PersonaAutorizada WHERE idTutor = $idTutor and nroDocumento = $nroDocumento");
-    return $string_query->result();
+    return $string_query;
   }
 
   /* END AMB Personas Autorizadas */

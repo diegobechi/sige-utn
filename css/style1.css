@@ -2,7 +2,6 @@
 html,body{
     margin: 0px;
     height: 100%;
-    background-color: rgb(248, 248, 248) !important;
     font-family: 'Lato'
 }
 
@@ -736,15 +735,15 @@ border-radius: 5px;
     width: 575px;
     margin: auto;
     margin-top: 50px;
-    height: 235px;
+    height: 435px;
     background-color: #fff;    
-    box-shadow: 0px 0px 9px 4px #CCC;
+    box-shadow: 0px 0px 25px 1px #CCC;
     margin-bottom: 20px;
 }
 
 .titulo-principal h3{
     margin-top: 0;
-    background-color: rgb(60, 60, 60);
+    line-height: 45px;
     color: #fff;
     font-size: 20px;
     padding-left: 10px;
@@ -752,6 +751,12 @@ border-radius: 5px;
 
 .titulo-principal h1{
  color: black;
+}
+
+.box-curso-generic span{
+    line-height: 48px;
+    font-size: 15px;
+    letter-spacing: 3px;
 }
 
 .lista-opciones{
@@ -790,12 +795,12 @@ table#abreviaturas td {
 .contenedor-principal{
     display: inline-block;
     margin: 0;
-    background-color: gainsboro;
 }
 
 .contenedor-principal.alumnos{
     float: left;
-    width: 70%;
+    width: 68%;
+    background-color: #CCCCCC;
 }
 
 .contenedor-principal.temario,
@@ -844,6 +849,7 @@ table#abreviaturas td {
 .contenedor-principal.asignaturas{
     width: 70%;
     margin: 0;
+    background-color: transparent;
 }
 
 #guardar-notas-primaria {
@@ -854,6 +860,12 @@ table#abreviaturas td {
 
 .box-alumno{
     text-decoration: none;
+}
+
+#informacion-num-curso{
+    float: left;
+    font-size: 16px;
+    margin-left: 100px;
 }
 
 .change-pass-container img{    
@@ -880,10 +892,10 @@ table#abreviaturas td {
 }
 .box-alumno-generic  {
     background-color: white;
-    width: 150px;
-    height: 150px;
+    width: 165px;
+    height: 165px;
     display: inline-block;
-    border: 2px solid rgb(60, 60, 60);
+    border: 2px solid rgb(200, 200, 200);
     float: left;
     margin: 10px;
 }
@@ -900,6 +912,16 @@ table#abreviaturas td {
     font-size: 16px;
     line-height: 16px;
 }
+
+.box-alumno-generic:hover{
+    background-color: rgba(32, 57, 82, 0.75);
+}
+
+.box-alumno-generic:hover a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 .contenedor-de-listados{
     background-color: darkslategrey;
     border: 2px solid grey;
@@ -932,7 +954,7 @@ table#abreviaturas td {
 
 
 .box-generic.progreso{
-    box-shadow: 0px 0px 9px 4px #CCC;
+    box-shadow: 0px 0px 25px 1px #CCC;
     width: 80%;
     margin: 30px auto;
 }
@@ -942,8 +964,19 @@ table#abreviaturas td {
     width: 543px;
     margin-left: 1%;
     margin-top: 30px;
-    box-shadow: 0px 0px 9px 4px #CCC;
+    box-shadow: 0px 0px 25px 1px #CCC;
 }
+
+.box-generic.aranceles{
+    box-shadow: 0px 0px 25px 1px #CCC;
+}
+
+#listadoInasistencias thead{
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #informe-nivel-primaria{
     padding: 30px;
     text-align: center;
@@ -981,7 +1014,7 @@ text-align: left;
 
 #listadoInasistencias{
     margin: 0 auto;
-    width: 90%;
+    width: 85%;
 }
 
 #listadoInasistencias td{

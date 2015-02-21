@@ -24,12 +24,12 @@ class Curso_Model extends CI_Model {
     }
     
     function get_all_students($idCurso){
-      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre, alu.sexo
                                         FROM Alumno alu, Curso c, Inscripcion i
                                         WHERE i.idCurso = c.idCurso and
                                         i.legajoAlumno = alu.legajoAlumno  and
                                         c.idCurso = $idCurso                                                  
-                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre
+                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre, alu.sexo
                                         ORDER BY alu.apellido ASC");
       return $string_query->result();
     }
@@ -73,19 +73,22 @@ class Curso_Model extends CI_Model {
 
     function insert_asistencia_por_fecha($string_insert){
       $string_query = $this->db->query("INSERT INTO AsistenciaAlumno (legajoAlumno, fecha, presente, justificacion) 
-                                        VALUES $string_insert");      
+                                        VALUES $string_insert");
+      return $string_query;      
     }
 
     function update_asistencia_por_fecha($legajoAlumno, $fecha, $presente, $justificacion){
       $string_query = $this->db->query("UPDATE  AsistenciaAlumno
                                         SET legajoAlumno = $legajoAlumno, fecha = '$fecha', presente = $presente, justificacion = '$justificacion' 
                                         WHERE  legajoAlumno = $legajoAlumno and fecha = '$fecha'");      
+      return $string_query;
     }
 
     /* START COMUNICADOS WEB*/
     function set_comunicado($idCurso, $legajoDocente, $fecha, $comunicado){
       $string_query = $this->db->query("INSERT INTO ComunicadoWeb(idCurso, legajoDocente, fecha, comunicado) 
                                         VALUES ($idCurso, $legajoDocente, '$fecha', '$comunicado')");
+      return $string_query;
     }
  
     function get_comunicado($idCurso, $startDate, $endDate){
@@ -139,7 +142,7 @@ class Curso_Model extends CI_Model {
                                         FROM Curso c , NivelEducativo ne, Asignatura a
                                         WHERE c.idNivelEducativo = ne.idNivelEducativo and
                                               ne.idNivelEducativo = a.idNivelEducativo and
-                                              c.cicloLectivo = 2014 and
+                                              c.cicloLectivo = 2015 and
                                               c.idCurso= $idCurso  and
                                               a.idAsignatura= $idAsignatura");
       return $string_query->result();

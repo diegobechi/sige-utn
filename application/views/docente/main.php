@@ -1,7 +1,7 @@
 <script type="text/javascript" src="../js/docente.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
 </head>
-<body>
+<body style="background-image: url('../img/fondo-1.jpg');">
 	<div class="header-menu">
 		<img class="icono-escudo" src="../img/Colegio/0. Escudo.png">
 		<label class="label-menu-superior-general">Instituto <br>Santa Teresita</label>
@@ -9,6 +9,7 @@
 			<li class="active"><a href="#tab_a" data-toggle="tab"><img src="../img/white-icons/appbar.home.png">Inicio</a></li>
 			<li><a id="misCursos" href="#tab_b" data-toggle="tab"><img src="../img/white-icons/appbar.book.png">Mis Cursos</a></li>
 			<li class="lastone"><a id="misDatos" href="#tab_c" data-toggle="tab"><img src="../img/white-icons/appbar.people.profile.png">Mis Datos</a></li>
+			<h1 id="informacion-num-curso"></h1>
 			<div class="user-right">
 				<span><?php echo $nombre_usuario ?></span>			
 				<img src="../img/white-icons/appbar.list.png"/>
@@ -42,16 +43,16 @@
 			<div class="box-generic personales">
 				<h3>Datos personales</h3>
 				<div class="datos-personales">
-					<label>Nombre y Apellido</label><input id="perfil-nombre-completo-docente" type="text"><br>
-					<label>Nro Documento</label><input id="perfil-dni-docente" type="text"><br>
-					<label>Sexo</label><input id="perfil-sexo-docente" type="text"><br>
-					<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac-docente" type="text"><br>
-					<label>Nacionalidad</label><input id="perfil-nacionalidad-docente" type="text"><br>
-					<label>Domicilio</label><input id="perfil-domicilio-docente" type="text"><br>
-					<label>Telefono Fijo</label><input id="perfil-tel-fijo-docente" type="text"><br>
-					<label>Telefono Movil</label><input id="perfil-tel-movil-docente" type="text"><br>
-					<label>Mail</label><input id="perfil-mail-docente" type="text"><br>
-					<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac-docente" type="text"><br>
+					<label>Nombre y Apellido</label><input id="perfil-nombre-completo-docente" type="text" readonly><br>
+					<label>Nro Documento</label><input id="perfil-dni-docente" type="text" readonly><br>
+					<label>Sexo</label><input id="perfil-sexo-docente" type="text" readonly><br>
+					<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac-docente" type="text" readonly><br>
+					<label>Nacionalidad</label><input id="perfil-nacionalidad-docente" type="text" readonly><br>
+					<label>Domicilio</label><input id="perfil-domicilio-docente" type="text" readonly><br>
+					<label>Telefono Fijo</label><input id="perfil-tel-fijo-docente" type="text" readonly><br>
+					<label>Telefono Movil</label><input id="perfil-tel-movil-docente" type="text" readonly><br>
+					<label>Mail</label><input id="perfil-mail-docente" type="text" readonly><br>
+					<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac-docente" type="text" readonly><br>
 				</div>
 			</div>
 			<div class="box-generic curriculum">
@@ -108,7 +109,7 @@
 		margin-right: 1%;
 		margin-top: 30px;
 		max-height: 532px;
-		box-shadow: 0px 0px 9px 4px #CCC;
+		box-shadow: 0px 0px 25px 1px #CCC;
 	}	
 	
 	.contenedor-principal.cargarNotas{

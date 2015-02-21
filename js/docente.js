@@ -71,7 +71,8 @@ $(document).ready(function(){
         guardarAsistenciaCurso(asistencia_alumnos);
     })
 
-    $('body').on("click",".box-curso-generic", function(event){    
+    $('body').on("click",".box-curso-generic", function(event){
+        $('.lista-opciones').children().eq(0).click();  
         var conte_info = $('.contenedor-info');
         var numCurso = $(this).data('idcurso');
         var nombre_curso = $(this).text();
@@ -83,7 +84,7 @@ $(document).ready(function(){
                 success: function(data, textStatus, jqXHR){            
                     $('#curso-info-container').append(data);
                     $('#selector-curso').hide();
-                    $('.titulo-principal h1').text(nombre_curso);
+                    $('#informacion-num-curso').text(nombre_curso);
                     cargarInfoCurso(numCurso);
                     cargarFiltroCursos(numCurso);
                     cargarAsignaturas(numCurso);
@@ -96,7 +97,7 @@ $(document).ready(function(){
             });
         }else{        
             $('#selector-curso').hide();
-            $('.titulo-principal h1').text(nombre_curso);
+            $('#informacion-num-curso').text(nombre_curso);
             conte_info.show();
             cargarInfoCurso(numCurso);        
             cargarFiltroCursos(numCurso);
@@ -108,6 +109,7 @@ $(document).ready(function(){
         $('#selector-curso').show();
         $('#selector-asignatura').show();
         $('.contenedor-info').hide();
+        $('#informacion-num-curso').empty();
     })
 
     $('body').on('click', '.lista-opciones li', function(){
@@ -186,14 +188,12 @@ $(document).ready(function(){
             type: "POST",
             data: { data : array_general },
             dataType: "json",
-            success: function(data, textStatus, jqXHR)
-            {
+            success: function(mensaje){
+                showNotification('Calificaciones registradas con exito');
                 actualizarUltimaModificacion(calificacionesCurso);
             },
-            error: function (jqXHR, textStatus, errorThrown)
-            {
-                console.log("fallo");
-                actualizarUltimaModificacion(calificacionesCurso);
+            error: function (jqXHR, textStatus, errorThrown){
+                showNotification('Failure');
             }
         });
     })
@@ -246,7 +246,7 @@ $(document).ready(function(){
                 buscarDatosTutor();
             },
             error: function (jqXHR, textStatus, errorThrown){
-                console.log("fallo");
+                showNotification('Failure');
             }
         });
     });
@@ -258,9 +258,10 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data, textStatus, jqXHR){
                 cargarDatosPersonales(data);
+                $('#informacion-num-curso').empty();
             },
             error: function (jqXHR, textStatus, errorThrown){
-                console.log("fallo");
+                showNotification('Failure');
             }
         });
     })
@@ -281,10 +282,10 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
                 updateListaTemario();
+                showNotification('Temario registrado con exito');
             },
             error: function (jqXHR, textStatus, errorThrown){
-                console.log("Fallo TEMARIO");
-                alert('No se pueden cargar 2 temarios el mismo dia')
+                showNotification('Failure');
             }
         })
     })
@@ -316,6 +317,7 @@ $(document).ready(function(){
                 $('#asignaturaTemario').prop('disabled', false);
                 $('#enviarTemario').show();
                 $('#updateTemario').hide();
+                showNotification('Actualización de temario con exito');
                 updateListaTemario();
             },
             error: function (jqXHR, textStatus, errorThrown){
@@ -333,6 +335,7 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
                 $('#temaComunicado').val('');
+                showNotification('Comunicado enviado con exito');
                 updateListaComunicados();
             },
             error: function (jqXHR, textStatus, errorThrown){
@@ -352,6 +355,7 @@ $(document).ready(function(){
                 $('#temaComunicado').val('');            
                 $('#enviarComunicado').show();
                 $('#updateComunicado').hide();
+                showNotification('Comunicado actualizado con éxito');
                 updateListaComunicados();
             },
             error: function (jqXHR, textStatus, errorThrown){
@@ -470,6 +474,7 @@ function cargarFiltroAsignaturas(asignaturas){
     var filtro_asignatura = $('#filtro_asignatura');
     var filtro_asignatura_temario = $('#asignaturaTemario');
     filtro_asignatura.empty();
+    filtro_asignatura_temario.empty();
     if(asignaturas.length != 0){
         for (var i = 0; i < asignaturas.length; i++) {
             var new_option = "<option data-idAsignatura='"+asignaturas[i].idAsignatura+"'>"+asignaturas[i].Asignatura+"</option>";
@@ -559,7 +564,11 @@ function createBoxAlumnos(data){
     var conte_info = $('ul.contenedor-alumnos');
     conte_info.empty();
     for(var i=0;i<data.length;i++){
-        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='../img/person.png'></div></a></li>";
+        var sexo = "man.png";
+        if(data[i].sexo =="Femenino"){
+            sexo = "women.png"
+        }
+        var newBox = "<li class='box-alumno-generic'><a id='legajo-"+data[i].legajoAlumno+"' href='#' class='box-alumno' data-legajo='"+data[i].legajoAlumno+"'><div><h2>"+data[i].apellido+"</h2><h3>"+data[i].nombre+"</h3><img src='../img/"+sexo+"' style='width: 90px;'></div></a></li>";
         conte_info.append(newBox);
     }
 }
@@ -605,8 +614,7 @@ function cargarInfoNivel(data){
                     $(this).find('#modificadoPor').text('Última modificación: '+data[i].modificacion);
                 }
             }
-        })
-        
+        })        
     };
 }
 
@@ -719,6 +727,7 @@ function guardarNotasInicial(insert,calificacionEscolar){
         type: 'POST',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
+          showNotification('calificaciones registradas correctamente');
           buscarInfoNivel();
         },
         error: function (jqXHR, textStatus, errorThrown){
@@ -732,7 +741,7 @@ function crearSelectorCurso(data){
     var filtro_curso = $('#filtro_curso');
     conte_btn.empty();
     for (var i=0; i<data.length;i++){
-        var newBox="<div class='box-curso-generic' data-idcurso='"+data[i].idCurso+"' data-nivel='"+data[i].nivel+"'>"+data[i].division+" "+data[i].seccion+" "+data[i].nombre+"</div>";
+        var newBox="<div class='box-curso-generic' data-idcurso='"+data[i].idCurso+"' data-nivel='"+data[i].nivel+"'><span>"+data[i].division+"<br> División "+data[i].seccion+"<br> "+data[i].nombre+"</span></div>";
         conte_btn.append(newBox);        
     }
  }
@@ -915,6 +924,7 @@ function buscarAlumnosCurso(curso){
 }
 
 function buscarAsistenciaCurso(curso){
+    $('#loading').show();
     $.ajax({
         url: 'curso/getAsistenciaCursoPorFecha/'+ curso,
         type: 'GET',
@@ -924,7 +934,8 @@ function buscarAsistenciaCurso(curso){
                 crearTablaAsistencia(data, false);    
             }else{
                 buscarAlumnosCurso(curso);
-            }            
+            }
+            $('#loading').hide();            
         },
         error: function (jqXHR, textStatus, errorThrown){
             console.log("fallo");
@@ -944,9 +955,10 @@ function guardarAsistenciaCurso(asistencia_alumnos){
         dataType: "json",
         success: function(data, textStatus, jqXHR){
             showNotification('Asistencias registradas con exito');
+            $('#listado-asistencia').addClass('editado')
         },
         error: function (jqXHR, textStatus, errorThrown){
-            console.log("fallo");
+            showNotification('Failure');
         }
     });
 }

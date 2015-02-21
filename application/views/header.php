@@ -18,11 +18,12 @@
         <script type="text/javascript">
             function showNotification(message){ 
                 if(message=="Failure") {
-                $('#notification').css('background', '#FE2E2E');
+                    $('#notification').css('background', '#FE2E2E');
+                    $('#notification span').html('Ups... Ocurrio un error.Por favor intentelo nuevamente.');
                 } else {
-                $('#notification').css('background', '#43ac6a');
-                }
-                $('#notification span').html(message);
+                    $('#notification').css('background', '#43ac6a');
+                    $('#notification span').html(message);
+                }                
                 $('#notification').animate({height: '86px'}, 100);
                 setTimeout(function(){ $('#notification').animate({height: '-86px'}, 100); }, 3000);
                 }

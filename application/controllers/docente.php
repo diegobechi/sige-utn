@@ -93,6 +93,9 @@ class Docente extends CI_Controller {
 					$string_insert .= ",";
 				}
 			}
+			echo "<pre>";
+			var_dump($string_insert);
+			die();
 			$query_insert = $this->Teacher_Model->insert_calificacion_primaria($string_insert);
 		}
 		// Check for update array

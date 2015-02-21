@@ -1,6 +1,5 @@
 <div class = "contenedor-info container" style = "display:block;"> <div class = "titulo-principal">
-	<span></span>
-	<h1 id="informacion-num-curso"><img src=""> INFORMACION DEL CURSO - </h1>
+	
 </div>
 <div style ="padding:20px">
 	<ul class = "lista-opciones">
@@ -13,18 +12,17 @@
 		<li data-title="mensajes" class="mensajes_enviados"> <img src="../img/white-icons/appbar.chat.png"/>Mensajes</li>
 	</ul>
 	<div class="contenedor-principal alumnos">
-		<div class ="titulo-principal">
+		<div class ="titulo-principal" style="background-color: rgba(32, 57, 82, 0.75);">
 			<span></span>
 			<h3> <img src=""> Alumnos </h3>
 		</div>
 		<ul class ="contenedor-alumnos">
 		</ul>
 	</div>
-	<div class="contenedor-principal asignaturas" style="display:none;">
-		
+	<div class="contenedor-principal asignaturas" style="display:none;">		
 		<div class="contenedor-asignaturas">
 			<div class="listado-asignaturas">
-				<ul style="margin: 10px;list-style: none;color: #FFF;">			     			
+				<ul style="margin: 0 10px;list-style: none;color: #FFF;">			     			
 				</ul>
 			</div> 
 		</div>
@@ -205,8 +203,8 @@
 			<select id="asignaturaTemario">					
 			</select>
 		</div>
-		<div style="margin-top: 30px;">
-			<label>Escriba a continuacion el mensaje:</label>
+		<div style="margin-top: 10px;">
+			<label>Escriba a continuacion los temas dictados:</label>
 			<textarea id="temaDictado" maxlength="180"></textarea><br>
 			<input id="enviarTemario" type="button" class="btn" value="Enviar">
 			<input id="updateTemario" type="button" class="btn" value="Update" style="display:none;">

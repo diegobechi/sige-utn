@@ -47,27 +47,18 @@ class Teacher_Model extends CI_Model {
                                                 d.legajoDocente = $legajoDocente");
         return $string_query->result();
     }
-
-    function get_asistencia($legajoDocente){
-        $string_query = $this->db->query("SELECT ad.fecha,a.nombre,c.idCurso
-                                            FROM AsistenciaDocente ad , Docente d, Asignatura a, Curso c
-                                            WHERE d.legajoDocente =ad.legajoDocente and
-                                                  a.idAsignatura = ad.idAsignatura  and
-                                                  c.idCurso = ad.idCurso and
-                                                  ad.presente = 0 and
-                                                  d.legajoDocente = $legajoDocente");
-    }
-
     
     function set_calificacion_inicial($legajoDocente, $legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa, $modificacion) {
         $string_query = $this->db->query("INSERT INTO CalificacionEscolar (idCurso, idAsignatura, legajoAlumno, etapa, nroCalificacion, calificacion, modificacion)
                                           VALUES ($idCurso, $idAsignatura, $legajoAlumno, '$etapa', 1, '$calificacion', '$modificacion')");
+        return $string_query;
     }
     
     function update_calificacion_inicial($legajoDocente, $legajoAlumno, $idAsignatura, $calificacion, $idCurso, $etapa, $modificacion){
         $string_query = $this->db->query("UPDATE CalificacionEscolar 
                                           SET  idCurso =$idCurso, idAsignatura = $idAsignatura, legajoAlumno=$legajoAlumno, etapa='$etapa', nroCalificacion=1,calificacion='$calificacion', modificacion = '$modificacion' 
                                           WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and legajoAlumno=$legajoAlumno and etapa = '$etapa' and nroCalificacion =1");
+        return $string_query;
     }
 
     function get_calificacion_primaria($idCurso, $idAsignatura, $etapa){
@@ -88,12 +79,15 @@ class Teacher_Model extends CI_Model {
     function insert_calificacion_primaria($string_insert){
         $string_query = $this->db->query("INSERT INTO CalificacionEscolar (idCurso, idAsignatura, legajoAlumno, etapa, nroCalificacion, motivo, calificacion)
                                           VALUES $string_insert");
+        return $string_query;
     }
 
     function update_calificacion_primaria($idCurso, $idAsignatura, $legajoAlumno, $etapa, $nroCalificacion, $motivo, $calificacion){
         $string_query = $this->db->query("UPDATE CalificacionEscolar 
                                           SET  idCurso =$idCurso, idAsignatura = $idAsignatura, legajoAlumno=$legajoAlumno, etapa='$etapa', nroCalificacion=$nroCalificacion, motivo='$motivo', calificacion='$calificacion' 
-                                          WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and legajoAlumno=$legajoAlumno and etapa = '$etapa' and nroCalificacion =$nroCalificacion");        
+                                          WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and legajoAlumno=$legajoAlumno and etapa = '$etapa' and nroCalificacion =$nroCalificacion");
+        
+        return $string_query;
     }
 
     function delete_calificacion_primaria($idCurso, $idAsignatura, $legajoAlumno, $etapa, $nroCalificacion, $motivo, $calificacion){
@@ -103,12 +97,14 @@ class Teacher_Model extends CI_Model {
                                                 legajoAlumno = $legajoAlumno and
                                                 etapa = '$etapa' and
                                                 nroCalificacion = $nroCalificacion");
+        return $string_query;
     }
 
     function actualizarUltimaModificacion($idCurso,$idAsignatura,$etapa,$modificacion){
         $string_query = $this->db->query("UPDATE CalificacionEscolar
                                           SET modificacion = '$modificacion'
                                           WHERE idCurso = $idCurso and idAsignatura = $idAsignatura and etapa = '$etapa'");
+        return $string_query;
     }
 
     function clear_result($query){

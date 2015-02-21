@@ -72,8 +72,6 @@ class Curso extends CI_Controller {
 		$this->load->model('Curso_Model');
 		$data = $this->input->post('data');
 		$fecha = date('j M Y');
-		echo "Fecha Arriba";
-		var_dump($data);
 		$string_insert = "";
 		for ($i=0; $i < sizeof($data); $i++) { 
 			$string_insert .= "(";
@@ -83,8 +81,6 @@ class Curso extends CI_Controller {
 				$string_insert .= ",";
 			}
 		}
-		echo "listado insert";
-		var_dump($string_insert);
 		$query = $this->Curso_Model->insert_asistencia_por_fecha($string_insert);
 		echo json_encode($query);	
 	}
