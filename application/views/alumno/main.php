@@ -77,25 +77,25 @@
 				<div class="box-generic personales">
 					<h3>Datos personales</h3>
 					<div style="padding: 30px;">
-						<label>Nombre y Apellido</label><input id="perfil-nombre-completo" type="text"><br>
-						<label>Nro Documento</label><input id="perfil-dni" type="text"><br>
-						<label>Sexo</label><input id="perfil-sexo" type="text"><br>
-						<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac" type="text"><br>
-						<label>Nacionalidad</label><input id="perfil-nacionalidad" type="text"><br>
-						<label>Domicilio</label><input id="perfil-domicilio" type="text"><br>
-						<label>Telefono Fijo</label><input id="perfil-tel-fijo" type="text"><br>
-						<label>Telefono Movil</label><input id="perfil-tel-movil" type="text"><br>
-						<label>Mail</label><input id="perfil-mail" type="text"><br>
-						<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text"><br>
+						<label>Nombre y Apellido</label><input id="perfil-nombre-completo" type="text" readonly><br>
+						<label>Nro Documento</label><input id="perfil-dni" type="text" readonly><br>
+						<label>Sexo</label><input id="perfil-sexo" type="text" readonly><br>
+						<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac" type="text" readonly><br>
+						<label>Nacionalidad</label><input id="perfil-nacionalidad" type="text" readonly><br>
+						<label>Domicilio</label><input id="perfil-domicilio" type="text" readonly><br>
+						<label>Telefono Fijo</label><input id="perfil-tel-fijo" type="text" readonly><br>
+						<label>Telefono Movil</label><input id="perfil-tel-movil" type="text" readonly><br>
+						<label>Mail</label><input id="perfil-mail" type="text" readonly><br>
+						<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text" readonly><br>
 					</div>
 				</div>
 				<div style="float: right;width: 40%;margin-right: 1%;margin-top: 30px;">
 					<div class="box-generic academicos" style="box-shadow: 0px 0px 25px 1px #CCC;">
 						<h3>Datos academicos generales</h3>
 						<div style="padding: 30px;">							
-							<label>Legajo</label><input id="perfil-legajo" type="text"><br>
-							<label>Curso</label><input id="perfil-curso"type="text"><br>
-							<label>Estado Academico</label><input id="perfil-estado"type="text"><br>
+							<label>Legajo</label><input id="perfil-legajo" type="text" readonly><br>
+							<label>Curso</label><input id="perfil-curso"type="text" readonly><br>
+							<label>Estado Academico</label><input id="perfil-estado"type="text" readonly><br>
 						</div>
 					</div>
 
@@ -127,14 +127,14 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="profile">							  	
-									<label>Nro Documento</label><input id="tutor-dni" type="text"><br>
-									<label>Sexo</label><input id="tutor-sexo" type="text"><br>
-									<label>Fecha de Nacimiento</label><input id="tutor-fecha-nac" type="text"><br>
-									<label>Estado Civil</label><input id="tutor-estado-civil" type="text"><br>							  	
-									<label>Domicilio</label><input id="tutor-domicilio" type="text"><br>							  	
-									<label>Telefono Fijo</label><input id="tutor-tel-fijo" type="text"><br>
-									<label>Telefono Movil</label><input id="tutor-tel-movil" type="text"><br>
-									<label>Correo Electronico</label><input id="tutor-mail" type="text"><br>
+									<label>Nro Documento</label><input id="tutor-dni" type="text" readonly><br>
+									<label>Sexo</label><input id="tutor-sexo" type="text" readonly><br>
+									<label>Fecha de Nacimiento</label><input id="tutor-fecha-nac" type="text" readonly><br>
+									<label>Estado Civil</label><input id="tutor-estado-civil" type="text" readonly><br>							  	
+									<label>Domicilio</label><input id="tutor-domicilio" type="text" readonly><br>							  	
+									<label>Telefono Fijo</label><input id="tutor-tel-fijo" type="text" readonly><br>
+									<label>Telefono Movil</label><input id="tutor-tel-movil" type="text" readonly><br>
+									<label>Correo Electronico</label><input id="tutor-mail" type="text" readonly><br>
 								</div>
 								<div class="tab-pane " id="personas-premitidas">							  	
 									<table>

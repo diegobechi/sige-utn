@@ -55,16 +55,18 @@ class Student_Model extends CI_Model {
   }
 
   function get_notas_alumno($legajoAlumno, $cicloLectivo){
-    $string_query = $this->db->query("SELECT DISTINCT asi.idAsignatura, asi.nombre as 'Asignatura' , ce.calificacion, ce.modificacion
-                                      FROM CalificacionEscolar ce, Inscripcion i, Alumno a, Asignatura asi, CicloLectivo cl, Curso c
-                                      WHERE a.legajoAlumno = i.legajoAlumno  and
-                                            a.legajoAlumno = ce.legajoAlumno and
-                                            asi.idAsignatura = ce.idAsignatura and
-                                            i.idCurso = ce.idCurso and
-                                            c.cicloLectivo = cl.cicloLectivo and
-                                            c.idCurso = i.idCurso and
-                                            c.cicloLectivo = $cicloLectivo and
-                                            a.legajoAlumno = $legajoAlumno");
+    $string_query = $this->db->query("SELECT  DISTINCT a.idAsignatura, alu.legajoAlumno, a.nombre as 'asignatura', ce.nroCalificacion , ce.etapa,  ce.motivo, ce.calificacion, ce.modificacion
+                                      FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
+                                      WHERE c.idCurso = hc.idCurso and
+                                          a.idAsignatura = hc.idAsignatura and
+                                          alu.legajoAlumno = ce.legajoAlumno and
+                                          a.idAsignatura = ce.idAsignatura and
+                                          alu.legajoAlumno=i.legajoAlumno and
+                                          c.idCurso = i.idCurso and
+                                          c.cicloLectivo = $cicloLectivo and
+                                          alu.legajoAlumno = $legajoAlumno and
+                                          ce.motivo NOT IN ('P.E.', 'P.F.', 'PE1', 'PE2', 'PE3')
+                                      ORDER BY a.nombre, ce.etapa");
     return $string_query->result();
   }
 

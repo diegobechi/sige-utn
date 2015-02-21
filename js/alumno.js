@@ -36,15 +36,16 @@ $(document).ready(function(){
                 url: "alumno/getAportes/",
                 type: "GET",
                 dataType: "json",
-                success: function(data, textStatus, jqXHR){    
-                    crearListadoAportes(data);
+                success: function(data, textStatus, jqXHR){                    
                     $('#loading').hide();
+                    crearListadoAportes(data);
                 },
                 error: function (jqXHR, textStatus, errorThrown){
                     console.log("fallo");
                 }
             })
         }
+        $('#loading').hide();
     })
 
     $('body').on('click', '#misDatos', function(){
