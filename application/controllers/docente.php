@@ -93,19 +93,17 @@ class Docente extends CI_Controller {
 					$string_insert .= ",";
 				}
 			}
-			echo "<pre>";
-			var_dump($string_insert);
-			die();
 			$query_insert = $this->Teacher_Model->insert_calificacion_primaria($string_insert);
+			echo json_encode($query_insert);
 		}
 		// Check for update array
 		if(!empty($data[1])){
 			$array_update = $data[1];	
 		
 			for ($i=0; $i < sizeof($array_update); $i++) { 
-				$query_update = $this->Teacher_Model->update_calificacion_primaria($array_update[$i]['idCurso'], $array_update[$i]['idAsignatura'], $array_update[$i]['legajoAlumno'], $array_update[$i]['etapa'], $array_update[$i]['nroCalificacion'], $array_update[$i]['motivo'], $array_update[$i]['calificacion']);
-				echo json_encode($query_update);
+				$query_update = $this->Teacher_Model->update_calificacion_primaria($array_update[$i]['idCurso'], $array_update[$i]['idAsignatura'], $array_update[$i]['legajoAlumno'], $array_update[$i]['etapa'], $array_update[$i]['nroCalificacion'], $array_update[$i]['motivo'], $array_update[$i]['calificacion']);				
 			}
+			echo json_encode($query_update);
 		}
 		// Check for delete array
 		if(!empty($data[2])){
@@ -113,8 +111,8 @@ class Docente extends CI_Controller {
 		
 			for ($i=0; $i < sizeof($array_delete); $i++) { 
 				$query_delete = $this->Teacher_Model->delete_calificacion_primaria($array_delete[$i]['idCurso'], $array_delete[$i]['idAsignatura'], $array_delete[$i]['legajoAlumno'], $array_delete[$i]['etapa'], $array_delete[$i]['nroCalificacion'], $array_delete[$i]['motivo'], $array_delete[$i]['calificacion']);
-				echo json_encode($query_update);
 			}
+			echo json_encode($query_delete);
 		}
 	}
 

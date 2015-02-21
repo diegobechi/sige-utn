@@ -122,7 +122,7 @@
 						<div class="container-right">
 							<ul class="nav nav-tabs" role="tablist">
 								<li class="active"><a href="#profile" role="tab" data-toggle="tab">Informacion Personal</a></li>
-								<li class=""><a id="retirarPersonas" href="#personas-premitidas" role="tab" data-toggle="tab">Personas Retirar</a></li>
+								<li class=""><a id="retirarPersonas" href="#personas-premitidas" role="tab" data-toggle="tab" style="display:none;">Personas Retirar</a></li>
 								<li class=""><a class="nueva-permitida" href="#nueva-premitida" role="tab" data-toggle="tab" style="display:none;">Asociar Nueva Persona</a></li>
 							</ul>
 							<div class="tab-content">

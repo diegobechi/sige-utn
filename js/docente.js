@@ -234,6 +234,7 @@ $(document).ready(function(){
     });
 
     $('body').on('click', '.box-alumno-generic', function(){
+        $('#loading').show();
         var legajo_alumno = $(this).children().data('legajo');
         $.ajax({
             url : "docente/getDatosAlumnoPorLegajo/"+legajo_alumno,
@@ -244,6 +245,7 @@ $(document).ready(function(){
                 $(".overlay-popup").show();
                 $(".perfil-alumno-container").show();
                 buscarDatosTutor();
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 showNotification('Failure');
@@ -252,6 +254,7 @@ $(document).ready(function(){
     });
 
     $('body').on('click', '#misDatos', function(){
+        $('#loading').show();
         $.ajax({
             url : "docente/getDocente/",
             type: "GET",
@@ -259,6 +262,7 @@ $(document).ready(function(){
             success: function(data, textStatus, jqXHR){
                 cargarDatosPersonales(data);
                 $('#informacion-num-curso').empty();
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 showNotification('Failure');
@@ -272,6 +276,7 @@ $(document).ready(function(){
     });
 
     $('body').on('click', '#enviarTemario', function(){
+        $('#loading').show();
         var temario = {};
         temario.curso = $('#id-curso-temario').val();
         temario.asignatura = $('#asignaturaTemario').children('option:selected').data('idasignatura');
@@ -283,6 +288,7 @@ $(document).ready(function(){
             success: function(data, textStatus, jqXHR){
                 updateListaTemario();
                 showNotification('Temario registrado con exito');
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 showNotification('Failure');
@@ -347,6 +353,7 @@ $(document).ready(function(){
     $('body').on('click', '#updateComunicado', function(){
         var id_comunicado = $(this).attr('data-idcomunicado');
         var texto_comunicado = $('#temaComunicado').val();
+        $('#loading').show();
         $.ajax({
             url: 'curso/updateComunicado/'+ id_comunicado +'/'+texto_comunicado,
             type: 'POST',
@@ -357,6 +364,7 @@ $(document).ready(function(){
                 $('#updateComunicado').hide();
                 showNotification('Comunicado actualizado con éxito');
                 updateListaComunicados();
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
                 console.log("fallo");
