@@ -61,6 +61,13 @@ class Curso extends CI_Controller {
 		echo json_encode($query);		
 	}
 
+	public function getAlumnosPorCursoLegajo($idCurso){
+		$this->load->model('Curso_Model');
+		$query = $this->Curso_Model->get_all_students_legajo($idCurso);
+		echo json_encode($query);		
+	}
+	
+
 	public function getAsistenciaCurso($idCurso){
 		$año = date("Y");		
 	 	$this->load->model('Curso_Model');

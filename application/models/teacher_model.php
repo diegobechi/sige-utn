@@ -72,7 +72,8 @@ class Teacher_Model extends CI_Model {
                                                 c.idCurso = i.idCurso and
                                                 c.idCurso = $idCurso and
                                                 ce.etapa= '$etapa' and
-                                                a.idAsignatura = $idAsignatura");
+                                                a.idAsignatura = $idAsignatura
+                                            ORDER BY alu.legajoAlumno");
         return $string_query->result();
     }
 

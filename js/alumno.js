@@ -695,7 +695,7 @@ function cargarDatosTutor(data){
     $('#tutor-dni').val(data[0].nroDocumento);
     $('#tutor-sexo').val(data[0].sexo);
     $('#tutor-fecha-nac').val(data[0].fechaNacimiento);
-    $('#tutor-estado').val(data[0].estado);
+    $('#tutor-estado-civil').val(data[0].estado);
     $('#tutor-domicilio').val(data[0].calle+" "+data[0].numero +" "+data[0].piso+" "+data[0].departamento );
     $('#tutor-tel-fijo').val(data[0].telefonoFijo);
     $('#tutor-tel-movil').val(data[0].telefonoMovil);

@@ -34,6 +34,17 @@ class Curso_Model extends CI_Model {
       return $string_query->result();
     }
 
+    function get_all_students_legajo($idCurso){
+      $string_query = $this->db->query("SELECT  alu.legajoAlumno, alu.apellido, alu.nombre, alu.sexo
+                                        FROM Alumno alu, Curso c, Inscripcion i
+                                        WHERE i.idCurso = c.idCurso and
+                                        i.legajoAlumno = alu.legajoAlumno  and
+                                        c.idCurso = $idCurso                                                  
+                                        GROUP BY alu.legajoAlumno, alu.apellido, alu.nombre, alu.sexo
+                                        ORDER BY alu.legajoAlumno ASC");
+      return $string_query->result();
+    }
+
     function get_all_asignaturas($idCurso, $año){
       $string_query = $this->db->query("SELECT  a.nombre as 'nom_asignatura', hc.diaSemana, SUBSTRING(CONVERT(CHAR(38),hc.horaInicio,121), 12,8) as 'horaInicio' ,  SUBSTRING(CONVERT(CHAR(38),hc.horaFin,121), 12,8) as 'horaFin', d.apellido, d.nombre,d.correoElectronico, d.legajoDocente
                                         FROM HorarioCurso hc, Docente d,Curso c, Asignatura a 

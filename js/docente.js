@@ -523,7 +523,7 @@ function get_asignaturas_curso(idCurso){
 function cargarAlumnos(idCurso, nivel){
 
     $.ajax({
-        url : "curso/getAlumnosPorCurso/"+idCurso,
+        url : "curso/getAlumnosPorCursoLegajo/"+idCurso,
         type: "GET",
         dataType: "json",
         success: function(data, textStatus, jqXHR)
@@ -645,6 +645,7 @@ function listarAlumnosNoInicial(data){
 }
 
 function buscarInfoNivelPrimaria(){
+    $('#loading').show();
     var idCurso = $('#filtro_curso').find(':selected').data('idcurso');;
     var idAsignatura = $('#filtro_asignatura').find(':selected').data('idasignatura');;
     var etapa = $('#filtro_etapa').find(':selected').text();
@@ -656,6 +657,7 @@ function buscarInfoNivelPrimaria(){
         {
             cargarCabeceraNotas(data);
             cargarInfoNivelPrimaria(data);
+            $('#loading').hide();
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
