@@ -39,56 +39,59 @@
 			</select>
 		</div>
 		<div class="grilla-notas" style="display:none;">			
-			<div class="tabla-abreviaturas">
-				<table id="abreviaturas">
-					<thead>
-						<tr>
-							<td colspan="2">Abreviaturas</td>						
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>P</td>
-							<td>Prueba</td>
-						</tr>
-						<tr>
-							<td>E</td>
-							<td>Examén</td>
-						</tr>
-						<tr>
-							<td>EO</td>
-							<td>Exposición Oral</td>
-						</tr>
-						<tr>
-							<td>TP</td>
-							<td>Trabajo Práctico</td>
-						</tr>
-						<tr>
-							<td>TI</td>
-							<td>Trabajo Integrador</td>
-						</tr>
-						<tr>
-							<td>R</td>
-							<td>Recuperatorio</td>
-						</tr>
-						<tr>
-							<td>C</td>
-							<td>Coloquio</td>
-						</tr>
-						<tr>
-							<td>NC</td>
-							<td>Nota de Concepto</td>
-						</tr>
-						<tr>
-							<td>LO</td>
-							<td>Lección Oral</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			
 			<div>					
 				<div id="contenedor-informe-progreso">
 					<div id="informe-nivel-primaria" style="float:left;">
+						<a id="tabla_referencias">Referencias							
+						</a>
+						<div class="tabla-abreviaturas" style="display:none;">
+								<table id="abreviaturas">
+									<thead>
+										<tr>
+											<td colspan="2">Abreviaturas</td>						
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>P</td>
+											<td>Prueba</td>
+										</tr>
+										<tr>
+											<td>E</td>
+											<td>Examén</td>
+										</tr>
+										<tr>
+											<td>EO</td>
+											<td>Exposición Oral</td>
+										</tr>
+										<tr>
+											<td>TP</td>
+											<td>Trabajo Práctico</td>
+										</tr>
+										<tr>
+											<td>TI</td>
+											<td>Trabajo Integrador</td>
+										</tr>
+										<tr>
+											<td>R</td>
+											<td>Recuperatorio</td>
+										</tr>
+										<tr>
+											<td>C</td>
+											<td>Coloquio</td>
+										</tr>
+										<tr>
+											<td>NC</td>
+											<td>Nota de Concepto</td>
+										</tr>
+										<tr>
+											<td>LO</td>
+											<td>Lección Oral</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						<table> Listado de alumnos
 							<thead>
 								<tr id="cabecera-notas">
@@ -181,6 +184,15 @@
 							<span id="modificacion-primaria"></span>
 							<input type="button" class="btn" id="guardar-notas-primaria" value="Guardar">
 						</div>
+						<script type="text/javascript">
+						$('body').on("mouseover",'#tabla_referencias',function(){
+					        $('.tabla-abreviaturas').show();
+					    })
+
+					   $('body').on("mouseleave",'#tabla_referencias',function(){
+					        $('.tabla-abreviaturas').hide();
+					    })
+						</script>
 					</div>
 				</div>
 			</div>
