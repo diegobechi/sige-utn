@@ -76,7 +76,11 @@
 			<input type="button" class="btn btn-primary" value="Confirmar"/>
 		</form>
 	</div>
-
+	<div id="loading" style="display:none;">
+		<div>
+			<img src="../img/loading.gif">
+		</div>
+	</div>
 	<style>
 
 	.header-menu{

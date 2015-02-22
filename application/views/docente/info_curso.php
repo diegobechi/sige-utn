@@ -31,19 +31,23 @@
 		<div class="contenedor-filtros">
 			<select id="filtro_curso" style="display:none;">					
 			</select>
-			<label>Asignatura</label>
-			<select id="filtro_asignatura">
-			</select>
-			<label>Etapa</label>
-			<select id="filtro_etapa">					
-			</select>
+			<div style="display: inline-block;margin-left: 75px;">
+				<label>Asignatura</label>
+				<select id="filtro_asignatura">
+				</select>
+			</div>
+			<div style="display: inline-block;margin-left: 100px;">
+				<label>Etapa</label>
+				<select id="filtro_etapa">					
+				</select>
+			</div>			
 		</div>
 		<div class="grilla-notas" style="display:none;">			
 			
 			<div>					
 				<div id="contenedor-informe-progreso">
 					<div id="informe-nivel-primaria" style="float:left;">
-						<a id="tabla_referencias">Referencias							
+						<a id="tabla_referencias" style="float:right;">Referencias							
 						</a>
 						<div class="tabla-abreviaturas" style="display:none;">
 								<table id="abreviaturas">
@@ -281,7 +285,7 @@
 			<ul class="nav nav-tabs" role="tablist">
 				<li class="active"><a href="#profile" role="tab" data-toggle="tab">Informacion Personal</a></li>				
 				<li><a href="#datostutor" role="tab" data-toggle="tab">Datos del Tutor</a></li>
-				<li><a href="#notes" role="tab" data-toggle="tab">Observaciones</a></li>
+				<li><a href="#notes" role="tab" data-toggle="tab" style="display:none;">Observaciones</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="profile">
@@ -324,6 +328,7 @@
 	margin: 0 auto;
 	padding: 40px;
 	margin: 40px;
+	margin-top: 20px;
 	background-color: #FFF;
 	border: 1px solid #CCC;
 }
