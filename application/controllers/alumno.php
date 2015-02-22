@@ -64,18 +64,20 @@ class Alumno extends CI_Controller {
 		);
 		$horarios = array();
 		$cont = 0;
+		$band = 0;
 		for ($j=0; $j < sizeof($semana) ; $j++) {
 			$nombreDia = $semana[$j];			
 			for ($i = 0; $i < sizeof($query); $i++){
 				$diaSemana = $query[$i]['diaSemana'];
 			    if($diaSemana == $nombreDia){
-			    	$horarios[$j]['asignatura'] = $query[$i]['nom_asignatura'];
-			    	$horarios[$j]['horaInicio'] = $query[$i]['horaInicio'];
-			    	$horarios[$j]['horaFin'] = $query[$i]['horaFin'];
-			    	$horarios[$j]['diaSemana'] = $query[$i]['diaSemana'];
-			    	$horarios[$j]['nombre'] = $query[$i]['nombre'];
-			    	$horarios[$j]['apellido'] = $query[$i]['apellido'];
-			    	$horarios[$j]['correoElectronico'] = $query[$i]['correoElectronico'];			    	
+			    	$horarios[$band]['asignatura'] = $query[$i]['nom_asignatura'];
+			    	$horarios[$band]['horaInicio'] = $query[$i]['horaInicio'];
+			    	$horarios[$band]['horaFin'] = $query[$i]['horaFin'];
+			    	$horarios[$band]['diaSemana'] = $query[$i]['diaSemana'];
+			    	$horarios[$band]['nombre'] = $query[$i]['nombre'];
+			    	$horarios[$band]['apellido'] = $query[$i]['apellido'];
+			    	$horarios[$band]['correoElectronico'] = $query[$i]['correoElectronico'];
+			    	$band++;
 			    	$cont++;
 			    }				
 			}
