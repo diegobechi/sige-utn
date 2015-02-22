@@ -76,6 +76,7 @@ $(document).ready(function(){
         var conte_info = $('.contenedor-info');
         var numCurso = $(this).data('idcurso');
         var nombre_curso = $(this).text();
+        $('#loading').show();
         if(!conte_info.size() > 0){        
             $.ajax({
                 url : "docente/pruebaVista",
@@ -89,7 +90,7 @@ $(document).ready(function(){
                     cargarFiltroCursos(numCurso);
                     cargarAsignaturas(numCurso);
                     buscarAsistenciaCurso(numCurso);
-
+                    $('#loading').hide();
                 },
                 error: function (jqXHR, textStatus, errorThrown){
                     console.log("fallo");
@@ -335,6 +336,7 @@ $(document).ready(function(){
         var comunicado = {};
         comunicado.curso = $('#id-curso-comunicado').val();
         comunicado.textoComunicado = $('#temaComunicado').val();
+        $('#loading').show();
         $.ajax({
             url: 'curso/setComunicadoWeb/'+ comunicado.curso +"/"+ comunicado.textoComunicado,
             type: 'POST',
@@ -343,9 +345,10 @@ $(document).ready(function(){
                 $('#temaComunicado').val('');
                 showNotification('Comunicado enviado con exito');
                 updateListaComunicados();
+                $('#loading').hide();
             },
             error: function (jqXHR, textStatus, errorThrown){
-                console.log("Fallo COMUNICADO");
+                showNotification('Failure');
             }
         })
     })
@@ -630,7 +633,7 @@ function listarAlumnosNoInicial(data){
     var conte = $('#listado-primario-notas');
     conte.empty();
     for (var i=0; i<data.length;i++){
-        var newBox='<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+' '+data[i].nombre+'</td><td data-nroCalificacion="1"><input type="text"></td><td data-nroCalificacion="2"><input type="text"></td><td data-nroCalificacion="3"><input type="text"></td><td data-nroCalificacion="4"><input type="text"></td><td data-nroCalificacion="5"><input type="text"></td><td data-nroCalificacion="6"><input type="text"></td><td><input type="text"></td></tr>';
+        var newBox='<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+' '+data[i].nombre+'</td><td data-nroCalificacion="1"><input type="text"></td><td data-nroCalificacion="2"><input type="text"></td><td data-nroCalificacion="3"><input type="text"></td><td data-nroCalificacion="4"><input type="text"></td><td data-nroCalificacion="5"><input type="text"></td><td data-nroCalificacion="6"><input type="text"></td></tr>';
         conte.append(newBox);
     }
 

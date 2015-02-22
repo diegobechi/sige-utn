@@ -457,7 +457,7 @@ function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
             if(i+1 != cant_columns){
                 new_cabecera = "<td>Nota</td>";
             }else{
-                new_cabecera = "<td>Promedio</td>";
+                new_cabecera = "<td>Nota</td>";
             }
         }
         conteCabecera.append(new_cabecera);    

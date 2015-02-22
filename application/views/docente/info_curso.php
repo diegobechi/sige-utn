@@ -171,10 +171,7 @@
 											<option>NC</option>
 											<option>LO</option>
 										</select>
-									</td>
-									<td data-nroCalificacion="7">
-										<label>Prom</label>
-									</td>
+									</td>									
 								</tr>
 							</thead>
 							<tbody id="listado-primario-notas">									
@@ -215,7 +212,9 @@
 		</div>
 	</div>
 	<div class="contenedor-principal inasistencias" style="display:none;">
-		<h4>Listado de Asistencia</h4>
+		<div class="titulo-principal" style="background-color: rgba(32, 57, 82, 0.75);">
+			<h3>Listado de Asistencia</h3>
+		</div>
 		<div>
 			<table>
 				<thead>
@@ -274,28 +273,28 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="profile">
-					<label>Legajo</label><input id="perfil-legajo" type="text" value="2134121231"><br>
-					<label>Nro Documento</label><input id="perfil-dni" type="text"><br>
-					<label>Sexo</label><input id="perfil-sexo" type="text"><br>
-					<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac" type="text"><br>
-					<label>Nacionalidad</label><input id="perfil-nacionalidad" type="text"><br>
-					<label>Domicilio</label><input id="perfil-domicilio" type="text"><br>
-					<label>Telefono Fijo</label><input id="perfil-tel-fijo" type="text"><br>
-					<label>Telefono Movil</label><input id="perfil-tel-movil" type="text"><br>
-					<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text"><br>
-					<label>Estado Civil</label><input id="perfil-estado-civil" type="text"><br>
+					<label>Legajo</label><input id="perfil-legajo" type="text" readonly><br>
+					<label>Nro Documento</label><input id="perfil-dni" type="text" readonly><br>
+					<label>Sexo</label><input id="perfil-sexo" type="text" readonly><br>
+					<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac" type="text" readonly><br>
+					<label>Nacionalidad</label><input id="perfil-nacionalidad" type="text" readonly><br>
+					<label>Domicilio</label><input id="perfil-domicilio" type="text" readonly><br>
+					<label>Telefono Fijo</label><input id="perfil-tel-fijo" type="text" readonly><br>
+					<label>Telefono Movil</label><input id="perfil-tel-movil" type="text" readonly><br>
+					<label>Lugar de Nacimiento</label><input id="perfil-lugar-nac" type="text" readonly><br>
+					<label>Estado Civil</label><input id="perfil-estado-civil" type="text" readonly><br>
 				</div>
 				<div class="tab-pane" id="datostutor">
 					<div class="datos-tutor">
-						<label>Nombre y Apellido</label><input id="perfil-nombre-t" type="text"><br>
-						<label>Nro Documento</label><input id="perfil-dni-t" type="text"><br>
-						<label>Sexo</label><input id="perfil-sexo-t" type="text"><br>
-						<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac-t" type="text"><br>
-						<label>Estado Civil</label><input id="perfil-estado-civil-t" type="text"><br>
-						<label>Domicilio</label><input id="perfil-domicilio-t" type="text"><br>
-						<label>Telefono Fijo</label><input id="perfil-tel-fijo-t" type="text"><br>
-						<label>Telefono Movil</label><input id="perfil-tel-movil-t" type="text"><br>
-						<label>Correo Electronico</label><input id="perfil-mail-t" type="text"><br>
+						<label>Nombre y Apellido</label><input id="perfil-nombre-t" type="text" readonly><br>
+						<label>Nro Documento</label><input id="perfil-dni-t" type="text" readonly><br>
+						<label>Sexo</label><input id="perfil-sexo-t" type="text" readonly><br>
+						<label>Fecha de Nacimiento</label><input id="perfil-fecha-nac-t" type="text" readonly><br>
+						<label>Estado Civil</label><input id="perfil-estado-civil-t" type="text" readonly><br>
+						<label>Domicilio</label><input id="perfil-domicilio-t" type="text" readonly><br>
+						<label>Telefono Fijo</label><input id="perfil-tel-fijo-t" type="text" readonly><br>
+						<label>Telefono Movil</label><input id="perfil-tel-movil-t" type="text" readonly><br>
+						<label>Correo Electronico</label><input id="perfil-mail-t" type="text" readonly><br>
 					</div>
 				</div>
 				<div class="tab-pane" id="notes">
@@ -319,7 +318,7 @@
 
 #informe-nivel-primaria input,
 #informe-nivel-primaria select{
-	width: 47px;
+	width: 57px;
 	margin: 0;
 	border: none;
 }

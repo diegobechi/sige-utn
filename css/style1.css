@@ -156,6 +156,7 @@ html,body{
 
 .box-generic.bienvenido{
     box-shadow: 1px 1px 15px 1px #CCC;
+    margin: 0 20px;
 }
 
 .box-generic h3{
@@ -800,7 +801,7 @@ table#abreviaturas td {
 .contenedor-principal.alumnos{
     float: left;
     width: 68%;
-    background-color: #CCCCCC;
+    background-color: #F4F4F4;
 }
 
 .contenedor-principal.temario,
@@ -823,8 +824,9 @@ table#abreviaturas td {
 }
 
 .contenedor-principal.inasistencias{
-    border: none;
-    background-color: transparent;
+    float: left;
+    width: 59%;
+    background-color: #F4F4F4;
 }
 
 #listado-asistencia td input[type="text"]{
@@ -840,6 +842,9 @@ table#abreviaturas td {
 }
 .contenedor-principal.inasistencias table thead{
     text-align: center;
+}
+.contenedor-principal.inasistencias table{
+    margin: 0 30px;
 }
 
 .contenedor-alumnos{

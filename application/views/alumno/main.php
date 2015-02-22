@@ -102,7 +102,7 @@
 					<div class="box-generic academicos" style="box-shadow: 0px 0px 25px 1px #CCC;">
 						<h3>Más informacion</h3>
 						<div class="botones-datos-personales">
-							<input id="misTutores" type="button" value="Tutor / Autorizados">
+							<input id="misTutores" type="button" value="Tutor / Responsable">
 							<input id="misInasistencias" type="button" value="Historial Inasistencias" style="margin-top: 15px;
 ">
 						</div>
@@ -274,6 +274,10 @@
 		margin: 0;
 		padding: 15px;
 	}
+	
+	#informe-nivel-primaria td {
+	    padding: 5px 10px;
+	}
 
 	#selectorBtnAsignatura li{
 		line-height: 30px;
@@ -337,7 +341,7 @@
 
 	#aportes-info-container{
 		width: 540px;
-		margin: 0 auto;
+		margin: 20px auto;
 		padding: 15px;
 	}
 
@@ -425,6 +429,8 @@
 		display: block;
 		position: relative;
 		margin: 40px 0;
+		border-bottom: 1px solid #CCC;
+		border-left: 1px solid #CCC;
 	}
 
 	#lista-mensajes h3{
