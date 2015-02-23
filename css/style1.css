@@ -823,7 +823,7 @@ table#abreviaturas td {
 
 .contenedor-principal.inasistencias{
     float: left;
-    width: 59%;
+    width: 60%;
     background-color: #F4F4F4;
 }
 
@@ -856,9 +856,19 @@ table#abreviaturas td {
 }
 
 #guardar-notas-primaria {
-    width: 70px !important;
+    width: 150px !important;
     margin-top: 20px !important;
     display: block;
+}
+
+#guardar-asistencia{
+    margin: 30px;
+    width: 150px;
+    height: 40px;
+}
+
+.btn.btn-info{
+    height: 40px;
 }
 
 .box-alumno{

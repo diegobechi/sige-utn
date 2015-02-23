@@ -166,18 +166,8 @@
 											<option>LO</option>
 										</select>
 									</td>
-									<td data-nroCalificacion="6">
-										<select>
-											<option>P</option>
-											<option>E</option>
-											<option>EO</option>
-											<option>TP</option>
-											<option>TI</option>												
-											<option>R</option>
-											<option>C</option>
-											<option>NC</option>
-											<option>LO</option>
-										</select>
+									<td data-nroCalificacion="10" data-promedio="">
+										<input type="text" value="Prom">
 									</td>									
 								</tr>
 							</thead>
@@ -186,7 +176,7 @@
 						</table>
 						<div>
 							<span id="modificacion-primaria"></span>
-							<input type="button" class="btn" id="guardar-notas-primaria" value="Guardar">
+							<input type="button" class="btn btn-info" id="guardar-notas-primaria" value="Guardar">
 						</div>
 						<script type="text/javascript">
 						$('body').on("mouseover",'#tabla_referencias',function(){
@@ -219,8 +209,8 @@
 		<div style="margin-top: 10px;">
 			<label>Escriba a continuacion los temas dictados:</label>
 			<textarea id="temaDictado" maxlength="180"></textarea><br>
-			<input id="enviarTemario" type="button" class="btn" value="Enviar">
-			<input id="updateTemario" type="button" class="btn" value="Update" style="display:none;">
+			<input id="enviarTemario" type="button" class="btn btn-info" value="Enviar">
+			<input id="updateTemario" type="button" class="btn btn-info" value="Update" style="display:none;">
 		</div>
 		<div>			
 			<div id="show-list-items">
@@ -243,19 +233,19 @@
 				</thead>
 				<tbody id="listado-asistencia">					
 				</tbody>				
-			</table>
-			<input type="button" class="btn" value="Guardar" id="guardar-asistencia"/>
+			</table>			
 		</div>
+		<input type="button" class="btn btn-info" value="Guardar" id="guardar-asistencia"/>
 	</div>
 	<div class="contenedor-principal mensajes" style="display:none;">
-		<h4>MENSAJES</h4>
+		<h4>COMUNICADO WEB</h4>
 		<div>
 			<div>
 				<input id="id-curso-comunicado" type="text" value="" style="display:none;"/>
-				<label>Escriba a continuacion el mensaje:</label>
+				<label>Escriba a continuacion el mensaje para los alumnos:</label>
 				<textarea id="temaComunicado" maxlength="180"></textarea><br>
-				<input id="enviarComunicado" type="button" class="btn" value="Enviar">
-				<input id="updateComunicado" type="button" class="btn" value="Update" style="display:none;">
+				<input id="enviarComunicado" type="button" class="btn btn-info" value="Enviar">
+				<input id="updateComunicado" type="button" class="btn btn-info" value="Update" style="display:none;">
 			</div>
 			<div>
 				<div id="show-list-comunicados">

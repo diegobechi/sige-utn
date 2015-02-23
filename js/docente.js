@@ -557,8 +557,12 @@ function cargarInfoCurso(numCurso){
         success: function(data, textStatus, jqXHR)
         {
             $('#filtro_etapa').empty();
-            if($('#informacion-num-curso').text().indexOf('Sala') == -1){                
-                $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option><option>Tercera</option><option>Final</option>')
+            if($('#informacion-num-curso').text().indexOf('Sala') == -1){
+                if($('#informacion-num-curso').text().indexOf('Grado') == -1){
+                    $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option><option>Tercera</option>')
+                }else{
+                    $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option><option>Tercera</option><option>Final</option>');    
+                }                
             }else{
                 $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option>')
             }
@@ -639,7 +643,7 @@ function listarAlumnosNoInicial(data){
     var conte = $('#listado-primario-notas');
     conte.empty();
     for (var i=0; i<data.length;i++){
-        var newBox='<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+' '+data[i].nombre+'</td><td data-nroCalificacion="1"><input type="text"></td><td data-nroCalificacion="2"><input type="text"></td><td data-nroCalificacion="3"><input type="text"></td><td data-nroCalificacion="4"><input type="text"></td><td data-nroCalificacion="5"><input type="text"></td><td data-nroCalificacion="6"><input type="text"></td></tr>';
+        var newBox='<tr><td>'+data[i].legajoAlumno+'</td><td>'+data[i].apellido+' '+data[i].nombre+'</td><td data-nroCalificacion="1"><input type="text"></td><td data-nroCalificacion="2"><input type="text"></td><td data-nroCalificacion="3"><input type="text"></td><td data-nroCalificacion="4"><input type="text"></td><td data-nroCalificacion="5"><input type="text"></td><td data-nroCalificacion="10"><input type="text"></td></tr>';
         conte.append(newBox);
     }
 
@@ -705,9 +709,15 @@ function cargarInfoNivelPrimaria(data){
         }else{
             var nroCalificacion = data[i].nroCalificacion;
             if(data[i].legajoAlumno == data[i-1].legajoAlumno){
-              $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).children().val(data[i].calificacion);
-              $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).addClass('previainfo');
-              $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).attr('valorinicial', data[i].calificacion);
+                if (nroCalificacion != 10) {
+                  $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).children().val(data[i].calificacion);
+                  $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).addClass('previainfo');
+                  $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).attr('valorinicial', data[i].calificacion);
+                }else{
+                  $('#listado-primario-notas tr').eq(fila).children().eq(7).children().val(data[i].calificacion);
+                  $('#listado-primario-notas tr').eq(fila).children().eq(7).addClass('previainfo');
+                  $('#listado-primario-notas tr').eq(fila).children().eq(7).attr('valorinicial', data[i].calificacion);
+                }
             }else{
                 fila++;
                 $('#listado-primario-notas tr').eq(fila).children().eq(nroCalificacion+1).children().val(data[i].calificacion);
@@ -716,6 +726,9 @@ function cargarInfoNivelPrimaria(data){
             }
         }
     };
+    if($('#informacion-num-curso').text().indexOf('Grado') == -1){
+        $('#listado-primario-notas [data-nroCalificacion="10"] input').attr('readonly', 'true');
+    }
 }
 
 function actualizarUltimaModificacion(calificacionesCurso){
