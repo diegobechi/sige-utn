@@ -1,5 +1,7 @@
 <script type="text/javascript" src="../js/docente.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style1.css">
+<script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/datepicker.css">
 </head>
 <body style="background-image: url('../img/fondo-1.jpg');">
 	<div class="header-menu">

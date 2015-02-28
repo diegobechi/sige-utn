@@ -24,7 +24,7 @@ class C_home extends CI_Controller {
          //remove all session data
          $this->session->unset_userdata('logged_in');
          $this->session->sess_destroy();
-         redirect(base_url('c_login'), 'refresh');
+         redirect(base_url('home'), 'refresh');
      }
  
 }

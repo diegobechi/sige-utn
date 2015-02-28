@@ -28,6 +28,15 @@ $(document).ready(function(){
         })        
     })
 
+    $('body').on('click','#por_etapas, #grilla_completa', function(){
+        if($(this).attr('id') == 'por_etapas'){
+            $('#filtro_etapa').show();    
+        }else{
+            $('#filtro_etapa').hide();
+        }
+        
+    })
+
     $('body').on('click', '#misAportes', function(){
         var aportes = $('.aportes-alumno tr').size();
         $('#loading').show();

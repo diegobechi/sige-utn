@@ -38,7 +38,8 @@ function crearContenedorNovedad(data){
     
     for(var i=0;i<data.length;i++){
         // if (i<=3) {
-            var ruta_imagen= ".."+data[i].rutaArchivo.substring(20);
+            /*var ruta_imagen= ".."+data[i].rutaArchivo.substring(20);*/
+            var ruta_imagen = "";
             if (i==0) {                
                 var newBoxTitulo ="<li class='selected'><span>"+data[i].titulo+"</span></li>"; 
                 var newBoxNoticia= "<div class='news-content top-content'><img src='"+ruta_imagen+"'><p class='fecha'>"+data[i].fecha+"<p class='titulo'>"+data[i].titulo+"</p><p class='descripcion'>"+data[i].descripcion+"</p></div>";

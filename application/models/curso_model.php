@@ -130,19 +130,20 @@ class Curso_Model extends CI_Model {
       return $string_query;
 
     }
-    function get_temario_dictado($idCurso, $idAsignatura){
-      $string_query = $this->db->query("SELECT a.nombre as 'asignatura', CONVERT(VARCHAR(11),tm.fecha, 106) as 'fechaPublicacion'  , tm.temasClase , d.apellido , d.nombre
+    function get_temario_dictado($idCurso, $idAsignatura, $año){
+      $string_query = $this->db->query("SELECT a.nombre as 'asignatura', tm.fecha as 'fechaPublicacion'  , tm.temasClase , d.apellido , d.nombre
                                         FROM TemarioDictado tm, Docente d , Asignatura a
                                         WHERE tm.legajoDocente = d.legajoDocente and
                                               tm.idAsignatura = a.idAsignatura and
                                               tm.idCurso = $idCurso and
-                                              a.idAsignatura = $idAsignatura;");
+                                              a.idAsignatura = $idAsignatura and
+                                              $año = YEAR(tm.fecha);");
       return $string_query->result();
     }
     function update_temario_dictado($idAsignatura, $idCurso, $fecha, $temasClase, $legajoDocente){
       $consulta = "UPDATE  TemarioDictado 
                   SET  temasClase = '$temasClase', legajoDocente = $legajoDocente 
-                  WHERE  idcurso = $idCurso  and CONVERT(VARCHAR(11), fecha , 106) = '$fecha' and idAsignatura = $idAsignatura";
+                  WHERE  idcurso = $idCurso  and fecha = '$fecha' and idAsignatura = $idAsignatura";
       $string_query = $this->db->query($consulta);
       return $string_query;
     }
