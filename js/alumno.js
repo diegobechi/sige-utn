@@ -30,9 +30,13 @@ $(document).ready(function(){
 
     $('body').on('click','#por_etapas, #grilla_completa', function(){
         if($(this).attr('id') == 'por_etapas'){
-            $('#filtro_etapa').show();    
+            $('#filtro_etapa').show();
+            $('#informe-primaria').show();    
+            $('#tabla_grilla_completa').hide();
         }else{
             $('#filtro_etapa').hide();
+            $('#informe-primaria').hide();
+            $('#tabla_grilla_completa').show();
         }
         
     })
@@ -385,6 +389,30 @@ function listarinfoAsignatura(data){
     $('.overlay-popup').show();
 }
 
+function cargarEtapa(numCurso){
+    var nivel = $('#informacion-num-curso').text();
+   /* if(nivel.indexOf ('Sala') == -1){
+        $('.inicial-notas').hide();
+        $('.grilla-notas').show();
+    }else{        
+        $('.grilla-notas').hide();
+        $('.inicial-notas').show();
+    }    */
+    $.ajax({
+        url : "curso/getAlumnosPorCurso/"+numCurso,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR)
+        {
+           createBoxAlumnos(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            console.log("fallo");
+        }
+    });
+}
+
 function listarTemas(data){
     var conte = $('#opciones-materias-contenedor');
     conte.empty();
@@ -622,6 +650,16 @@ function buscarMiCurso(){
             $('body').prepend('<div id="curso-alumno" data-cursoid="'+data[0].idCurso+'" data-nivel="'+data[0].nivel+'" style="display: none;"></div>');
             $('#selector-asignatura h3').text('Asignaturas del curso:  '+data[0].division+' '+data[0].seccion+' '+data[0].nombre);
             buscarComunicadoWeb(data[0].idCurso);
+            $('#filtro_etapa').empty();
+            if(data[0].division.indexOf('Sala') == -1){
+                if(data[0].division.indexOf('Grado') == -1){
+                    $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option><option>Tercera</option>')
+                }else{
+                    $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option><option>Tercera</option><option>Final</option>');    
+                }                
+            }else{
+                $('#filtro_etapa').append('<option>Primera</option><option>Segunda</option>')
+            }
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
