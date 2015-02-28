@@ -726,9 +726,6 @@ function cargarInfoNivelPrimaria(data){
             }
         }
     };
-    if($('#informacion-num-curso').text().indexOf('Grado') == -1){
-        $('#listado-primario-notas [data-nroCalificacion="10"] input').attr('readonly', 'true');
-    }
 }
 
 function actualizarUltimaModificacion(calificacionesCurso){

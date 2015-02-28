@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 /*$db['default']['username'] = 'NOELRIBBA\Noel';*/
-//$db['default']['username'] = 'pc\pampa';
-$db['default']['username'] = 'Bechi\Diego';
+$db['default']['username'] = 'pampa-pc';
+//$db['default']['username'] = 'Bechi\Diego';
 $db['default']['password'] = '';
 $db['default']['port'] 	   = '8080';
 $db['default']['database'] = 'SIGE_UTN';
