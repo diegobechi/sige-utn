@@ -8,9 +8,10 @@
 		<li data-title="cargarNotas"> <img src="../img/white-icons/appbar.grade.a.plus.png"/>Cargar Notas</li>
 		<li data-title="temario" class="temas_dictados"> <img src="../img/white-icons/appbar.calendar.day.png"/>Temario</li>
 		<li data-title="listados" style="display:none;"> <img src="">Listados</li>
-		<li data-title="inasistencias"> <img src="../img/white-icons/appbar.clipboard.paper.check.png"/>Inasistencias</li>
+		<li data-title="inasistencias" class="menu-inasistencias"> <img src="../img/white-icons/appbar.clipboard.paper.check.png"/>Inasistencias</li>
 		<li data-title="mensajes" class="mensajes_enviados"> <img src="../img/white-icons/appbar.chat.png"/>Mensajes</li>
 	</ul>
+	<div id="fecha_base" style="display:none;"></div>
 	<div class="contenedor-principal alumnos">
 		<div class ="titulo-principal" style="background-color: rgba(32, 57, 82, 0.75);">
 			<span></span>
@@ -200,16 +201,24 @@
 		</div>
 	</div>
 	<div class="contenedor-principal temario" style="display:none;">
-		<h4>Seleccione una asignatura</h4>
-		<div>			
+		<h4>Temario dictado</h4>
+		<div style="text-align: left; width: 100%; height: 70px;">			
 			<input id="id-curso-temario" type="text" value="" style="display:none;"/>
-			<select id="asignaturaTemario">					
-			</select>
+			<div style="margin-left:140px;float: left;">
+				<label>Asignatura</label>
+				<select id="asignaturaTemario">					
+				</select>
+			</div>
+			<div class="input-append date" id="dp1" data-date="" data-date-format="dd-mm-yyyy" style="margin-left: 100px; float: left;">
+				<label>Fecha</label>
+				<input class="span2" size="16" type="text" value="" readonly="">
+				<span class="add-on"><i class="icon-calendar"></i></span>
+			</div>
 		</div>
 		<div style="margin-top: 10px;">
 			<label>Escriba a continuacion los temas dictados:</label>
 			<textarea id="temaDictado" maxlength="180"></textarea><br>
-			<input id="enviarTemario" type="button" class="btn btn-info" value="Enviar">
+			<input id="enviarTemario" type="button" class="btn btn-info" value="Enviar" disabled>
 			<input id="updateTemario" type="button" class="btn btn-info" value="Update" style="display:none;">
 		</div>
 		<div>			
@@ -219,7 +228,13 @@
 	</div>
 	<div class="contenedor-principal inasistencias" style="display:none;">
 		<div class="titulo-principal" style="background-color: rgba(32, 57, 82, 0.75);">
-			<h3>Listado de Asistencia</h3>
+			<h3>Listado de Asistencia
+				<div class="input-append date" id="dp2" data-date="" data-date-format="dd-mm-yyyy" style="float: right;margin: 7px; margin-right: 30px;">
+					<label style="display: inline-block; margin-right: 20px;">Fecha</label>
+					<input class="span2" size="16" type="text" value="" readonly="">
+					<span class="add-on"><i class="icon-calendar"></i></span>
+				</div>
+			</h3>
 		</div>
 		<div>
 			<table>

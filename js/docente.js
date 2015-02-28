@@ -20,7 +20,7 @@ $(document).ready(function(){
     })
 
     $('body').on('click', '.logout', function(){
-        window.location = "c_home/logout";
+        window.location = "c_home/logout";        
     })
 
     $('body').on('click', '.pass_change', function(){
@@ -30,6 +30,22 @@ $(document).ready(function(){
 
     $('body').on('click','.temas_dictados, .mensajes_enviados', function(){
         if($(this).data('title') == 'temario'){
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+            if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            } 
+            var fecha = dd+'-'+mm+'-'+yyyy;
+            $('#dp1').datepicker('setEndDate', ''+fecha+'');
+            $('#dp1').attr('data-date', fecha);
+            $('#dp1 .span2').val(fecha);
+            var fecha_base = yyyy+'-'+mm+'-'+dd;
+            $('#fecha_base').val(fecha_base);
             updateListaTemario();
         }else{
             updateListaComunicados();
@@ -50,7 +66,6 @@ $(document).ready(function(){
             $(this).parent().find('span').text('Ausente');
         }
     })
-
 
     $('body').on('click','#guardar-asistencia', function(){
         var alumnos = $('#listado-asistencia').children();
@@ -89,7 +104,59 @@ $(document).ready(function(){
                     cargarInfoCurso(numCurso);
                     cargarFiltroCursos(numCurso);
                     cargarAsignaturas(numCurso);
-                    buscarAsistenciaCurso(numCurso);
+                    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1;
+                    var yyyy = today.getFullYear();
+                    if(dd<10){
+                        dd='0'+dd
+                    } 
+                    if(mm<10){
+                        mm='0'+mm
+                    } 
+                    var fecha = dd+'-'+mm+'-'+yyyy;
+                    $('#dp2').datepicker('setEndDate', ''+fecha+'');
+                    $('#dp2').attr('data-date', fecha);
+                    $('#dp2 .span2').val(fecha);
+                    var fecha_base = yyyy+'-'+mm+'-'+dd;
+                    buscarAsistenciaCurso(numCurso, fecha_base);
+                        $('#dp1').datepicker()
+                            .on('changeDate', function(e){
+                                var today = e.date;
+                                var dd = today.getDate();
+                                var mm = today.getMonth()+1;
+                                var yyyy = today.getFullYear();
+                                if(dd<10){
+                                    dd='0'+dd
+                                } 
+                                if(mm<10){
+                                    mm='0'+mm
+                                }
+                                dd++;
+                                var fecha = yyyy+'-'+mm+'-'+dd;
+                                $('#fecha_base').val(fecha);
+                        });
+                        $('#dp2').datepicker()
+                            .on('changeDate', function(e){
+                                var today = e.date;
+                                var dd = today.getDate();
+                                var mm = today.getMonth()+1;
+                                var yyyy = today.getFullYear();
+                                if(dd<10){
+                                    dd='0'+dd
+                                } 
+                                if(mm<10){
+                                    mm='0'+mm
+                                }
+                                dd++;
+                                var fecha = yyyy+'-'+mm+'-'+dd;
+                                $('#fecha_base').val(fecha);
+                                if($('#listado-asistencia').hasClass('editado')){
+                                    $('#listado-asistencia').removeClass('editado');
+                                }
+                                
+                                buscarAsistenciaCurso(numCurso, fecha);
+                        });
                     $('#loading').hide();
                 },
                 error: function (jqXHR, textStatus, errorThrown){
@@ -210,8 +277,8 @@ $(document).ready(function(){
 
     $('body').on('click','input.guardar_nota', function(){
         var calificacionEscolar = {};
-        calificacionEscolar.idCurso = $('#filtro_curso').find(':selected').data('idcurso');;
-        calificacionEscolar.idAsignatura = $('#filtro_asignatura').find(':selected').data('idasignatura');;
+        calificacionEscolar.idCurso = $('#filtro_curso').find(':selected').data('idcurso');
+        calificacionEscolar.idAsignatura = $('#filtro_asignatura').find(':selected').data('idasignatura');
         calificacionEscolar.etapa = $('#filtro_etapa').find(':selected').text();
         calificacionEscolar.legajoAlumno = $(this).data('legajoalumno');
         calificacionEscolar.calificacion = $(this).parent().find('textarea').val();
@@ -276,43 +343,91 @@ $(document).ready(function(){
         $(this).parent().parent().hide();
     });
 
+    $('body').on('keyup','#temaDictado', function(){
+        if($('#temaDictado').val() != ''){
+            $('#enviarTemario').attr('disabled', false);
+            $('#updateTemario').attr('disabled', false);
+        }else{
+            $('#enviarTemario').attr('disabled', true);
+            $('#updateTemario').attr('disabled', true);
+        }
+    })
+
     $('body').on('click', '#enviarTemario', function(){
         $('#loading').show();
         var temario = {};
         temario.curso = $('#id-curso-temario').val();
         temario.asignatura = $('#asignaturaTemario').children('option:selected').data('idasignatura');
         temario.temaDictado = $('#temaDictado').val();
-        $.ajax({
-            url: 'curso/setTemasDictados/'+ temario.curso+"/"+ temario.asignatura +"/"+  temario.temaDictado,
-            type: 'POST',
-            dataType: 'json',
-            success: function(data, textStatus, jqXHR){
-                updateListaTemario();
-                showNotification('Temario registrado con exito');
-                $('#loading').hide();
-            },
-            error: function (jqXHR, textStatus, errorThrown){
-                showNotification('Failure');
+        temario.fecha = $('#fecha_base').val();
+        var fecha = $('#dp1 input').val();
+        var bandera = true;
+        $('.tema-dictado').each(function(){        
+            if($(this).data('fechapicker') == fecha){
+                alert("Este dia ya tiene tema dictado");
+                bandera = false;
+                return false;
             }
         })
+        if(bandera){
+            $.ajax({
+                url: 'curso/setTemasDictados/'+ temario.curso+"/"+ temario.asignatura +"/"+  temario.temaDictado +"/"+  temario.fecha,
+                type: 'POST',
+                dataType: 'json',
+                success: function(data, textStatus, jqXHR){
+                    updateListaTemario();
+                    $('#temaDictado').val('');
+                    showNotification('Temario registrado con exito');
+                    $('#loading').hide();
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    showNotification('Failure');
+                }
+            })
+        }else{
+            $('#loading').hide();
+            $('#temaDictado').val('');
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+            if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            } 
+            var fecha = dd+'-'+mm+'-'+yyyy;
+            $('#dp1').datepicker('setEndDate', ''+fecha+'');
+            $('#dp1').attr('data-date', fecha);
+            $('#dp1 .span2').val(fecha);
+            var fecha_base = yyyy+'-'+mm+'-'+dd;
+            $('#fecha_base').val(fecha_base);
+        }
+        
+        
     })
 
     $('body').on('click', '.edit-temario', function(){
         var tema_dictado = $(this).parent('.tema-dictado')
         var texto_tema_dictado = tema_dictado.children('.texto_tema_dictado').text();
         var fechaPublicacion = tema_dictado.attr('data-fechapubli');
+        var fecha_picker = tema_dictado.attr('data-fechapicker');
         $('#temaDictado').val(texto_tema_dictado);
         $('#enviarTemario').hide();
         $('#updateTemario').show();
         $('#asignaturaTemario').prop('disabled', true);
         $('#updateTemario').attr('data-fechapubli', '');    
         $('#updateTemario').attr('data-fechapubli', fechaPublicacion);
+        $('#fecha_base').val(fechaPublicacion);
+        $('#dp1').attr('data-date', fecha_picker);
+        $('#dp1 .span2').val(fecha_picker);
     })
 
     $('body').on('click', '#updateTemario', function(){    
         var idAsignatura = $('#asignaturaTemario').children(':selected').attr('data-idasignatura');
         var idCurso = $('#id-curso-temario').val();
-        var fechaPublicacion = $('#updateTemario').data('fechapubli');
+        var fechaPublicacion = $('#fecha_base').val();
         console.log(fechaPublicacion);
         var texto_tema_dictado = $('#temaDictado').val();
         $.ajax({
@@ -889,7 +1004,20 @@ function listarTemasCurso(data){
     conte.empty();
     var newLine = "";
     for (var i = 0; i < data.length; i++) {
-        newLine="<div class='tema-dictado' data-fechapubli='"+data[i].fechaPublicacion+"'><div class='texto_tema_dictado'>"+data[i].temasClase.replace(/%20/g, " ")+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+data[i].fechaPublicacion+"</span> <span class='edit-temario'><img src='../img/edit.png'/></span><div class='separate-line'></div></div>";
+        var today = data[i].fechaPublicacion;
+        today = new Date(today);
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd<10){
+            dd='0'+dd
+        } 
+        if(mm<10){
+            mm='0'+mm
+        }
+        var fecha = dd+'-'+mm+'-'+yyyy;
+        var fecha_base = yyyy+'-'+mm+'-'+dd;
+        newLine="<div class='tema-dictado' data-fechapubli='"+fecha_base+"' data-fechapicker='"+fecha+"'><div class='texto_tema_dictado'>"+data[i].temasClase.replace(/%20/g, " ")+"</div><span>"+data[i].apellido+", "+data[i].nombre+"</span><span> "+fecha+"</span> <span class='edit-temario'><img src='../img/edit.png'/></span><div class='separate-line'></div></div>";
         conte.append(newLine);
     };
 }
@@ -962,10 +1090,10 @@ function buscarAlumnosCurso(curso){
     })
 }
 
-function buscarAsistenciaCurso(curso){
+function buscarAsistenciaCurso(curso, fecha){
     $('#loading').show();
     $.ajax({
-        url: 'curso/getAsistenciaCursoPorFecha/'+ curso,
+        url: 'curso/getAsistenciaCursoPorFecha/'+ curso+'/'+fecha,
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, jqXHR){
@@ -988,8 +1116,10 @@ function guardarAsistenciaCurso(asistencia_alumnos){
     if ( $('#listado-asistencia').hasClass('editado')){
         consulta = "updateAsistenciaCursoPorFecha";
     };
+    var fecha = $('#fecha_base').val();
+    console.log(fecha);
     $.ajax({
-        url : "curso/"+consulta+"/",
+        url : "curso/"+consulta+"/"+fecha,
         type: "POST",
         data: { data : asistencia_alumnos },
         dataType: "json",

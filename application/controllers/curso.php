@@ -23,7 +23,8 @@ class Curso extends CI_Controller {
 
 	public function getTemasDictados($idCurso, $idAsignatura){
 	 	$this->load->model('Curso_Model');
-		$query = $this->Curso_Model->get_temario_dictado($idCurso, $idAsignatura);
+	 	$año = date("Y");
+		$query = $this->Curso_Model->get_temario_dictado($idCurso, $idAsignatura, $año);
 		echo json_encode($query);
 	}
 
@@ -41,16 +42,14 @@ class Curso extends CI_Controller {
 
 	/* Funciones usadas por el docente */
 	
-	public function setTemasDictados($idCurso, $idAsignatura, $temasClase){	 	
+	public function setTemasDictados($idCurso, $idAsignatura, $temasClase, $date){	 	
 	 	$this->load->model('Curso_Model');
-	 	$date = date('j M Y');
 		$query = $this->Curso_Model->set_temario_dictado($idCurso, $idAsignatura, $date, $temasClase, $this->legajo);
 		echo json_encode($query);
 	}
 
-	public function updateTemario($idAsignatura, $idCurso, $fechaPublicacion, $texto_tema_dictado){
-		$this->load->model('Curso_Model');
-		$fecha = urldecode($fechaPublicacion);		
+	public function updateTemario($idAsignatura, $idCurso, $fecha, $texto_tema_dictado){
+		$this->load->model('Curso_Model');	
 		$query = $this->Curso_Model->update_temario_dictado($idAsignatura, $idCurso, $fecha, $texto_tema_dictado, $this->legajo);
 		echo json_encode($query);
 	}
@@ -67,7 +66,6 @@ class Curso extends CI_Controller {
 		echo json_encode($query);		
 	}
 	
-
 	public function getAsistenciaCurso($idCurso){
 		$año = date("Y");		
 	 	$this->load->model('Curso_Model');
@@ -75,10 +73,9 @@ class Curso extends CI_Controller {
 		echo json_encode($query);
 	}
 
-	public function insertAsistenciaCursoPorFecha(){
+	public function insertAsistenciaCursoPorFecha($fecha){
 		$this->load->model('Curso_Model');
 		$data = $this->input->post('data');
-		$fecha = date('j M Y');
 		$string_insert = "";
 		for ($i=0; $i < sizeof($data); $i++) { 
 			$string_insert .= "(";
@@ -92,10 +89,9 @@ class Curso extends CI_Controller {
 		echo json_encode($query);	
 	}
 
-	public function updateAsistenciaCursoPorFecha(){
+	public function updateAsistenciaCursoPorFecha($fecha){
 		$this->load->model('Curso_Model');
 		$data = $this->input->post('data');
-		$fecha = date('j M Y');
 		for ($i=0; $i < sizeof($data); $i++) {
 			$justificacion = $data[$i]['justificacion'];
 			if ($data[$i]['justificacion'] == "") {
@@ -106,9 +102,8 @@ class Curso extends CI_Controller {
 		echo json_encode($query);	
 	}
 
-	public function getAsistenciaCursoPorFecha($idCurso){
+	public function getAsistenciaCursoPorFecha($idCurso, $fecha){
 		$this->load->model('Curso_Model');
-		$fecha = date('j M Y');
 		$query = $this->Curso_Model->get_asistencia_por_fecha($idCurso, $fecha);
 		echo json_encode($query);	
 	}

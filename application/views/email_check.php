@@ -1,28 +1,22 @@
-<script type="text/javascript" src="../js/aes.js"></script>
 <img class="header-background-image"/>
-<div class="login">
-   <h3>Bienvenido</h3>
-   <?php echo validation_errors(); ?>
-   <?php echo form_open('c_verifylogin'); 
-   echo form_label("Legajo: ");
-   echo form_input("username");
-   echo br();
-   echo form_label("Contraseña: ");
-   echo form_password("password");
-   echo br();
-   echo form_submit("","Ingresar");
-   echo form_close();
-   ?>
-   <a href="http://localhost:8080/sige-utn/index.php/gfp/index">¿Olvido su contraseña?</a>
-</div>
+<div class="forgot_pass">
+	<?php echo validation_errors(); ?>
+	<?php echo form_open('gfp/index'); ?>
+	<h3> Recuperacion de contraseña </h3>
 
+	<span>Ingrese su correo electronico:</span>
+	<input type="text" size="30" id="correoElectronico" name="correoElectronico"/>
+	<br/>
+	<input type="submit"name="submit"  value="Enviar contraseña"/>
+	</form>
+</div>
 <style type="text/css">
 
 body{
    margin: 0px;
 }
 
-.login h3{
+.forgot_pass h3{
    margin-top: 0;
    color: white;
    font-family: 'Lobster';
@@ -30,7 +24,8 @@ body{
    margin-bottom: 25px;
 }
 
-.login{
+.forgot_pass{
+	color: #FFFFFF;
    width: 230px;
    margin: auto;
    top: 0;
@@ -38,22 +33,22 @@ body{
    position: absolute;
    left: 0;
    right: 0;
-   height: 290px;
+   height: 230px;
    text-align: center;
    padding: 30px;
    background-color: rgba(215, 215, 215, 0.29);
 }
 
-.login input{
+.forgot_pass input{
    text-align: center;
 }
 
-.login label{
+.forgot_pass label{
    text-align: left;
    color: #FFF;
 }
 
-.login input { 
+.forgot_pass input { 
    width: 100%; 
    margin-bottom: 10px; 
    background: rgba(0,0,0,0.3);
@@ -72,7 +67,7 @@ body{
    -ms-transition: box-shadow .5s ease;
    transition: box-shadow .5s ease;
 }
-.login input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+.forgot_pass input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
 input[type="submit"]{
    background-color: rgb(99, 163, 112);
