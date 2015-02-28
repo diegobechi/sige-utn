@@ -1,15 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Instituto Santa Teresita - SIGE</title>
+        <meta name="viewport" content="width=device-width">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/animations.css"> -->
+        <link rel="icon" type="image/png" href="../img/icons/SIGE.ico">
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Paytone+One|Shadows+Into+Light|Fredoka+One|Righteous|Nunito:400,700,300|Chewy|Luckiest+Guy|Montserrat|Exo+2|Raleway:400,900|Coming+Soon|Open+Sans:800,400|Roboto:400,900|Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>  
+          
+
 <img class="header-background-image"/>
 <div class="confirm_pass">
 	<h3>Cambiar contraseña</h3>
 	<?php  echo validation_errors();      
       echo "Contraseña :".form_password('password', '');
       echo "Confirmacion de contraseña :".form_password('passconf', '');
-      echo form_submit('submit', 'Confirmar');
-     
+      echo form_submit('submit', 'Confirmar');     
 	?>
 </div>
 
 <style type="text/css">
+
+body{
+   margin: 0;
+}
 
 .confirm_pass h3{
    margin-top: 0;
@@ -24,6 +37,8 @@
    width: 230px;
    margin: auto;
    top: 0;
+   font-size: 14px;
+   font-family: 'Lato';
    bottom: 0;
    position: absolute;
    left: 0;
@@ -79,7 +94,7 @@ input[type="submit"]{
    -o-background-size: cover;
    background-size: cover!important;
    background-attachment: fixed!important;
-   background: url(../../img/login_bk.jpg) top center no-repeat;
+   background: url('../../../img/login_bk.jpg') top center no-repeat;
 }
 
 </style>

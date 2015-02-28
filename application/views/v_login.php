@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../js/aes.js"></script>
+
 <img class="header-background-image"/>
 <div class="login">
    <h3>Bienvenido</h3>
@@ -13,7 +13,7 @@
    echo form_submit("","Ingresar");
    echo form_close();
    ?>
-   <a href="http://localhost:8080/sige-utn/index.php/gfp/index">¿Olvido su contraseña?</a>
+   <a href="http://localhost:8080/sige-utn/index.php/gfp/index" style="color:#FFFFFF">¿Olvido su contraseña?</a>
 </div>
 
 <style type="text/css">
@@ -51,6 +51,9 @@ body{
 .login label{
    text-align: left;
    color: #FFF;
+}
+.login form{
+   margin-bottom: 5px;   
 }
 
 .login input { 

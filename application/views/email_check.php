@@ -4,7 +4,7 @@
 	<?php echo form_open('gfp/index'); ?>
 	<h3> Recuperacion de contraseña </h3>
 
-	<span>Ingrese su correo electronico:</span>
+	<label>Ingrese su correo electronico:</label>
 	<input type="text" size="30" id="correoElectronico" name="correoElectronico"/>
 	<br/>
 	<input type="submit"name="submit"  value="Enviar contraseña"/>
