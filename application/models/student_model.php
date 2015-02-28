@@ -69,6 +69,21 @@ class Student_Model extends CI_Model {
                                       ORDER BY a.nombre, ce.etapa");
     return $string_query->result();
   }
+  function get_notas_alumno_etapa($legajoAlumno, $cicloLectivo, $etapa){
+    $string_query = $this->db->query("SELECT  DISTINCT a.idAsignatura, alu.legajoAlumno, a.nombre as 'asignatura', ce.nroCalificacion , ce.etapa,  ce.motivo, ce.calificacion, ce.modificacion
+                                      FROM Alumno alu , CalificacionEscolar ce, Asignatura a, Curso c, HorarioCurso hc, Inscripcion i
+                                      WHERE c.idCurso = hc.idCurso and
+                                          a.idAsignatura = hc.idAsignatura and
+                                          alu.legajoAlumno = ce.legajoAlumno and
+                                          a.idAsignatura = ce.idAsignatura and
+                                          alu.legajoAlumno=i.legajoAlumno and
+                                          c.idCurso = i.idCurso and
+                                          c.cicloLectivo = $cicloLectivo and
+                                          alu.legajoAlumno = $legajoAlumno and
+                                          ce.etapa = $etapa
+                                      ORDER BY a.nombre, ce.etapa");
+    return $string_query->result();
+  }
 
   function get_mis_alumnos_a_cargo($idTutor){
     $tring_query = $this ->db->query("SELECT DISTINCT a.legajoAlumno,a.apellido, a.nombre
