@@ -274,6 +274,13 @@
 
 	<style>
 
+	#listado-primario-notas span{
+		position: absolute;
+		background-color: aqua;
+		margin: 10px;
+		padding: 20px;
+	}
+
 	.asignaturas-curso label{
 		display: inline-block;
 	}

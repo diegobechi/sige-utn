@@ -92,7 +92,7 @@ class Alumno extends CI_Controller {
 		$query = $this->Student_Model->get_notas_alumno($this->legajoAlumno, $año);
 		echo json_encode($query);			
 	}
-	public function getNotasAlumnoEtapa($año){
+	public function getNotasAlumnoEtapa($año, $etapa){
 		$this->load->model('Student_Model');
 		$query = $this->Student_Model->get_notas_alumno_etapa($this->legajoAlumno, $año, $etapa);
 		echo json_encode($query);			
