@@ -38,6 +38,7 @@ class Gfp extends CI_Controller
       }
 
       public function send_mail(){
+
             $email= $this->input->post('correoElectronico');
 
             $this->load->helper('string');
@@ -50,22 +51,35 @@ class Gfp extends CI_Controller
             $this->db->update('alumno', $data);
             //now we will send an email
 
-            $config['protocol'] = 'smtp';
-            $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-            $config['smtp_port'] = 465;
-            $config['smtp_user'] = 'infosantateresita@gmail.com';
-            $config['smtp_pass'] = 'santatere';
 
-            $this->load->library('email', $config);
 
-            $this->email->from('infosantateresita@gmail.com', 'Santa Teresita Info');
-            $this->email->to($email);
 
-            $this->email->subject('Get your forgotten Password');
-            $this->email->message('Please go to this link to get your password.
-                   http://localhost:8080/sige-utn/index.php/get_password/index/'.$rs );
+            $mail = new PHPMailer();
+            $mail->IsSMTP(); // establecemos que utilizaremos SMTP
+            $mail->SMTPAuth   = true; // habilitamos la autenticación SMTP
+            $mail->SMTPSecure = "ssl";  // establecemos el prefijo del protocolo seguro de comunicación con el servidor
+            $mail->Host       = "smtp.gmail.com";      // establecemos GMail como nuestro servidor SMTP
+            $mail->Port       = 465;                   // establecemos el puerto SMTP en el servidor de GMail
+            $mail->Username   = "infosantateresita@gmail.com";  // la cuenta de correo GMail
+            $mail->Password   = "santatere";            // password de la cuenta GMail
+            $mail->SetFrom('infosantateresita@gmail.com', 'Instituto Santa Teresita');  //Quien envía el correo
+            $mail->AddReplyTo("infosantateresita@gmail.com","Instituto Santa Teresita");  //A quien debe ir dirigida la respuesta
+            $mail->Subject    = "Recuperacion de contraseña";  //Asunto del mensaje
+            $mail->Body      = 'Please go to this link to get your password.<br> http://localhost:8080/sige-utn/index.php/get_password/index/'.$rs ;
+            $mail->AltBody    = "Cuerpo en texto plano";
+            $destino = $email;
+            $mail->AddAddress($destino, "Diego Bechi");
 
-            $this->email->send();
+            $mail->AddAttachment("images/phpmailer.gif");      // añadimos archivos adjuntos si es necesario
+            $mail->AddAttachment("images/phpmailer_mini.gif"); // tantos como queramos
+
+            if(!$mail->Send()) {
+            $data["message"] = "Error en el envío: " . $mail->ErrorInfo;
+            } else {
+            $data["message"] = "¡Mensaje enviado correctamente!";
+            }
+            //$this->load->view('c_login',$data);
+            
             echo "Please check your email address.";
       }    
 }
