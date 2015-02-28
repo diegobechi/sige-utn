@@ -79,7 +79,7 @@ input[type="submit"]{
    -o-background-size: cover;
    background-size: cover!important;
    background-attachment: fixed!important;
-   background: url(../img/login_bk.jpg) top center no-repeat;
+   background: url(../../img/login_bk.jpg) top center no-repeat;
 }
 
 </style>
