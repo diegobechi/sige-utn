@@ -80,7 +80,7 @@ class Student_Model extends CI_Model {
                                           c.idCurso = i.idCurso and
                                           c.cicloLectivo = $cicloLectivo and
                                           alu.legajoAlumno = $legajoAlumno and
-                                          ce.etapa = $etapa
+                                          ce.etapa ='$etapa'
                                       ORDER BY a.nombre, ce.etapa");
     return $string_query->result();
   }

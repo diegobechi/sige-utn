@@ -15,6 +15,14 @@ $(document).ready(function(){
         }) 
     })
 
+    $('body').on("mouseover",'#listado-primario-notas td', function(event){    
+        $(this).children().show();
+    });
+
+    $('body').on("mouseleave",'#listado-primario-notas td', function(event){    
+        $(this).children().hide();
+    });
+
     $('body').on('click', '.user-right img', function(event){
         event.stopPropagation();
         if($('.user-options').is(':visible')){
@@ -28,15 +36,45 @@ $(document).ready(function(){
         })        
     })
 
+    $('body').on('change','#filtro_etapa', function(){
+        $('#por_etapas').click();
+    });
+
     $('body').on('click','#por_etapas, #grilla_completa', function(){
         if($(this).attr('id') == 'por_etapas'){
             $('#filtro_etapa').show();
-            $('#informe-primaria').show();    
-            $('#tabla_grilla_completa').hide();
+            var fecha = new Date();
+            var año = fecha.getFullYear();;
+            $('#loading').show();
+            $.ajax({
+                url : "alumno/getAsignaturas/"+año,
+                type: "GET",
+                dataType: "json",
+                success: function(data, textStatus, jqXHR){
+                    crearTablaNotasAsignaturasPorEtapas(data);   
+                    $('#loading').hide();
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    console.log("fallo");
+                }
+            });
         }else{
+            var fecha = new Date();
+            var año = fecha.getFullYear();
+            $('#loading').show();
+            $.ajax({
+                url : "alumno/getAsignaturas/"+año,
+                type: "GET",
+                dataType: "json",
+                success: function(data, textStatus, jqXHR){
+                    crearTablaNotasAsignaturas(data);
+                    $('#loading').hide();
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    console.log("fallo");
+                }
+            });
             $('#filtro_etapa').hide();
-            $('#informe-primaria').hide();
-            $('#tabla_grilla_completa').show();
         }
         
     })
@@ -122,6 +160,9 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data, textStatus, jqXHR){
                 if( origen == 'misNotas'){
+                    $('#grilla_completa').attr('checked', true);
+                    $('#grilla_completa').click();
+                    $('#por_etapas').attr('checked', false);
                     crearTablaNotasAsignaturas(data);                    
                 }else{
                     crearSelectorAsignatura(data);
@@ -454,29 +495,56 @@ function crearTablaNotasAsignaturas(asignaturas){
     var fecha = new Date();
     var año = fecha.getFullYear();
     $.ajax({
-            url : "alumno/getNotasAlumno/"+año,
-            type: "GET",
-            dataType: "json",
-            success: function(data, textStatus, jqXHR){
-                if (nivel != "Inicial"){
-                    $('#informe-nivel-primaria').show();
-                    $('#informe-nivel-inicial').hide();
-                    if($('#listado-primario-notas').children().size() < 1){    
-                        var cant_columns = checkMayorCantNotas(data);
-                        cargarInfoTablaNotas(asignaturas, data, cant_columns);
-                    }    
-                }else{                    
-                    $('#informe-nivel-inicial').show();
-                    $('#informe-nivel-primaria').hide();
-                    if($('.accordion-group').size() < 1){
-                        cargarNotasInicial(asignaturas, data);    
-                    }                    
-                }                
-            },
-            error: function (jqXHR, textStatus, errorThrown){
-                console.log("fallo");
-            }
-        });
+        url : "alumno/getNotasAlumno/"+año,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            if (nivel != "Inicial"){
+                $('#informe-nivel-primaria').show();
+                $('#informe-nivel-inicial').hide(); 
+                var cant_columns = checkMayorCantNotas(data);
+                cargarInfoTablaNotas(asignaturas, data, cant_columns);
+            }else{                    
+                $('#informe-nivel-inicial').show();
+                $('#informe-nivel-primaria').hide();
+                if($('.accordion-group').size() < 1){
+                    cargarNotasInicial(asignaturas, data);    
+                }                    
+            }                
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
+}
+
+function crearTablaNotasAsignaturasPorEtapas(asignaturas){
+    var nivel = $('#curso-alumno').data('nivel');
+    var fecha = new Date();
+    var año = fecha.getFullYear();
+    var etapa = $('#filtro_etapa').val();
+    $.ajax({
+        url : "alumno/getNotasAlumnoEtapa/"+año+"/"+etapa,
+        type: "GET",
+        dataType: "json",
+        success: function(data, textStatus, jqXHR){
+            if (nivel != "Inicial"){
+                $('#informe-nivel-primaria').show();
+                $('#informe-nivel-inicial').hide();
+                var cant_columns = checkMayorCantNotas(data);
+                cargarInfoTablaNotas(asignaturas, data, cant_columns);    
+            }else{                    
+                $('#informe-nivel-inicial').show();
+                $('#informe-nivel-primaria').hide();
+                if($('.accordion-group').size() < 1){
+                    cargarNotasInicial(asignaturas, data);    
+                }                    
+            }                
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+            console.log("fallo");
+        }
+    });
 }
 
 function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
@@ -508,7 +576,7 @@ function cargarInfoTablaNotas(asignaturas,notas, cant_columns){
         var array_notas = getArrayNotas(notas, idAsignatura);
         for (var j = 0; j < cant_columns-1; j++) {
             if(typeof array_notas[j] != "undefined"){
-                new_line += "<td>"+array_notas[j].calificacion+"</td>";
+                new_line += "<td>"+array_notas[j].calificacion+"<span style='display:none;'>"+array_notas[j].motivo+"</span></td>";
                 conta++;
             }else{
                 new_line += "<td></td>";                

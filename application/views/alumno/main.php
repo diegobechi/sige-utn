@@ -215,148 +215,6 @@
 									<tbody id="listado-primario-notas">									
 									</tbody>
 								</table>
-								<div id="informe-primaria" style="display:none;">
-									<a id="tabla_referencias" style="float:right;">Referencias							
-									</a>
-									<div class="tabla-abreviaturas" style="display:none;">
-											<table id="abreviaturas">
-												<thead>
-													<tr>
-														<td colspan="2">Abreviaturas</td>						
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>P</td>
-														<td>Prueba</td>
-													</tr>
-													<tr>
-														<td>E</td>
-														<td>Examén</td>
-													</tr>
-													<tr>
-														<td>EO</td>
-														<td>Exposición Oral</td>
-													</tr>
-													<tr>
-														<td>TP</td>
-														<td>Trabajo Práctico</td>
-													</tr>
-													<tr>
-														<td>TI</td>
-														<td>Trabajo Integrador</td>
-													</tr>
-													<tr>
-														<td>R</td>
-														<td>Recuperatorio</td>
-													</tr>
-													<tr>
-														<td>C</td>
-														<td>Coloquio</td>
-													</tr>
-													<tr>
-														<td>NC</td>
-														<td>Nota de Concepto</td>
-													</tr>
-													<tr>
-														<td>LO</td>
-														<td>Lección Oral</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									<table> Listado de alumnos
-										<thead>
-											<tr id="cabecera-notas">
-												<td>Legajo</td>
-												<td>Alumno</td>
-												<td data-nroCalificacion="1">
-													<select>
-														<option>P</option>
-														<option>E</option>
-														<option>EO</option>
-														<option>TP</option>
-														<option>TI</option>												
-														<option>R</option>
-														<option>C</option>
-														<option>NC</option>
-														<option>LO</option>
-													</select>
-												</td>
-												<td data-nroCalificacion="2">
-													<select>
-														<option>P</option>
-														<option>E</option>
-														<option>EO</option>
-														<option>TP</option>
-														<option>TI</option>												
-														<option>R</option>
-														<option>C</option>
-														<option>NC</option>
-														<option>LO</option>
-													</select>
-												</td>
-												<td data-nroCalificacion="3">
-													<select>
-														<option>P</option>
-														<option>E</option>
-														<option>EO</option>
-														<option>TP</option>
-														<option>TI</option>												
-														<option>R</option>
-														<option>C</option>
-														<option>NC</option>
-														<option>LO</option>
-													</select>
-												</td>
-												<td data-nroCalificacion="4">
-													<select>
-														<option>P</option>
-														<option>E</option>
-														<option>EO</option>
-														<option>TP</option>
-														<option>TI</option>												
-														<option>R</option>
-														<option>C</option>
-														<option>NC</option>
-														<option>LO</option>
-													</select>
-												</td>
-												<td data-nroCalificacion="5">
-													<select>
-														<option>P</option>
-														<option>E</option>
-														<option>EO</option>
-														<option>TP</option>
-														<option>TI</option>												
-														<option>R</option>
-														<option>C</option>
-														<option>NC</option>
-														<option>LO</option>
-													</select>
-												</td>
-												<td data-nroCalificacion="10" data-promedio="">
-													<input type="text" value="Prom">
-												</td>									
-											</tr>
-										</thead>
-										<tbody id="listado-primario-notas">									
-										</tbody>
-									</table>
-									<div>
-										<span id="modificacion-primaria"></span>
-										<input type="button" class="btn btn-info" id="guardar-notas-primaria" value="Guardar">
-									</div>
-									<script type="text/javascript">
-									$('body').on("mouseover",'#tabla_referencias',function(){
-								        $('.tabla-abreviaturas').show();
-								    })
-
-								   $('body').on("mouseleave",'#tabla_referencias',function(){
-								        $('.tabla-abreviaturas').hide();
-								    })
-									</script>
-								</div>
 							</div>
 							<div id="informe-nivel-inicial" style="display:none;">
 								<div class="accordion nivel-inicial" id="accordion2">
@@ -415,6 +273,13 @@
 	</div>
 
 	<style>
+
+	#listado-primario-notas span{
+		position: absolute;
+		background-color: aqua;
+		margin: 10px;
+		padding: 20px;
+	}
 
 	.asignaturas-curso label{
 		display: inline-block;
