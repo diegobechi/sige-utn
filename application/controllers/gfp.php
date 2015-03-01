@@ -42,7 +42,14 @@ class Gfp extends CI_Controller
             $this->load->model('M_Login');
             $query = $this->M_Login->checkMail($legajoAlumno);
             $array =  json_decode(json_encode($query), true);
-            $email = $array[0]['correoElectronico'];
+            if($array[0]['correoElectronico']){
+                  $email = $array[0]['correoElectronico'];
+            }else{
+                  $query = $this->M_Login->checkMailTutor($legajoAlumno);
+                  $array =  json_decode(json_encode($query), true);
+                  $email = $array[0]['correoElectronico'];
+            }
+            
 
             $this->load->helper('string');
             $rs = random_string('alnum', 12);

@@ -16,6 +16,9 @@ $(document).ready(function(){
     })
 
     $('body').on("mouseover",'#listado-primario-notas td', function(event){    
+        var texto = $(this).children().text();
+        texto = cambiarTexto(texto);
+        $(this).children().text(texto);
         $(this).children().show();
     });
 
@@ -390,6 +393,25 @@ $(document).ready(function(){
     })
 
 });
+
+function cambiarTexto(texto){
+    var array =[]
+    array['P']= "Prueba";
+    array['LO']= "Leccion Oral";
+    array['E']= "Examen";
+    array['EO']= "Exposicion Oral";
+    array['TP']="Trabajo Practico";
+    array['TI']="Trabajo Integrador";
+    array['R']="Recuperatorio";
+    array['C']="Coloquio";
+    array['NC']="Nota de Concepto";
+    array['PE1']="Promedio 1er Etapa";
+    array['PE2']="Promedio 2da Etapa";
+    array['PE3']="Promedio 3ra Etapa";
+    array['P.F.']="Promedio Final";
+    var significado = array[texto];
+    return significado;
+}
 
 function mostrarAsistencias(data){
     var conte = $('#listadoInasistencias tbody');
