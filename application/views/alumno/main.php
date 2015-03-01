@@ -198,11 +198,11 @@
 								<div class="contenedor-filtros">
 									<select id="filtro_curso" style="display:none;">					
 									</select>
-									<div style="display: inline-block;margin-left: 75px;">
+									<div style="display: inline-block;">
 										<input type="radio" id="grilla_completa" name="mis_notas" checked>
-										<label>Grilla Completa</label><br>
+										<label style="display:inline-block;">Grilla Completa</label><br>
 										<input type="radio" id="por_etapas" name="mis_notas">
-										<label>Por etapas</label>
+										<label style="display:inline-block;">Por etapas</label>
 										<select id="filtro_etapa" style="display:none;">					
 										</select>
 									</div>			
@@ -517,6 +517,22 @@
 		width: 60px;
 		margin: 0;
 		border: none;
+	}
+
+	#informe-nivel-primaria .contenedor-filtros{
+		margin: 0;
+		text-align: left;
+		margin-bottom: 15px;
+	}
+
+	.contenedor-filtros input{
+		margin-top: -2px;
+	}
+
+	#informe-nivel-primaria #filtro_etapa{
+	    width: 100px;
+	    margin-left: 20px;
+	    border: 1px solid #CCC;
 	}
 
 	#informe-nivel-primaria td{

@@ -8,19 +8,17 @@ public function index($rs=FALSE)
     $this->load->helper(array('form', 'url'));
     $this->load->library('form_validation');
   
-    $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[7]|max_length[20]|matches[passconf]|md5');
-      $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|max_length[20]|matches[passconf]|md5');
+    $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required');
  
    if ($this->form_validation->run() == FALSE)
      {
                   echo form_open();
-                  $this->load->helper(array('form','html'));
-                  $this->load->view('header');
                   $this->load->view('gp_form');
     }
    else
     {
-            $query=$this->db->get_where('alumno', array('observaciones' => $rs), 1);
+            $query=$this->db->get_where('usuario', array('contraseña' => $rs), 1);
  
        if ($query->num_rows() == 0)
        {
@@ -29,14 +27,14 @@ public function index($rs=FALSE)
       else
       {
       $data = array(
-            'observaciones' => $this->input->post('password')
+            'contraseña' => 'SqddibwSxG+2VHwmgFIaIA=='
       );
      
-      $where=$this->db->where('observaciones', $rs);
+      $where=$this->db->where('contraseña', $rs);
      
-      $where->update('alumno',$data);
+      $where->update('usuario',$data);
      
-      echo "Congratulations!";
+      redirect('http://localhost:8080/sige-utn/index.php/c_login', false);
       }
    
   }

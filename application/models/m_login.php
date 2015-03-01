@@ -15,4 +15,19 @@ class M_login extends CI_Model {
             return false; //if data is wrong
         }
     }
+
+    function checkMail($legajoUser){
+        $query = $this->db->query("SELECT correoElectronico FROM Usuario WHERE idUsuario = '$legajoUser'");
+        return $query->result();
+    }
+
+    function checkMailTutor($legajoAlumno){
+        $query = $this->db->query("SELECT DISTINCT t.correoElectronico
+                                    FROM Tutor t, GrupoFamiliar gf, Alumno a
+                                    WHERE t.idTutor = gf.idTutor and
+                                          a.legajoAlumno = gf.legajoAlumno and
+                                          gf.legajoAlumno = $legajoAlumno");
+        return $query->result();
+    }
+
 }
