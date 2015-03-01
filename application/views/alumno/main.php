@@ -276,9 +276,11 @@
 
 	#listado-primario-notas span{
 		position: absolute;
-		background-color: aqua;
-		margin: 10px;
-		padding: 20px;
+		background-color: #6B6464;
+		margin: -10px 10px;
+		padding: 11px;
+		border-radius: 20px;
+		color: white;
 	}
 
 	.asignaturas-curso label{
@@ -512,7 +514,10 @@
 		border: 1px solid #CCC;
 	}
 
-	
+	#listado-primario-notas td{
+		cursor: pointer;
+	}
+
 	#informe-nivel-primaria select{
 		width: 60px;
 		margin: 0;
