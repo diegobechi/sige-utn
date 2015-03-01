@@ -12,7 +12,7 @@ class Gfp extends CI_Controller
 
       public function index(){
 
-            $this->form_validation->set_rules('correoElectronico', 'Email', 'trim|required|valid_email|callback_email_check');
+            $this->form_validation->set_rules('legajo_usuario', 'legajoUser', 'trim|required|callback_email_check');
 
             if ($this->form_validation->run() == FALSE){
                   $this->load->helper(array('form','html'));
@@ -25,7 +25,7 @@ class Gfp extends CI_Controller
       }
 
       public function email_check($str){
-            $query = $this->db->get_where('usuario', array('correoElectronico' => $str), 1);            
+            $query = $this->db->get_where('usuario', array('idUsuario' => $str), 1);            
 
             if ($query->num_rows()== 1){
                   $this->send_mail();
@@ -38,7 +38,11 @@ class Gfp extends CI_Controller
 
       public function send_mail(){
 
-            $email= $this->input->post('correoElectronico');
+            $legajoAlumno = $this->input->post('legajo_usuario');
+            $this->load->model('M_Login');
+            $query = $this->M_Login->checkMail($legajoAlumno);
+            $array =  json_decode(json_encode($query), true);
+            $email = $array[0]['correoElectronico'];
 
             $this->load->helper('string');
             $rs = random_string('alnum', 12);
@@ -82,7 +86,7 @@ class Gfp extends CI_Controller
             } else {
             $data["message"] = "¡Mensaje enviado correctamente!";
             }
-            
+
             redirect('http://localhost:8080/sige-utn/index.php/c_login', false);
       }    
 }

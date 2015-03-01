@@ -8,8 +8,8 @@ public function index($rs=FALSE)
     $this->load->helper(array('form', 'url'));
     $this->load->library('form_validation');
   
-    $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[7]|max_length[20]|matches[passconf]|md5');
-      $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|max_length[20]|matches[passconf]|md5');
+    $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required');
  
    if ($this->form_validation->run() == FALSE)
      {
@@ -27,7 +27,7 @@ public function index($rs=FALSE)
       else
       {
       $data = array(
-            'contraseña' => $this->input->post('password')
+            'contraseña' => 'SqddibwSxG+2VHwmgFIaIA=='
       );
      
       $where=$this->db->where('contraseña', $rs);
