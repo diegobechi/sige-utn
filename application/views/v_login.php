@@ -38,7 +38,7 @@ body{
    position: absolute;
    left: 0;
    right: 0;
-   height: 290px;
+   height: 315px;
    text-align: center;
    padding: 30px;
    background-color: rgba(215, 215, 215, 0.29);
