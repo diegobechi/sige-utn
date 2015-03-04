@@ -42,13 +42,15 @@ class Curso extends CI_Controller {
 
 	/* Funciones usadas por el docente */
 	
-	public function setTemasDictados($idCurso, $idAsignatura, $temasClase, $date){	 	
+	public function setTemasDictados($idCurso, $idAsignatura, $temasClase, $date){
+		$temasClase = urldecode($temasClase);
 	 	$this->load->model('Curso_Model');
 		$query = $this->Curso_Model->set_temario_dictado($idCurso, $idAsignatura, $date, $temasClase, $this->legajo);
 		echo json_encode($query);
 	}
 
 	public function updateTemario($idAsignatura, $idCurso, $fecha, $texto_tema_dictado){
+		$texto_tema_dictado = urldecode($texto_tema_dictado);
 		$this->load->model('Curso_Model');	
 		$query = $this->Curso_Model->update_temario_dictado($idAsignatura, $idCurso, $fecha, $texto_tema_dictado, $this->legajo);
 		echo json_encode($query);
@@ -111,7 +113,7 @@ class Curso extends CI_Controller {
 	public function setComunicadoWeb($idCurso, $comunicado){	 	
 	 	$this->load->model('Curso_Model');
 	 	$date = date('j M Y');
-	 	$comunicado_web = str_replace(' ', '%20', $comunicado);
+	 	$comunicado_web = urldecode($comunicado);
 		$query = $this->Curso_Model->set_comunicado($idCurso, $this->legajo, $date, $comunicado_web);
 		echo json_encode($query);
 	}
@@ -127,6 +129,7 @@ class Curso extends CI_Controller {
 	public function updateComunicado($idComunicado, $textoComunicado){
 		$this->load->model('Curso_Model');
 	 	$date = date('j M Y');
+	 	$textoComunicado = urldecode($textoComunicado);
 		$query = $this->Curso_Model->update_comunicado($idComunicado, $textoComunicado, $date, $this->legajo);
 		echo json_encode($query);	
 	}

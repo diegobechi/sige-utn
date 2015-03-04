@@ -91,6 +91,7 @@ $(document).ready(function(){
         var conte_info = $('.contenedor-info');
         var numCurso = $(this).data('idcurso');
         var nombre_curso = $(this).text();
+        get_asignaturas_curso(numCurso);
         $('#loading').show();
         if(!conte_info.size() > 0){        
             $.ajax({
@@ -103,7 +104,7 @@ $(document).ready(function(){
                     $('#informacion-num-curso').text(nombre_curso);
                     cargarInfoCurso(numCurso);
                     cargarFiltroCursos(numCurso);
-                    cargarAsignaturas(numCurso);
+                    cargarAsignaturas(numCurso);                    
                     var today = new Date();
                     var dd = today.getDate();
                     var mm = today.getMonth()+1;
@@ -153,8 +154,7 @@ $(document).ready(function(){
                                 $('#fecha_base').val(fecha);
                                 if($('#listado-asistencia').hasClass('editado')){
                                     $('#listado-asistencia').removeClass('editado');
-                                }
-                                
+                                }                                
                                 buscarAsistenciaCurso(numCurso, fecha);
                         });
                     $('#loading').hide();
@@ -371,7 +371,7 @@ $(document).ready(function(){
         })
         if(bandera){
             $.ajax({
-                url: 'curso/setTemasDictados/'+ temario.curso+"/"+ temario.asignatura +"/"+  temario.temaDictado +"/"+  temario.fecha,
+                url: 'curso/setTemasDictados/'+ temario.curso+"/"+ temario.asignatura +"/"+ encodeURI(temario.temaDictado) +"/"+  temario.fecha,
                 type: 'POST',
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR){
@@ -433,7 +433,7 @@ $(document).ready(function(){
         console.log(fechaPublicacion);
         var texto_tema_dictado = $('#temaDictado').val();
         $.ajax({
-            url: 'curso/updateTemario/'+ idAsignatura +'/'+idCurso+'/'+fechaPublicacion+'/'+texto_tema_dictado,
+            url: 'curso/updateTemario/'+ idAsignatura +'/'+idCurso+'/'+fechaPublicacion+'/'+encodeURI(texto_tema_dictado),
             type: 'POST',
             dataType: 'json',
             success: function(data, textStatus, jqXHR){            
@@ -455,7 +455,7 @@ $(document).ready(function(){
         comunicado.textoComunicado = $('#temaComunicado').val();
         $('#loading').show();
         $.ajax({
-            url: 'curso/setComunicadoWeb/'+ comunicado.curso +"/"+ comunicado.textoComunicado,
+            url: 'curso/setComunicadoWeb/'+ comunicado.curso +"/"+ encodeURI(comunicado.textoComunicado),
             type: 'POST',
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
@@ -475,7 +475,7 @@ $(document).ready(function(){
         var texto_comunicado = $('#temaComunicado').val();
         $('#loading').show();
         $.ajax({
-            url: 'curso/updateComunicado/'+ id_comunicado +'/'+texto_comunicado,
+            url: 'curso/updateComunicado/'+ id_comunicado +'/'+encodeURI(texto_comunicado),
             type: 'POST',
             dataType: 'json',
             success: function(data, textStatus, jqXHR){            
@@ -586,6 +586,7 @@ function crearAsignaturas(data){
 function cargarFiltroCursos(idCurso){
     var cursos = $('.box-curso-generic');
     var filtro_curso = $('#filtro_curso');
+
     $('#filtro_curso').empty();
     for (var i = 0; i < cursos.length; i++) {
         if(cursos.eq(i).data("idcurso") == idCurso ){
@@ -594,8 +595,7 @@ function cargarFiltroCursos(idCurso){
             var new_option = "<option data-idcurso='"+cursos.eq(i).data("idcurso")+"' data-nivel='"+cursos.eq(i).data("nivel")+"'>"+cursos.eq(i).text()+"</option>";
             filtro_curso.append(new_option);
         }
-    };
-    get_asignaturas_curso(idCurso);
+    };    
 }
 
 function cargarFiltroAsignaturas(asignaturas){
@@ -613,6 +613,7 @@ function cargarFiltroAsignaturas(asignaturas){
         filtro_asignatura.append("<option>Sin Asignaturas</option>");
     }
     mostrarNotasInicial();
+    console.log('cargando los temas');
 }
 
 function mostrarNotasInicial(){
@@ -986,7 +987,7 @@ function cargarComunicadoWeb(data){
 function updateListaTemario(){
     $('#loading').show();    
     var curso = $('#id-curso-temario').val();
-    var asignatura = $('#asignaturaTemario').children('option:selected').data('idasignatura');
+    var asignatura = $('#asignaturaTemario').children(':selected').data('idasignatura');
     $.ajax({
         url: 'curso/getTemasDictados/'+ curso+"/"+asignatura,
         type: 'GET',
@@ -997,6 +998,7 @@ function updateListaTemario(){
         },
         error: function (jqXHR, textStatus, errorThrown){
             console.log("fallo");
+            $('#loading').hide();
         }
     })
 }
