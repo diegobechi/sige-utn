@@ -34,7 +34,7 @@ public function index($rs=FALSE)
      
       $where->update('usuario',$data);
      
-      redirect('http://localhost:8080/sige-utn/index.php/c_login', false);
+      redirect('http://localhost:8080/sige-utn/index.php/c_login/passExito', 'refresh');
       }
    
   }
