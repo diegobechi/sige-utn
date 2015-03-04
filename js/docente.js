@@ -382,6 +382,8 @@ $(document).ready(function(){
                 },
                 error: function (jqXHR, textStatus, errorThrown){
                     showNotification('Failure');
+                    alert('Ya existe un tema cargado para la fecha seleccionada.')
+                    $('#loading').hide();
                 }
             })
         }else{
